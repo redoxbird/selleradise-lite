@@ -1,0 +1,237 @@
+.#{$global-prefix}_button--base {
+  @include font-size(p);
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em 1.5em;
+  border-radius: 5em;
+  overflow: hidden !important;
+  border: none;
+  outline: none;
+  width: auto;
+  transform-origin: center;
+  font-weight: font("primary_boldest", "font-weight");
+  cursor: pointer;
+  transition: all 400ms easing(out-expo);
+  z-index: 10;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    clip-path: circle(0% at 50% 50%);
+    transform-origin: center;
+    z-index: -1;
+    transition: all $time_slow easing(out-expo);
+  }
+
+  [data-focus-source="key"] &:focus {
+    transition: none;
+    outline: 0.15rem dashed color(text);
+    outline-offset: 0.15rem;
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
+}
+
+.#{$global-prefix}_button--primary {
+  @extend .#{$global-prefix}_button--base;
+  background-color: color(main);
+  color: color(main-text);
+
+  &::before {
+    background-color: color(main);
+  }
+
+  &:not(:disabled):hover {
+    background-color: color(text);
+    color: color(background);
+  }
+
+  &:not(:disabled):active,
+  &:not(:disabled):focus {
+    &::before {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+
+  &-outline {
+    @extend .#{$global-prefix}_button--base;
+    color: color(main);
+    border: 0.15rem solid color(main);
+  }
+}
+
+.#{$global-prefix}_button--accent {
+  @extend .#{$global-prefix}_button--base;
+  background-color: color(accent-light);
+  color: color(accent-light-text);
+
+  &::before {
+    background-color: color(accent-light);
+  }
+
+  &:not(:disabled):hover {
+    background-color: color(text);
+    color: color(background);
+  }
+
+  &:not(:disabled):active,
+  &:not(:disabled):focus {
+    color: color(accent-light-text);
+    &::before {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+
+  &-outline {
+    @extend .#{$global-prefix}_button--base;
+    color: color(accent-light);
+    border: 0.15rem solid color(accent-light);
+  }
+}
+
+.#{$global-prefix}_button--secondary {
+  @extend .#{$global-prefix}_button--base;
+  background-color: rgba(color(text-rgb), 0.05);
+  color: rgba(color(text-rgb), 0.8);
+
+  &::after {
+    content: none;
+  }
+
+  &::before {
+    background-color: rgba(color(text-rgb), 0.05);
+  }
+
+  &:not(:disabled):hover {
+    box-shadow: inset 0 0 0 0.1em color(text);
+    background-color: color(background);
+  }
+
+  &:not(:disabled):active,
+  &:not(:disabled):focus {
+    &::before {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+
+  &-outline {
+    @extend .#{$global-prefix}_button--base;
+    background-color: transparent;
+    color: rgba(color(text-rgb), 0.7);
+    box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.25);
+
+    &:hover {
+      background-color: color(text);
+      color: color(background);
+      box-shadow: none;
+    }
+  }
+}
+
+.#{$global-prefix}_button--skip-to-content {
+  @extend .#{$global-prefix}_button--base;
+  background-color: color(text);
+  color: color(background);
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1500;
+  opacity: 0;
+  pointer-events: none;
+
+  :root[data-focus-source="key"] &:focus {
+    opacity: 1;
+  }
+}
+
+.button--icon {
+  @include focus-outline;
+  transition: all 300ms easing(out-expo);
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  border-radius: 100%;
+  font-size: 1rem;
+  outline: none;
+  transform-origin: center;
+  cursor: pointer;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .helper {
+    @extend .flex-center;
+    position: absolute;
+    left: 50%;
+    top: -0.65rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: -0.65rem;
+    background-color: color(accent-dark);
+    color: color(light);
+    border-radius: 50%;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  [data-focus-source="key"] &:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem color(dark);
+  }
+}
+
+.buttonIcon--primary {
+  @extend .button--icon;
+  background-color: color(main);
+  color: color(main-text);
+
+  [data-focus-source="key"] &:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1em color(accent-dark);
+  }
+}
+
+.buttonIcon--secondary {
+  @extend .button--icon;
+  background-color: rgba(color(text-rgb), 0.05);
+  color: color(text);
+
+  [data-focus-source="key"] &:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem color(text);
+  }
+
+  &-outline {
+    @extend .button--icon;
+    background-color: transparent;
+    border: 0.1em solid rgba(color(text-rgb), 0.1);
+    color: color(text);
+
+    &:hover {
+      background-color: rgba(color(text-rgb), 0.05);
+    }
+  }
+}

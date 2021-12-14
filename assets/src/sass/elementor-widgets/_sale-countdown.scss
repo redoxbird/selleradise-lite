@@ -1,0 +1,133 @@
+.selleradise_widgets_sale-countdown {
+  --selleradise-color-overlay: rgba(#{color(main-rgb)}, 0.8);
+  width: calc(100% - #{$page-padding * 2});
+  margin: 1rem auto;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--border-radius-base);
+
+  &__image {
+    @extend .selleradise-background-image;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  &__content {
+    @extend .flex-start;
+    position: relative;
+    width: 100%;
+    padding: 2.5rem 5rem;
+    background-color: color(overlay);
+    color: color(main-text);
+    z-index: 10;
+
+    @include device(mobileAndTablet) {
+      padding: 2.5rem;
+    }
+  }
+
+  &__title {
+    @include font-size(h2);
+    margin: 0;
+    line-height: 1;
+
+    &-outer {
+      width: 30%;
+
+      @include device(mobileAndTablet) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include font-size(h5);
+    margin: 0.5em 0 0 0;
+  }
+
+  &__timer {
+    @extend .flex-center;
+    width: 40%;
+
+    &-title {
+      @include font-size(small);
+      margin: 0;
+      text-align: center;
+      font-weight: font("primary_boldest", "font-weight");
+      background-color: color(text);
+      color: color(background);
+      padding: 0.6em 1.2em;
+      border-radius: 5em;
+      margin-top: 1.5rem;
+
+      @include device(mobileAndTablet) {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &-duration {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin: 0 1rem;
+      text-align: center;
+
+      &-outer {
+        @extend .flex-center;
+        width: 100%;
+
+        @include device(mobileAndTablet) {
+          order: 2;
+        }
+      }
+    }
+
+    &-time {
+      @include font-size(h1);
+      font-weight: font("primary_boldest", "font-weight");
+      line-height: 1;
+
+      @include device(mobile) {
+        @include font-size(h2);
+      }
+    }
+
+    &-label {
+      @include font-size(small);
+      font-weight: font("primary_bolder", "font-weight");
+      text-transform: capitalize;
+    }
+
+    @include device(mobileAndTablet) {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+      margin-left: 1.2em;
+    }
+
+    &-outer {
+      @extend .flex-end;
+      width: 30%;
+
+      @include device(mobileAndTablet) {
+        justify-content: center;
+        width: 100%;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}

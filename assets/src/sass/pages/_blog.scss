@@ -1,0 +1,195 @@
+.selleradise-page--blog {
+  @extend .flex-start;
+  padding-bottom: 1.5rem;
+  align-items: stretch;
+
+  .selleradise_page__title {
+    margin: 2.5rem 0 0 0;
+  }
+
+  main {
+    width: 65%;
+    flex-grow: 1;
+    align-self: stretch;
+  }
+
+  .archive-description {
+    color: rgba(color(text-rgb), 0.7);
+  }
+
+  @include device(mobile) {
+    main {
+      width: 100%;
+    }
+  }
+}
+
+.posts {
+  @extend .flex-between;
+  margin-top: 2.5rem;
+
+  &[data-selleradise-post-card-type="masonry"] {
+    display: block;
+    column-count: 3;
+    column-gap: 2.5rem;
+    width: 100%;
+
+    .selleradise-page--blog-has-sidebar & {
+      column-count: 2;
+    }
+  }
+
+  .blogPage--macy & {
+    justify-content: flex-start;
+  }
+}
+
+.selleradise_blog__sidebar {
+  @include font-size(p);
+  width: 35%;
+  align-self: stretch;
+  padding: 2.5rem 0 0 5rem;
+  margin-bottom: 2rem;
+
+  aside {
+    section {
+      padding: 0 0 1rem;
+      background-color: color(background);
+      color: color(text);
+      overflow-x: hidden;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      h1 {
+        @include font-size(h3);
+      }
+
+      h2 {
+        @include font-size(h4);
+      }
+
+      h1,
+      h2 {
+        margin: 1rem 0.5rem 0.5rem 0;
+      }
+
+      ul {
+        @extend .inline-list;
+
+        a {
+          color: color(text);
+          text-decoration: underline;
+        }
+
+        li:not(:last-child) {
+          padding-bottom: 0.5rem;
+        }
+
+        > li {
+          list-style: none;
+
+          li {
+            border-left: 0.05em solid rgba(color(text-rgb), 0.25);
+            padding-left: 1rem;
+          }
+        }
+      }
+
+      @include device(mobileAndTablet) {
+        padding: 0 0 1rem;
+      }
+    }
+
+    .wp-block-search {
+      @include font-size(p);
+
+      &__input {
+        border: 0.1em solid rgba(color(text-rgb), 0.1);
+        border-right: none;
+        border-radius: 0.75em 0 0 0.75em;
+        box-shadow: none;
+      }
+
+      &__button {
+        @extend .selleradise_button--secondary;
+        border-radius: 0 0.75em 0.75em 0;
+        margin-left: 0;
+      }
+    }
+
+    ol.wp-block-latest-comments {
+      padding-left: 0;
+
+      a {
+        color: color(text);
+        font-weight: font("primary_bolder", "font-weight");
+
+        &:hover {
+          color: color(main);
+        }
+      }
+    }
+
+    .wp-block-tag-cloud {
+      @extend .flex-start;
+      align-items: flex-start;
+
+      > .tag-cloud-link {
+        @extend .chip--base;
+        margin: 0 0.75em 0.75em 0;
+        background-color: transparent;
+        border: 0.05em solid rgba(color(text-rgb), 0.1);
+        border-radius: 2em;
+        font-weight: 400;
+      }
+    }
+
+    .wp-block-latest-posts {
+      &__list {
+        a {
+          @include font-size(p);
+          color: color(text);
+          text-decoration: none;
+          width: 100%;
+          font-weight: font("primary_boldest", "font-weight");
+
+          &:hover {
+            color: color(main);
+          }
+        }
+
+        li {
+        }
+
+        > * {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &__post-author {
+      }
+
+      &__featured-image {
+        @extend .selleradise-background-image;
+        width: 100%;
+        height: 15rem;
+        border-radius: 0.5em;
+        margin: 0 0 1rem 0;
+      }
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    width: 100%;
+    padding: 0;
+    margin-top: 2rem;
+  }
+}

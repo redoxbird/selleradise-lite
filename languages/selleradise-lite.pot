@@ -1,0 +1,1315 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Selleradise Lite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-14 14:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.5; wp-5.8.2\n"
+"X-Domain: selleradise-lite"
+
+#: template-parts/headers/partials/logo.php:21
+#: template-parts/headers/partials/logo.php:28
+#: template-parts/headers/partials/logo.php:42
+msgid " Logo"
+msgstr ""
+
+#: inc/Api/Customizer/Header.php:46
+msgid "\"Fast\" will only match beginning of the title."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3598
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3606
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#. 1: Comments count.
+#: comments.php:33
+#, php-format
+msgid "%d Comment."
+msgid_plural "%d Comments."
+msgstr[0] ""
+msgstr[1] ""
+
+#. %s: Quantity.
+#: woocommerce/global/quantity-input.php:20
+#, php-format
+msgid "%s quantity"
+msgstr ""
+
+#: woocommerce/single-product/sale-flash.php:21
+#: template-parts/product/partials/sale-chip.php:29
+#, php-format
+msgid "%s%% OFF"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/Core/Tags.php:45 inc/Core/Tags.php:50
+msgid ", "
+msgstr ""
+
+#: 404.php:16
+msgid "404"
+msgstr ""
+
+#: inc/Helpers.php:668 inc/Plugins/BreadcrumbsTrail.php:271
+msgid "404 Not Found"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:106
+msgid "a background color."
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:120
+msgid "A password will be sent to your email address."
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:125 inc/Api/Customizer/Colors.php:192
+msgid "Accent"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:220
+msgid "Account"
+msgstr ""
+
+#: inc/Api/Customizer/Header.php:51
+msgid "Accurate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2800
+msgid "Activate"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2684
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2380
+msgid "Active"
+msgstr ""
+
+#: inc/Api/Customizer/Blog.php:42
+msgid "Adaptive Colors"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:227
+msgid "Add To Cart"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:228
+msgid "Adding To Cart"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:211
+msgid "All Categories"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3599
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3607
+msgid "All installations have been completed."
+msgstr ""
+
+#. 1: dashboard link.
+#: inc/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/Api/Customizer/Footer.php:45
+msgid "All rights reserved by Selleradise &copy; 2021."
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:136
+msgid "Already have an account?"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:126 inc/Api/Customizer/Colors.php:193
+msgid "an accent color, rarely used."
+msgstr ""
+
+#. 1: plugin name, 2: error message.
+#: inc/class-tgm-plugin-activation.php:3590
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: woocommerce/cart/cart.php:156 woocommerce/cart/cart.php:157
+msgid "Apply coupon"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:236
+msgid "Apply Filters"
+msgstr ""
+
+#: inc/Helpers.php:669 inc/Plugins/BreadcrumbsTrail.php:272
+msgid "Archives"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2547
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: woocommerce/cart/cart.php:71
+msgid "Available on backorder"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2575
+msgid "Available version:"
+msgstr ""
+
+#: woocommerce/loop/orderby-default.php:21
+msgid "Average rating"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:105 inc/Api/Customizer/Colors.php:172
+msgid "Background"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:383
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:373
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:378
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/Api/Customizer/Blog.php:34
+msgid "Blog"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:73
+msgid "Both"
+msgstr ""
+
+#: inc/Helpers.php:665 inc/Plugins/BreadcrumbsTrail.php:269
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: inc/Helpers.php:666
+msgctxt "breadcrumbs aria label"
+msgid "Home"
+msgstr ""
+
+#: inc/Helpers.php:664 inc/Plugins/BreadcrumbsTrail.php:268
+msgid "Browse:"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:209
+msgid "Cart"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:221 inc/Setup/Enqueue.php:237
+msgid "Categories"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:71
+msgid "Category Card Type"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:91
+msgid ""
+"Check to load fonts from google server instead of local server. Can be used "
+"if fonts are not loading properly."
+msgstr ""
+
+#: inc/Setup/Enqueue.php:206
+msgid "Checkout"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:238
+msgid "Clear"
+msgstr ""
+
+#: woocommerce/single-product/photoswipe.php:38
+msgid "Close (Esc)"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:222
+msgid "Color Palette"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:173
+msgid "Color used either for background."
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:59
+msgid "Colors"
+msgstr ""
+
+#: comments.php:41 comments.php:64
+msgid "Comment navigation"
+msgstr ""
+
+#. %s is the page number.
+#: inc/Helpers.php:675 inc/Plugins/BreadcrumbsTrail.php:278
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: comments.php:82
+msgid "Comments are closed."
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:63
+msgid "Compact"
+msgstr ""
+
+#. %s: Name of current post.
+#: template-parts/content/content.php:39 template-parts/content/single.php:36
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/Api/Customizer/Footer.php:43
+msgid "Copyright notice"
+msgstr ""
+
+#: woocommerce/cart/cart.php:155
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:154
+msgid "Coupon:"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:837 inc/Plugins/BreadcrumbsTrail.php:1303
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:72
+msgid "Dark"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:224
+msgid "Dark Mode"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:27
+msgid "Decrease Product Quantity"
+msgstr ""
+
+#: woocommerce/loop/orderby-default.php:19 inc/Api/Customizer/Shop.php:59
+#: inc/Api/Customizer/Shop.php:77
+msgid "Default"
+msgstr ""
+
+#: inc/Core/Sidebar.php:27
+msgid "Default sidebar to add all your widgets."
+msgstr ""
+
+#: inc/Api/Customizer/Footer.php:51
+msgid "Disable back to top button?"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:398
+msgid "Dismiss this notice"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:77
+msgid "Don't have an account?"
+msgstr ""
+
+#. %s: Name of current post
+#: inc/Core/Tags.php:64
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:207
+msgid "Edit Cart"
+msgstr ""
+
+#: inc/Setup/Setup.php:88
+msgid "Elementor"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:107
+msgid "Email address"
+msgstr ""
+
+#. Name of the template
+msgid "Empty"
+msgstr ""
+
+#: inc/Core/Ajax.php:381
+msgid "Error occurred while updating product in cart"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2353
+msgid "External Source"
+msgstr ""
+
+#: inc/Api/Customizer/Header.php:50
+msgid "Fast"
+msgstr ""
+
+#: woocommerce/loop/orderby-dropdown.php:42
+#: woocommerce/loop/orderby-default.php:75
+msgid "Filter"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:30
+msgid "Fonts"
+msgstr ""
+
+#: inc/Setup/Menus.php:29 inc/Api/Customizer/Footer.php:35
+msgid "Footer"
+msgstr ""
+
+#: template-parts/footers/partials/back-to-top.php:24
+msgid "Go back to top"
+msgstr ""
+
+#: 404.php:24
+msgid "Go to homepage"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:208
+msgid "Go to slide"
+msgstr ""
+
+#: template-parts/headers/partials/account-info.php:18
+msgid "Guest"
+msgstr ""
+
+#: inc/Api/Customizer/Header.php:37
+msgid "Header"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:37
+msgid "Heading Font"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3598
+#: inc/class-tgm-plugin-activation.php:3606
+msgid "Hide Details"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:270
+msgid "Home"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:816
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://redoxbird.com"
+msgstr ""
+
+#. URI of the theme
+msgid "https://selleradise.com"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:78
+msgid "Icon"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:23
+msgid "Increase Product Quantity"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2791
+msgid "Install"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2673
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:331
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:330
+msgid "Install Required Plugins"
+msgstr ""
+
+#. 1: install status, 2: update status
+#: inc/class-tgm-plugin-activation.php:2401
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2378
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2555
+msgid "Installed version:"
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3601
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3609
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. %s: plugin name.
+#: inc/class-tgm-plugin-activation.php:333
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: template-parts/content/none.php:52
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/footers/partials/form.php:19
+msgid "Join to receive regular updates"
+msgstr ""
+
+#: inc/Setup/Setup.php:83
+msgid "Kirki"
+msgstr ""
+
+#: woocommerce/loop/orderby-default.php:22
+msgid "Latest"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:214
+msgid "Learn More"
+msgstr ""
+
+#. %s: post title
+#: inc/Core/Tags.php:58
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:45
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:71
+msgid "Light"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:62
+msgid "List"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:90
+msgid "Load fonts from google server"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:58
+#: woocommerce/myaccount/form-login.php:59
+msgid "Log in"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:29
+#: template-parts/headers/partials/account-links.php:35
+msgid "Login"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:139
+msgid "Login here"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:215
+#: template-parts/headers/partials/account-info.php:19
+msgid "Login or create a new account"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:216
+msgid "Login/Register"
+msgstr ""
+
+#: inc/Api/Customizer/Identity.php:38
+msgid "Logo (Dark Mode)"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:217 woocommerce/cart/cart-empty.php:25
+msgid "Looks like you have not added any product to your cart yet."
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:67
+msgid "Lost your password?"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:87 inc/Api/Customizer/Colors.php:154
+msgid "Main"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:222 template-parts/headers/header-default.php:52
+msgid "Menu"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:60
+msgid "Minimal"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2563
+msgid "Minimum required version:"
+msgstr ""
+
+#. Minute archive title. %s is the minute time format.
+#: inc/Helpers.php:677 inc/Plugins/BreadcrumbsTrail.php:280
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:776
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:796
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: inc/Setup/Menus.php:28
+msgid "Mobile"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:67
+msgid "Mode"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:836 inc/Plugins/BreadcrumbsTrail.php:896
+#: inc/Plugins/BreadcrumbsTrail.php:1298
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: comments.php:45 comments.php:68
+msgid "Newer Comments"
+msgstr ""
+
+#: template-parts/content/single-post-navigation.php:18
+#: woocommerce/loop/pagination.php:35
+msgid "Next"
+msgstr ""
+
+#: woocommerce/single-product/photoswipe.php:56
+msgid "Next (arrow right)"
+msgstr ""
+
+#. 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:393
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3009
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2875
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2877
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2599
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2983
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2832
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2834
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2374
+msgid "Not Installed"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:225 template-parts/content/none.php:17
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:44
+msgid "Off Screen"
+msgstr ""
+
+#: comments.php:44 comments.php:67
+msgid "Older Comments"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:226
+msgid "Other"
+msgstr ""
+
+#: template-parts/product/partials/out-of-stock.php:1
+#: template-parts/product/partials/stock-status.php:25
+msgid "Out Of Stock"
+msgstr ""
+
+#. %s is the page number.
+#: inc/Helpers.php:673 inc/Plugins/BreadcrumbsTrail.php:276
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: 404.php:20
+msgid "Page not found"
+msgstr ""
+
+#: template-parts/content/content.php:52 template-parts/content/single.php:49
+#: template-parts/content/page.php:24
+msgid "Pages:"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:41
+#: woocommerce/myaccount/form-login.php:114
+msgid "Password"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:400
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:943
+#: inc/class-tgm-plugin-activation.php:946
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: inc/Setup/Enqueue.php:213
+msgid "Please enter at least 2 digits"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2614
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1132
+#: inc/class-tgm-plugin-activation.php:3023
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:390
+#: inc/class-tgm-plugin-activation.php:3241
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3240
+msgid "Plugin activation failed."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:395
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2449
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/loop/orderby-default.php:20
+msgid "Popularity"
+msgstr ""
+
+#: template-parts/post/partials/author.php:18
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/Core/Tags.php:32
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: inc/Core/Tags.php:47
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2356
+msgid "Pre-Packaged"
+msgstr ""
+
+#: template-parts/content/single-post-navigation.php:11
+#: woocommerce/loop/pagination.php:34
+msgid "Previous"
+msgstr ""
+
+#: woocommerce/single-product/photoswipe.php:53
+msgid "Previous (arrow left)"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:239
+msgid "Price"
+msgstr ""
+
+#: woocommerce/loop/orderby-default.php:24
+msgid "Price: high to low"
+msgstr ""
+
+#: woocommerce/loop/orderby-default.php:23
+msgid "Price: low to high"
+msgstr ""
+
+#: inc/Setup/Menus.php:27
+msgid "Primary"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:51
+msgid "Primary Font"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:72
+msgid "Primary Font (Bolder)"
+msgstr ""
+
+#: inc/Api/Customizer/Fonts.php:81
+msgid "Primary Font (Boldest)"
+msgstr ""
+
+#: woocommerce/cart/proceed-to-checkout-button.php:17
+msgid "Proceed to checkout"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:53
+msgid "Product Card Type"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:45
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:233
+msgid "Products"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:20
+msgid "Quantity"
+msgstr ""
+
+#: inc/Api/Customizer/Header.php:45
+msgid "Quick Search Type"
+msgstr ""
+
+#. 1: link.
+#: template-parts/content/none.php:29
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2333
+msgid "Recommended"
+msgstr ""
+
+#. Author of the theme
+msgid "RedOxbird"
+msgstr ""
+
+#: woocommerce/loop/empty-state.php:19
+msgid "Refresh"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:91
+#: woocommerce/myaccount/form-login.php:128
+#: woocommerce/myaccount/form-login.php:128
+#: template-parts/headers/partials/account-links.php:43
+msgid "Register"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:80
+msgid "Register here"
+msgstr ""
+
+#: woocommerce/loop/orderby-default.php:25
+msgid "Relevance"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:49
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/cart/cart.php:124
+msgid "Remove"
+msgstr ""
+
+#: woocommerce/cart/cart.php:121
+msgid "Remove this item"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2330
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2386
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2389
+msgid "Requires Update"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:70
+msgid "Reset here"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:388
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:29
+msgid "Return to shop"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:389
+#: inc/class-tgm-plugin-activation.php:834
+#: inc/class-tgm-plugin-activation.php:2599
+#: inc/class-tgm-plugin-activation.php:3672
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:26
+#: template-parts/product/partials/rating-textual.php:26
+msgid "review"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:28
+#: template-parts/product/partials/rating-textual.php:28
+msgid "reviews"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:43
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:231
+msgid "Sale ends in"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:230
+msgid "Sale has ended"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:232
+msgid "Sale starts in"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:210 inc/Setup/Enqueue.php:234
+msgid "Search"
+msgstr ""
+
+#. %s is the search query.
+#: inc/Helpers.php:671 inc/Plugins/BreadcrumbsTrail.php:274
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: inc/Api/Customizer/Identity.php:39
+msgid "Select a light header logo to be used with dark background."
+msgstr ""
+
+#. Description of the theme
+msgid "Selleradise is fast, responsive and accessible WooCommerce theme."
+msgstr ""
+
+#. Name of the theme
+msgid "Selleradise Lite"
+msgstr ""
+
+#: inc/Setup/Setup.php:93
+msgid "Selleradise Widgets"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:60
+msgid "Set color for the website."
+msgstr ""
+
+#: inc/Setup/Enqueue.php:223 inc/Setup/Enqueue.php:235
+msgid "Settings"
+msgstr ""
+
+#: inc/Api/Customizer/Footer.php:36
+msgid "Settings for footer section."
+msgstr ""
+
+#: inc/Api/Customizer/Header.php:38
+msgid "Settings for header section."
+msgstr ""
+
+#: inc/Api/Customizer/Blog.php:35
+msgid "Settings related to blog."
+msgstr ""
+
+#: woocommerce/single-product/photoswipe.php:35
+msgid "Share"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:37
+msgid "Shop Filter Location"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3598
+#: inc/class-tgm-plugin-activation.php:3606
+msgid "Show Details"
+msgstr ""
+
+#: inc/Core/Sidebar.php:25
+msgid "Sidebar"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:61
+msgid "Simple"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: template-parts/content/none.php:44
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2615
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2621
+msgid "Status"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:240
+msgid "Suggestions"
+msgstr ""
+
+#: inc/Core/Tags.php:52
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:241
+msgid "Tags"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:115 inc/Api/Customizer/Colors.php:182
+msgid "Text"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:116 inc/Api/Customizer/Colors.php:183
+msgid "text color, make sure that it contrasts well with the background color."
+msgstr ""
+
+#. %s: version number
+#: inc/class-tgm-plugin-activation.php:2029
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:349
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:391
+#: inc/class-tgm-plugin-activation.php:3027
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:3596
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3592
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3604
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:88 inc/Api/Customizer/Colors.php:155
+msgid "The main color of the website."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:946
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:943
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: inc/Setup/Enqueue.php:242
+msgid "Theme"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:399
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:355
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:523
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2461
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2453
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/photoswipe.php:32
+msgid "Toggle fullscreen"
+msgstr ""
+
+#: template-parts/post/card-trending.php:36
+msgid "Trending Posts"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2616
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2797
+msgid "Update"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2678
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2457
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/cart/cart.php:149
+msgid "Update cart"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2392
+msgid "Update recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:524
+msgid "Update Required"
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3587
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. %s: plugin name.
+#: inc/class-tgm-plugin-activation.php:335
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2756
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:100
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:36
+msgid "Username or email address"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2620
+msgid "Version"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:229
+msgid "View Cart"
+msgstr ""
+
+#. Weekly archive title. %s is the week date format.
+#: inc/Helpers.php:679 inc/Plugins/BreadcrumbsTrail.php:282
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:867
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: inc/Setup/Enqueue.php:243
+#, php-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:38
+msgid "Where to show the filters for the product catalog?"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:72
+msgid "Which type of card design should be used for the shop categories?"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:54
+msgid "Which type of card design should be used for the shop?"
+msgstr ""
+
+#: inc/Setup/Setup.php:78
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2350
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/Plugins/BreadcrumbsTrail.php:835 inc/Plugins/BreadcrumbsTrail.php:866
+#: inc/Plugins/BreadcrumbsTrail.php:895 inc/Plugins/BreadcrumbsTrail.php:924
+#: inc/Plugins/BreadcrumbsTrail.php:1293
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: inc/Setup/Enqueue.php:244 woocommerce/cart/cart-empty.php:24
+msgid "Your cart is empty."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:49
+msgid "Your order"
+msgstr ""
+
+#: woocommerce/single-product/photoswipe.php:29
+msgid "Zoom in/out"
+msgstr ""

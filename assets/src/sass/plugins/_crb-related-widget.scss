@@ -1,0 +1,53 @@
+.crp_related_widget {
+  ul {
+    li {
+      width: 100%;
+      height: auto;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      a.crp_link {
+        @extend .flex-start;
+        position: relative;
+        width: 100%;
+        text-decoration: none;
+
+        figure {
+          @extend .selleradise-background-image;
+          width: 5rem;
+          height: 5rem;
+          margin: 0;
+          margin-right: 1rem;
+          margin-bottom: 0.5rem;
+          border-radius: var(--border-radius-fourth);
+        }
+
+        .crp_title {
+          @include font-size(h5);
+          font-family: var(--font-heading);
+          font-weight: var(--font-heading-weight);
+          align-self: stretch;
+        }
+      }
+
+      .crp_author,
+      .crp_date,
+      .crp_excerpt {
+        @include font-size(small);
+      }
+      .crp_author,
+      .crp_date {
+        a {
+          font-weight: font("primary_bolder", "font-weight");
+        }
+      }
+
+      .crp_excerpt {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

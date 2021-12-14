@@ -1,0 +1,62 @@
+.selleradise_widget--posts {
+  padding: 5rem 0 2.5rem 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: hidden;
+
+  &__head {
+    @extend .flex-between;
+    padding: 0 $page-padding;
+    margin: 0 0 2rem 0;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    @include font-size(h5);
+    margin-top: 0;
+    color: rgba(color(text-rgb), 0.7);
+  }
+
+  &__slider {
+    padding: 0.5rem $page-padding;
+
+    &-buttons {
+      @extend .flex-end;
+    }
+
+    &-button {
+      @extend .flex-center;
+      background-color: transparent;
+      color: rgba(color(text-rgb), 0.7);
+      border: none;
+      padding: 0.5rem;
+      border-radius: 5em;
+      transition: all $time easing(out-expo);
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      &:hover {
+        background-color: rgba(color(text-rgb), 0.05);
+      }
+
+      &--right {
+        margin-left: 0.5rem;
+      }
+    }
+
+    [class^="selleradise_postCard--"][class$="__image"] {
+      img {
+        body.elementor-editor-active & {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

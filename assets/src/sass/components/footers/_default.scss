@@ -1,0 +1,161 @@
+.selleradise_footer--default {
+  @extend .flex-between-stretch;
+  border-top: 0.1rem solid rgba(color(text-rgb), 0.05);
+  position: relative;
+  background-color: color(background);
+  color: color(text);
+  width: 100%;
+  height: auto;
+  z-index: 10;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    @include focus-outline;
+    color: inherit;
+  }
+
+  .selleradiseHeader__logo-outer {
+    margin-right: 0;
+    justify-content: flex-start;
+
+    @include device(mobileAndTablet) {
+      margin: 0 auto;
+    }
+  }
+
+  .selleradise_menu--footer__list {
+    @extend .inline-list;
+    @extend .flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    height: 10rem;
+
+    > li {
+      > a {
+        @include font-size(p);
+        font-weight: font("primary_boldest", "font-weight");
+        color: rgba(color(text-rgb), 0.8);
+        padding: 1rem;
+
+        &:hover {
+          color: color(main);
+          text-decoration: underline;
+        }
+      }
+
+      &.menu-item-has-children {
+        .sub-menu {
+          a {
+            @include font-size(small);
+            color: rgba(color(text-rgb), 0.7);
+            padding: 0.5rem 1rem;
+
+            &:hover {
+              color: color(main);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    @include device(mobileAndTablet) {
+      height: auto;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .selleradise_footer__form {
+    width: 30%;
+
+    h2 {
+      @include font-size(h4);
+      margin: 0 0 2rem 0;
+    }
+
+    p:first-of-type {
+      margin-top: 0;
+    }
+
+    input[type="email"] {
+      margin: 0.5rem 0;
+
+      &::placeholder {
+        font-weight: 400;
+      }
+    }
+
+    input[type="submit"] {
+      @extend .selleradise_button--primary;
+      width: 100%;
+    }
+
+    .mc4wp-alert {
+      @include font-size(small);
+      font-weight: font("primary_boldest", "font-weight");
+    }
+  }
+
+  &__top {
+    @extend .flex-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 5rem $page-padding;
+
+    nav {
+      width: 40%;
+      flex-grow: 1;
+      padding: 0 5rem;
+    }
+
+    @include device(mobileAndTablet) {
+      padding-bottom: 0;
+      justify-content: center;
+      text-align: center;
+
+      nav {
+        width: 100%;
+        padding: 2rem 0;
+      }
+    }
+
+    @include device(tablet) {
+      .selleradise_footer__form {
+        width: 50%;
+      }
+    }
+
+    @include device(mobile) {
+      .selleradise_footer__form {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bottom {
+    @extend .flex-between;
+    @include font-size(small);
+    color: rgba(color(text-rgb), 0.7);
+    font-weight: font("primary_bolder", "font-weight");
+    width: 100%;
+    margin: 0;
+    padding: 1rem $page-padding;
+
+    @include device(mobileAndTablet) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    justify-content: center;
+  }
+}

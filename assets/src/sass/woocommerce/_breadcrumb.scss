@@ -1,0 +1,64 @@
+.woocommerce {
+  .woocommerce-breadcrumb {
+    padding: 1rem $page-padding;
+
+    margin: 0;
+    font-size: 1rem;
+
+    a {
+      color: color(text);
+    }
+  }
+}
+
+.selleradiseBreadcrumb,
+.breadcrumb-trail {
+  @include font-size(p);
+  width: 100%;
+  padding: 2rem 0 1rem 0;
+  color: color(text);
+  font-weight: font("primary_bolder", "font-weight");
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+    opacity: 0.5;
+  }
+
+  ul {
+    @extend .flex-start;
+    @extend .inline-list;
+
+    li {
+      @extend .flex-start;
+      a {
+        color: rgba(color(text-rgb), 0.7);
+
+        &:hover {
+          text-decoration: underline;
+          opacity: 1;
+        }
+
+        &[rel="home"] {
+          span {
+            @extend .flex-center;
+          }
+
+          svg {
+            margin: 0;
+            opacity: 1;
+          }
+        }
+      }
+
+      &.trail-end {
+        color: color(text);
+      }
+    }
+  }
+
+  @include device(mobile) {
+    @include font-size(small);
+  }
+}

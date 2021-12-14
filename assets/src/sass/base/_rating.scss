@@ -1,0 +1,88 @@
+.productRating--minimal {
+  @include font-size(p);
+  @extend .flex-center;
+  background-color: material-color("green", "500");
+  color: color(background);
+  font-weight: font("primary_boldest", "font-weight");
+  padding: 0.25rem 1em 0.25rem 0;
+  z-index: 30;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.25rem;
+  }
+
+  &-bad {
+    background-color: material-color("red", "600");
+  }
+
+  &-average {
+    background-color: material-color("teal", "600");
+  }
+
+  &-good {
+    background-color: material-color("green", "500");
+  }
+}
+
+.#{$global-prefix}_productRating--normal {
+  @extend .flex-start;
+  color: color(text);
+  border-radius: var(--border-radius-half);
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+  }
+
+  .back-stars {
+    @extend .flex-start;
+    position: relative;
+    display: flex;
+    color: rgba(color(text-rgb), 0.25);
+
+    > span,
+    > svg {
+      opacity: 0.5;
+    }
+  }
+
+  .front-stars {
+    @extend .flex-start;
+    flex-wrap: nowrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: material-color("yellow", "800");
+    overflow: hidden;
+  }
+
+  .reviewCount {
+    @include font-size(small);
+    color: rgba(color(text-rgb), 0.7);
+    margin-left: 0.25rem;
+    font-weight: font("primary_boldest", "font-weight");
+  }
+}
+
+.#{$global-prefix}_productRating--textual {
+  @include font-size(p);
+  @extend .flex-start;
+
+  svg {
+    color: #ffd166;
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  &__average {
+    font-weight: font("primary_boldest", "font-weight");
+    margin: 0 0.25em;
+  }
+
+  &__count {
+    color: rgba(color(text-rgb), 0.7);
+  }
+}

@@ -1,0 +1,110 @@
+.selleradiseWidgets_Categories--default {
+  width: 100%;
+  background-color: color(background);
+  --gutter: 2rem;
+  --width: 14rem;
+  --ratio: 1;
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__subtitle {
+    @extend .selleradise_Widgets__subtitle;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__list {
+    @extend .inline-list;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--width));
+    grid-gap: var(--gutter);
+    gap: var(--gutter);
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  &__item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    $prefix: &;
+
+    a {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: color(dark);
+      background-color: color(background);
+
+      &:hover,
+      &:focus {
+        #{$prefix}Image {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    &Image {
+      @extend .selleradise-background-image;
+      width: 100%;
+      height: calc(var(--width) * var(--ratio));
+      border-radius: var(--border-radius-base);
+
+      img {
+        transform-origin: center;
+        transition: all $time_slow easing(out-expo);
+        height: 100% !important;
+      }
+    }
+
+    &-count {
+      pointer-events: none;
+      z-index: 10;
+      color: rgba(color(text-rgb), 0.7);
+
+      span:first-child {
+        margin-right: 0.25em;
+      }
+    }
+
+    &Content {
+      @include font-size(small);
+      padding: 1rem;
+      width: 100%;
+      color: color(text);
+      text-align: center;
+    }
+
+    &Name {
+      @include font-size(p);
+      z-index: 10;
+      text-align: center;
+      margin: 0 0 0.5em 0;
+      vertical-align: baseline;
+
+      > span {
+        @include font-size(small);
+        color: rgba(color(text-rgb), 0.7);
+      }
+    }
+
+    &Description {
+      display: none;
+    }
+  }
+
+  @include device(mobile) {
+    --width: 13rem;
+  }
+}

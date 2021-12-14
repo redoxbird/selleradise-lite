@@ -1,0 +1,100 @@
+.selleradise_incentives--default {
+  --selleradise-color-icon: #{color(text)};
+  --selleradise-color-icon-background: rgba(#{color(text-rgb)}, 0.05);
+  padding: 1rem $page-padding;
+  $prefix: &;
+
+  &__list {
+    @extend .inline-list;
+    @extend .flex-between;
+    align-items: stretch;
+    border-radius: var(--border-radius-base);
+
+    > li {
+      @extend .flex-start;
+      flex-wrap: nowrap;
+      flex: 1;
+      margin: 1rem 0;
+      padding-right: 1rem;
+
+      #{$prefix}.selleradise_scroll_animate & {
+        transition: all calc((var(--selleradise-item-index) + 1) * 800ms)
+          easing(out-expo);
+        opacity: 0;
+        transform-origin: top;
+        transform: translateY(5rem);
+      }
+
+      #{$prefix}[data-scroll-entered="true"] & {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__info {
+    &-title {
+      @include font-size(p);
+      margin: 0;
+      padding: 0;
+    }
+
+    &-description {
+      @include font-size(small);
+      font-weight: font("primary_bolder", "font-weight");
+      color: rgba(color(text-rgb), 0.7);
+
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        @extend .focus-outline;
+      }
+    }
+  }
+
+  &__icon {
+    @include font-size(h4);
+    @extend .flex-center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5em;
+    background-color: color(icon-background);
+    color: color(icon);
+    margin: 0 1rem 0 0;
+    flex-shrink: 0;
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    &__list {
+      > li {
+        flex-basis: 50%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 1.5rem;
+      }
+    }
+
+    &__icon {
+      margin: 0 0 1rem 0;
+    }
+
+    &__info {
+      &-title {
+        margin: 0 0 0.5rem 0;
+      }
+    }
+  }
+}

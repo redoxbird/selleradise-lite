@@ -1,0 +1,100 @@
+.selleradise_Testimonials--cards {
+  padding: 2.5rem $page-padding;
+
+  $root: &;
+
+  &__subtitle {
+    @extend .selleradise_Widgets__subtitle;
+    margin-top: 1rem;
+  }
+
+  &__title {
+    margin: 0;
+    width: 50%;
+    flex-grow: 1;
+
+    &-outer {
+      @extend .flex-between;
+    }
+  }
+
+  .selleradise_Testimonials__rating {
+    margin: 1rem 0 0 0;
+  }
+
+  &__quotes {
+    @extend .flex-start;
+    overflow: hidden;
+    margin-top: 2.5rem;
+  }
+
+  &__quote {
+    padding: 2rem 1.5rem 1.5rem;
+    background-color: color(background);
+    border: 0.1em solid rgba(color(text-rgb), 0.1);
+    border-radius: var(--border-radius-base);
+
+    h3 {
+      @include font-size(p);
+      margin: 0;
+    }
+
+    blockquote {
+      @include font-size(small);
+      margin: 1.5rem 0 0 0;
+      color: rgba(color(text-rgb), 0.7);
+      background-color: transparent;
+      border: none;
+      padding: 0;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &__profile {
+    @extend .flex-start;
+    width: 100%;
+    background-color: transparent;
+    padding: 1.5rem 0 0 0;
+    margin-top: auto;
+    text-align: left;
+    transition: all $time easing(out-expo);
+
+    > img {
+      .elementor & {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 3rem;
+        object-fit: cover;
+      }
+    }
+
+    > div {
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      > p:nth-of-type(1) {
+        @include font-size(small);
+        margin: 0;
+        padding: 0;
+        font-weight: font("primary_boldest", "font-weight");
+        color: color(text);
+      }
+
+      > p:nth-of-type(2) {
+        @include font-size(small);
+        margin: 0;
+        padding: 0;
+        font-weight: font("primary_bolder", "font-weight");
+        color: rgba(color(text-rgb), 0.7);
+      }
+    }
+
+    [data-focus-source="key"] &:focus {
+      box-shadow: inset 0 0 0 0.1em color(text);
+    }
+  }
+}

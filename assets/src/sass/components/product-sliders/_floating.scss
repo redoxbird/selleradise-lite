@@ -1,0 +1,228 @@
+.productSlider--floating {
+  overflow: hidden;
+
+  .swiper-slide {
+    @extend .flex-start;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    color: color(text);
+    background-color: color(background);
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+
+    .selleradise_productCard__image-outer {
+      @extend .flex-center;
+      width: 60%;
+      height: 100%;
+    }
+
+    .contentWrap {
+      @extend .flex-center;
+      width: 40%;
+      height: 100%;
+      background-color: color(background-mild);
+      padding: 5rem 5vw;
+    }
+
+    .content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+      padding: 2.5rem;
+      background-color: color(background);
+      overflow: hidden;
+      position: relative;
+      border-radius: var(--border-radius-half);
+      box-shadow: 0 0.1rem 0.2rem color(shadow);
+
+      .price {
+        @extend .flex-start;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: material-color("green", "500");
+
+        span {
+          line-height: 1.6;
+        }
+
+        del {
+          order: 2;
+          opacity: 0.5;
+          margin-left: 0.25rem;
+          color: color(text);
+        }
+
+        ins {
+          order: 1;
+          text-decoration: none;
+        }
+      }
+
+      > h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      .categories {
+        @extend .flex-start;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.7rem;
+        margin-top: 1rem;
+
+        a {
+          color: inherit;
+          padding: 0.25rem 1rem;
+          background-color: color(background-mild);
+          border-radius: 1rem;
+          margin: 0 0.25rem 0.5rem 0;
+
+          &:hover,
+          &:focus,
+          &:active {
+            color: color(main);
+            background-color: color(highlight-main);
+          }
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .description {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .callToActions {
+        @extend .flex-start;
+        margin-top: auto;
+
+        a:nth-child(2) {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .image {
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 50vh;
+      height: 50vh;
+      border-radius: var(--border-radius-half);
+      margin: 0 auto;
+    }
+  }
+
+  .naviagtionWrap {
+    @extend .flex-center;
+    margin-top: auto;
+    width: 100%;
+    padding: 0 0 2.5rem 0;
+    z-index: 10;
+
+    > .navigationButton {
+      @extend .flex-center;
+      position: relative;
+      z-index: 10;
+      border: 0;
+      background-color: rgba(color(text-rgb), 0.05);
+      color: color(text);
+      border-radius: 100%;
+      padding: 0.5rem;
+      outline: none;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: color(main);
+        color: color(light);
+      }
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .navigationImages {
+    @extend .flex-start;
+
+    .navigationButton--image {
+      @extend .background-image;
+      width: 5rem;
+      height: 5rem;
+      position: relative;
+      z-index: 10;
+      border: 0;
+      background-color: rgba(color(text-rgb), 0.05);
+      color: color(text);
+      border-radius: var(--border-radius-half);
+      outline: none;
+      margin-right: 1rem;
+    }
+  }
+
+  .swiper-pagination {
+    position: relative;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: color(dark);
+    width: auto;
+    height: 2rem;
+    padding: 0 0.5rem;
+
+    .swiper-pagination-bullet {
+      background-color: color(light);
+      margin: 0 0.25rem;
+      opacity: 0.5;
+      outline: none;
+      border: 0;
+
+      &:focus,
+      &:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-notification {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background-color: color(dark);
+    color: color(light);
+    font-size: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    display: none;
+    line-height: 1.6;
+
+    [data-focus-source="key"] & {
+      display: inline-flex;
+    }
+  }
+}

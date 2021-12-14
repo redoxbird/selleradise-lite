@@ -1,0 +1,77 @@
+.selleradise_search_page {
+  .selleradise_page__title {
+    margin: 4rem 0 0 0;
+    text-align: center;
+    color: rgba(color(text-rgb), 0.7);
+    justify-content: center;
+
+    em {
+      font-style: normal;
+      color: color(text);
+    }
+  }
+
+  main {
+    margin: 2.5rem 0;
+    padding: 2.5rem 3.5rem;
+    border: 0.1em solid rgba(color(text-rgb), 0.1);
+    border-radius: var(--border-radius-base);
+  }
+
+  &__article {
+    margin: 0 0 4rem 0;
+
+    h2 {
+      @include font-size(h4);
+      margin: 1em 0 0.75em 0;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-excerpt {
+      color: rgba(color(text-rgb), 0.7);
+      margin-top: 1em;
+    }
+
+    &-type {
+      @extend .chip--base;
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    main {
+      padding: $page-padding;
+    }
+  }
+}
+
+.search-form {
+  @extend .flex-between;
+  box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.1);
+  border-radius: 5em;
+  width: auto;
+  padding: 0.5em;
+  width: 30rem;
+  margin: 2.5rem auto;
+
+  label {
+    flex-grow: 1;
+  }
+
+  input {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .search-submit {
+    @extend .selleradise_button--primary;
+    margin-top: 0;
+    width: auto;
+  }
+
+  @include device(mobile) {
+    width: 100%;
+  }
+}

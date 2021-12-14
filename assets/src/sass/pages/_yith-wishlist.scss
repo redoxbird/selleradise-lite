@@ -1,0 +1,224 @@
+.woocommerce-wishlist {
+  .wishlist-title-container {
+    .wishlist-title-with-form {
+      @extend .flex-start;
+      margin: 2.5rem 0;
+
+      h2 {
+        margin: 0;
+      }
+
+      a {
+        @extend .selleradise_button--secondary;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .wishlist-out-of-stock,
+  .wishlist-in-stock {
+    @include font-size(x-small);
+    font-weight: font("primary_boldest", "font-weight");
+    padding: 0.5em 1em;
+    border-radius: 5em;
+  }
+
+  .wishlist-in-stock {
+    background-color: material-color("green", "50");
+    color: material-color("green", "700");
+  }
+
+  .wishlist-out-of-stock {
+    background-color: material-color("red", "50");
+    color: material-color("red", "700");
+  }
+
+  .shop_table.wishlist_table {
+    border: none;
+    background-color: color(background);
+    border-collapse: collapse;
+    border-radius: var(--border-radius-half);
+    overflow: hidden;
+    border: 0;
+
+    tr {
+      border-bottom: 0.05rem solid rgba(color(text-rgb), 0.05);
+    }
+
+    th,
+    td {
+      @include font-size(p);
+      padding: 1rem;
+      border: none;
+      text-align: center;
+    }
+
+    th {
+      font-weight: font("primary_bolder", "font-weight");
+      line-height: inherit;
+    }
+
+    .product-thumbnail {
+      > a {
+        @extend .selleradise-background-image;
+        width: 5rem;
+        height: 5rem;
+        border-radius: var(--border-radius-half);
+
+        img {
+          height: 100% !important;
+        }
+      }
+    }
+
+    .product-remove a.remove_from_wishlist {
+      @extend .flex-center;
+      width: 2rem;
+      height: 2rem;
+      background-color: material-color("red", "50");
+    }
+
+    .dateadded {
+      @include font-size(small);
+      margin-bottom: 0.5rem;
+      font-weight: font("primary_bolder", "font-weight");
+    }
+
+    .product-name a {
+      @include font-size(p);
+      font-weight: font("primary_boldest", "font-weight");
+    }
+
+    .product-add-to-cart {
+      .add_to_cart {
+        @include font-size(small);
+        @extend .selleradise_button--primary;
+        display: inline-flex !important;
+      }
+
+      .remove_from_wishlist {
+        @include font-size(small);
+        display: flex !important;
+        justify-content: center;
+        background-color: transparent;
+        padding: 1em !important;
+        color: color(main);
+        font-weight: font("primary_boldest", "font-weight");
+        text-align: center;
+      }
+    }
+
+    thead {
+      color: color(text);
+      border: none;
+    }
+
+    tbody {
+    }
+  }
+
+  .yith-wcwl-share {
+    @include font-size(p);
+    margin: 2.5rem 0 5rem 0;
+
+    ul {
+      margin-left: -0.5rem;
+    }
+
+    .share-button {
+      a {
+        @extend .flex-center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 5em;
+        margin: 0.5em;
+      }
+    }
+  }
+
+  .wishlist_table.mobile {
+    padding: 0;
+
+    li {
+      border: 0.05em solid rgba(color(text-rgb), 0.05);
+      margin-bottom: 2.5rem;
+      padding: 1rem;
+      border-radius: var(--border-radius-base);
+      position: relative;
+    }
+
+    li .item-wrapper {
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .product-thumbnail {
+        margin: 0;
+      }
+
+      .item-details {
+        display: inline-flex;
+        flex-direction: column;
+        padding: 0 0 0 1.5rem;
+      }
+    }
+
+    .product-name {
+      h3 {
+        margin: 0 0 0.5rem;
+        line-height: 1;
+      }
+    }
+
+    .additional-info-wrapper {
+      @extend .flex-between;
+      padding-top: 1rem;
+
+      .additional-info {
+        @extend .flex-start;
+        margin: 0;
+        flex-grow: 1;
+        text-align: left;
+        white-space: nowrap;
+
+        .label {
+          @extend .sr-only;
+        }
+      }
+
+      .product-add-to-cart {
+        margin-left: auto;
+        margin-bottom: 0;
+
+        a.add_to_cart {
+          margin: 0 !important;
+        }
+      }
+
+      .product-remove {
+        a {
+          @extend .flex-center;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 2em;
+          background-color: transparent;
+          position: absolute;
+          right: 1rem;
+          top: 1rem;
+          background-color: material-color("red", "50");
+          color: material-color("red", "700");
+        }
+      }
+    }
+  }
+}
+
+body #yith-wcwl-popup-message {
+  @include font-size(small);
+  font-weight: font("primary_boldest", "font-weight");
+  background-color: color(text);
+  color: color(background);
+  box-shadow: none;
+  border-radius: var(--border-radius-base);
+  padding: 0.75em 1.4em;
+}

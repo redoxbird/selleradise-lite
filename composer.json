@@ -1,0 +1,29 @@
+{
+  "name": "khizar/selleradise-lite",
+  "description": "",
+  "keywords": [
+    "WordPress",
+    "Theme",
+    "Starter"
+  ],
+  "homepage": "https://selleradise.com",
+  "license": "",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Khizar Hasan",
+      "email": "khizarhasan927@gmail.com",
+      "homepage": "https://khizar.info",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Selleradise_Lite\\": "./inc"
+    },
+    "files": [
+      "./inc/Helpers.php",
+      "./inc/class-tgm-plugin-activation.php"
+    ]
+  }
+}

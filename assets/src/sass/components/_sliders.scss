@@ -1,0 +1,384 @@
+// @import "product-sliders/default";
+// @import "product-sliders/floating";
+
+// .selleradiseSlider {
+//   .naviagtionWrap {
+//     @extend .flex-center;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     padding: 1rem 0;
+//     border-radius: 0.5rem;
+//     z-index: 10;
+
+//     > .navigationButton {
+//       @extend .flex-center;
+//       position: relative;
+//       z-index: 10;
+//       border: 0;
+//       background-color: color(dark);
+//       color: color(light);
+//       width: 2rem;
+//       height: 2rem;
+//       outline: none;
+
+//       svg {
+//         width: 1.5rem;
+//         height: 1.5rem;
+//       }
+
+//       &:hover,
+//       &:focus {
+//         background-color: color(light);
+//         color: color(dark);
+//       }
+
+//       &:first-child {
+//         border-top-left-radius: 0.25rem;
+//         border-bottom-left-radius: 0.25rem;
+//       }
+
+//       &:last-child {
+//         border-top-right-radius: 0.25rem;
+//         border-bottom-right-radius: 0.25rem;
+//       }
+//     }
+//   }
+
+//   .swiper-pagination {
+//     position: relative;
+//     text-align: center;
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: color(dark);
+//     width: auto;
+//     height: 2rem;
+//     padding: 0 0.5rem;
+
+//     .swiper-pagination-bullet {
+//       background-color: color(light);
+//       margin: 0 0.25rem;
+//       opacity: 0.5;
+//       outline: none;
+//       border: 0;
+
+//       &:focus,
+//       &:hover {
+//         opacity: 1;
+//         transform: scale(1.2);
+//       }
+
+//       &-active {
+//         opacity: 1;
+//       }
+//     }
+//   }
+
+//   .swiper-notification {
+//     position: absolute;
+//     bottom: 1rem;
+//     right: 1rem;
+//     z-index: 10;
+//     background-color: color(dark);
+//     color: color(light);
+//     font-size: 1rem;
+//     padding: 0.25rem 0.75rem;
+//     border-radius: 0.25rem;
+//     display: none;
+//     line-height: 1.6;
+
+//     [data-focus-source="key"] & {
+//       display: inline-flex;
+//     }
+//   }
+// }
+
+// .slider--default {
+//   position: relative;
+//   width: calc(100vw - #{$page-padding * 2});
+//   margin: 1rem auto;
+//   height: auto;
+//   overflow: hidden;
+//   border-radius: var(--border-radius-base);
+//   background-color: color(background-mild);
+
+//   .swiper-slide {
+//     @extend .flex-between-stretch;
+//     position: relative;
+
+//     .content {
+//       display: flex;
+//       justify-content: center;
+//       align-items: flex-start;
+//       flex-direction: column;
+//       padding: 5rem;
+//       background-color: color(main);
+//       color: color(light);
+//       overflow: hidden;
+//       flex: 1;
+
+//       .title,
+//       .description,
+//       .button--cta {
+//         transform-origin: left;
+//       }
+
+//       .title {
+//         font-size: 3rem;
+//         line-height: 1.6;
+//         margin-top: 0;
+//       }
+
+//       .button--cta {
+//         @extend .selleradise_button--base;
+//         background-color: color(light);
+//         color: color(main);
+//         margin-top: 2.5rem;
+//         transition: inherit;
+//       }
+//     }
+
+//     .image {
+//       @extend .selleradise-background-image;
+//       width: 40rem;
+//       height: 40rem;
+//     }
+//   }
+
+//   .naviagtionWrap {
+//     @extend .flex-end;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     padding: 1rem;
+//     border-radius: 0.5rem;
+//     z-index: 10;
+
+//     > .navigationButton {
+//       @extend .flex-center;
+//       position: relative;
+//       z-index: 10;
+//       border: 0;
+//       background-color: color(dark);
+//       color: color(light);
+//       width: 2rem;
+//       height: 2rem;
+//       outline: none;
+
+//       svg {
+//         width: 1.5rem;
+//         height: 1.5rem;
+//       }
+
+//       &:hover,
+//       &:focus {
+//         background-color: color(light);
+//         color: color(dark);
+//       }
+
+//       &:first-child {
+//         border-top-left-radius: 0.25rem;
+//         border-bottom-left-radius: 0.25rem;
+//       }
+
+//       &:last-child {
+//         border-top-right-radius: 0.25rem;
+//         border-bottom-right-radius: 0.25rem;
+//       }
+//     }
+//   }
+// }
+
+// .slider--promotional {
+//   position: relative;
+//   width: calc(100vw - 6rem);
+//   margin: 1rem auto;
+//   height: auto;
+//   overflow: hidden;
+//   border-radius: var(--border-radius-base);
+
+//   .swiper-slide {
+//     @extend .flex-between-stretch;
+//     position: relative;
+
+//     .image {
+//       @extend .selleradise-background-image;
+//     }
+
+//     .content {
+//       display: flex;
+//       justify-content: center;
+//       align-items: flex-start;
+//       flex-direction: column;
+//       width: 60%;
+//       height: 100%;
+//       padding: 5rem;
+//       margin-top: auto;
+//       margin-bottom: auto;
+//       background-color: #055f6f;
+//       color: color(light);
+//       overflow: hidden;
+
+//       .title,
+//       .description,
+//       .button--cta {
+//         transform-origin: left;
+//       }
+
+//       .title {
+//         font-size: 3rem;
+//         line-height: 1.6;
+//         margin-top: 0;
+//       }
+
+//       .button--cta {
+//         @extend .selleradise_button--base;
+//         background-color: color(dark);
+//         color: color(light);
+//         margin-top: 2.5rem;
+//       }
+//     }
+
+//     .image {
+//       @extend .background-image;
+//       width: 40%;
+//     }
+//   }
+
+//   .naviagtionWrap {
+//     @extend .flex-end;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     padding: 1rem;
+//     border-radius: 0.5rem;
+//     z-index: 10;
+
+//     > .navigationButton {
+//       @extend .flex-center;
+//       position: relative;
+//       z-index: 10;
+//       border: 0;
+//       background-color: color(dark);
+//       color: color(light);
+//       width: 2rem;
+//       height: 2rem;
+//       outline: none;
+
+//       svg {
+//         width: 1.5rem;
+//         height: 1.5rem;
+//       }
+
+//       &:hover,
+//       &:focus {
+//         background-color: color(light);
+//         color: color(dark);
+//       }
+
+//       &:first-child {
+//         border-top-left-radius: 0.25rem;
+//         border-bottom-left-radius: 0.25rem;
+//       }
+
+//       &:last-child {
+//         border-top-right-radius: 0.25rem;
+//         border-bottom-right-radius: 0.25rem;
+//       }
+//     }
+//   }
+
+//   .swiper-pagination {
+//     position: relative;
+//     text-align: center;
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: color(dark);
+//     width: auto;
+//     height: 2rem;
+//     padding: 0 0.5rem;
+
+//     .swiper-pagination-bullet {
+//       background-color: color(light);
+//       margin: 0 0.25rem;
+//       opacity: 0.5;
+//       outline: none;
+//       border: 0;
+
+//       &:focus,
+//       &:hover {
+//         opacity: 1;
+//         transform: scale(1.2);
+//       }
+
+//       &-active {
+//         opacity: 1;
+//       }
+//     }
+//   }
+
+//   .swiper-notification {
+//     position: absolute;
+//     bottom: 1rem;
+//     left: 1rem;
+//     z-index: 10;
+//     background-color: color(dark);
+//     color: color(light);
+//     font-size: 1rem;
+//     padding: 0.25rem 0.75rem;
+//     border-radius: 0.25rem;
+//     display: none;
+//     line-height: 1.6;
+
+//     [data-focus-source="key"] & {
+//       display: inline-flex;
+//     }
+//   }
+// }
+
+// .slider--image_only {
+//   @extend .selleradiseSlider;
+//   position: relative;
+//   width: 100%;
+//   height: auto;
+//   overflow: hidden;
+
+//   .swiper-slide {
+//     img {
+//       width: 100%;
+//       height: auto;
+//     }
+//   }
+
+//   .naviagtionWrap {
+//     @extend .flex-between;
+//     top: 50%;
+//     transform: translate(0, -50%);
+//     padding: 0;
+
+//     > .navigationButton {
+//       &:hover,
+//       &:focus {
+//         background-color: color(main);
+//         color: color(light);
+//       }
+
+//       &:first-child {
+//         border-radius: 0;
+//         border-top-right-radius: var(--border-radius-half);
+//         border-bottom-right-radius: var(--border-radius-half);
+//       }
+
+//       &:last-child {
+//         border-radius: 0;
+//         border-top-left-radius: var(--border-radius-half);
+//         border-bottom-left-radius: var(--border-radius-half);
+//       }
+//     }
+//   }
+// }

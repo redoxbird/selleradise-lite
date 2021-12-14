@@ -1,0 +1,38 @@
+{
+  "name": "selleradise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "eslint": "^8.2.0",
+    "eslint-webpack-plugin": "^3.1.0",
+    "laravel-mix": "^6.0.13",
+    "laravel-mix-eslint": "^0.2.0",
+    "postcss": "^8.2.1",
+    "sass": "^1.30.0",
+    "sass-loader": "^8.0.2",
+    "svg-inline-loader": "^0.8.2",
+    "vue": "^3.0.5",
+    "vue-loader": "^16.1.2"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.4.0",
+    "@xstate/vue": "^0.4.0",
+    "bricks.js": "^1.8.0",
+    "date-fns": "^2.25.0",
+    "normalize.css": "^8.0.1",
+    "wnumb": "^1.2.0",
+    "xstate": "^4.16.0"
+  }
+}

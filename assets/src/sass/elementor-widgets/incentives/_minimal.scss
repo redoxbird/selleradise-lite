@@ -1,0 +1,137 @@
+.selleradise_incentives--minimal {
+  padding: 1rem $page-padding;
+  --selleradise-color-icon: #{color(text)};
+  $prefix: &;
+
+  &__list {
+    @extend .inline-list;
+    @extend .flex-center;
+    align-items: stretch;
+    border-radius: var(--border-radius-base);
+  }
+
+  &__item {
+    @extend .flex-start;
+    flex-wrap: nowrap;
+    padding: 1rem 2.5rem;
+
+    #{$prefix}.selleradise_scroll_animate & {
+      transition: all calc((var(--selleradise-item-index) + 1) * 600ms)
+        easing(out-expo);
+      opacity: 0;
+      transform-origin: top;
+      transform: translateY(2.5rem);
+    }
+
+    #{$prefix}[data-scroll-entered="true"] & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__info {
+    &-title {
+      @include font-size(p);
+      font-family: var(--font-primary);
+      font-weight: font("primary_boldest", "font-weight");
+      color: color(icon);
+      margin: 0;
+      padding: 0;
+    }
+
+    &-description {
+      display: none;
+    }
+  }
+
+  &__icon {
+    @include font-size(h5);
+    color: color(icon);
+    margin: 0 0.75em 0 0;
+    flex-shrink: 0;
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    &__list {
+      > li {
+        flex-basis: 50%;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.selleradise_incentives--minimal-alt {
+  padding: 1rem $page-padding;
+  --selleradise-color-icon: #{color(text)};
+
+  &__list {
+    @extend .inline-list;
+    @extend .flex-center;
+    align-items: stretch;
+    border-radius: 5em;
+    background-color: rgba(color(text-rgb), 0.05);
+    width: 100%;
+  }
+
+  &__item {
+    @extend .flex-start;
+    flex-wrap: nowrap;
+    padding: 1rem 2.5rem;
+  }
+
+  &__info {
+    &-title {
+      @include font-size(p);
+      font-family: var(--font-primary);
+      font-weight: font("primary_boldest", "font-weight");
+      color: color(icon);
+      margin: 0;
+      padding: 0;
+    }
+
+    &-description {
+      display: none;
+    }
+  }
+
+  &__icon {
+    @include font-size(h5);
+    color: color(icon);
+    margin: 0 0.75em 0 0;
+    flex-shrink: 0;
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  &.selleradise_scroll_animate {
+    transition: all 800ms easing(out-expo);
+    opacity: 0;
+    transform-origin: top;
+    transform: translateY(2.5rem);
+  }
+
+  &[data-scroll-entered="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include device(mobileAndTablet) {
+    &__list {
+      border-radius: var(--border-radius-base);
+      padding: 1rem;
+      > li {
+        flex-basis: 50%;
+        padding: 1rem;
+      }
+    }
+  }
+}

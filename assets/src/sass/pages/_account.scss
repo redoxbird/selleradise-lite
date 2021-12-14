@@ -1,0 +1,370 @@
+.selleradise_account-forms {
+  @extend .flex-center;
+  width: 100%;
+  margin: 1rem auto $page-padding auto;
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+}
+
+.selleradise_account-form {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  margin: 5rem auto;
+  background-color: color(background);
+  width: 25rem;
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  border-radius: var(--border-radius-base);
+  border: 0.1em solid rgba(color(text-rgb), 0.1);
+  box-shadow: 0 3.6em 3.6em -2.7em color(shadow);
+  z-index: 10;
+  $prefix: &;
+
+  &.hidden {
+    display: none;
+  }
+
+  &__title {
+    @include font-size(h4);
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    color: color(text);
+  }
+
+  form.login,
+  form.register {
+    @include font-size(p);
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+
+  &__option {
+    @extend .flex-center;
+    @include font-size(small);
+    font-weight: font("primary_boldest", "font-weight");
+    height: auto;
+    margin: 0.5em 0;
+    color: rgba(color(text-rgb), 0.7);
+    width: 100%;
+
+    &:first-of-type {
+      margin-top: 1.5rem;
+    }
+
+    button,
+    a {
+      @include focus-outline;
+      background-color: transparent;
+      color: color(main);
+      border: none;
+      outline: none;
+      transition: all 400ms easing(out-expo);
+      font-weight: font("primary_boldest", "font-weight");
+      margin-left: 0.25em;
+      padding: 0;
+
+      &:hover {
+        text-decoration: underline 0.1em;
+        text-underline-offset: 0.1em;
+      }
+    }
+  }
+
+  .woocommerce-LostPassword {
+    @extend #{$prefix}__option;
+  }
+
+  .woocommerce-privacy-policy-text {
+    @include font-size(small);
+    font-weight: font("primary_bolder", "font-weight");
+    color: rgba(color(text-rgb), 0.7);
+
+    a {
+      font-weight: font("primary_boldest", "font-weight");
+      color: color(main);
+    }
+  }
+
+  @include device(mobile) {
+    width: 90vw;
+  }
+}
+
+.woocommerce-ResetPassword {
+  @extend .selleradise_account-form;
+
+  padding-top: 2rem;
+}
+
+body.woocommerce-lost-password .woocommerce {
+  @include device(desktop) {
+    padding: 5rem $page-padding;
+  }
+}
+
+.selleradise-lite .woocommerce form.login,
+.selleradise-lite .woocommerce form.register,
+.selleradise-lite .loginForm--popup form.login,
+.selleradise-lite .loginForm--popup form.register,
+.selleradise-lite .woocommerce .woocommerce-ResetPassword {
+  .woocommerce-form-row {
+    width: 100%;
+
+    label {
+      @include font-size(p);
+      font-weight: font("primary_bolder", "font-weight");
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      background-color: color(background-mild);
+      width: 100%;
+    }
+  }
+
+  button[type="submit"].button {
+    @extend .selleradise_button--primary;
+    width: 100%;
+    margin-top: 1rem;
+    float: none;
+    margin-right: 0;
+  }
+
+  .show-password-input {
+    &.display-password {
+      &::after {
+        color: color(main);
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .woocommerce-password-strength {
+    border-radius: var(--border-radius-half);
+    display: none;
+    font-size: 0.9rem;
+
+    &.bad,
+    &.good,
+    &.strong,
+    &.short {
+      display: block;
+      padding: 0.8rem 1rem;
+      margin-top: 0.5rem;
+    }
+
+    &.short {
+      background-color: material-color("red", "50");
+      color: material-color("red", "900");
+    }
+
+    &.bad {
+      background-color: material-color("yellow", "50");
+      color: material-color("yellow", "900");
+    }
+
+    &.good {
+      background-color: material-color("blue", "50");
+      color: material-color("blue", "900");
+    }
+
+    &.strong {
+      background-color: material-color("green", "50");
+      color: material-color("green", "900");
+    }
+  }
+
+  .lost_password {
+    margin-bottom: 0;
+
+    a {
+      font-weight: font("primary_bolder", "font-weight");
+      color: color(text);
+    }
+  }
+}
+
+.woocommerce-MyAccount-navigation {
+  color: color(text);
+  overflow: hidden;
+  padding: 5rem 0;
+
+  a {
+    color: color(text);
+    outline: none;
+  }
+
+  ul {
+    @include font-size(p);
+    @extend .flex-start;
+    @extend .selleradise-hide-scrollbar;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none;
+    margin: 0;
+    border: 0.1em solid rgba(color(text-rgb), 0.1);
+    box-shadow: 0 3.6em 3.6em -2.7em color(shadow);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-base);
+
+    li {
+      position: relative;
+      width: 100%;
+
+      a {
+        @include focus-outline;
+        @extend .flex-start;
+        font-size: inherit;
+        font-weight: font("primary_boldest", "font-weight");
+        padding: 0.5em 1em;
+        border-radius: 5em;
+        color: rgba(color(text-rgb), 0.7);
+        cursor: pointer;
+        margin: 0.5em 0;
+        width: 100%;
+
+        svg {
+          width: 1em;
+          height: 1em;
+          margin-right: 1em;
+        }
+
+        &:hover,
+        &:focus {
+          color: color(text-rgb);
+        }
+      }
+
+      &.is-active {
+        a {
+          color: color(text);
+          font-weight: font("primary_boldest", "font-weight");
+        }
+      }
+
+      &.woocommerce-MyAccount-navigation-link--customer-logout {
+        a {
+          font-weight: font("primary_boldest", "font-weight");
+        }
+      }
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    ul {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow-x: scroll;
+
+      li {
+        a {
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.selleradise-lite {
+  .woocommerce-MyAccount-content {
+    padding: 5rem;
+    width: 75%;
+    color: color(text);
+
+    button[type="submit"] {
+      @extend .selleradise_button--primary;
+    }
+
+    .form-row {
+      margin: 0.5em 0;
+    }
+
+    @include device(mobileAndTablet) {
+      padding: 0 0 2.5rem;
+      width: 100%;
+    }
+  }
+
+  .woocommerce-MyAccount-navigation {
+    width: 25%;
+
+    @include device(mobileAndTablet) {
+      width: 100%;
+      padding: 1rem 0 4rem 0;
+    }
+  }
+
+  table.shop_table {
+    .woocommerce-orders-table {
+      &__cell-order-actions {
+        a {
+          @extend .selleradise_button--primary;
+          color: color(main-text);
+        }
+      }
+    }
+  }
+
+  .woocommerce-customer-details {
+    address {
+      padding: 2.5rem;
+      border: 0.1em solid rgba(color(text-rgb), 0.1);
+      border-radius: var(--border-radius-base);
+    }
+  }
+}
+
+.woocommerce-MyAccount-content .woocommerce-Addresses {
+  @extend .flex-start;
+  align-items: stretch;
+
+  .woocommerce-Address {
+    @include font-size(p);
+    background-color: color(background);
+    padding: 2.5rem;
+    margin-right: 1rem;
+    border-radius: var(--border-radius-base);
+    border: 0.1em solid rgba(color(text-rgb), 0.1);
+    position: relative;
+
+    &-title {
+      @extend .flex-between;
+      margin-bottom: 1rem;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    h3 {
+      @include font-size(h5);
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    a.edit {
+      @include font-size(small);
+      @extend .selleradise_button--secondary;
+    }
+
+    address {
+      @include font-size(small);
+    }
+
+    @include device(mobileAndTablet) {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.selleradise_Features--simple {
+  @extend .flex-center;
+  width: 100%;
+  padding: 5rem $page-padding;
+
+  &__subtitle {
+    @extend .selleradise_Widgets__subtitle;
+    text-align: center;
+    margin: 0 0 5rem 0;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+  }
+
+  &__list {
+    @extend .inline-list;
+    @extend .flex-between;
+    align-items: stretch;
+
+    > li {
+      width: 30%;
+      margin-bottom: 2.5rem;
+      background-color: color(background);
+      padding: 2.5rem;
+      border-radius: var(--border-radius-base);
+      border: 0.1em solid rgba(color(text-rgb), 0.1);
+    }
+
+    &Title {
+      @include font-size(h5);
+      margin: 0 0 1rem 0;
+      padding: 0;
+    }
+
+    &Description {
+      @include font-size(small);
+      margin: 0 0 1rem 0;
+      color: rgba(color(text-rgb), 0.7);
+      font-weight: font("primary_bolder", "font-weight");
+
+      a {
+        @extend .focus-outline;
+        color: color(main);
+      }
+    }
+  }
+
+  &__icon {
+    @include font-size(h3);
+    display: inline-flex;
+    color: rgba(color(text-rgb), 0.7);
+    margin: 0 0 2rem 0;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__cta {
+    @include font-size(p);
+    color: color(text);
+    font-weight: font("primary_boldest", "font-weight");
+    text-decoration: underline !important;
+  }
+
+  @include device(mobile) {
+    &__list {
+      > li {
+        width: 100%;
+      }
+    }
+  }
+}

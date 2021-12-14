@@ -1,0 +1,28 @@
+.container,
+.container-fluid,
+.container-narrow {
+  box-sizing: border-box;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  max-width: 75rem;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+.container-narrow {
+  max-width: 1920px;
+}

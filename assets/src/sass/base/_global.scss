@@ -1,0 +1,146 @@
+[x-cloak] {
+  display: none;
+}
+
+body {
+  background-color: color(background);
+  color: color(text);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .elementor-column-gap-default
+    > .elementor-column
+    > .elementor-element-populated {
+    padding: 0;
+  }
+}
+
+svg[id^="mdi"] {
+  fill: currentColor;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+[data-src]:not[src] {
+  position: relative;
+  opacity: 0;
+  transition: opacity 200ms map-get($easing, "swift");
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+span.inlineSVGIcon {
+  line-height: 0;
+}
+
+a {
+  display: inline-flex;
+  color: color(main);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+blockquote {
+  background-color: rgba(color(text-rgb), 0.05);
+  color: color(text);
+  border-radius: var(--border-radius-base);
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  margin: 0;
+  position: relative;
+  border: none;
+
+  cite {
+    font-weight: font("primary_boldest", "font-weight");
+    margin-top: 0.5rem;
+
+    a {
+      color: color(main);
+    }
+  }
+
+  &::before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: font("primary_boldest", "font-weight");
+    content: "\201C";
+    color: rgba(color(main-rgb), 0.5);
+    font-size: 4em;
+    position: absolute;
+    left: 2.5rem;
+    top: 0;
+  }
+}
+
+.selleradise-lite {
+  .woocommerce table.shop_table {
+    border: none;
+    background-color: color(background);
+    border-collapse: collapse;
+    border-radius: var(--border-radius-half);
+    overflow: hidden;
+    border: 0;
+
+    a {
+      color: color(main);
+      font-weight: font("primary_bolder", "font-weight");
+    }
+
+    th,
+    td {
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-bottom: 0.05rem solid rgba(color(text-rgb), 0.05);
+    }
+
+    th {
+      font-weight: font("primary_boldest", "font-weight");
+      line-height: inherit;
+    }
+
+    thead {
+      color: color(text);
+      border: none;
+    }
+  }
+
+  .woocommerce button.button {
+    @extend .selleradise_button--base;
+  }
+}
+
+.page-template-homepage {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: none;
+  }
+}
+
+.site-content {
+  --padding-top: var(--header-height);
+
+  .woocommerce-checkout & {
+    --padding-top: calc(var(--header-height) + 2.5rem);
+  }
+
+  padding-top: var(--padding-top);
+}
+
+// Customize text selection
+::selection {
+  background: color(text);
+  color: color(background);
+}
+
+::-moz-selection {
+  background: color(text);
+  color: color(background);
+}

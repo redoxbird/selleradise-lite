@@ -1,0 +1,66 @@
+.selleradiseWidgets_Categories {
+  padding: 5rem $page-padding;
+  position: relative;
+  $root: &;
+
+  &__loadMore,
+  &__toShop {
+    @extend .flex-center;
+    width: 100%;
+    grid-column: 1 / -1;
+    z-index: 10;
+    margin-top: 1.5rem;
+
+    a,
+    button {
+      background-color: color(background);
+      border: 0.1em solid rgba(color(text-rgb), 0.1);
+      color: rgba(color(text-rgb), 0.7);
+
+      svg {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+      }
+
+      &:disabled {
+        display: none;
+      }
+    }
+
+    button {
+      padding: 0.75em 2em 0.75em 1em;
+    }
+
+    a {
+      padding: 0.75em 2em;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__item[data-selleradise-status="hidden"] {
+    display: none;
+  }
+
+  @include scroll_animate(initial) {
+    #{$root}__item[data-selleradise-status="initial"] {
+      transition: all 800ms easing(out-expo)
+        calc((var(--selleradise-item-index) + 1) * 50ms);
+      opacity: 0;
+      transform-origin: top;
+      transform: translateY(5rem);
+    }
+  }
+
+  @include scroll_animate(entered) {
+    #{$root}__item[data-selleradise-status="initial"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@import "categories/default";

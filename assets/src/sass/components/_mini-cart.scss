@@ -1,0 +1,224 @@
+.selleradise_MiniCart {
+  $prefix: &;
+  .overlay {
+    z-index: 1200;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 30rem;
+    height: calc(100vh - 2rem);
+    background-color: color(background);
+    color: color(text);
+    z-index: 1300;
+    padding: 2.5rem 2.5rem 5rem 2.5rem;
+    border-radius: var(--border-radius-base);
+    transform-origin: left center;
+    outline: none;
+    &-enter-active,
+    &-leave-active {
+      transition: transform 600ms easing(out-expo),
+        opacity 400ms easing(out-expo);
+    }
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+      transform: translate(5rem, 0);
+    }
+
+    @include device(mobile) {
+      top: 10rem;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+
+      &-enter-active,
+      &-leave-active {
+        transition: transform 400ms easing(out-expo), opacity 200ms ease-out;
+      }
+
+      &-enter-from,
+      &-leave-to {
+        opacity: 0;
+        transform: translate(0, 5rem);
+      }
+    }
+  }
+
+  &__head {
+    @extend .flex-between;
+    width: 100%;
+    margin-bottom: 2.5rem;
+
+    &Count {
+      margin: 0;
+      padding: 0;
+    }
+
+    > .buttonIcon--secondary-outline {
+      margin-left: auto;
+    }
+  }
+
+  &__items {
+    @extend .selleradise-hide-scrollbar;
+    @extend .inline-list;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 5rem;
+  }
+
+  &__item {
+    @extend .flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+
+    &Image {
+      @extend .selleradise-background-image;
+      @extend .focus-outline;
+      width: 7rem;
+      height: 7rem;
+      border-radius: var(--border-radius-half);
+      flex-shrink: 0;
+    }
+
+    &Content {
+      flex-grow: 1;
+      padding: 0.5rem 0 0.5rem 1rem;
+      max-width: 75%;
+      align-self: stretch;
+    }
+
+    &Name {
+      @include font-size(p);
+      font-weight: font("primary_bolder", "font-weight");
+      margin: 0 0 0.25rem 0;
+
+      a {
+        @extend .focus-outline;
+        color: color(text);
+      }
+    }
+
+    &Price {
+      @extend .flex-between;
+      @include font-size(small);
+      font-weight: font("primary_bolder", "font-weight");
+      color: rgba(color(text-rgb), 0.7);
+      width: 100%;
+      margin: 0 0 1rem 0;
+    }
+
+    &Quantity {
+      @include font-size(small);
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 2rem;
+      border: 0.05em solid rgba(color(text-rgb), 0.1);
+
+      button {
+        @extend .buttonIcon--secondary;
+        background-color: transparent;
+        padding: 0.5rem;
+
+        #{$prefix}[data-selleradise-minicart-state="updating"] & {
+          opacity: 0.25;
+        }
+      }
+
+      button:not(#{$prefix}__removeItem) {
+        &:hover {
+          background-color: transparent;
+          box-shadow: inset 0 0 0 0.1em color(text);
+        }
+      }
+
+      .inlineSVGIcon {
+        svg {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+
+      &Count {
+        font-weight: font("primary_boldest", "font-weight");
+        padding: 0 1rem;
+      }
+    }
+
+    & + & {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__removeItem {
+    &:hover {
+      background-color: material-color("red", "500");
+      color: color(light);
+    }
+  }
+
+  &__foot {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--border-radius-base);
+
+    &Actions {
+      @extend .flex-between;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 1rem;
+      padding: 1rem 2.5rem;
+
+      .selleradise_button--primary {
+        flex: 1;
+        margin-left: 1rem;
+      }
+    }
+
+    &CartTotal {
+      display: inline-block;
+
+      &::before {
+        content: "-";
+        padding: 0 0.5rem;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__loader {
+    @extend .flex-center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: color(text);
+    background-color: rgba(color(text-rgb), 0.5);
+    border-radius: var(--border-radius-base);
+
+    svg {
+      background-color: color(text);
+      color: color(background);
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 100%;
+    }
+  }
+}

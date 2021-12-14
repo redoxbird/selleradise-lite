@@ -1,0 +1,54 @@
+.selleradise_CTA--default {
+  width: calc(100% - #{$page-padding * 2});
+  margin: 2.5rem auto;
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+
+  &__image {
+    @extend .selleradise-background-image;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(color(text-rgb), 0.1);
+    border-radius: var(--border-radius-base);
+
+    img {
+      z-index: 1;
+      object-position: center center;
+      transform: rotate(0);
+    }
+  }
+
+  &__overlay {
+    position: relative;
+    width: 100%;
+    color: color(text);
+    padding: 5rem 15rem;
+    z-index: 10;
+    background-color: rgba(color(main-rgb), 0.9);
+    color: color(main-text);
+
+    @include device(mobileAndTablet) {
+      padding: 2.5rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__description {
+    @include font-size(p);
+    opacity: 0.7;
+  }
+
+  .selleradise_button--primary {
+    margin-top: 2.5rem;
+  }
+}

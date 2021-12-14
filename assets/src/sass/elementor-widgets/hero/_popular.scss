@@ -1,0 +1,80 @@
+.selleradise_Hero--popular {
+  @extend .flex-center;
+  width: calc(100% - #{$page-padding * 2});
+  padding: 0;
+  height: auto;
+  margin: 1rem auto;
+  position: relative;
+
+  &__image {
+    @extend .selleradise-background-image;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(color(text-rgb), 0.1);
+    border-radius: var(--border-radius-base);
+
+    img {
+      z-index: 1;
+      object-position: center center;
+      transform: rotate(0);
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin: 7.5rem 50% 7.5rem 7.5rem;
+    padding: 3.5rem;
+    z-index: 10;
+    color: color(background);
+    border-radius: var(--border-radius-base);
+    backdrop-filter: blur(0.25em);
+    background-color: rgba(var(--light-theme_color-background-rgb), 0.5);
+    color: color(dark);
+  }
+
+  &__subtitle {
+    @extend .selleradise_Widgets__subtitle;
+    color: inherit;
+  }
+
+  &__title {
+    @include font-size(h1);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  &__description {
+    @include font-size(h5);
+    opacity: 0.8;
+  }
+
+  &__primaryCTA {
+    @extend .selleradise_button--primary;
+    margin-top: 1.5rem;
+
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+      margin-left: 1.2em;
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    &__content {
+      margin: 50% 10% 10% 10%;
+      padding: $page-padding;
+    }
+
+    &__title {
+      @include font-size(h3);
+    }
+
+    &__description {
+      @include font-size(p);
+    }
+  }
+}

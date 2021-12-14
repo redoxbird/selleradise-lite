@@ -1,0 +1,111 @@
+@function font($type, $property) {
+  @return var(--selleradise-font-#{$type}-#{$property});
+}
+
+@mixin font-size($size) {
+  @if $size == display {
+    font-size: 4rem;
+  } @else if $size == h1 {
+    font-size: 3.052rem;
+  } @else if $size == h2 {
+    font-size: 2.441rem;
+  } @else if $size == h3 {
+    font-size: 1.953rem;
+  } @else if $size == h4 {
+    font-size: 1.563rem;
+  } @else if $size == h5 {
+    font-size: 1.25rem;
+  } @else if $size == p or $size == h6 {
+    font-size: 1rem;
+  } @else if $size == small {
+    font-size: 0.8rem;
+  } @else if $size == x-small {
+    font-size: 0.64rem;
+  } @else if $size == xx-small {
+    font-size: 0.512rem;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+// Mobile phones
+@media (max-width: 767px) {
+  html {
+    font-size: 3.2vw;
+  }
+}
+
+// Tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 1.9vw;
+  }
+}
+
+// Desktop
+@media (min-width: 1025px) {
+  html {
+    font-size: 0.9375vw;
+  }
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+// Headings
+$heading_tags: h1, h2, h3, h4, h5, h6;
+
+@each $tag in $heading_tags {
+  #{$tag} {
+    @include font-size($tag);
+  }
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+b,
+strong {
+  font-weight: font("primary_boldest", "font-weight");
+}
+
+// alignments
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+// Modifiers
+.text-bold {
+  font-weight: 700;
+}
+
+.text-semibold {
+  font-weight: font("primary_boldest", "font-weight");
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.no-line-height {
+  line-height: 1em !important;
+}

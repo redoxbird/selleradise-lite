@@ -1,0 +1,75 @@
+.selleradise_postCard {
+  &__author {
+    @extend .flex-start;
+
+    &-image {
+      @extend .selleradise-background-image;
+      width: 3rem;
+      height: 3rem;
+      background-color: rgba(color(text-rgb), 0.05);
+      border-radius: 3rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.75rem;
+
+      svg {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+      }
+
+      a {
+        align-items: center;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-name {
+      @include font-size(small);
+      font-weight: font("primary_boldest", "font-weight");
+    }
+
+    &-date {
+      @include font-size(small);
+      opacity: 0.7;
+    }
+
+    &--minimal {
+      @include font-size(small);
+
+      .entry-meta {
+        @extend .flex-start;
+      }
+
+      svg {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+      }
+
+      a {
+        font-weight: font("primary_bolder", "font-weight");
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .author {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@import "post-cards/default";
+@import "post-cards/trending";

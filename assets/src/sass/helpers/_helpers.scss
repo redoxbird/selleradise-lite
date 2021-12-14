@@ -1,0 +1,366 @@
+// position
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-center-stretch {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-between-stretch {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inline-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// display
+.display-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  .display-table-cell {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+// visibility
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.show {
+  display: inline-block;
+  visibility: visible;
+}
+
+.selleradise-color-main {
+  color: color(main);
+
+  svg & {
+    fill: color(main);
+  }
+}
+
+.selleradise-color-main-text {
+  color: color(main-text);
+
+  svg & {
+    fill: color(main-text);
+  }
+}
+
+.selleradise-color-accent-light {
+  color: color(accent-light);
+
+  svg & {
+    fill: color(accent-light);
+  }
+}
+
+.selleradise-color-background {
+  color: color(background);
+
+  svg & {
+    fill: color(background);
+  }
+}
+
+.selleradise-color-text {
+  color: color(text);
+
+  svg & {
+    fill: color(text);
+  }
+}
+
+.line-through {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    position: absolute;
+    left: 0.25rem;
+    top: 50%;
+    margin-top: -0.1rem;
+    background-color: rgba(color(text-rgb), 0.5);
+    transform-origin: center;
+    transform: rotate(5deg);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  outline: 0;
+}
+
+.focus-outline {
+  :root[data-focus-source="key"] &:not([tabindex="-1"]):focus {
+    transition: none;
+    outline: 0.15rem dashed color(main);
+    outline-offset: 0.2rem;
+  }
+}
+
+.selleradise-hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+.selleradise-hide-horizontal-scrollbar {
+  scrollbar-width: none;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+}
+
+// background
+.background-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.selleradise-background-image {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
+.overlay-dark {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: "";
+    opacity: 0.5;
+    background-color: $black;
+  }
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(#000, 0.7);
+  z-index: 1100;
+
+  &-enter-active,
+  &-leave-active {
+    transition: all $time easing(out-expo);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  @include device(desktop) {
+    backdrop-filter: grayscale(100%);
+  }
+}
+
+.selleradise_page__title {
+  @extend .flex-start;
+  width: 100%;
+  color: color(text);
+  transform-origin: center;
+  margin: 2.5rem 0;
+
+  h1 {
+    margin: 0;
+  }
+
+  .archive-description {
+    width: 100%;
+  }
+
+  .selleradise-lite.woocommerce-account &,
+  .woocommerce-cart.woocommerce-cart-is-empty &,
+  .woocommerce-wishlist & {
+    @extend .sr-only;
+  }
+
+  .woocommerce-checkout.woocommerce-multi-step-checkout & {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.selleradise-container {
+  padding: 0 $page_padding;
+}
+
+.selleradise-table {
+  @include font-size(p);
+  background-color: color(background);
+  overflow: hidden;
+  border-collapse: collapse;
+  border: none;
+
+  tbody {
+    box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.1);
+    border-radius: var(--border-radius-base);
+  }
+
+  a {
+    color: color(text);
+    font-weight: font("primary_bolder", "font-weight");
+  }
+
+  th,
+  td {
+    padding: 1em 2em;
+    border: none;
+    border-collapse: collapse;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 0.1em solid rgba(color(text-rgb), 0.1);
+  }
+
+  th {
+    width: 0;
+    white-space: nowrap;
+    font-weight: font("primary_boldest", "font-weight");
+    line-height: inherit;
+  }
+
+  thead {
+    color: color(text);
+    border: none;
+  }
+}
+
+.selleradise_Widgets__subtitle {
+  @include font-size(h5);
+  width: 100%;
+  color: rgba(color(text-rgb), 0.7);
+  margin: 0;
+}
+
+.selleradise_dropdown__options {
+  @extend .inline-list;
+  @extend .selleradise-hide-scrollbar;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.5rem);
+  background-color: color(background);
+  width: auto;
+  width: 15rem;
+  z-index: 1500;
+  border-radius: 1em;
+  border: 0.05em solid rgba(color(text-rgb), 0.1);
+  max-height: 20rem;
+  overflow-y: scroll;
+  padding: 1rem;
+
+  li {
+    @include font-size(small);
+    @extend .flex-start;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding: 0.7em 1.4em;
+    margin: 0.5em 0;
+    font-weight: font("primary_boldest", "font-weight");
+    border-radius: 5em;
+    transition: background-color $time easing(out-expo);
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0 0.5em;
+    }
+
+    &.active,
+    &.selected {
+      background-color: rgba(color(text-rgb), 0.05);
+    }
+
+    &[aria-disabled] {
+      color: rgba(color(text-rgb), 0.7);
+    }
+  }
+}

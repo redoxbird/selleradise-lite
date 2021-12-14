@@ -1,0 +1,155 @@
+.elementor-column-gap-default
+  > .elementor-column
+  > .elementor-element-populated {
+  padding: 0;
+}
+
+.heroCarousel--default {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .swiper-slide {
+    @extend .flex-center;
+    @extend .background-image;
+    position: relative;
+    border-radius: var(--border-radius-base);
+    height: 35rem;
+    overflow: hidden;
+
+    .content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60%;
+      height: auto;
+      padding: 5rem;
+      background-color: transparent;
+      color: color(light);
+      overflow: hidden;
+      flex: 1;
+      align-self: stretch;
+      z-index: 10;
+
+      .title {
+        @include font-size(h1);
+        margin: 0;
+      }
+
+      .description {
+        @include font-size(p);
+      }
+
+      .actions {
+        margin-top: 1.5rem;
+
+        .selleradise_button--secondary {
+          background-color: transparent;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .sliderNavButtons {
+    > .previous,
+    > .next {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -17.5rem;
+      height: 35rem;
+      width: 35rem;
+      padding: 2.5rem;
+      z-index: 10;
+      border: 0;
+      background-color: rgba(color(text-rgb), 0.7);
+      color: color(background);
+      outline: none;
+      opacity: 0;
+      transition: all 400ms easing(out-expo);
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+
+    .previous {
+      justify-content: flex-end;
+      border-top-right-radius: 100%;
+      border-bottom-right-radius: 100%;
+      transform: translate(-2.5rem, 0);
+      margin-left: -28rem;
+    }
+
+    .next {
+      justify-content: flex-start;
+      right: 0;
+      left: auto;
+      border-top-left-radius: 100%;
+      border-bottom-left-radius: 100%;
+      transform: translate(2.5rem, 0);
+      margin-right: -28rem;
+    }
+  }
+
+  @include device(mobile) {
+    .swiper-slide {
+      height: 15rem;
+
+      .content {
+        width: 80%;
+        padding: 1.5rem;
+
+        .title {
+          @include font-size(h5);
+        }
+
+        .description {
+          @include font-size(small);
+        }
+
+        .actions {
+          margin-top: 1rem;
+
+          .selleradise_button--secondary,
+          .selleradise_button--primary {
+            @include font-size(small);
+          }
+        }
+      }
+    }
+
+    .sliderNavButtons {
+      > .previous,
+      > .next {
+        margin-top: -7.5rem;
+        height: 15rem;
+        width: 15rem;
+        padding: 2.5rem;
+      }
+
+      .previous {
+        margin-left: -10rem;
+      }
+
+      .next {
+        margin-right: -10rem;
+      }
+    }
+  }
+}

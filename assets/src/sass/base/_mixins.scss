@@ -1,0 +1,55 @@
+@mixin device($point) {
+  @if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == mobileAndTablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  } @else if $point == desktopAndTablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+@mixin focus-source-key {
+  :root[data-focus-source="key"] {
+    @content;
+  }
+}
+
+@mixin focus-outline($color: main) {
+  :root[data-focus-source="key"] &:focus {
+    transition: none;
+    outline: 0.15rem dashed color($color);
+    outline-offset: 0.2rem;
+  }
+}
+
+@mixin mode($type: dark) {
+  :root[data-selleradise-theme-type="#{$type}"] & {
+    @content;
+  }
+}
+
+@mixin scroll_animate($state: initial) {
+  @if $state == initial {
+    &.selleradise_scroll_animate {
+      @content;
+    }
+  } @else if $state == entered {
+    &[data-scroll-entered="true"] {
+      @content;
+    }
+  }
+}

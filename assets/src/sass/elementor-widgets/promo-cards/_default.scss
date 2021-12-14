@@ -1,0 +1,127 @@
+.selleradise_PromoCards--default {
+  padding: 1.5rem $page-padding;
+  $root: &;
+
+  &__list {
+    @extend .inline-list;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    gap: 2rem;
+
+    @include device(mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include device(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    $prefix: &;
+
+    a {
+      @extend .flex-between-stretch;
+      height: auto;
+      background-color: color(background);
+      color: color(text);
+      border-radius: var(--border-radius-base);
+      padding: 1rem;
+      position: relative;
+      border: 0.1em solid rgba(color(text-rgb), 0.1);
+      width: 100%;
+      height: auto;
+
+      &:hover {
+        border-color: rgba(color(text-rgb), 0.5);
+
+        #{$prefix}-image {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    &-content {
+      @extend .flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      width: 45%;
+      flex-grow: 1;
+    }
+
+    &-title {
+      @include font-size(h5);
+      margin: 0 0 1rem 0;
+
+      @include device(tablet) {
+        @include font-size(p);
+      }
+    }
+
+    &-subtitle {
+      @include font-size(small);
+      font-weight: font("primary_boldest", "font-weight");
+      margin: 0;
+      background-color: color(text);
+      color: color(background);
+      border-radius: 5em;
+      padding: 0.5em 1.2em;
+      margin-top: auto;
+
+      @include device(tablet) {
+        @include font-size(x-small);
+      }
+    }
+
+    &-image {
+      @extend .selleradise-background-image;
+      width: 12rem;
+      min-height: 12rem;
+      position: relative;
+      border-radius: var(--border-radius-base);
+
+      > img {
+        transition: all $time_slow easing(out-expo);
+        transform-origin: center;
+      }
+
+      @include device(tablet) {
+        width: 10rem;
+        min-height: 10rem;
+      }
+    }
+
+    #{$root}.selleradise_scroll_animate & {
+      transition: all calc((var(--selleradise-item-index) + 1) * 600ms)
+        easing(out-expo);
+      opacity: 0;
+      transform-origin: top;
+      transform: translateY(5rem);
+    }
+
+    #{$root}[data-scroll-entered="true"] & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.selleradise_adaptive_colors {
+      a {
+        background-color: rgba(color(palette-dominant), 1);
+        border-color: rgba(color(palette-dominant-text), 0.1);
+      }
+
+      #{$prefix}-title {
+        color: rgba(color(palette-dominant-text), 0.8);
+      }
+
+      #{$prefix}-subtitle {
+        background-color: rgba(color(palette-dominant-text), 1);
+        color: rgba(color(palette-dominant), 1);
+      }
+    }
+  }
+}

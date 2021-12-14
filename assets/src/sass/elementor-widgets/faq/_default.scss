@@ -1,0 +1,56 @@
+.selleradise_faq--default {
+  @extend .flex-start;
+  align-items: flex-start;
+  padding: 5rem $page-padding;
+  width: 100%;
+  height: auto;
+
+  &__section-subtitle {
+    @extend .selleradise_Widgets__subtitle;
+  }
+
+  &__section-title {
+    margin-top: 0;
+  }
+
+  &__head {
+    width: 35%;
+    padding: 0 2.5rem 0 0;
+
+    @include device(mobileAndTablet) {
+      width: 100%;
+      padding: 0 0 2.5rem 0;
+    }
+  }
+
+  &__body {
+    width: 65%;
+    flex-grow: 1;
+
+    @include device(mobileAndTablet) {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    @extend .inline-list;
+  }
+
+  &__item {
+    margin-bottom: 2.5rem;
+
+    &.selleradise_faq__item--hidden {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include font-size(h5);
+    margin: 0 0 0.5em 0;
+  }
+
+  &__content {
+    @include font-size(p);
+    color: rgba(color(text-rgb), 0.7);
+  }
+}

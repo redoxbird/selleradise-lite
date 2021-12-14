@@ -1,0 +1,15 @@
+form.wvs-loaded {
+  .reset_variations {
+    margin-top: 1rem;
+  }
+}
+
+.woo-variation-swatches {
+  .variable-items-wrapper {
+    .variable-item:not(.radio-variable-item) {
+      border-radius: var(--border-radius-base);
+      &:hover {
+      }
+    }
+  }
+}

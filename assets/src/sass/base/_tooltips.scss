@@ -1,0 +1,25 @@
+.tippy-box[data-theme~="primary"] {
+  @include font-size(small);
+  background-color: color(text);
+  color: color(background);
+  border-color: color(text);
+  font-weight: font("primary_boldest", "font-weight");
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius-base);
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: color(text);
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: color(text);
+  }
+
+  &[data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: color(text);
+  }
+
+  &[data-placement^="left"] > .tippy-arrow::before {
+    border-left-color: color(text);
+  }
+}

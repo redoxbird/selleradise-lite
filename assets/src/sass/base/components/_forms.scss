@@ -1,0 +1,353 @@
+.selleradise_label {
+  @include font-size(p);
+  color: rgba(color(text-rgb), 0.7);
+  font-weight: font("primary_boldest", "font-weight");
+}
+
+label {
+  @extend .selleradise_label;
+
+  .theme-selleradise form .form-row.woocommerce-invalid & {
+    color: material-color("red", "500");
+  }
+}
+
+.selleradise_input {
+  @include font-size(p);
+  background-color: color(background);
+  color: color(text);
+  padding: 0 1rem;
+  height: 3.2em;
+  width: 100%;
+  border-radius: 0.75em;
+  outline: none;
+  border: none;
+  box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.1);
+  transition: box-shadow $time easing(out-expo);
+
+  &::placeholder {
+    color: rgba(color(text-rgb), 0.7);
+    font-weight: font("primary_boldest", "font-weight");
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.25);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 0.1em color(text);
+  }
+}
+
+.selleradise_select {
+  @include font-size(p);
+  background-color: color(background);
+  color: color(text);
+  padding: 0 2rem;
+  height: 3em;
+  width: 100%;
+  border-radius: 0.75em;
+  outline: none;
+  border: none;
+  transition: box-shadow $time easing(out-expo);
+  box-shadow: 0 0 0 0.1em rgba(color(text-rgb), 0.1);
+  cursor: pointer;
+  position: relative;
+  border-right: 1em solid transparent;
+
+  &::placeholder {
+    color: color(text);
+    opacity: 0.7;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 0.1em rgba(color(text-rgb), 0.25);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.1em color(text);
+  }
+}
+
+input,
+.input {
+  @extend .selleradise_input;
+}
+
+textarea {
+  @extend .selleradise_input;
+  height: auto;
+}
+
+select {
+  @extend .selleradise_select;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1em;
+  height: 1em;
+}
+
+:root:not([data-focus-source="key"]) .selleradise .input-radio,
+:root:not([data-focus-source="key"]) .selleradise input[type="radio"] {
+  display: none;
+  cursor: pointer;
+
+  & + label,
+  & ~ label {
+    cursor: pointer;
+    &::before {
+      content: "";
+      width: 1em;
+      height: 1em;
+      border-radius: 100%;
+      background-color: transparent;
+      box-shadow: 0 0 0 0.1rem color(text);
+      margin-right: 1rem;
+      transition: all 250ms easing(out-expo);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::before {
+        box-shadow: 0 0 0 0.1rem color(main);
+
+        :root[data-selleradise-theme-type="dark"] & {
+          box-shadow: 0 0 0 0.1rem color(accent-light);
+        }
+      }
+    }
+
+    &:active {
+      &::before {
+        background-color: color(main);
+
+        :root[data-selleradise-theme-type="dark"] & {
+          background-color: color(accent-light);
+        }
+      }
+    }
+  }
+
+  &:checked {
+    & + label,
+    & ~ label {
+      &::before {
+        background-color: color(main);
+        box-shadow: 0 0 0 0.1rem color(main),
+          inset 0 0 0 0.2rem color(background);
+
+        :root[data-selleradise-theme-type="dark"] & {
+          background-color: color(accent-light);
+          box-shadow: 0 0 0 0.1rem color(accent-light),
+            inset 0 0 0 0.2rem color(background);
+        }
+      }
+    }
+  }
+}
+
+input[type="checkbox"],
+.input-checkbox,
+.woocommerce-form__input-checkbox,
+#wp-comment-cookies-consent {
+  -webkit-appearance: none;
+  @extend .flex-center;
+  @include font-size(p);
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 0.2em;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.5);
+  transition: all 250ms easing(out-expo);
+  color: color(main-text);
+  line-height: 1;
+  padding: 0;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: inset 0 0 0 0.1em color(main);
+  }
+
+  &:checked {
+    @extend .icon-selleradise-check-bold;
+    background-color: color(main);
+    box-shadow: inset 0 0 0 0.1em color(main);
+
+    &::before {
+      @include font-size(small);
+      font-family: "icomoon";
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:active {
+    background-color: color(main);
+  }
+
+  & + label,
+  & ~ label,
+  & ~ span,
+  & ~ span {
+    cursor: pointer;
+    position: relative;
+    padding-left: 1em;
+  }
+}
+
+.customInput--number {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
+
+.theme-selleradise {
+  .select2 {
+    .select2-selection {
+      @include font-size(p);
+      @extend .flex-start;
+      background-color: color(background);
+      color: color(text);
+      padding: 0 1em;
+      height: 3rem;
+      width: 100%;
+      border-radius: var(--border-radius-half);
+      outline: none;
+      border: none;
+      box-shadow: 0 0 0 0.1em rgba(color(text-rgb), 0.1);
+    }
+
+    .select2-selection__arrow {
+      height: 100%;
+      width: 2.5rem;
+      top: 0;
+      right: 0;
+    }
+
+    .select2-selection__rendered {
+      color: color(text);
+    }
+
+    &-results__option {
+      @include font-size(small);
+      background-color: color(background);
+      color: color(text);
+      padding: 0.5em 1em;
+      outline: none;
+
+      &[aria-selected="true"],
+      &[data-selected="true"] {
+      }
+    }
+  }
+
+  .select2-container--default .select2-results__option[aria-selected="true"],
+  .select2-container--default .select2-results__option[data-selected="true"] {
+    background-color: color(text);
+    color: color(background);
+  }
+
+  .select2-container--default
+    .select2-results__option--highlighted[aria-selected],
+  .select2-container--default
+    .select2-results__option--highlighted[data-selected] {
+    background-color: color(main);
+    color: color(main-text);
+  }
+
+  .select2-search {
+    background-color: color(background);
+    color: color(text);
+
+    input {
+      padding: 0 1rem;
+    }
+
+    .select2-results {
+      background-color: color(background);
+      color: color(text);
+      border: 0.05rem solid rgba(color(text-rgb), 0.05);
+    }
+  }
+}
+
+fieldset {
+  padding: 2.5rem;
+  border: 0.15em solid color(text);
+  border-radius: var(--border-radius-base);
+  margin: 1.5rem 0 1rem 0;
+
+  legend {
+    @include font-size(small);
+    background-color: color(text);
+    font-weight: font("primary_boldest", "font-weight");
+    color: color(background);
+    padding: 0.6em 1.4em;
+    border-radius: 5em;
+  }
+}
+
+.selleradise-lite
+  .woocommerce
+  .woocommerce-form-login
+  .woocommerce-form-login__rememberme {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  cursor: pointer;
+  width: 100%;
+}
+
+.selleradise_switch {
+  @extend .flex-between;
+
+  &__label {
+    @include font-size(p);
+    font-weight: font("primary_bolder", "font-weight");
+  }
+
+  button {
+    @include focus-outline;
+    background-color: rgba(color(text-rgb), 0.05);
+    color: color(text);
+    border-radius: 5em;
+    width: 4.5rem;
+    height: 2rem;
+    position: relative;
+    border: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin: -0.625rem 0 0 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 1.5rem;
+      background-color: rgba(color(text-rgb), 0.5);
+      transition: all $time easing(out-expo);
+      transform: translateX(0.3125rem);
+    }
+
+    &[aria-checked="true"] {
+      background-color: color(main);
+
+      &::before {
+        background-color: color(main-text);
+        transform: translateX(2.9rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.selleradise_Features--default {
+  --selleradise-color-icon: #{color(main)};
+  --selleradise-color-icon-background: rgba(#{color(main-rgb)}, 0.05);
+  @extend .flex-center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 5rem $page-padding;
+  border-radius: var(--border-radius-base);
+
+  @include device(mobile) {
+    padding-bottom: 0;
+  }
+
+  &__subtitle {
+    @extend .selleradise_Widgets__subtitle;
+    margin-top: 0.5rem;
+  }
+
+  &__title {
+    margin: 0;
+
+    &-outer {
+      width: 35%;
+      height: auto;
+      padding-right: 5rem;
+      border-radius: var(--border-radius-base);
+
+      @include device(mobileAndTablet) {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 5rem;
+        text-align: center;
+      }
+    }
+  }
+
+  &__list {
+    @extend .inline-list;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2.5rem;
+    gap: 2.5rem;
+    width: 65%;
+    flex-grow: 1;
+
+    > li {
+      margin-bottom: 2.5rem;
+      background-color: color(background);
+      border-radius: var(--border-radius-base);
+    }
+
+    &-title {
+      @include font-size(h4);
+      margin: 0 0 1rem 0;
+      padding: 0;
+    }
+
+    &-description {
+      @include font-size(p);
+      margin: 0 0 1rem 0;
+      color: rgba(color(text-rgb), 0.7);
+
+      a {
+        @extend .focus-outline;
+        color: color(main);
+      }
+    }
+
+    @include device(mobileAndTablet) {
+      width: 100%;
+      justify-items: center;
+      text-align: center;
+    }
+
+    @include device(mobile) {
+      grid-template-columns: 1fr;
+      grid-gap: 1.25rem;
+      gap: 1.25rem;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    @include font-size(h4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 2rem 0;
+    background-color: color(icon-background);
+    color: color(icon);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5em;
+
+    svg {
+      width: 1.5em;
+      height: auto;
+    }
+  }
+
+  &__cta {
+    @extend .selleradise_button--primary;
+    margin-top: 2.5rem;
+
+    svg {
+      width: 1.25em;
+      height: 1.25em;
+      margin: 0 0 0 1.5em;
+    }
+  }
+
+  @include device(mobile) {
+    &__list {
+      > li {
+        width: 100%;
+      }
+    }
+  }
+}

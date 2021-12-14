@@ -1,0 +1,132 @@
+@import "footers/default";
+
+.selleradise_footer__form {
+  width: 30%;
+
+  h2 {
+    @include font-size(h4);
+    margin: 0 0 2rem 0;
+  }
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  input[type="email"] {
+    margin: 0.5rem 0;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+  }
+
+  input[type="submit"] {
+    @extend .selleradise_button--primary;
+    width: 100%;
+  }
+
+  .mc4wp-alert {
+    @include font-size(small);
+    font-weight: font("primary_boldest", "font-weight");
+  }
+}
+
+.selleradise p.woocommerce-store-notice {
+  @include font-size(small);
+  position: fixed;
+  top: auto;
+  left: 1rem;
+  bottom: 1rem;
+  width: 20rem;
+  height: auto;
+  padding: 1.5rem 2.5rem;
+  border-radius: var(--border-radius-base);
+  background-color: color(text);
+  color: color(background);
+  box-shadow: none;
+  z-index: 1000;
+  text-align: left;
+  transform: translate(0, 1.5rem) scale(0.9);
+  transform-origin: left bottom;
+  opacity: 0;
+  animation: woocommerce-store-notice $time easing(in-out-back) forwards;
+
+  &__dismiss-link {
+    color: inherit;
+    display: inline-block;
+    font-weight: font("primary_bolder", "font-weight");
+  }
+}
+
+// .selleradise.admin-bar p.demo_store {
+//   top: auto;
+//   left: 0;
+//   bottom: 0;
+// }
+
+a.selleradise_back-to-top {
+  @extend .flex-center;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: color(main);
+  color: color(main-text);
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 50%;
+  overflow: visible;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0.8);
+  transition: all 400ms easing(out-expo);
+
+  svg:not(.progress) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  &.headroom--not-top {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    circle {
+      cx: 2rem;
+      cy: 2rem;
+      r: 1.9rem;
+      stroke: color(light);
+      stroke-width: 0.2rem;
+      fill: none;
+      stroke-dasharray: var(--dasharray);
+      stroke-dashoffset: var(--dashoffset);
+      transform-origin: center;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &:hover {
+    color: color(main-text);
+  }
+}
+
+@keyframes woocommerce-store-notice {
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+  }
+}

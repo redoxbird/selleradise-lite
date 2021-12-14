@@ -1,0 +1,115 @@
+.selleradise_PromoCards--bold {
+  padding: 1.5rem $page-padding;
+  $root: &;
+
+  &__list {
+    @extend .inline-list;
+    display: grid;
+    grid-template-columns: repeat(3, 31.5%);
+    grid-gap: 2.75%;
+    gap: 2.75%;
+
+    @include device(mobile) {
+      grid-template-columns: 100%;
+      grid-gap: 0;
+      gap: 0;
+      grid-row-gap: 2rem;
+      row-gap: 2rem;
+    }
+  }
+
+  &__item {
+    $prefix: &;
+
+    a {
+      @extend .flex-between-stretch;
+      height: auto;
+      background-color: color(accent-light);
+      color: color(accent-light-text);
+      border-radius: var(--border-radius-base);
+      padding: 1rem;
+      position: relative;
+      border: 0.1em solid rgba(color(text-rgb), 0.1);
+
+      &:hover {
+        #{$prefix}-image {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      flex: 1;
+      padding: 1rem;
+    }
+
+    &-title {
+      @include font-size(h5);
+      margin: 0;
+    }
+
+    &-subtitle {
+      @include font-size(small);
+      font-weight: font("primary_boldest", "font-weight");
+      margin: 0;
+      background-color: color(main);
+      color: color(main-text);
+      border-radius: 5em;
+      padding: 0.5em 1.2em;
+      margin-top: auto;
+    }
+
+    &-image {
+      @extend .selleradise-background-image;
+      position: relative;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 12rem;
+      border: 0.5em solid color(main-text);
+
+      img {
+        transition: all $time_slow easing(out-expo);
+        transform-origin: center;
+      }
+    }
+
+    #{$root}.selleradise_scroll_animate & {
+      transition: all calc((var(--selleradise-item-index) + 1) * 600ms)
+        easing(out-expo);
+      opacity: 0;
+      transform-origin: top;
+      transform: translateY(5rem);
+    }
+
+    #{$root}[data-scroll-entered="true"] & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.selleradise_adaptive_colors {
+      a {
+        background-color: rgba(color(palette-dominant), 1);
+        border-color: rgba(color(palette-dominant), 1);
+      }
+
+      #{$prefix}-subtitle {
+        background-color: rgba(color(palette-dominant-text), 1);
+        color: rgba(color(palette-dominant), 1);
+      }
+
+      #{$prefix}-title {
+        color: rgba(color(palette-dominant-text), 0.8);
+      }
+
+      #{$prefix}-image {
+        border-color: rgba(color(palette-dominant-text), 0.8);
+      }
+    }
+  }
+}

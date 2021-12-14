@@ -1,0 +1,76 @@
+.selleradise_post_widget--trending {
+  @extend .selleradise-hide-scrollbar;
+  align-self: stretch;
+  flex-basis: 32%;
+  position: relative;
+  border-radius: var(--border-radius-base);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 0 0.05rem rgba(color(text-rgb), 0.1);
+  color: color(text);
+  padding: 2.5rem;
+  max-height: 30rem;
+  overflow-y: scroll;
+  $prefix: &;
+
+  h2 {
+    @include font-size(h4);
+    margin: 0 0 1.5rem 0;
+  }
+
+  .selleradise_blog__sidebar & {
+    padding: 0;
+    box-shadow: none;
+    max-height: none;
+    flex-basis: 100%;
+    margin-bottom: 0;
+  }
+
+  @include device(mobile) {
+    flex-basis: 100%;
+  }
+
+  @include device(tablet) {
+    flex-basis: 48%;
+  }
+}
+
+.selleradise_postCard--trending {
+  @extend .flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  $prefix: &;
+
+  h3 {
+    @include font-size(p);
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: color(main);
+      text-decoration: underline;
+    }
+  }
+
+  &__image {
+    @extend .selleradise-background-image;
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--border-radius-half);
+    flex-shrink: 0;
+  }
+
+  &__content {
+    padding: 0.5rem 1rem;
+  }
+
+  .selleradise_postCard__author--minimal {
+    margin-top: 0.25rem;
+  }
+}

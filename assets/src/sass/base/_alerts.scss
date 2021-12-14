@@ -1,0 +1,208 @@
+@mixin alert {
+  @include font-size(p);
+  @extend .flex-between;
+  color: color(light);
+  border-radius: 2.5em;
+  transform: translate(0, 1rem);
+  z-index: 1000;
+  border: none;
+  font-weight: font("primary_boldest", "font-weight");
+  padding: 1em 1.6rem 1em 4rem;
+
+  li {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  a,
+  a.button {
+    font-weight: font("primary_boldest", "font-weight");
+    background-color: rgba(color(text-rgb), 0.1);
+    color: color(text);
+    padding: 0.5em 1em;
+    border-radius: 5em;
+    order: 2;
+    margin: 0 0 0 1rem;
+
+    &:hover {
+      background-color: color(text);
+      color: color(background);
+    }
+  }
+
+  &::before {
+    color: color(light);
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  @include device(mobileAndTablet) {
+    border-radius: var(--border-radius-base);
+    padding: 1rem;
+
+    a,
+    a.button {
+      justify-content: center;
+      width: 100%;
+      margin: 0.8rem 0 0 0;
+      text-align: center;
+      padding: 0.8em 1.6em;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.woocommerce-notices-wrapper {
+  position: fixed;
+  left: 1rem;
+  bottom: 0;
+  z-index: 1000;
+
+  > * {
+    animation: fadeInTop 300ms easing(out-expo) forwards;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-duration: 100ms + $i * 50;
+      }
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    width: 90vw;
+    right: 5vw;
+  }
+}
+
+.woocommerce-message {
+  @include alert;
+  background-color: material-color("green", "50");
+  color: material-color("green", "800");
+
+  &::before {
+    color: material-color("green", "800");
+  }
+
+  a,
+  a.button {
+    background-color: material-color("green", "800");
+    color: material-color("green", "50");
+
+    &:hover {
+      background-color: material-color("green", "900");
+    }
+  }
+}
+
+.woocommerce-info {
+  @include alert;
+  background-color: color(background);
+  color: color(main);
+  background-image: linear-gradient(
+    rgba(color(main-rgb), 0.1),
+    rgba(color(main-rgb), 0.1)
+  );
+
+  a,
+  a.button {
+    background-color: color(main);
+    color: color(main-text);
+
+    &:hover {
+      background-color: rgba(color(main-rgb), 0.9);
+    }
+  }
+
+  &::before {
+    color: color(main);
+  }
+}
+
+.woocommerce-error {
+  @include alert;
+  background-color: material-color("red", "50");
+  color: material-color("red", "900");
+
+  &::before {
+    color: material-color("red", "900");
+  }
+  a,
+  a.button {
+    background-color: material-color("red", "900");
+    color: material-color("red", "50");
+  }
+}
+
+.selleradiseToast {
+  @include alert;
+  font-weight: font("primary_bolder", "font-weight");
+  width: auto;
+  position: fixed;
+  padding: 0.7em 1.4em;
+  left: 1rem;
+  bottom: 2.5rem;
+
+  .button--icon {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: transform 300ms easing(out-expo), opacity 200ms ease-out;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translate(0, 2rem);
+  }
+
+  @include device(mobileAndTablet) {
+    width: 90vw;
+    right: 5vw;
+
+    .button--icon {
+      margin-left: auto;
+    }
+  }
+}
+.selleradiseToast--message {
+  background-color: material-color("green", "50");
+  color: material-color("green", "900");
+}
+
+.selleradiseToast--info {
+  background-color: color(background);
+  color: color(main);
+  background-image: linear-gradient(
+    rgba(color(main-rgb), 0.1),
+    rgba(color(main-rgb), 0.1)
+  );
+
+  :root[data-selleradise-theme-type="dark"] & {
+    color: color(accent-light);
+    border-color: color(accent-light);
+  }
+}
+
+.selleradiseToast--error {
+  background-color: material-color("red", "50");
+  color: material-color("red", "900");
+  border-color: material-color("red", "900");
+}
+
+@include keyframes(fadeInTop) {
+  0% {
+    opacity: 0;
+    transform: translate(0, 2.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
