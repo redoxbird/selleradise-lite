@@ -34,7 +34,5 @@
 	<?php get_template_part('template-parts/headers/skip-link'); ?>
 	
 	<?php get_template_part('template-parts/headers/header', "default");?>
-
-	<overlay> </overlay>
-
+	
 	<div id="content" class="site-content">

@@ -1,4 +1,4 @@
-.selleradise .selleradise-container .page {
+.selleradise-lite .selleradise-container .page {
   .woocommerce {
     &-billing-fields,
     &-shipping-fields,
@@ -150,7 +150,7 @@
   }
 }
 
-.selleradise .checkout.woocommerce-checkout {
+.selleradise-lite .checkout.woocommerce-checkout {
   color: color(text);
   padding-bottom: 5rem;
 
@@ -256,7 +256,7 @@
   }
 }
 
-.selleradise.woocommerce-order-received {
+.selleradise-lite.woocommerce-order-received {
   .pageTitle {
     padding: 0;
     text-align: left;
@@ -333,7 +333,7 @@
 // ===============================
 //
 
-.selleradise .wpmc {
+.selleradise-lite .wpmc {
   @include font-size(p);
   &-tabs-wrapper,
   &-steps-wrapper,
@@ -350,7 +350,7 @@
   }
 
   &-step-item {
-    .selleradise
+    .selleradise-lite
       .checkout.woocommerce-checkout
       &
       .woocommerce-checkout-payment {

@@ -11,6 +11,8 @@
 
 ?>
 
+	<overlay> </overlay>
+	
 	<selleradise-toast>
 		<template v-slot:icon-close>
       <?php echo selleradise_svg('unicons-line/multiply') ?>

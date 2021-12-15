@@ -13,6 +13,7 @@ class Setup
 
         add_action('after_setup_theme', [$this, 'setup'], 0);
         add_action('tgmpa_register', [$this, 'register_required_plugins']);
+        add_action('admin_menu', [$this, 'admin_pages']);
 
         add_filter('body_class', [$this, 'add_class_to_body']);
         add_filter('terms_clauses', [$this, 'filter_terms_clauses'], 10, 3);
@@ -227,6 +228,36 @@ class Setup
         }
 
         return $content;
+    }
+
+    public function admin_pages()
+    {
+        $admin_page = add_submenu_page(
+            'themes.php', 
+            'Selleradise Information', 
+            'Selleradise', 
+            'manage_options', 
+            'selleradise_lite_info', 
+            [$this, 'selleradise_lite_info_page']
+        );
+
+        add_action('load-'.$admin_page, [$this, 'load_admin_css']);
+
+    }
+
+    public function load_admin_css()
+    {
+        add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_css']);
+    }
+
+    public function enqueue_admin_css()
+    {
+        wp_enqueue_style('admin', selleradise_assets('css/admin.css'), array(), '1.0.0', 'all');
+    }
+
+    public function selleradise_lite_info_page()
+    {
+        get_template_part("template-parts/admin/info");
     }
 
     public function delete_product_category_transient($term_id)

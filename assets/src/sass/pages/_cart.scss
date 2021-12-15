@@ -1,4 +1,4 @@
-.selleradise.woocommerce-cart {
+.selleradise-lite.woocommerce-cart {
   .pageTitle {
     text-align: left;
     justify-content: flex-start;
@@ -222,7 +222,7 @@
       align-items: flex-start;
       justify-content: flex-start;
 
-      .selleradise & {
+      .selleradise-lite & {
         a.remove {
           @include font-size(small);
           padding: 0;
