@@ -1,5 +1,4 @@
 $page-padding: 5vw;
-$global-prefix: "selleradise";
 
 /*--------------------------------------------------------------
 # Base
@@ -14,7 +13,6 @@ $global-prefix: "selleradise";
 @import "components/footer";
 @import "components/product-cards";
 @import "components/post-cards";
-@import "components/pagination";
 @import "components/mini-cart";
 
 /*--------------------------------------------------------------
@@ -33,14 +31,11 @@ $global-prefix: "selleradise";
 @import "pages/yith-wishlist";
 
 /*--------------------------------------------------------------
-# WooCommerce
---------------------------------------------------------------*/
-@import "woocommerce/breadcrumb";
-
-/*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
+@import "plugins/woocommerce";
+@import "plugins/breadcrumb-trail";
+@import "plugins/elementor";
 @import "plugins/photoswipe";
 @import "plugins/crb-related-widget";
-@import "plugins/elementor";
 @import "plugins/variation-swatches";

@@ -1,21 +1,15 @@
 $page-padding: 5vw;
-$global-prefix: "selleradise";
+$global-prefix: "selleradise-widgets";
 
 /*--------------------------------------------------------------
-# Helpers
---------------------------------------------------------------*/
-@import "helpers/variables";
-@import "helpers/functions";
-
-/*--------------------------------------------------------------
-# Partials
+# Base
 --------------------------------------------------------------*/
 @import "base/colors";
 @import "base/typography";
 @import "base/animations";
 @import "base/mixins";
+@import "base/helpers";
 @import "base/components/chips";
-@import "helpers/helpers";
 
 /*--------------------------------------------------------------
 # Elementor Widgets

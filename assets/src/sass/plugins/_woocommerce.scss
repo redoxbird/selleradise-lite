@@ -1,0 +1,12 @@
+.woocommerce {
+  .woocommerce-breadcrumb {
+    padding: 1rem $page-padding;
+
+    margin: 0;
+    font-size: 1rem;
+
+    a {
+      color: color(text);
+    }
+  }
+}

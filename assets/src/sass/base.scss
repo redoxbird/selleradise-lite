@@ -1,26 +1,19 @@
-/*--------------------------------------------------------------
-# Import Modules
---------------------------------------------------------------*/
-@import "normalize/normalize";
+$global-prefix: "selleradise";
 
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+@import "base/normalize";
 @import "base/colors";
 @import "base/typography";
 @import "base/animations";
 @import "base/grid";
 @import "base/mixins";
-@import "helpers/helpers";
+@import "base/helpers";
 @import "base/global";
 @import "base/containers";
 @import "base/wordpress";
 @import "base/fonts";
-@import "base/links";
-@import "base/media";
-@import "base/tooltips";
-@import "base/alerts";
-@import "base/rating";
 
 /*--------------------------------------------------------------
 # Components
@@ -30,3 +23,8 @@
 @import "base/components/chips";
 @import "base/components/tabs";
 @import "base/components/forms";
+@import "base/components/tooltips";
+@import "base/components/alerts";
+@import "base/components/rating";
+@import "base/components/pagination";
+@import "base/components/breadcrumb";

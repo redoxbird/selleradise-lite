@@ -99,18 +99,13 @@ if (!function_exists('selleradise_svg')) {
             return;
         }
 
-        global $wp_filesystem;
-        require_once ABSPATH . '/wp-admin/includes/file.php';
-
-        WP_Filesystem();
-
         $file_location = get_template_directory() . '/assets/dist/svg/' . $filename . '.svg';
 
         if (!file_exists($file_location)) {
             return;
         }
 
-        return $wp_filesystem->get_contents($file_location);
+        return file_get_contents($file_location);
     }
 }
 

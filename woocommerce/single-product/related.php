@@ -19,7 +19,7 @@ if ( $related_products ) : ?>
 		data-selleradise-card-type="<?php echo esc_attr( get_theme_mod('shop_page_card_type', 'default') ); ?>">
 
 		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __("Related Products", "selleradise") );
+		$heading = apply_filters( 'woocommerce_product_related_products_heading', __("Related Products", "selleradise-lite") );
 
 		if ( $heading ) : ?>
 

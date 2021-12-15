@@ -19,7 +19,7 @@ get_header(); ?>
 				<?php
 					printf(
 						/* translators: %s: Search Term. */
-						esc_html( __("Search Results for: %s", "selleradise") ),
+						esc_html( __("Search Results for: %s", "selleradise-lite") ),
 						'<em>' . get_search_query() . '</em>'
 					);
 				?>

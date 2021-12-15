@@ -1,18 +1,4 @@
-.woocommerce {
-  .woocommerce-breadcrumb {
-    padding: 1rem $page-padding;
-
-    margin: 0;
-    font-size: 1rem;
-
-    a {
-      color: color(text);
-    }
-  }
-}
-
-.selleradiseBreadcrumb,
-.breadcrumb-trail {
+.#{$global-prefix}_breadcrumb {
   @include font-size(p);
   width: 100%;
   padding: 2rem 0 1rem 0;

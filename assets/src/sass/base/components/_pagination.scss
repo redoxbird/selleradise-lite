@@ -1,4 +1,4 @@
-.selleradise_pagination {
+.#{$global-prefix}_pagination {
   @extend .flex-start;
 
   ul {
@@ -54,31 +54,5 @@
 
   @include device(mobile) {
     justify-content: center;
-  }
-}
-
-.selleradise.woocommerce {
-  nav.woocommerce-pagination {
-    @extend .selleradise_pagination;
-  }
-}
-
-.selleradise_shop__pagination {
-  @extend .flex-between;
-  margin: 2.5rem 0;
-  width: 100%;
-
-  .woocommerce-result-count {
-    @include font-size(small);
-  }
-
-  @include device(mobile) {
-    justify-content: center;
-
-    .woocommerce-result-count {
-      margin-top: 1rem;
-      width: 100%;
-      text-align: center;
-    }
   }
 }

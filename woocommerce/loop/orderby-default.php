@@ -44,7 +44,7 @@ foreach ( $catalog_orderby_options as $id => $name )  {
 	<form class="selleradise_shop--default__sortForm--default" method="get">
 
 		<span class="screen-reader-text">
-			<?php esc_html_e( "Sort By", "selleradise" ); ?>
+			<?php esc_html_e( "Sort By", "selleradise-lite" ); ?>
 		</span>
 
 		<ul class="selleradise_tablist">

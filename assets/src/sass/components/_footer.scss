@@ -31,7 +31,8 @@
   }
 }
 
-.selleradise p.woocommerce-store-notice {
+.selleradise-lite p.woocommerce-store-notice,
+.selleradise-lite p.demo_store {
   @include font-size(small);
   position: fixed;
   top: auto;
@@ -57,12 +58,6 @@
     font-weight: font("primary_bolder", "font-weight");
   }
 }
-
-// .selleradise.admin-bar p.demo_store {
-//   top: auto;
-//   left: 0;
-//   bottom: 0;
-// }
 
 a.selleradise_back-to-top {
   @extend .flex-center;

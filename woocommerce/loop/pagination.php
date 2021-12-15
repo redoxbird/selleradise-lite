@@ -20,24 +20,24 @@ if ( $total <= 1 ) {
 	return;
 }
 ?>
-<nav class="woocommerce-pagination">
+<nav class="selleradise_pagination">
 	<?php
-	echo paginate_links(
-		apply_filters(
-			'woocommerce_pagination_args',
-			array( // WPCS: XSS ok.
-				'base'      => $base,
-				'format'    => $format,
-				'add_args'  => false,
-				'current'   => max( 1, $current ),
-				'total'     => $total,
-				'prev_text' => sprintf('<span class="sr-only">%s</span>', __('Previous', 'selleradise-lite')).selleradise_svg('unicons-line/angle-left'),
-				'next_text' => sprintf('<span class="sr-only">%s</span>', __('Next', 'selleradise-lite')).selleradise_svg('unicons-line/angle-right'),
-				'type'      => 'list',
-				'end_size'  => 2,
-				'mid_size'  => 2,
+		echo paginate_links(
+			apply_filters(
+				'woocommerce_pagination_args',
+				array( // WPCS: XSS ok.
+					'base'      => $base,
+					'format'    => $format,
+					'add_args'  => false,
+					'current'   => max( 1, $current ),
+					'total'     => $total,
+					'prev_text' => sprintf('<span class="sr-only">%s</span>', __('Previous', 'selleradise-lite')).selleradise_svg('unicons-line/angle-left'),
+					'next_text' => sprintf('<span class="sr-only">%s</span>', __('Next', 'selleradise-lite')).selleradise_svg('unicons-line/angle-right'),
+					'type'      => 'list',
+					'end_size'  => 2,
+					'mid_size'  => 2,
+				)
 			)
-		)
-	);
+		);
 	?>
 </nav>
