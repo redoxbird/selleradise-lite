@@ -17,7 +17,7 @@ do_action( 'woocommerce_cart_is_empty' );
 ?>
 
 <div class="selleradise_emptyCart--message">
-	<div class="selleradise_empty_state__svg">
+	<div class="selleradise_empty-state__svg">
 		<?php echo selleradise_svg('misc/empty-state');?>
 	</div>
 

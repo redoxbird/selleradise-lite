@@ -39,7 +39,6 @@
       > a {
         @include font-size(p);
         font-weight: font("primary_boldest", "font-weight");
-        color: rgba(color(text-rgb), 0.8);
         padding: 1rem;
 
         &:hover {
@@ -51,7 +50,7 @@
       &.menu-item-has-children {
         .sub-menu {
           a {
-            @include font-size(small);
+            @include font-size(p);
             color: rgba(color(text-rgb), 0.7);
             padding: 0.5rem 1rem;
 

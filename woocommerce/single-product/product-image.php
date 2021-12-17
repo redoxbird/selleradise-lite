@@ -54,10 +54,10 @@ array_unshift($gallery_image_ids, $post_thumbnail_id);
 			<?php endforeach; ?>
 		</ul>
 
-		<div class="selleradise_single_product__images-slider-navigation">
-			<button class="selleradise_single_product__images-slider-navigation-button previous"> <?php echo selleradise_svg('unicons-line/angle-left') ?> </button>
+		<div class="selleradise_slider__nav">
+			<button class="selleradise_slider__nav--previous"> <?php echo selleradise_svg('unicons-line/angle-left') ?> </button>
 			<div class="swiper-pagination"></div>
-			<button class="selleradise_single_product__images-slider-navigation-button next"> <?php echo selleradise_svg('unicons-line/angle-right') ?> </button>
+			<button class="selleradise_slider__nav--next"> <?php echo selleradise_svg('unicons-line/angle-right') ?> </button>
 		</div>
 	</div>
 

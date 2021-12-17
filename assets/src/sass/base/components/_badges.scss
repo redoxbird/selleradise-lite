@@ -1,0 +1,21 @@
+.#{$global-prefix}_badge--sale {
+  @include font-size(small);
+  @extend .flex-center;
+  line-height: 1;
+  position: absolute;
+  z-index: 20;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 3.25rem;
+  min-width: auto;
+  min-height: auto;
+  font-weight: bold;
+  background-color: color(accent-light);
+  color: color(accent-light-text);
+
+  .sign {
+    font-weight: normal;
+  }
+}

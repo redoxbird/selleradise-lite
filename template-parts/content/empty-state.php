@@ -12,10 +12,10 @@ if (isset($args)) {
 
 <section class="selleradise_empty-state">
   <div class="selleradise_empty-state__svg">
-    <?php echo selleradise_svg('misc/empty-state'); ?>
+    <?php echo selleradise_widgets_svg('misc/empty-state'); ?>
   </div>
 
-  <a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="selleradise_button--primary">
-    <?php esc_html_e('Refresh', 'selleradise-lite'); ?>
-  </a>
+  <p class="selleradise_empty-state__title" role="status">
+    <?php echo esc_attr($title) ?: __('Nothing found', 'selleradise-widgets'); ?>
+  </p>
 </section>

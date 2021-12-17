@@ -131,7 +131,7 @@
   &-filters-trigger {
     @include font-size(small);
     @extend .flex-center;
-    @extend .chip--base;
+    @extend .selleradise_chip--base;
     display: inline-flex;
     border: none;
     padding: 0.7em 1.7em 0.7em 1em;

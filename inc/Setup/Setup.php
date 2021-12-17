@@ -93,7 +93,6 @@ class Setup
             array(
                 'name' => esc_html__('Selleradise Widgets', 'selleradise-lite'),
                 'slug' => 'selleradise-widgets',
-                'source' => get_template_directory() . '/plugins/selleradise-widgets.zip',
                 'required' => false,
             ),
         );

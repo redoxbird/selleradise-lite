@@ -26,16 +26,12 @@ $trending = new WP_Query(
     ]
 );
 
-if (!isset($trending) || empty($trending)) {
-    return;
-}
-
 ?>
 
 <div class="selleradise_post_widget--trending">
   <h2><?php echo __('Trending Posts', 'selleradise-lite'); ?></h2>
 
-  <?php if ($trending->have_posts()): while ($trending->have_posts()): $trending->the_post();?>
+  <?php if ($trending && $trending->have_posts()): while ($trending->have_posts()): $trending->the_post();?>
     <div class="selleradise_postCard--trending">
         <?php
             $image_id = get_post_thumbnail_id();
@@ -64,9 +60,12 @@ if (!isset($trending) || empty($trending)) {
             <?php get_template_part('template-parts/post/partials/author', 'minimal', ["type" => "default"]);?>
         </div>
     </div>
+
     <?php
         endwhile;
-        wp_reset_postdata();
+            wp_reset_postdata();
+        else:
+            get_template_part("template-parts/content/empty", "state", ["title" => __("No trending posts found", "selleradise-lite")]);
         endif;
     ?>
 

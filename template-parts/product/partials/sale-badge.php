@@ -25,7 +25,7 @@ $percentage = (int) round(($product->get_regular_price() - (float) $product->get
 
 ?>
 
-<span class="onsale--badge">
+<span class="selleradise_badge--sale">
     <?php echo sprintf('-%d', $percentage); ?>
     <span class="sign">%</span>
 </span>

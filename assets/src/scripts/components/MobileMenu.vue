@@ -70,9 +70,6 @@
           <span class="selleradise__mobile-menu__toggle-icon">
             <slot name="icon-menu"></slot>
           </span>
-          <span class="selleradise__mobile-menu__toggle-label">
-            {{ trans("mobile-menu-button-menu") }}
-          </span>
         </button>
         <button
           v-if="isWooCommerce"
@@ -86,9 +83,6 @@
         >
           <span class="selleradise__mobile-menu__toggle-icon">
             <slot name="icon-account"></slot>
-          </span>
-          <span class="selleradise__mobile-menu__toggle-label">
-            {{ trans("mobile-menu-button-account") }}
           </span>
         </button>
         <button
@@ -104,9 +98,6 @@
           <span class="selleradise__mobile-menu__toggle-icon">
             <slot name="icon-settings"></slot>
           </span>
-          <span class="selleradise__mobile-menu__toggle-label">
-            {{ trans("mobile-menu-button-settings") }}
-          </span>
         </button>
         <button
           v-if="isWooCommerce"
@@ -120,9 +111,6 @@
         >
           <span class="selleradise__mobile-menu__toggle-icon">
             <slot name="icon-categories"></slot>
-          </span>
-          <span class="selleradise__mobile-menu__toggle-label">
-            {{ trans("mobile-menu-button-categories") }}
           </span>
         </button>
       </div>

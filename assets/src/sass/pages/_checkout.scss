@@ -225,7 +225,7 @@
   }
 }
 
-.theme-selleradise.woocommerce-page.woocommerce-checkout {
+.selleradise-lite.woocommerce-page.woocommerce-checkout {
   .woocommerce-form-login,
   .woocommerce-form-coupon {
     background-color: color(background);
@@ -236,7 +236,7 @@
   }
 }
 
-.theme-selleradise form.checkout_coupon {
+.selleradise-lite form.checkout_coupon {
   @extend .flex-start;
   border: none;
   color: color(text);

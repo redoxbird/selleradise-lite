@@ -1,5 +1,4 @@
 @import "product-cards/default";
-@import "product-cards/simple";
 
 .selleradise_productCards {
   &[data-selleradise-card-type="default"],
@@ -47,28 +46,6 @@
 
   a {
     outline: none;
-  }
-
-  .onsale--badge {
-    @include font-size(p);
-    @extend .flex-center;
-    line-height: 1.6;
-    position: absolute;
-    z-index: 20;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 4rem;
-    min-width: auto;
-    min-height: auto;
-    font-weight: bold;
-    background-color: color(text);
-    color: color(background);
-
-    .sign {
-      font-weight: normal;
-    }
   }
 
   .productRating--minimal {

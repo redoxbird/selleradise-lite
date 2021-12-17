@@ -10,7 +10,7 @@ function number($number, $type = "lite") {
 
 <div class="selleradise-page-admin--information">
   <h1 class="text-3xl">
-    Thank Your For Installing Selleradise.
+    Thank You For Installing Selleradise.
   </h1>
 
   <ul>

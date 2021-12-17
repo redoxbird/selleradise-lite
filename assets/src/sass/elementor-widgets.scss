@@ -1,13 +1,10 @@
-$page-padding: 5vw;
-$global-prefix: "selleradise-widgets";
-
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-@import "base/colors";
-@import "base/typography";
-@import "base/animations";
+@import "base/variables";
+@import "base/functions";
 @import "base/mixins";
+@import "base/animations";
 @import "base/helpers";
 @import "base/components/chips";
 

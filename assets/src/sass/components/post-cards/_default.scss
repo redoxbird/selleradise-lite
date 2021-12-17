@@ -100,7 +100,7 @@
     margin: 1rem 0 0 0;
 
     a {
-      @extend .chip--base;
+      @extend .selleradise_chip--base;
       color: rgba(color(text-rgb), 0.7);
       margin: 0 0.25rem 0.5rem 0;
 
@@ -207,6 +207,10 @@
 
       #{$prefix}__entry-title {
         @include font-size(h3);
+      }
+
+      #{$prefix}__excerpt {
+        @include font-size(p);
       }
     }
 

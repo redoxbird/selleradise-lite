@@ -20,20 +20,7 @@
           v-on:input="(e) => (keyword = e.target.value)"
           v-on:focus="send('START')"
           v-on:keydown.tab.shift="send('STOP')"
-          v-on:keydown.enter.prevent="
-            (e) => {
-              if (keyword.length <= 2) {
-                e.preventDefault();
-                showToast(
-                  trans('header-search-from-error-digits'),
-                  'error',
-                  1500
-                );
-              } else {
-                searchForm.submit();
-              }
-            }
-          "
+          v-on:keydown.enter.prevent="onPressEnter"
           class="searchField"
           ref="searchField"
           name="s"
@@ -67,13 +54,7 @@
           ['not_found', 'initiated'].some(state.matches) ? send('STOP') : false
         "
         v-on:keydown.tab.exact="send('STOP')"
-        v-on:click="
-          (e) => {
-            if (keyword.length <= 2) {
-              e.preventDefault();
-            }
-          }
-        "
+        v-on:click="onPressEnter"
         aria-label="Submit"
         v-tippy="'Submit'"
       >
@@ -438,6 +419,15 @@ export default {
       });
     }
 
+    function onPressEnter(e) {
+      if (keyword.value.length <= 2) {
+        e.preventDefault();
+        showToast(trans("header-search-from-error-digits"), "error", 1500);
+      } else {
+        searchForm.submit();
+      }
+    }
+
     onBeforeUpdate(() => {
       items.value = {
         products: [],
@@ -482,7 +472,7 @@ export default {
       selectedCategory,
       getResultsDebounced,
       categoriesTree,
-      showToast,
+      onPressEnter,
     };
   },
 };

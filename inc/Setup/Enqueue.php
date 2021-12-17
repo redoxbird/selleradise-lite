@@ -210,7 +210,7 @@ class Enqueue
                 'header-button-search' => __('Search', 'selleradise-lite'),
                 'header-search-dropdown' => __('All Categories', 'selleradise-lite'),
                 'header-search-form-label' => __("Search for products here...", "selleradise-lite"),
-                'header-search-from-error-digits' => __('Please enter at least 2 digits', 'selleradise-lite'),
+                'header-search-from-error-digits' => __('Please enter at least 2 characters', 'selleradise-lite'),
                 'Learn More' => __('Learn More', 'selleradise-lite'),
                 'Login or create a new account' => __('Login or create a new account', 'selleradise-lite'),
                 'Login/Register' => __('Login/Register', 'selleradise-lite'),

@@ -35,7 +35,7 @@
         </div>
 
         <div class="selleradise_emptyCart--message" v-if="cartIsEmpty">
-          <div class="selleradise_empty_state__svg">
+          <div class="selleradise_empty-state__svg">
             <slot name="nothing-found"></slot>
           </div>
 

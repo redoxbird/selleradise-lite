@@ -143,7 +143,7 @@
       align-items: flex-start;
 
       > .tag-cloud-link {
-        @extend .chip--base;
+        @extend .selleradise_chip--base;
         margin: 0 0.75em 0.75em 0;
         background-color: transparent;
         border: 0.05em solid rgba(color(text-rgb), 0.1);
