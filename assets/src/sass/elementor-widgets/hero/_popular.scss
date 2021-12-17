@@ -5,6 +5,7 @@
   height: auto;
   margin: 1rem auto;
   position: relative;
+  $prefix: &;
 
   &__image {
     @extend .selleradise-background-image;
@@ -60,6 +61,32 @@
       width: 1.2em;
       height: 1.2em;
       margin-left: 1.2em;
+    }
+  }
+
+  @include scroll_animate(initial) {
+    #{$prefix}__image img {
+      transition: all 800ms easing(out-expo);
+      opacity: 0;
+      transform-origin: center;
+    }
+
+    #{$prefix}__content {
+      transition: all 800ms easing(out-expo);
+      opacity: 0;
+      transform-origin: left;
+      transform: translate(-1rem, 0);
+    }
+  }
+
+  @include scroll_animate(entered) {
+    #{$prefix}__image img {
+      opacity: 1;
+    }
+
+    #{$prefix}__content {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 

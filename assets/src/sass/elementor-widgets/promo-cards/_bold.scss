@@ -80,8 +80,8 @@
     }
 
     #{$root}.selleradise_scroll_animate & {
-      transition: all calc((var(--selleradise-item-index) + 1) * 600ms)
-        easing(out-expo);
+      transition: all 800ms easing(out-expo)
+        calc((var(--selleradise-item-index) + 1) * 50ms);
       opacity: 0;
       transform-origin: top;
       transform: translateY(5rem);
