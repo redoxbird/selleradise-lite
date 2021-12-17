@@ -3,8 +3,9 @@ $global-prefix: "selleradise";
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+@import "variables";
 @import "normalize";
-@import "colors";
+@import "functions";
 @import "typography";
 @import "animations";
 @import "grid";
@@ -28,3 +29,4 @@ $global-prefix: "selleradise";
 @import "components/rating";
 @import "components/pagination";
 @import "components/breadcrumb";
+@import "components/slider";

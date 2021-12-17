@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+
+@function material-color($color-name, $color-variant: "500") {
+  $color_key: map-get($material-colors, $color-name);
+
+  @if map-has-key($color_key, $color-variant) {
+    @return map-get($color_key, $color-variant);
+  }
+
+  @warn "=> ERROR: COLOR NOT FOUND! <= | Your $color-name, $color-variant combination did not match any of the values in the $material-colors map.";
+  @return null;
+}
+
+@function color($key) {
+  @return var(--selleradise-color-#{$key});
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+@function font($type, $property) {
+  @return var(--selleradise-font-#{$type}-#{$property});
+}
+
+@mixin font-size($size) {
+  @if $size == display {
+    font-size: 4rem;
+  } @else if $size == h1 {
+    font-size: 3.052rem;
+  } @else if $size == h2 {
+    font-size: 2.441rem;
+  } @else if $size == h3 {
+    font-size: 1.953rem;
+  } @else if $size == h4 {
+    font-size: 1.563rem;
+  } @else if $size == h5 {
+    font-size: 1.25rem;
+  } @else if $size == p or $size == h6 {
+    font-size: 1rem;
+  } @else if $size == small {
+    font-size: 0.8rem;
+  } @else if $size == x-small {
+    font-size: 0.64rem;
+  } @else if $size == xx-small {
+    font-size: 0.512rem;
+  }
+}

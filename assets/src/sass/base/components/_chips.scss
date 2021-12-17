@@ -1,18 +1,32 @@
-.chip--base {
+.#{$global-prefix}_chip {
   @include font-size(small);
   font-weight: font("primary_boldest", "font-weight");
   padding: 0.5em 1em;
-  background-color: rgba(color(text-rgb), 0.05);
   border-radius: 2em;
   outline: none;
   transition: all $time easing(out-expo);
   color: rgba(color(text-rgb), 0.7);
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: color(text);
-    background-color: transparent;
-    box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.5);
+  &--base {
+    @extend .#{$global-prefix}_chip;
+    background-color: rgba(color(text-rgb), 0.05);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: color(text);
+      background-color: transparent;
+      box-shadow: inset 0 0 0 0.1em rgba(color(text-rgb), 0.5);
+    }
+  }
+
+  &--onsale {
+    @extend .#{$global-prefix}_chip;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 20;
+    background-color: color(text);
+    color: color(background);
   }
 }

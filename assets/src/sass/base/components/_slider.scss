@@ -1,0 +1,51 @@
+.selleradise_slider__nav {
+  @extend .flex-center-stretch;
+  @include font-size(small);
+  flex-wrap: nowrap;
+  font-weight: font("primary_bolder", "font-weight");
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: auto;
+  height: auto;
+  border-radius: 5em;
+  background-color: rgba(var(--light-theme_color-background-rgb), 0.7);
+  color: var(--light-theme_color-text);
+  backdrop-filter: blur(0.25em);
+  z-index: 100;
+
+  .swiper-pagination-fraction {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    text-align: left;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    padding: 0.3em;
+  }
+
+  &--previous,
+  &--next {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+}
