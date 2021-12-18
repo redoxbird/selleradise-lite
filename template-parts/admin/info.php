@@ -86,6 +86,28 @@ function number($number, $type = "lite") {
       </tr>
       <tr>
         <td class="px-2 py-1">
+          <p class="font-bold text-gray-600 text-left">Custom Colors</p>
+        </td>
+        <td class="px-2 py-1">
+          <p class="font-bold text-green-700 text-center">Yes</p>
+        </td>
+        <td class="px-2 py-1">
+          <p class="font-bold text-green-700 text-center">Yes</p>
+        </td>
+      </tr>
+       <tr>
+        <td class="px-2 py-1">
+          <p class="font-bold text-gray-600 text-left">Custom Fonts</p>
+        </td>
+        <td class="px-2 py-1">
+          <p class="font-bold text-green-700 text-center">Yes</p>
+        </td>
+        <td class="px-2 py-1">
+          <p class="font-bold text-green-700 text-center">Yes</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="px-2 py-1">
           <p class="font-bold text-gray-600 text-left">Elementor Widgets</p>
         </td>
         <td class="px-2 py-1">

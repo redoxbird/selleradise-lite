@@ -16,6 +16,6 @@ if (isset($args)) {
   </div>
 
   <p class="selleradise_empty-state__title" role="status">
-    <?php echo esc_attr($title) ?: __('Nothing found', 'selleradise-widgets'); ?>
+    <?php echo esc_attr($title) ?: __('Nothing found', 'selleradise-lite'); ?>
   </p>
 </section>
