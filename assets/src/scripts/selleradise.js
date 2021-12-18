@@ -2,6 +2,9 @@ import { ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
 import { updateCart, cartIsEmpty } from "./store/cart";
 import { calculateContrastRatioLuminance, device, luminance } from "./helpers";
+import { menu } from "./main/menu";
+import { loginFormSwitcher } from "./main/account";
+import { lazyLoad } from "./main/lazyload";
 import Bricks from "bricks.js";
 
 export function selleradise() {
@@ -101,76 +104,6 @@ export function selleradise() {
     )) {
       let headroom = new Headroom(header, headroomOptions);
       headroom.init();
-    }
-  }
-
-  /**
-   * Lazy load images.
-   */
-
-  function lazyLoad(context = document) {
-    const images = context.querySelectorAll(
-      "[data-src]:not(.loading):not(.loaded):not(.selleradise_skip-lazy-load):not(.swiper-lazy)"
-    );
-
-    const backgroundImages = context.querySelectorAll(
-      "[data-image-src]:not(.loading):not(.loaded)"
-    );
-
-    const observer = scrollama();
-
-    if (images.length > 0) {
-      observer
-        .setup({
-          step: images,
-          offset: 1,
-          once: true,
-        })
-        .onStepEnter((response) => {
-          const { element, index, direction } = response;
-          const dataSrc = element.getAttribute("data-src");
-
-          if (!dataSrc) {
-            return;
-          }
-
-          element.classList.add("loading");
-          element.setAttribute("src", dataSrc);
-
-          element.onload = function () {
-            element.classList.remove("loading");
-            element.classList.add("loaded");
-            element.setAttribute("data-selleradise-status", "loaded");
-          };
-        });
-    }
-
-    const observerBack = scrollama();
-
-    if (backgroundImages.length > 0) {
-      observerBack
-        .setup({
-          step: backgroundImages,
-          offset: 1,
-          once: true,
-        })
-        .onStepEnter((response) => {
-          const { element, index, direction } = response;
-          const dataUrl = element.getAttribute("data-image-src");
-
-          if (!dataUrl) {
-            return;
-          }
-
-          element.classList.add("loading");
-
-          if (dataUrl) {
-            element.style.backgroundImage = `url(${dataUrl})`;
-          }
-
-          element.classList.add("loaded");
-          element.classList.remove("loading");
-        });
     }
   }
 
@@ -360,74 +293,6 @@ export function selleradise() {
   }
 
   /**
-   * Allows smoothly switching between two kind of account forms.
-   */
-
-  function loginFormSwitcher() {
-    const accountForms = document.querySelectorAll(
-      ".selleradise_account-forms"
-    );
-
-    if (accountForms.length < 1) {
-      return;
-    }
-
-    for (const accountForm of accountForms) {
-      const login = accountForm.querySelector(
-        ".selleradise_account-form--login"
-      );
-      const register = accountForm.querySelector(
-        ".selleradise_account-form--register"
-      );
-
-      if (!login || !register) {
-        return;
-      }
-
-      const loginSwitcher = register.querySelector(
-        ".selleradise_account-form__option button"
-      );
-      const registerSwitcher = login.querySelector(
-        ".selleradise_account-form__option button"
-      );
-
-      let activeForm = ref("login");
-
-      registerSwitcher.addEventListener("click", function () {
-        activeForm.value = "register";
-
-        anime({
-          targets: register,
-          opacity: [0, 1],
-          translateY: [100, 0],
-          duration: 500,
-          easing: "easeOutExpo",
-          begin: () => {
-            login.classList.add("hidden");
-            register.classList.remove("hidden");
-          },
-        });
-      });
-
-      loginSwitcher.addEventListener("click", function () {
-        activeForm.value = "login";
-
-        anime({
-          targets: login,
-          opacity: [0, 1],
-          translateY: [-100, 0],
-          duration: 500,
-          easing: "easeOutExpo",
-          begin: () => {
-            login.classList.remove("hidden");
-            register.classList.add("hidden");
-          },
-        });
-      });
-    }
-  }
-
-  /**
    * A custom input number field with (+) and (-) buttons.
    */
   function selleradiseNumberInput() {
@@ -565,133 +430,6 @@ export function selleradise() {
     $("body").on("updated_wc_div", update);
 
     $(document).on("added_to_cart", update);
-  }
-
-  /**
-   * Adds functionality to desktop menu.
-   */
-
-  function menu() {
-    const menu = document.querySelector(
-      "header.selleradiseHeader .selleradise_menu"
-    );
-
-    if (!menu) {
-      return;
-    }
-
-    const root = menu.querySelector(".selleradise_menu__list");
-
-    if (!root) {
-      return;
-    }
-
-    const rootItems = menu.querySelectorAll(".selleradise_menu__list > li");
-
-    if (rootItems.length < 1) {
-      return;
-    }
-
-    let activeRootSubMenu = ref(null);
-
-    watch(activeRootSubMenu, (to, from) => {
-      if (from) {
-        rootItems[from].classList.remove("opened");
-        rootItems[from].querySelector("a").setAttribute("aria-expanded", false);
-      }
-
-      if (to) {
-        rootItems[to].classList.add("opened");
-        rootItems[to].querySelector("a").setAttribute("aria-expanded", true);
-      }
-    });
-
-    for (const index in rootItems) {
-      if (rootItems.hasOwnProperty.call(rootItems, index)) {
-        const item = rootItems[index];
-        const anchor = item.querySelector("a");
-        const subMenu = item.querySelector(".selleradise_menu__sub-menu");
-
-        if (!item.classList.contains("menu-item-has-children") || !subMenu) {
-          continue;
-        }
-
-        subMenu.style.setProperty("--width", subMenu.offsetWidth + "px");
-
-        redom.setAttr(anchor, {
-          "aria-haspopup": true,
-          "aria-expanded": true,
-        });
-
-        item.addEventListener("keydown", (e) => {
-          switch (e.code) {
-            case "ArrowDown":
-              e.preventDefault();
-              e.stopPropagation();
-              activeRootSubMenu.value = index;
-              return;
-
-            case "ArrowUp":
-              e.preventDefault();
-              e.stopPropagation();
-              activeRootSubMenu.value = null;
-              item.classList.remove("opened");
-              return anchor.focus();
-          }
-        });
-      }
-    }
-
-    const subMenus = document.querySelectorAll(".selleradise_menu__sub-menu");
-
-    if (subMenus.length < 1) {
-      return;
-    }
-
-    for (const index in subMenus) {
-      if (subMenus.hasOwnProperty.call(subMenus, index)) {
-        const subMenu = subMenus[index];
-
-        const subItems = subMenu.querySelectorAll("li.menu-item-has-children");
-
-        if (subItems.length < 1) {
-          continue;
-        }
-
-        for (const index in subItems) {
-          if (subItems.hasOwnProperty.call(subItems, index)) {
-            const item = subItems[index];
-            const anchor = item.querySelector("a");
-
-            item.addEventListener("mouseenter", function () {
-              item.parentElement.classList.add("showing--sub-menu");
-            });
-
-            item.addEventListener("mouseleave", function () {
-              item.parentElement.classList.remove("showing--sub-menu");
-            });
-
-            item.addEventListener("keydown", (e) => {
-              switch (e.code) {
-                case "ArrowRight":
-                  e.preventDefault();
-                  e.stopPropagation();
-                  item.classList.add("opened");
-                  item.parentElement.classList.add("showing--sub-menu");
-                  return;
-
-                case "ArrowLeft":
-                  e.preventDefault();
-                  e.stopPropagation();
-                  item.classList.remove("opened");
-                  item.parentElement.classList.remove("showing--sub-menu");
-                  return anchor.focus();
-              }
-            });
-          }
-        }
-      }
-    }
   }
 
   /**

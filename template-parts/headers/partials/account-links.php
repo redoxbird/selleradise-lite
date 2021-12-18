@@ -38,7 +38,7 @@ if ($args) {
 
     <?php if(get_option( 'woocommerce_enable_myaccount_registration', false) == 'yes'): ?>
       <li>
-        <a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>">
+        <a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>#register">
           <?php echo selleradise_svg("unicons-line/user-plus"); ?>
           <?php _e("Register", 'selleradise-lite'); ?>
         </a>

@@ -854,8 +854,8 @@
     visibility: hidden;
     pointer-events: none;
     transform-origin: top;
-    transform: rotateX(-20deg);
-    transition: all $time_slower easing(out-expo);
+    transform: translateY(1rem);
+    transition: all $time easing(out-expo);
     perspective: 50rem;
 
     &::before,

@@ -148,6 +148,7 @@
     }
 
     a {
+      @include focus-outline;
       font-weight: font("primary_bolder", "font-weight");
       margin: 0.25rem 0.25rem 0.25rem 0;
       color: rgba(color(text-rgb), 0.7);
@@ -224,6 +225,7 @@
     }
 
     &-outer {
+      @include focus-outline;
       @extend .flex-center;
       position: relative;
       background-color: color(background);
