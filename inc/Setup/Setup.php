@@ -251,7 +251,7 @@ class Setup
 
     public function enqueue_admin_css()
     {
-        wp_enqueue_style('admin', selleradise_assets('css/admin.css'), array(), '1.0.0', 'all');
+        wp_enqueue_style('admin', selleradise_assets('css/admin.css'), array(), '1.2.0', 'all');
     }
 
     public function selleradise_lite_info_page()

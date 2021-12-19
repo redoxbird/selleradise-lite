@@ -7,7 +7,7 @@
  * @package Selleradise_Lite
  */
 
-define('SELLERADISE_VERSION', '1.1.0');
+define('SELLERADISE_VERSION', '1.2.0');
 
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) :
 	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
