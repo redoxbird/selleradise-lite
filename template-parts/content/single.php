@@ -27,7 +27,7 @@
 
 	<?php get_template_part('template-parts/content/partials/categories'); ?>
 	
-	<div class="entry-content">
+	<div class="entry-content selleradise_prose">
 		<?php
 			the_content(
 				sprintf(

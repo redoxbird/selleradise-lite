@@ -301,36 +301,3 @@
     }
   }
 }
-
-.selleradise_single_post .entry-content {
-  table {
-    @extend .selleradise-table;
-  }
-
-  //Definition
-
-  dl {
-    display: flex;
-    flex-flow: row wrap;
-    border: 0.1em solid rgba(color(text-rgb), 0.1);
-    padding: 1rem 0 0 0;
-  }
-
-  dt {
-    flex-basis: 20%;
-    padding: 0 1rem 1rem 1rem;
-    color: color(text);
-    font-weight: font("primary_boldest", "font-weight");
-  }
-  dd {
-    flex-basis: 70%;
-    flex-grow: 1;
-    margin: 0;
-    padding: 0 1rem 1rem 1rem;
-  }
-
-  code {
-    padding: 0.5rem;
-    background-color: rgba(color(text-rgb), 0.05);
-  }
-}

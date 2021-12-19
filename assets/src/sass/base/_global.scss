@@ -58,36 +58,6 @@ button {
   cursor: pointer;
 }
 
-blockquote {
-  background-color: rgba(color(text-rgb), 0.05);
-  color: color(text);
-  border-radius: var(--border-radius-base);
-  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
-  margin: 0;
-  position: relative;
-  border: none;
-
-  cite {
-    font-weight: font("primary_boldest", "font-weight");
-    margin-top: 0.5rem;
-
-    a {
-      color: color(main);
-    }
-  }
-
-  &::before {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: font("primary_boldest", "font-weight");
-    content: "\201C";
-    color: rgba(color(main-rgb), 0.5);
-    font-size: 4em;
-    position: absolute;
-    left: 2.5rem;
-    top: 0;
-  }
-}
-
 // responsive embeds
 .video-container,
 figure.wp-block-embed {

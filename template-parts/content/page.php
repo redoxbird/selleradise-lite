@@ -15,7 +15,7 @@
 		<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 	</div>
 		
-	<div class="entry-content">
+	<div class="entry-content selleradise_prose">
 		<?php
 			the_content();
 
