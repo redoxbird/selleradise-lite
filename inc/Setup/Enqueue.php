@@ -189,7 +189,7 @@ class Enqueue
     public function get_data_for_javascript()
     {
         $data = [
-            'nonce' => wp_create_nonce('wp_ajax'),
+            'nonce' => wp_create_nonce('selleradise_ajax'),
             'homeURL' => home_url(),
             'assetsURL' => selleradise_assets('/'),
             'ajaxURL' => admin_url('admin-ajax.php'),

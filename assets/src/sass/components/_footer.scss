@@ -52,8 +52,9 @@
   opacity: 0;
   animation: woocommerce-store-notice $time easing(in-out-back) forwards;
 
-  &__dismiss-link {
-    color: inherit;
+  &__dismiss-link,
+  a {
+    color: color(background);
     display: inline-block;
     font-weight: font("primary_bolder", "font-weight");
   }

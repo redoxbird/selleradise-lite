@@ -12,7 +12,7 @@ if (isset($args)) {
 
 <section class="selleradise_empty-state">
   <div class="selleradise_empty-state__svg">
-    <?php echo selleradise_widgets_svg('misc/empty-state'); ?>
+    <?php echo selleradise_svg('misc/empty-state'); ?>
   </div>
 
   <p class="selleradise_empty-state__title" role="status">

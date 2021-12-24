@@ -107,9 +107,9 @@
 
     a.add_to_wishlist {
       @include font-size(small);
-      background-color: color(background);
-      color: rgba(color(text-rgb), 0.7);
-      border: 0.1em solid rgba(color(text-rgb), 0.1);
+      background-color: var(--light-theme_color-background);
+      color: rgba(var(--light-theme_color-text-rgb), 0.7);
+      border: 0.1em solid rgba(var(--light-theme_color-text-rgb), 0.1);
     }
 
     a:not(.delete_item):not(.add_to_wishlist),

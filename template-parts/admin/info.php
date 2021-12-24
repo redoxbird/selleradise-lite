@@ -17,7 +17,8 @@ function number($number, $type = "lite") {
     <li>
       <a 
         href="https://docs.selleradise.com/docs/getting-started/import-demo-content"
-        target="_blank" 
+        target="_blank"
+        rel="noreferrer"
         class="text-lg font-medium no-underline">
         How to import demo content?
       </a>
@@ -26,10 +27,12 @@ function number($number, $type = "lite") {
       <a 
         href="https://docs.selleradise.com/docs/getting-started/setup-homepage"
         target="_blank"
+        rel="noreferrer"
         class="text-lg font-medium no-underline">
         How to setup homepage like demo?
       </a>
     </li>
+  
   </ul>
 
   <h2 class="mt-10 mb-0 text-2xl">You are currently using the LITE version of the theme.</h2>
