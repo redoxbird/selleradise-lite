@@ -14,12 +14,12 @@ $name = get_bloginfo( "name" ) ?: "";
 
 <div class="selleradiseHeader__logo-placeholder">
   <span class="selleradiseHeader__logo-placeholder__icon">
-    <?php echo esc_html($name[0]); ?>
+    <?php echo esc_html( $name[0] ); ?>
   </span>
   <div class="selleradiseHeader__logo-placeholder__text">
     <p>
       <b class="selleradiseHeader__logo-placeholder__name">
-        <?php echo esc_html($name); ?>
+        <?php echo esc_html(selleradise_truncate($name, 8)); ?>
       </b>
     </p>
     
