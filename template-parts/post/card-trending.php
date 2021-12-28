@@ -37,12 +37,14 @@ $trending = new WP_Query(
             $image_id = get_post_thumbnail_id();
             $image = wp_get_attachment_image_src($image_id, 'thumbnail');
             $image_src = $image ? $image[0] : selleradise_get_image_placeholder();
-            $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+            $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: get_the_title()." Thumbnail";
             $image_height = isset($image[1]) && $image[1] ? $image[1] : 0;
             $image_width = isset($image[2]) && $image[2] ? $image[2] : 0;
         ?>
 
-        <a href="<?php echo esc_attr(get_the_permalink()); ?>" class="selleradise_postCard--trending__image">
+        <a 
+            href="<?php echo esc_attr(get_the_permalink()); ?>" 
+            class="selleradise_postCard--trending__image">
             <img
                 src="<?php echo esc_attr($image_src); ?>"
                 width="<?php echo esc_attr($image_height); ?>"

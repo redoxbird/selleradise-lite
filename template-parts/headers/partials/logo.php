@@ -31,7 +31,7 @@ $logo_dark_mode = wp_get_attachment_image_src($custom_logo_dark_mode_id, 'full')
     />
   <?php else: ?>
     <span class="selleradiseHeader__logo--dark">
-      <?php echo selleradise_svg('misc/selleradise-logo'); ?>
+      <?php get_template_part('template-parts/headers/partials/logo', 'placeholder'); ?>
     </span>
   <?php endif; ?>
 
@@ -43,7 +43,7 @@ $logo_dark_mode = wp_get_attachment_image_src($custom_logo_dark_mode_id, 'full')
     />
   <?php else: ?>
     <span class="selleradiseHeader__logo--light">
-      <?php echo selleradise_svg('misc/selleradise-logo'); ?>
+      <?php get_template_part('template-parts/headers/partials/logo', 'placeholder');?>
     </span>
   <?php endif; ?>
 </a>

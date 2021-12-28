@@ -13,6 +13,10 @@ def main():
     "style.css" : {
       "checker": r"Version: \d{1,2}\.\d{1,2}\.\d{1,3}",
       "replacer": f"Version: {version}",
+    },
+    "readme.txt" : {
+      "checker": r"Stable tag: \d{1,2}\.\d{1,2}\.\d{1,3}",
+      "replacer": f"Stable tag: {version}",
     }
   }
 

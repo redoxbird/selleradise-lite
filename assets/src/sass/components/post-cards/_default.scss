@@ -28,6 +28,7 @@
   }
 
   &__image {
+    @include focus-outline;
     @extend .selleradise-background-image;
     background-color: rgba(color(text-rgb), 0.05);
     width: 100%;
@@ -60,10 +61,6 @@
         transform: scale(1.1);
       }
     }
-
-    [data-focus-source="key"] &:focus {
-      box-shadow: 0 0 0 0.25em color(text);
-    }
   }
 
   &__entry-title {
@@ -73,7 +70,6 @@
 
     a {
       @include focus-outline;
-      border-radius: var(--border-radius-base);
 
       &:hover {
         color: color(main);

@@ -153,6 +153,7 @@ input[type="checkbox"],
 .input-checkbox,
 .woocommerce-form__input-checkbox,
 #wp-comment-cookies-consent {
+  @include focus-outline;
   -webkit-appearance: none;
   @extend .flex-center;
   @include font-size(p);

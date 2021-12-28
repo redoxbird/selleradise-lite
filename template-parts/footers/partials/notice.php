@@ -8,4 +8,4 @@ if ($args) {
     extract($args);
 }
 
-echo esc_html(get_theme_mod('copyright_notice', 'Copyright © 2021 | Selleradise by RedOxbird'));
+echo esc_html(get_theme_mod('copyright_notice', sprintf('Copyright © %s | All rights reserved by %s', date("Y"), get_bloginfo("name"))));

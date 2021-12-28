@@ -60,6 +60,11 @@
   }
 }
 
+@mixin font($type: "primary") {
+  font-weight: font($type, "font-weight");
+  font-family: font($type, "font-family");
+}
+
 @mixin mode($type: dark) {
   :root[data-selleradise-theme-type="#{$type}"] & {
     @content;

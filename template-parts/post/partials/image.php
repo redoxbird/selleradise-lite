@@ -14,7 +14,7 @@ if ('post' !== get_post_type()) {
 
 $image_id = get_post_thumbnail_id();
 $image = wp_get_attachment_image_src($image_id, 'large');
-$image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+$image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: get_the_title()." Thumbnail";
 
 ?>
 
