@@ -152,3 +152,11 @@ Source: https://github.com/Iconscout/unicons
 Placeholder
 License: CC0 License
 Source: https://www.svgrepo.com/svg/231379/mountains-lake
+
+Screenshot
+License: CC0 License
+https://www.pexels.com/photo/man-wearing-black-hat-and-black-coat-157675/
+https://www.pexels.com/photo/man-wearing-gray-coat-with-sale-tags-5935748/
+https://www.pexels.com/photo/woman-wearing-maroon-velvet-plunge-neck-long-sleeved-dress-while-carrying-several-paper-bags-photography-972995/
+https://www.pexels.com/photo/young-stylish-woman-in-gray-hoodie-6311613/
+https://pxhere.com/en/photo/1409476
