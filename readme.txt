@@ -51,112 +51,93 @@ GNU General Public License for more details.
 
 = CSS and JavaScript =
 
-Normalize.css, Copyright © Nicolas Gallagher and Jonathan Neal
-License: MIT License
-License URI: https://github.com/necolas/normalize.css/blob/master/LICENSE.md
-Source: https://github.com/necolas/normalize.css
+**Normalize.css**, Copyright © Nicolas Gallagher and Jonathan Neal
+[MIT License](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+[Source](https://github.com/necolas/normalize.css)
 
-Swiper, Copyright (c) 2019 Vladimir Kharlampidi
-License: MIT License
-License URI: https://github.com/nolimits4web/swiper/blob/master/LICENSE
-Source: https://github.com/nolimits4web/swiper
+**Swiper**, Copyright (c) 2019 Vladimir Kharlampidi
+[MIT License](https://github.com/nolimits4web/swiper/blob/master/LICENSE)
+[Source](https://github.com/nolimits4web/swiper)
 
-Headroom.js, Copyright (c) 2013 Nick Williams
-License: MIT License
-License URI: https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
-Source: https://github.com/WickyNilliams/headroom.js
+**Headroom.js**, Copyright (c) 2013 Nick Williams
+[MIT License](https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE)
+[Source](https://github.com/WickyNilliams/headroom.js)
 
-Popper.js, Copyright (c) 2021 Floating UI contributors
-License: MIT License
-License URI: https://github.com/floating-ui/floating-ui/blob/master/LICENSE
-Source: https://github.com/floating-ui/floating-ui
+**Popper.js**, Copyright (c) 2021 Floating UI contributors
+[MIT License](https://github.com/floating-ui/floating-ui/blob/master/LICENSE)
+[Source](https://github.com/floating-ui/floating-ui)
 
-Tippy, Copyright (c) 2017-present atomiks
-License: MIT License
-License URI: https://github.com/atomiks/tippyjs/blob/master/LICENSE
-Source: https://github.com/atomiks/tippyjs
+**Tippy**, Copyright (c) 2017-present atomiks
+[MIT License](https://github.com/atomiks/tippyjs/blob/master/LICENSE)
+[Source](https://github.com/atomiks/tippyjs)
 
-Anime.js, Copyright (c) 2019 Julian Garnier
-License: MIT License
-License URI: https://github.com/juliangarnier/anime/blob/master/LICENSE.md
-Source: https://github.com/juliangarnier/anime
+**Anime.js**, Copyright (c) 2019 Julian Garnier
+[MIT License](https://github.com/juliangarnier/anime/blob/master/LICENSE.md)
+[Source](https://github.com/juliangarnier/anime)
 
-Axios, Copyright (c) 2014-present Matt Zabriskie
-License: MIT License
-License URI: https://github.com/axios/axios/blob/master/LICENSE
-Source: https://github.com/axios/axios
+**Axios**, Copyright (c) 2014-present Matt Zabriskie
+[MIT License](https://github.com/axios/axios/blob/master/LICENSE)
+[Source](https://github.com/axios/axios)
 
-noUiSlider, Copyright (c) 2019 Léon Gersen
-License: MIT License
-License URI: https://github.com/leongersen/noUiSlider/blob/master/LICENSE.md
-Source: https://github.com/leongersen/noUiSlider
+**noUiSlider**, Copyright (c) 2019 Léon Gersen
+[MIT License](https://github.com/leongersen/noUiSlider/blob/master/LICENSE.md)
+[Source](https://github.com/leongersen/noUiSlider)
 
-ReDOM, Copyright (c) 2016 Juha Lindstedt
-License: MIT License
-License URI: https://github.com/redom/redom/blob/master/LICENSE
-Source: https://github.com/redom/redom
+**ReDOM**, Copyright (c) 2016 Juha Lindstedt
+[MIT License](https://github.com/redom/redom/blob/master/LICENSE)
+[Source](https://github.com/redom/redom)
 
-colorthief, Copyright (c) 2015 Lokesh Dhakar
-License: MIT License
-License URI: https://github.com/lokesh/color-thief/blob/master/LICENSE
-Source: https://github.com/lokesh/color-thief
+**colorthief**, Copyright (c) 2015 Lokesh Dhakar
+[MIT License](https://github.com/lokesh/color-thief/blob/master/LICENSE)
+[Source](https://github.com/lokesh/color-thief)
 
-Scrollama, Copyright (c) 2017 Russell Goldenberg
-License: MIT License
-License URI: https://github.com/russellgoldenberg/scrollama/blob/main/LICENSE
-Source: https://github.com/russellgoldenberg/scrollama
+**Scrollama**, Copyright (c) 2017 Russell Goldenberg
+[MIT License](https://github.com/russellgoldenberg/scrollama/blob/main/LICENSE)
+[Source](https://github.com/russellgoldenberg/scrollama)
 
-IntersectionObserver polyfill, Copyright © 2021 W3C
-License: W3C Software Notice and License
-License URI: https://directory.fsf.org/wiki/License:W3C
-Source: https://github.com/w3c/IntersectionObserver/tree/main/polyfill
+**IntersectionObserver polyfill**, Copyright © 2021 W3C
+[W3C Software Notice and License](https://directory.fsf.org/wiki/License:W3C)
+[Source](https://github.com/w3c/IntersectionObserver/tree/main/polyfill)
 
-Vue.js, Copyright (c) 2013-present, Yuxi (Evan) You
-License: MIT License
-License URI: https://github.com/vuejs/vue/blob/dev/LICENSE
-Source: https://github.com/vuejs/vue
+**Vue.js**, Copyright (c) 2013-present, Yuxi (Evan) You
+[MIT License](https://github.com/vuejs/vue/blob/dev/LICENSE)
+[Source](https://github.com/vuejs/vue)
 
-Headless UI, Copyright (c) 2020 Tailwind Labs
-License: MIT License
-License URI: https://github.com/tailwindlabs/headlessui/blob/main/LICENSE
-Source: https://github.com/tailwindlabs
+**Headless UI**, Copyright (c) 2020 Tailwind Labs
+[MIT License](https://github.com/tailwindlabs/headlessui/blob/main/LICENSE)
+[Source](https://github.com/tailwindlabs)
 
-Bricks.js, Copyright (c) 2017 Michael Cavalea
-License: MIT License
-Source: https://github.com/callmecavs/bricks.js
+**Bricks.js**, Copyright (c) 2017 Michael Cavalea
+[MIT License](https://opensource.org/licenses/MIT)
+[Source](https://github.com/callmecavs/bricks.js)
 
-date-fns, Copyright (c) 2021 Sasha Koss and Lesha Koss https://kossnocorp.mit-license.org
-License: MIT License
-License URI: https://github.com/date-fns/date-fns/blob/master/LICENSE.md
-Source: https://github.com/date-fns/date-fns
+**date-fns**, Copyright (c) 2021 Sasha Koss and Lesha Koss https://kossnocorp.mit-license.org
+[MIT License](https://github.com/date-fns/date-fns/blob/master/LICENSE.md)
+[Source](https://github.com/date-fns/date-fns)
 
-wNumb, Copyright (c) 2019 Léon Gersen
-License: MIT License
-License URI: https://github.com/leongersen/wnumb/blob/master/LICENSE.MD
-Source: https://github.com/leongersen/wnumb
+**wNumb**, Copyright (c) 2019 Léon Gersen
+[MIT License](https://github.com/leongersen/wnumb/blob/master/LICENSE.MD)
+[Source](https://github.com/leongersen/wnumb)
 
-xstate, Copyright (c) 2015 David Khourshid
-License: MIT License
-License URI: https://github.com/statelyai/xstate/blob/main/LICENSE
-Source: https://github.com/statelyai/xstate
+**xstate**, Copyright (c) 2015 David Khourshid
+[MIT License](https://github.com/statelyai/xstate/blob/main/LICENSE)
+[Source](https://github.com/statelyai/xstate)
 
 = Icons =
 
-Unicons
-License: Apache License 2.0
-License URI: https://github.com/Iconscout/unicons/blob/master/LICENSE
-Source: https://github.com/Iconscout/unicons
+**Unicons**
+[Apache License 2.0](https://github.com/Iconscout/unicons/blob/master/LICENSE)
+[Source](https://github.com/Iconscout/unicons)
 
 = Images =
 
-Placeholder
-License: CC0 License
-Source: https://www.svgrepo.com/svg/231379/mountains-lake
+**Placeholder**
+CC0 License
+[Source](https://www.svgrepo.com/svg/231379/mountains-lake)
 
-Screenshot
-License: CC0 License
-https://www.pexels.com/photo/man-wearing-black-hat-and-black-coat-157675/
-https://www.pexels.com/photo/man-wearing-gray-coat-with-sale-tags-5935748/
-https://www.pexels.com/photo/woman-wearing-maroon-velvet-plunge-neck-long-sleeved-dress-while-carrying-several-paper-bags-photography-972995/
-https://www.pexels.com/photo/young-stylish-woman-in-gray-hoodie-6311613/
-https://pxhere.com/en/photo/1409476
+**Screenshot**
+CC0 License
+[Pexels: 4947390](https://www.pexels.com/photo/fashionable-woman-jumping-in-the-air-4947390/)
+[Pexels: 9558900](https://www.pexels.com/photo/woman-in-pink-crew-neck-t-shirt-9558900/)
+[Pexels: 6984650](https://www.pexels.com/photo/stylish-woman-sitting-on-armchair-6984650/)
+[Pexels: 1113554](https://www.pexels.com/photo/woman-in-brown-long-sleeved-shirt-and-brown-hijab-headdress-with-beige-leather-backpack-1113554/)
