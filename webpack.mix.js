@@ -37,4 +37,7 @@ mix
   .sass("assets/src/sass/elementor-widgets.scss", "assets/dist/css")
   .options({
     processCssUrls: false,
+    terser: {
+      extractComments: false,
+    },
   });
