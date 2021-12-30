@@ -52,5 +52,10 @@
   &__content {
     @include font-size(p);
     color: rgba(color(text-rgb), 0.7);
+
+    a {
+      text-decoration: underline !important;
+      color: color(main);
+    }
   }
 }

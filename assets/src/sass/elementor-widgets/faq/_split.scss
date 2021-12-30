@@ -62,5 +62,10 @@
     p:only-child {
       margin: 0;
     }
+
+    a {
+      text-decoration: underline !important;
+      color: color(main);
+    }
   }
 }
