@@ -1,40 +1,46 @@
-=== Selleradise Lite ===
-Contributors: zarhasan
-Tags:  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready
-Requires at least: 5.5
-Requires PHP: 7.1
-Tested up to: 5.8
-Stable tag: 1.2.2
-License: GPLv3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+# Selleradise Lite
+
+**Contributors:** zarhasan \
+**Tags:**  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready \
+**Requires at least:** 5.5 \
+**Requires PHP:** 7.1 \
+**Tested up to:** 5.8 \
+**Stable tag:** 1.2.2 \
+**License:** GPLv3 or later \
+**License URI:** https://www.gnu.org/licenses/gpl-3.0.html
 
 Selleradise Lite WordPress Theme, Copyright 2021 RedOxbird
 Selleradise Lite is distributed under the terms of the GNU GPL.
 
-== Description ==
+## Description
 
 Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store like quick search, mini cart, dark mode, shop filters, lazy loading, etc.
 
-== Changelog ==
+## Changelog
 
-= 1.2.2 =
+### 1.2.2
+
 * Removing default logo in favour of placeholder text
 * Fixing accessibility issues 
 * Adding Copyright info for each library.
 
-= 1.2.1 =
+### 1.2.1
+
 * Fixing some errors and warnings.
 
-= 1.2.0 =
+### 1.2.0
+
 * Splitting javascript.
 
-= 1.1.0 =
+### 1.1.0
+
 * Cleaning up some css.
 
-= 1.0.0 =
+### 1.0.0
+
 * Releasing the first version of the theme.
 
-== Copyright ==
+## Copyright
 
 Selleradise Lite WordPress Theme, 2021 RedOxbird
 Selleradise Lite is distributed under the terms of the GNU GPL.
@@ -49,7 +55,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-= CSS and JavaScript =
+### CSS and JavaScript
 
 **Normalize.css**, Copyright © Nicolas Gallagher and Jonathan Neal
 [MIT License](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
@@ -123,13 +129,13 @@ GNU General Public License for more details.
 [MIT License](https://github.com/statelyai/xstate/blob/main/LICENSE)
 [Source](https://github.com/statelyai/xstate)
 
-= Icons =
+### Icons
 
 **Unicons**
 [Apache License 2.0](https://github.com/Iconscout/unicons/blob/master/LICENSE)
 [Source](https://github.com/Iconscout/unicons)
 
-= Images =
+### Images
 
 **Placeholder**
 CC0 License

@@ -20,7 +20,7 @@
           v-on:input="(e) => (keyword = e.target.value)"
           v-on:focus="send('START')"
           v-on:keydown.tab.shift="send('STOP')"
-          v-on:keydown.enter.prevent="onPressEnter"
+          v-on:keydown.enter="onPressEnter"
           class="searchField"
           ref="searchField"
           name="s"
@@ -424,7 +424,7 @@ export default {
         e.preventDefault();
         showToast(trans("header-search-from-error-digits"), "error", 1500);
       } else {
-        searchForm.submit();
+        searchForm.value.submit();
       }
     }
 
