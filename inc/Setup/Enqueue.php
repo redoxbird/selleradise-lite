@@ -19,7 +19,7 @@ class Enqueue
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
         add_action('admin_enqueue_scripts', [$this, 'admin_enqueue_scripts']);
 
-        if (!class_exists('Kirki') || get_theme_mod('font_load_from_google', false)) {
+        if (!class_exists('Kirki') || get_theme_mod('font_load_from_google', true)) {
             add_action('wp_print_styles', [$this, 'google_fonts']);
             add_action('wp_head', [$this, 'google_fonts_css']);
         }

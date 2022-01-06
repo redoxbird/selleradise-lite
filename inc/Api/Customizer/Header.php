@@ -46,6 +46,7 @@ class Header
             'description' => esc_html__('"Fast" will only match beginning of the title.', 'selleradise-lite'),
             'section' => 'selleradise_header',
             'default' => 'accurate',
+            'transport' => 'refresh',
             'choices' => [
                 'fast' => esc_html__('Fast', 'selleradise-lite'),
                 'accurate' => esc_html__('Accurate', 'selleradise-lite'),

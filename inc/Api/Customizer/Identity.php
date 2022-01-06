@@ -40,7 +40,7 @@ class Identity
             'section' => 'title_tagline',
             'default' => '',
             'priority' => 9,
-            'transport' => 'auto',
+            'transport' => 'refresh',
             'choices' => [
                 'save_as' => 'id',
             ],

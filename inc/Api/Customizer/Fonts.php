@@ -37,7 +37,7 @@ class Fonts
             'label' => esc_html__('Heading Font', 'selleradise-lite'),
             'section' => 'selleradise_fonts',
             'default' => selleradise_get_default_fonts('heading'),
-            'transport' => 'auto',
+            'transport' => 'refresh',
             'output' => [
                 [
                     'element' => 'h1,h2,h3,h4,h5,h6',
@@ -51,7 +51,7 @@ class Fonts
             'label' => esc_html__('Primary Font', 'selleradise-lite'),
             'section' => 'selleradise_fonts',
             'default' => selleradise_get_default_fonts('primary'),
-            'transport' => 'auto',
+            'transport' => 'refresh',
             'output' => [
                 [
                     'element' => 'body',
@@ -90,7 +90,7 @@ class Fonts
             'label' => esc_html__('Load fonts from google server', 'selleradise-lite'),
             'description' => esc_html__('Check to load fonts from google server instead of local server. Can be used if fonts are not loading properly.', 'selleradise-lite'),
             'section' => 'selleradise_fonts',
-            'default' => false,
+            'default' => true,
         ]);
 
     }

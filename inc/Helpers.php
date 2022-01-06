@@ -612,19 +612,22 @@ if (!function_exists('selleradise_get_default_fonts')) {
 
 if (!function_exists('selleradise_get_fonts')) {
 
-    function selleradise_get_fonts($key = false)
+    function selleradise_get_fonts($_key = false)
     {
         $default_fonts = selleradise_get_default_fonts();
+        $fonts = [];
 
-        $fonts = [
-            "primary" => get_theme_mod('font_primary', $default_fonts['primary']),
-            "primary_bolder" => get_theme_mod('font_primary_bolder', $default_fonts['primary_bolder']),
-            "primary_boldest" => get_theme_mod('font_primary_boldest', $default_fonts['primary_boldest']),
-            "heading" => get_theme_mod('font_heading', $default_fonts['heading']),
-        ];
+        foreach ($default_fonts as $key => $value) {
+            $fonts[$key] = get_theme_mod('font_' . $key, $value);
 
-        if ($key) {
-            return $fonts[$key];
+            if (!$fonts[$key]) {
+                $fonts[$key] = $value;
+            }
+        }
+
+        
+        if ($_key !== false && isset($fonts[$_key])) {
+            return $fonts[$_key];
         }
 
         return $fonts;
@@ -776,7 +779,7 @@ if (!function_exists('selleradise_kirki_heading')) {
             return;
         }
 
-        return '<h3 style="margin:30px 0 10px 0; font-size: 25px; color: inherit; line-height: 1.2;">' . $text . '</h3>';
+        return '<h3 style="margin:30px 0 10px 0; font-size: 25px; color: inherit; line-height: 1.2;">' . wp_kses_post($text) . '</h3>';
     }
 }
 

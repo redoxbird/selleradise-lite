@@ -8,9 +8,6 @@ Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Selleradise Lite WordPress Theme, Copyright 2021 RedOxbird
-Selleradise Lite is distributed under the terms of the GNU GPL.
-
 == Description ==
 
 Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store like quick search, mini cart, dark mode, shop filters, lazy loading, etc.
@@ -36,7 +33,7 @@ Selleradise is a clean, responsive and accessible WooCommerce theme. It is very 
 
 == Copyright ==
 
-Selleradise Lite WordPress Theme, 2021 RedOxbird
+Selleradise Lite WordPress Theme, Copyright (c) 2021 RedOxbird
 Selleradise Lite is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -51,7 +48,7 @@ GNU General Public License for more details.
 
 = CSS and JavaScript =
 
-**Normalize.css**, Copyright © Nicolas Gallagher and Jonathan Neal
+**Normalize.css**, Copyright (c) Nicolas Gallagher and Jonathan Neal
 [MIT License](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
 [Source](https://github.com/necolas/normalize.css)
 

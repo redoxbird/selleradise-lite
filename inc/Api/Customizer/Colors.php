@@ -48,11 +48,12 @@ class Colors
             $settings['dark_mode_color_text'] = $palettes[$name]['dark']['color_light'];
             $settings['dark_mode_color_accent_light'] = $palettes[$name]['dark']['color_accent_light'];
 
-            $this->palette[$name] = $palettes[$name]['light'];
+            $this->palette[$name] = $name;
 
             $presets[$name] = [
                 'settings' => $settings,
             ];
+
         }
 
         Kirki::add_section('selleradise_colors', array(
@@ -83,30 +84,12 @@ class Colors
 
         Kirki::add_field('selleradise-lite', [
             'type' => 'color',
-            'settings' => 'color_main',
-            'label' => __('Main', 'selleradise-lite'),
-            'description' => esc_html__('The main color of the website.', 'selleradise-lite'),
-            'section' => 'selleradise_colors',
-            'default' => $palettes['default']['light']['color_main'],
-            'transport' => 'auto',
-        ]);
-
-        Kirki::add_field('selleradise-lite', [
-            'type' => 'color',
-            'settings' => 'color_main_text',
-            'section' => 'selleradise_colors',
-            'default' => selleradise_get_default_color('main_text'),
-            'transport' => 'auto',
-        ]);
-
-        Kirki::add_field('selleradise-lite', [
-            'type' => 'color',
             'settings' => 'color_background',
             'label' => __('Background', 'selleradise-lite'),
             'description' => esc_html__('a background color.', 'selleradise-lite'),
             'section' => 'selleradise_colors',
-            'default' => $palettes['default']['light']['color_light'],
-            'transport' => 'auto',
+            'default' => selleradise_get_default_color("background"),
+            'transport' => 'refresh',
         ]);
 
         Kirki::add_field('selleradise-lite', [
@@ -115,8 +98,26 @@ class Colors
             'label' => __('Text', 'selleradise-lite'),
             'description' => esc_html__('text color, make sure that it contrasts well with the background color.', 'selleradise-lite'),
             'section' => 'selleradise_colors',
-            'default' => $palettes['default']['light']['color_dark'],
-            'transport' => 'auto',
+            'default' => selleradise_get_default_color("text"),
+            'transport' => 'refresh',
+        ]);
+
+        Kirki::add_field('selleradise-lite', [
+            'type' => 'color',
+            'settings' => 'color_main',
+            'label' => esc_html__('Main', 'selleradise-lite'),
+            'description' => esc_html__('The main color of the website.', 'selleradise-lite'),
+            'section' => 'selleradise_colors',
+            'default' => selleradise_get_default_color("main"),
+            'transport' => 'refresh',
+        ]);
+
+        Kirki::add_field('selleradise-lite', [
+            'type' => 'color',
+            'settings' => 'color_main_text',
+            'section' => 'selleradise_colors',
+            'default' => selleradise_get_default_color('main_text'),
+            'transport' => 'refresh',
         ]);
 
         Kirki::add_field('selleradise-lite', [
@@ -125,8 +126,8 @@ class Colors
             'label' => __('Accent', 'selleradise-lite'),
             'description' => esc_html__('an accent color, rarely used.', 'selleradise-lite'),
             'section' => 'selleradise_colors',
-            'default' => $palettes['default']['light']['color_accent_light'],
-            'transport' => 'auto',
+            'default' => selleradise_get_default_color("accent_light"),
+            'transport' => 'refresh',
         ]);
 
         Kirki::add_field('selleradise-lite', [
@@ -134,12 +135,12 @@ class Colors
             'settings' => 'color_accent_light_text',
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color('accent_light_text'),
-            'transport' => 'auto',
+            'transport' => 'refresh',
         ]);
 
-        //=========================
-        // Dark Mode
-        //=======================
+        /**
+         * Dark Mode Colors
+         */
 
         Kirki::add_field('selleradise-lite', [
             'type' => 'custom',
@@ -150,30 +151,12 @@ class Colors
 
         Kirki::add_field('selleradise-lite', [
             'type' => 'color',
-            'settings' => 'dark_mode_color_main',
-            'label' => __('Main', 'selleradise-lite'),
-            'description' => esc_html__('The main color of the website.', 'selleradise-lite'),
-            'section' => 'selleradise_colors',
-            'default' => $palettes['default']['dark']['color_main'],
-            'transport' => 'auto',
-        ]);
-
-        Kirki::add_field('selleradise-lite', [
-            'type' => 'color',
-            'settings' => 'dark_mode_color_main_text',
-            'section' => 'selleradise_colors',
-            'default' => selleradise_get_default_color('dark-theme_main_text'),
-            'transport' => 'auto',
-        ]);
-
-        Kirki::add_field('selleradise-lite', [
-            'type' => 'color',
             'settings' => 'dark_mode_color_background',
             'label' => __('Background', 'selleradise-lite'),
             'description' => esc_html__('Color used either for background.', 'selleradise-lite'),
             'section' => 'selleradise_colors',
-            'default' => $palettes['default']['dark']['color_dark'],
-            'transport' => 'auto',
+            'default' => selleradise_get_default_color("dark-theme_background"),
+            'transport' => 'refresh',
         ]);
 
         Kirki::add_field('selleradise-lite', [
@@ -182,8 +165,26 @@ class Colors
             'label' => __('Text', 'selleradise-lite'),
             'description' => esc_html__('text color, make sure that it contrasts well with the background color.', 'selleradise-lite'),
             'section' => 'selleradise_colors',
-            'default' => $palettes['default']['dark']['color_light'],
-            'transport' => 'auto',
+            'default' => selleradise_get_default_color("dark-theme_text"),
+            'transport' => 'refresh',
+        ]);
+
+        Kirki::add_field('selleradise-lite', [
+            'type' => 'color',
+            'settings' => 'dark_mode_color_main',
+            'label' => __('Main', 'selleradise-lite'),
+            'description' => esc_html__('The main color of the website.', 'selleradise-lite'),
+            'section' => 'selleradise_colors',
+            'default' => selleradise_get_default_color("dark-theme_main"),
+            'transport' => 'refresh',
+        ]);
+
+        Kirki::add_field('selleradise-lite', [
+            'type' => 'color',
+            'settings' => 'dark_mode_color_main_text',
+            'section' => 'selleradise_colors',
+            'default' => selleradise_get_default_color('dark-theme_main_text'),
+            'transport' => 'refresh',
         ]);
 
         Kirki::add_field('selleradise-lite', [
@@ -192,8 +193,8 @@ class Colors
             'label' => __('Accent', 'selleradise-lite'),
             'description' => esc_html__('an accent color, rarely used.', 'selleradise-lite'),
             'section' => 'selleradise_colors',
-            'default' => $palettes['default']['dark']['color_accent_light'],
-            'transport' => 'auto',
+            'default' => selleradise_get_default_color("dark-theme_accent_light"),
+            'transport' => 'refresh',
         ]);
 
         Kirki::add_field('selleradise-lite', [
@@ -201,31 +202,7 @@ class Colors
             'settings' => 'dark_mode_color_accent_light_text',
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color('dark-theme_accent_light_text'),
-            'transport' => 'auto',
-        ]);
-
-        //=========================
-        // Color Palette
-        //=======================
-
-        Kirki::add_field('selleradise-lite', [
-            'type' => 'custom',
-            'settings' => 'title_color_palette',
-            'section' => 'selleradise_colors',
-            'default' => selleradise_kirki_heading('Predefined Color Palettes'),
-            'priority' => 105,
-        ]);
-
-        Kirki::add_field('selleradise-lite', [
-            'type' => 'palette',
-            'settings' => 'color_palette',
-            'label' => __('Color Palette', 'selleradise-lite'),
-            'section' => 'selleradise_colors',
-            'default' => 'default',
-            'priority' => 110,
-            'choices' => $this->palette,
-            'preset' => $presets,
-            'transport' => 'auto',
+            'transport' => 'refresh',
         ]);
 
     }
