@@ -38,6 +38,10 @@
     background-color: color(background);
   }
 
+  .admin-bar & {
+    top: 32px;
+  }
+
   .overlayMenu {
     @extend .overlay;
     z-index: 500;

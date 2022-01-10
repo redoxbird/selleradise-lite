@@ -1,169 +1,3 @@
-<template>
-  <div class="selleradise_MiniCart" ref="miniCart">
-    <transition name="selleradise_MiniCart__inner">
-      <div
-        class="selleradise_MiniCart__inner"
-        v-if="
-          selleradiseData.isWooCommerce &&
-          ['hidden'].some(state.matches) === false
-        "
-        v-cloak
-      >
-        <div class="selleradise_MiniCart__head">
-          <p
-            class="selleradise_MiniCart__headCount"
-            v-if="cart && cart.count > 0"
-            v-html="
-              replace(
-                trans(
-                  cart && cart.count > 1
-                    ? 'mini-cart-items-text'
-                    : 'mini-cart-item-text'
-                ),
-                '%d',
-                `<b>${cart && cart.count}</b>`
-              )
-            "
-          ></p>
-          <button
-            class="button--close buttonIcon--secondary-outline"
-            v-on:click="send('CLOSE')"
-            ref="closeBtn"
-          >
-            <slot name="icon-close"></slot>
-          </button>
-        </div>
-
-        <div class="selleradise_emptyCart--message" v-if="cartIsEmpty">
-          <div class="selleradise_empty-state__svg">
-            <slot name="nothing-found"></slot>
-          </div>
-
-          <h2>
-            <b>{{ trans("Your cart is empty.") }}</b>
-          </h2>
-          <p>
-            {{
-              trans(
-                "Looks like you have not added any product to your cart yet."
-              )
-            }}
-          </p>
-        </div>
-
-        <ul class="selleradise_MiniCart__items" v-else>
-          <li
-            class="selleradise_MiniCart__item"
-            v-for="(item, index) of cart.items"
-            :key="item.key"
-          >
-            <a
-              :href="item.product.link"
-              class="selleradise_MiniCart__itemImage"
-              v-html="item.product.image ? item.product.image : false"
-            ></a>
-
-            <div class="selleradise_MiniCart__itemContent">
-              <p class="selleradise_MiniCart__itemName">
-                <a :href="item.product.link" v-html="item.product.name"></a>
-              </p>
-
-              <p
-                class="selleradise_MiniCart__itemPrice"
-                v-html="item.product.price"
-              ></p>
-
-              <div class="selleradise_MiniCart__itemQuantity">
-                <button
-                  v-bind:class="
-                    item.quantity > 1
-                      ? 'selleradise_MiniCart__decreaseQuantity'
-                      : 'selleradise_MiniCart__removeItem'
-                  "
-                  v-on:click="decreaseQuantity(index)"
-                >
-                  <span
-                    class="inlineSVGIcon"
-                    v-html="
-                      require(`!svg-inline-loader!../../../dist/svg/unicons-line/minus.svg`)
-                    "
-                    v-if="item.quantity > 1"
-                  ></span>
-                  <span
-                    class="inlineSVGIcon"
-                    v-html="
-                      require(`!svg-inline-loader!../../../dist/svg/unicons-line/trash.svg`)
-                    "
-                    v-else
-                  ></span>
-                </button>
-
-                <span class="selleradise_MiniCart__itemQuantityCount">
-                  {{ item.quantity }}</span
-                >
-
-                <button
-                  class="selleradise_MiniCart__increaseQuantity"
-                  v-on:click="increaseQuantity(index)"
-                >
-                  <span
-                    class="inlineSVGIcon"
-                    v-html="
-                      require(`!svg-inline-loader!../../../dist/svg/unicons-line/plus.svg`)
-                    "
-                  ></span>
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <div class="selleradise_MiniCart__foot" v-if="!cartIsEmpty">
-          <div class="selleradise_MiniCart__footActions">
-            <a
-              :href="selleradiseData.cartURL"
-              class="selleradise_button--secondary-outline"
-            >
-              {{ trans("Edit Cart") }}
-            </a>
-            <a
-              :href="selleradiseData.checkoutURL"
-              class="selleradise_button--primary"
-            >
-              {{ trans("Checkout") }}
-              <span
-                class="selleradise_MiniCart__footCartTotal"
-                v-html="cart.total"
-              ></span>
-            </a>
-          </div>
-        </div>
-
-        <div
-          class="selleradise_MiniCart__loader"
-          v-if="state.matches('updating')"
-        >
-          <span
-            class="inlineSVGIcon"
-            v-html="
-              require(`!svg-inline-loader!../../../dist/svg/loader/simple.svg`)
-            "
-            v-if="state.matches('updating')"
-          ></span>
-        </div>
-      </div>
-    </transition>
-
-    <transition name="overlay">
-      <div
-        class="overlay"
-        v-if="['hidden'].some(state.matches) === false"
-        v-on:click="send('CLOSE')"
-      ></div>
-    </transition>
-  </div>
-</template>
-
 <script>
 import { trans } from "../helpers";
 import { cart, cartIsEmpty } from "../store/cart";
@@ -345,3 +179,168 @@ export default {
   },
 };
 </script>
+<template>
+  <div class="selleradise_MiniCart" ref="miniCart">
+    <transition name="selleradise_MiniCart__inner">
+      <div
+        class="selleradise_MiniCart__inner"
+        v-if="
+          selleradiseData.isWooCommerce &&
+          ['hidden'].some(state.matches) === false
+        "
+        v-cloak
+      >
+        <div class="selleradise_MiniCart__head">
+          <p
+            class="selleradise_MiniCart__headCount"
+            v-if="cart && cart.count > 0"
+            v-html="
+              replace(
+                trans(
+                  cart && cart.count > 1
+                    ? 'mini-cart-items-text'
+                    : 'mini-cart-item-text'
+                ),
+                '%d',
+                `<b>${cart && cart.count}</b>`
+              )
+            "
+          ></p>
+          <button
+            class="button--close buttonIcon--secondary-outline"
+            v-on:click="send('CLOSE')"
+            ref="closeBtn"
+          >
+            <slot name="icon-close"></slot>
+          </button>
+        </div>
+
+        <div class="selleradise_emptyCart--message" v-if="cartIsEmpty">
+          <div class="selleradise_empty-state__svg">
+            <slot name="nothing-found"></slot>
+          </div>
+
+          <h2>
+            <b>{{ trans("Your cart is empty.") }}</b>
+          </h2>
+          <p>
+            {{
+              trans(
+                "Looks like you have not added any product to your cart yet."
+              )
+            }}
+          </p>
+        </div>
+
+        <ul class="selleradise_MiniCart__items" v-else>
+          <li
+            class="selleradise_MiniCart__item"
+            v-for="(item, index) of cart.items"
+            :key="item.key"
+          >
+            <a
+              :href="item.product.link"
+              class="selleradise_MiniCart__itemImage"
+              v-html="item.product.image ? item.product.image : false"
+            ></a>
+
+            <div class="selleradise_MiniCart__itemContent">
+              <p class="selleradise_MiniCart__itemName">
+                <a :href="item.product.link" v-html="item.product.name"></a>
+              </p>
+
+              <p
+                class="selleradise_MiniCart__itemPrice"
+                v-html="item.product.price"
+              ></p>
+
+              <div class="selleradise_MiniCart__itemQuantity">
+                <button
+                  v-bind:class="
+                    item.quantity > 1
+                      ? 'selleradise_MiniCart__decreaseQuantity'
+                      : 'selleradise_MiniCart__removeItem'
+                  "
+                  v-on:click="decreaseQuantity(index)"
+                >
+                  <span
+                    class="inlineSVGIcon"
+                    v-html="
+                      require(`!svg-inline-loader!../../../dist/svg/unicons-line/minus.svg`)
+                    "
+                    v-if="item.quantity > 1"
+                  ></span>
+                  <span
+                    class="inlineSVGIcon"
+                    v-html="
+                      require(`!svg-inline-loader!../../../dist/svg/unicons-line/trash.svg`)
+                    "
+                    v-else
+                  ></span>
+                </button>
+
+                <span class="selleradise_MiniCart__itemQuantityCount">
+                  {{ item.quantity }}</span
+                >
+
+                <button
+                  class="selleradise_MiniCart__increaseQuantity"
+                  v-on:click="increaseQuantity(index)"
+                >
+                  <span
+                    class="inlineSVGIcon"
+                    v-html="
+                      require(`!svg-inline-loader!../../../dist/svg/unicons-line/plus.svg`)
+                    "
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="selleradise_MiniCart__foot" v-if="!cartIsEmpty">
+          <div class="selleradise_MiniCart__footActions">
+            <a
+              :href="selleradiseData.cartURL"
+              class="selleradise_button--secondary-outline"
+            >
+              {{ trans("Edit Cart") }}
+            </a>
+            <a
+              :href="selleradiseData.checkoutURL"
+              class="selleradise_button--primary"
+            >
+              {{ trans("Checkout") }}
+              <span
+                class="selleradise_MiniCart__footCartTotal"
+                v-html="cart.total"
+              ></span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="selleradise_MiniCart__loader"
+          v-if="state.matches('updating')"
+        >
+          <span
+            class="inlineSVGIcon"
+            v-html="
+              require(`!svg-inline-loader!../../../dist/svg/loader/simple.svg`)
+            "
+            v-if="state.matches('updating')"
+          ></span>
+        </div>
+      </div>
+    </transition>
+
+    <transition name="overlay">
+      <div
+        class="overlay"
+        v-if="['hidden'].some(state.matches) === false"
+        v-on:click="send('CLOSE')"
+      ></div>
+    </transition>
+  </div>
+</template>

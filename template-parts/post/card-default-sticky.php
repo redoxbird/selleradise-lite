@@ -34,9 +34,3 @@ if (get_theme_mod('post_card_adaptive_colors', false)) {
 </div><!-- #post-## -->
 
 <?php
-
-if (is_active_sidebar('selleradise-sidebar')) {
-    return;
-}
-
-get_template_part('template-parts/post/card', 'trending');

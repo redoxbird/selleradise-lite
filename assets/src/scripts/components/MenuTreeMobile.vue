@@ -1,3 +1,92 @@
+<script>
+import { childMenuIds } from "../store/menu";
+import { useMobileMenuService } from "../machines/mobile-menu.js";
+import { ref } from "@vue/reactivity";
+import { trans } from "../helpers";
+import { onMounted, watch } from "@vue/runtime-core";
+
+export default {
+  props: ["items", "level", "parent"],
+
+  setup(props) {
+    const { state: mobileMenuState, send: mobileMenuSend } =
+      useMobileMenuService();
+
+    const nonLinkCharacters = ["#", " ", ""];
+    const list = ref(null);
+    const elements = {
+      backButton: ref(null),
+    };
+
+    function openChildMenu(item) {
+      if (!item.children) {
+        return;
+      }
+
+      if (!childMenuIds.value.includes(item.ID)) {
+        childMenuIds.value.push(item.ID);
+        list.value.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }
+    }
+
+    function shouldShowChildMenu(item) {
+      if (!item.children) {
+        return false;
+      }
+      if (item.children.length <= 0) {
+        return false;
+      }
+      return childMenuIds.value.includes(item.ID);
+    }
+
+    function openChildMenuLink(e, item) {
+      const href = e.target.getAttribute("href");
+
+      if (e.code != "ArrowRight" && href && !nonLinkCharacters.includes(href)) {
+        return;
+      }
+
+      e.preventDefault();
+      openChildMenu(item);
+    }
+
+    watch(
+      () => [...childMenuIds.value],
+      (to, from) => {
+        if (to.length > from.length) {
+          console.log("Forward");
+        } else {
+          console.log("Backward");
+        }
+      }
+    );
+
+    onMounted(() => {
+      if (elements.backButton.value) {
+        elements.backButton.value.focus();
+      }
+    });
+
+    return {
+      ...props,
+      ...selleradiseData,
+      openChildMenu,
+      shouldShowChildMenu,
+      openChildMenuLink,
+      mobileMenuSend,
+      childMenuIds,
+      list,
+      trans,
+      elements,
+    };
+  },
+};
+</script>
+
 <template>
   <ul
     class="selleradise_sidebar__navigation-list"
@@ -8,7 +97,8 @@
       <button
         class="selleradise_sidebar__navigation-button--back"
         v-on:click="childMenuIds.pop()"
-        ref="backBtn"
+        v-on:keydown.arrow-left.prevent="childMenuIds.pop()"
+        :ref="elements.backButton"
         aria-label="Go To Previous List"
         v-if="level > 1"
       >
@@ -38,10 +128,11 @@
       :title="menuItem.attr_title ? menuItem.attr_title : null"
     >
       <a
+        class="menuItemLink"
         :href="menuItem.url"
         :target="menuItem.target ? menuItem.target : null"
-        class="menuItemLink"
         v-on:click="openChildMenuLink($event, menuItem)"
+        v-on:keydown.arrow-right.prevent="openChildMenuLink($event, menuItem)"
       >
         <span>{{ menuItem.title }}</span>
       </a>
@@ -49,6 +140,7 @@
       <button
         class="selleradise_sidebar__navigation-button--more"
         v-on:click.prevent="openChildMenu(menuItem)"
+        v-on:keydown.arrow-right.prevent="openChildMenuLink($event, menuItem)"
         v-if="menuItem.children && menuItem.children.length > 0"
         :aria-haspopup="
           menuItem.children && menuItem.children.length > 0 ? true : undefined
@@ -74,66 +166,3 @@
     </li>
   </ul>
 </template>
-
-<script>
-import { childMenuIds } from "../store/menu";
-import { useMobileMenuService } from "../machines/mobile-menu.js";
-import { ref } from "@vue/reactivity";
-import { trans } from "../helpers";
-
-export default {
-  props: ["items", "level", "parent"],
-
-  setup(props) {
-    const { state: mobileMenuState, send: mobileMenuSend } =
-      useMobileMenuService();
-
-    const nonLinkCharacters = ["#", " ", ""];
-    const list = ref(null);
-
-    function openChildMenu(item) {
-      if (!item.children) {
-        return;
-      }
-
-      if (!childMenuIds.value.includes(item.ID)) {
-        childMenuIds.value.push(item.ID);
-        list.value.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-          inline: "nearest",
-        });
-      }
-    }
-
-    function shouldShowChildMenu(item) {
-      if (!item.children) {
-        return false;
-      }
-      if (item.children.length <= 0) {
-        return false;
-      }
-      return childMenuIds.value.includes(item.ID);
-    }
-
-    function openChildMenuLink(e, item) {
-      if (nonLinkCharacters.includes(e.target.getAttribute("href"))) {
-        e.preventDefault();
-        openChildMenu(item);
-      }
-    }
-
-    return {
-      ...props,
-      ...selleradiseData,
-      openChildMenu,
-      shouldShowChildMenu,
-      openChildMenuLink,
-      mobileMenuSend,
-      childMenuIds,
-      list,
-      trans,
-    };
-  },
-};
-</script>

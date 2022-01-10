@@ -6,13 +6,13 @@
  * @package Selleradise
  */
 
-if (!function_exists('dd')) {
+if (!function_exists('selleradise_dd')) {
     /**
      * Var_dump and die method
      *
      * @return void
      */
-    function dd()
+    function selleradise_dd()
     {
         echo '<pre>';
         array_map(function ($x) {

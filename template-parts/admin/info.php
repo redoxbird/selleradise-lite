@@ -9,7 +9,7 @@
         href="https://docs.selleradise.com/docs/getting-started/import-demo-content"
         target="_blank"
         rel="noreferrer"
-        class="text-lg font-medium no-underline">
+        class="text-lg font-medium">
         How to import demo content?
       </a>
     </li>
@@ -18,7 +18,7 @@
         href="https://docs.selleradise.com/docs/getting-started/setup-homepage"
         target="_blank"
         rel="noreferrer"
-        class="text-lg font-medium no-underline">
+        class="text-lg font-medium">
         How to setup homepage like demo?
       </a>
     </li>

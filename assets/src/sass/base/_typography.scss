@@ -24,6 +24,7 @@ html {
 }
 
 body {
+  @include font("primary");
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -39,6 +40,7 @@ $heading_tags: h1, h2, h3, h4, h5, h6;
 
 @each $tag in $heading_tags {
   #{$tag} {
+    @include font("heading");
     @include font-size($tag);
   }
 }

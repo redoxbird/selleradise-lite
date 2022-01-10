@@ -51,6 +51,10 @@
   padding: 2.5rem 0 0 5rem;
   margin-bottom: 2rem;
 
+  a {
+    text-decoration: underline;
+  }
+
   aside {
     section {
       padding: 0 0 1rem;
@@ -60,12 +64,6 @@
 
       &:not(:last-child) {
         margin-bottom: 0;
-      }
-
-      a {
-        &:hover {
-          text-decoration: underline;
-        }
       }
 
       h1 {
@@ -157,7 +155,6 @@
         a {
           @include font-size(p);
           color: color(text);
-          text-decoration: none;
           width: 100%;
           font-weight: font("primary_boldest", "font-weight");
 

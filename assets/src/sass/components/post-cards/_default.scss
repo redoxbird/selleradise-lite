@@ -114,6 +114,10 @@
     font-weight: font("primary_bolder", "font-weight");
     margin: 1rem 0 2rem 0;
     color: rgba(color(text-rgb), 0.7);
+
+    a {
+      text-decoration: underline;
+    }
   }
 
   .selleradise_postCard__author--minimal {

@@ -19,7 +19,6 @@ class Setup
         add_filter('terms_clauses', [$this, 'filter_terms_clauses'], 10, 3);
         add_filter('posts_clauses', [$this, 'filter_posts_clauses'], 10, 2);
         add_filter('excerpt_length', [$this, 'excerpt_length'], 999);
-        add_filter('the_content', [$this, 'update_post_views']);
 
         add_action("edited_product_cat", [$this, 'delete_product_category_transient'], 10, 1);
         add_action("created_product_cat", [$this, 'delete_product_category_transient'], 10, 1);
@@ -78,12 +77,12 @@ class Setup
             array(
                 'name' => esc_html__('WooCommerce', 'selleradise-lite'),
                 'slug' => 'woocommerce',
-                'required' => true,
+                'required' => false,
             ),
             array(
                 'name' => esc_html__('Kirki', 'selleradise-lite'),
                 'slug' => 'kirki',
-                'required' => true,
+                'required' => false,
             ),
             array(
                 'name' => esc_html__('Elementor', 'selleradise-lite'),
@@ -179,56 +178,6 @@ class Setup
         return $pieces;
     }
 
-    public function update_post_views($content)
-    {
-        if (current_user_can('edit_posts') || !is_single() || get_post_type() !== 'post') {
-            return $content;
-        }
-
-        $current_time = time();
-        $reset_time = selleradise_trending_posts_reset_time();
-
-        $id = get_the_ID();
-
-        $meta_key = [
-            'selleradise_trending_post_views',
-            'selleradise_trending_post_views_updated_on',
-        ];
-
-        $meta_value_new = [
-            "selleradise_trending_post_views" => 0,
-            "selleradise_trending_post_views_updated_on" => $current_time,
-        ];
-
-        $meta_value = [];
-        $meta_check = [];
-
-        foreach ($meta_key as $index => $key) {
-            $meta_check[$key] = metadata_exists('post', $id, $key);
-
-            if (false === $meta_check[$key]) {
-                $meta_value[$key] = $meta_value_new[$key];
-                delete_post_meta($id, $key);
-                add_post_meta($id, $key, $meta_value[$key]);
-                continue;
-            }
-
-            $meta_value[$key] = get_post_meta($id, $key, true);
-        }
-
-        if ($reset_time->format('U') <= $current_time && $reset_time->format('U') > $meta_value[$meta_key[1]]) {
-            $meta_value = $meta_value_new;
-        } else {
-            $meta_value[$meta_key[0]]++;
-        }
-
-        foreach ($meta_key as $index => $key) {
-            update_post_meta($id, $key, $meta_value[$key]);
-        }
-
-        return $content;
-    }
-
     public function admin_pages()
     {
         $admin_page = add_submenu_page(
@@ -251,7 +200,7 @@ class Setup
 
     public function enqueue_admin_css()
     {
-        wp_enqueue_style('admin', selleradise_assets('css/admin.css'), array(), SELLERADISE_VERSION, 'all');
+        wp_enqueue_style('selleradise-admin', selleradise_assets('css/admin.css'), array(), SELLERADISE_VERSION, 'all');
     }
 
     public function selleradise_lite_info_page()

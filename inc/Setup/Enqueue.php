@@ -21,7 +21,6 @@ class Enqueue
 
         if (!class_exists('Kirki') || get_theme_mod('font_load_from_google', true)) {
             add_action('wp_print_styles', [$this, 'google_fonts']);
-            add_action('wp_head', [$this, 'google_fonts_css']);
         }
     }
 
@@ -190,15 +189,15 @@ class Enqueue
     {
         $data = [
             'nonce' => wp_create_nonce('selleradise_ajax'),
-            'homeURL' => home_url(),
-            'assetsURL' => selleradise_assets('/'),
-            'ajaxURL' => admin_url('admin-ajax.php'),
+            'homeURL' => esc_url(home_url()),
+            'assetsURL' => esc_url(selleradise_assets('/')),
+            'ajaxURL' => esc_url(admin_url('admin-ajax.php')),
             "isWooCommerce" => class_exists('WooCommerce') ? true : false,
             "settings" => [
-                "dark_mode_setting" => get_theme_mod('theme_type', 'light') === 'both',
+                "dark_mode_setting" => esc_html(get_theme_mod('theme_type', 'light') === 'both'),
             ],
             "theme" => [
-                "type" => get_theme_mod('theme_type', 'light'),
+                "type" => esc_attr(get_theme_mod('theme_type', 'light')),
                 "current" => !empty($_COOKIE['darkMode']) && $_COOKIE['darkMode'] == 'true' ? 'dark' : 'light',
                 "darkMode" => !empty($_COOKIE['darkMode']) && $_COOKIE['darkMode'] == 'true' ? true : false,
             ],
@@ -304,10 +303,6 @@ class Enqueue
         wp_enqueue_style($fonts['heading']['font-family']);
     }
 
-    public function google_fonts_css()
-    {
-        get_template_part('template-parts/headers/google-fonts-css');
-    }
 
     public function admin_enqueue_scripts()
     {

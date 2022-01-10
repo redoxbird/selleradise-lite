@@ -1,14 +1,180 @@
+<script>
+import MenuTreeMobile from "./MenuTreeMobile.vue";
+import {
+  mobileMenuItems,
+  updateCategories,
+  updateMenuItems,
+} from "../store/menu";
+import { childMenuIds } from "../store/menu";
+import { useMobileMenuService } from "../machines/mobile-menu.js";
+import Account from "../components/sidebars/Account";
+import Categories from "../components/sidebars/Categories";
+import DarkModeToggleBtn from "../components/DarkModeToggleBtn";
+import { trans } from "../helpers";
+import { activeSidebar, haveSettings } from "../store/menu";
+import {
+  onMounted,
+  ref,
+  onUnmounted,
+  watchEffect,
+  nextTick,
+  watch,
+  unref,
+} from "vue";
+import { focusIn, Focus } from "../utils/focus-management";
+
+export default {
+  components: {
+    "menu-tree-mobile": MenuTreeMobile,
+    Account,
+    Categories,
+    DarkModeToggleBtn,
+  },
+
+  setup() {
+    const { state: mobileMenuState, send: mobileMenuSend } =
+      useMobileMenuService();
+
+    const elements = {
+      menu: ref(null),
+      closeButton: ref(null),
+    };
+
+    function closeMenu() {
+      mobileMenuSend("CLOSE");
+      childMenuIds.value = [];
+    }
+
+    function enableTriggers() {
+      const links = document.querySelectorAll(
+        'a[href^="#selleradise_sidebar__"]'
+      );
+
+      if (links.length < 1) {
+        return;
+      }
+
+      for (const index in links) {
+        if (links.hasOwnProperty.call(links, index)) {
+          const link = links[index];
+          const type = link.href.split("__")[1];
+
+          if (!type) {
+            continue;
+          }
+
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            mobileMenuSend("OPEN");
+            activeSidebar.value = type;
+          });
+        }
+      }
+    }
+
+    function handleKeydown(e) {
+      if (!elements.menu.value) {
+        return;
+      }
+
+      switch (e.code) {
+        case "Escape":
+          e.preventDefault();
+          e.stopPropagation();
+          return mobileMenuSend("CLOSE");
+
+        case "Home":
+        case "PageUp":
+          e.preventDefault();
+          e.stopPropagation();
+          return focusIn(elements.menu.value, Focus.First);
+
+        case "End":
+        case "PageDown":
+          e.preventDefault();
+          e.stopPropagation();
+          return focusIn(elements.menu.value, Focus.Last);
+
+        case "ArrowDown":
+          e.preventDefault();
+          return focusIn(elements.menu.value, Focus.Next | Focus.WrapAround);
+
+        case "ArrowUp":
+          e.preventDefault();
+          return focusIn(
+            elements.menu.value,
+            Focus.Previous | Focus.WrapAround
+          );
+
+        case "Tab":
+          e.preventDefault();
+          if (e.shiftKey) {
+            return focusIn(
+              elements.menu.value,
+              Focus.Previous | Focus.WrapAround
+            );
+          }
+          return focusIn(elements.menu.value, Focus.Next | Focus.WrapAround);
+      }
+    }
+
+    watch(mobileMenuState, (to, from) => {
+      if (unref(to).matches("visible")) {
+        nextTick(() => {
+          if (!unref(elements.closeButton)) {
+            return;
+          }
+
+          unref(elements.closeButton).focus();
+        });
+      }
+    });
+
+    watchEffect(() => {
+      if (elements.menu.value) {
+        elements.menu.value.addEventListener("keydown", handleKeydown);
+      }
+    });
+
+    onMounted(() => {
+      enableTriggers();
+      updateMenuItems();
+    });
+
+    onUnmounted(() => {
+      if (elements.menu.value) {
+        elements.menu.value.removeEventListener("keydown", handleKeydown);
+      }
+    });
+
+    return {
+      ...selleradiseData,
+      mobileMenuItems,
+      mobileMenuState,
+      haveSettings,
+      activeSidebar,
+      mobileMenuSend,
+      closeMenu,
+      trans,
+      elements,
+    };
+  },
+};
+</script>
+
 <template>
   <transition name="selleradise__mobile-menu">
     <div
       v-cloak
       class="selleradise__mobile-menu"
       v-if="['visible', 'changing'].some(mobileMenuState.matches)"
+      :ref="elements.menu"
     >
       <button
         class="selleradise__mobile-menu-button--close"
         v-on:click="closeMenu()"
         aria-label="Close Mobile Menu"
+        :ref="elements.closeButton"
       >
         <slot name="icon-close"></slot>
       </button>
@@ -117,82 +283,3 @@
     </div>
   </transition>
 </template>
-
-<script>
-import MenuTreeMobile from "./MenuTreeMobile.vue";
-import {
-  mobileMenuItems,
-  updateCategories,
-  updateMenuItems,
-} from "../store/menu";
-import { childMenuIds } from "../store/menu";
-import { useMobileMenuService } from "../machines/mobile-menu.js";
-import Account from "../components/sidebars/Account";
-import Categories from "../components/sidebars/Categories";
-import DarkModeToggleBtn from "../components/DarkModeToggleBtn";
-import { trans } from "../helpers";
-import { activeSidebar, haveSettings } from "../store/menu";
-import { onMounted } from "@vue/runtime-core";
-
-export default {
-  components: {
-    "menu-tree-mobile": MenuTreeMobile,
-    Account,
-    Categories,
-    DarkModeToggleBtn,
-  },
-
-  setup() {
-    const { state: mobileMenuState, send: mobileMenuSend } =
-      useMobileMenuService();
-
-    function closeMenu() {
-      mobileMenuSend("CLOSE");
-      childMenuIds.value = [];
-    }
-
-    function triggers() {
-      const links = document.querySelectorAll(
-        'a[href^="#selleradise_sidebar__"]'
-      );
-
-      if (links.length < 1) {
-        return;
-      }
-
-      for (const index in links) {
-        if (links.hasOwnProperty.call(links, index)) {
-          const link = links[index];
-          const type = link.href.split("__")[1];
-
-          if (!type) {
-            continue;
-          }
-
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            mobileMenuSend("OPEN");
-            activeSidebar.value = type;
-          });
-        }
-      }
-    }
-
-    onMounted(() => {
-      triggers();
-      updateMenuItems();
-    });
-
-    return {
-      ...selleradiseData,
-      mobileMenuItems,
-      mobileMenuState,
-      haveSettings,
-      activeSidebar,
-      mobileMenuSend,
-      closeMenu,
-      trans,
-    };
-  },
-};
-</script>

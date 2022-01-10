@@ -1,0 +1,150 @@
+.comments-area {
+  background-color: color(background);
+  color: color(text);
+  padding: 2.5rem 0;
+  border-radius: var(--border-radius-base);
+
+  > ol {
+    list-style-type: none;
+    &:not(:first-child) {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .comment {
+    list-style-type: none;
+    &:not(:last-child) {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .comment-reply-title {
+    margin: 0;
+  }
+
+  .comments-title {
+    margin: 2.5rem 0 1rem;
+  }
+
+  .comment-form {
+    input,
+    textarea {
+    }
+    textarea {
+      padding: 1rem;
+    }
+    input[type="submit"] {
+      @extend .selleradise_button--primary;
+    }
+    label {
+      @include font-size(p);
+      font-weight: font("primary_bolder", "font-weight");
+      margin-bottom: 0.25rem;
+      display: inline-block;
+    }
+  }
+
+  .comment-list {
+    padding: 2.5rem 0;
+    background-color: color(background);
+    border-radius: var(--border-radius-base);
+
+    .comment {
+      &-author {
+        @extend .flex-start;
+        align-items: flex-start;
+
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 100%;
+          margin-right: 1rem;
+          background-color: rgba(color(text-rgb), 0.05);
+        }
+
+        b.fn {
+          @include font-size(small);
+          font-weight: font("primary_boldest", "font-weight");
+          color: rgba(color(text-rgb), 0.7);
+
+          a {
+            color: inherit;
+          }
+        }
+
+        .says {
+          @extend .sr-only;
+        }
+      }
+
+      &-metadata {
+        @include font-size(small);
+        color: color(text);
+        font-weight: 400;
+        margin-top: -1rem;
+        margin-left: 3.5rem;
+
+        a {
+          color: inherit;
+        }
+      }
+
+      &-content {
+        @extend .selleradise_prose;
+        color: color(text);
+        padding-left: 3.5rem;
+      }
+
+      &-reply-title {
+        @extend .flex-start;
+        color: color(text);
+        margin: 1.5rem 0 0.5rem 0;
+
+        #cancel-comment-reply-link {
+          @extend .selleradise_chip--base;
+          margin-left: 0.5rem;
+          font-family: var(--font-primary);
+        }
+      }
+
+      &-notes {
+        @include font-size(small);
+        color: color(text);
+      }
+
+      .comment-awaiting-moderation {
+        display: block;
+        font-weight: font("primary_bolder", "font-weight");
+        color: material-color("red", "500");
+        margin: 1rem 0 0 3.5rem;
+
+        :root[data-selleradise-theme-type="dark"] & {
+          color: material-color("red", "200");
+        }
+      }
+    }
+
+    .reply {
+      @extend .selleradise_chip--base;
+      display: inline-flex;
+      text-align: center;
+      padding: 0.3rem 1rem;
+      margin-left: 3rem;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  p.comment-form-cookies-consent {
+    @extend .flex-start;
+    margin: 2em 0;
+
+    label {
+      margin-bottom: 0;
+      width: 50%;
+      flex-grow: 1;
+    }
+  }
+}
