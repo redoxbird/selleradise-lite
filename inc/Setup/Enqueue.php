@@ -248,7 +248,7 @@ class Enqueue
         ];
 
         $woocommerce_data = [
-            "currencySymbol" => function_exists("get_woocommerce_currency_symbol") ? get_woocommerce_currency_symbol() : "",
+            "currencySymbol" => function_exists("get_woocommerce_currency_symbol") ? esc_html(get_woocommerce_currency_symbol()) : "",
             "cartURL" => function_exists("wc_get_cart_url") ? esc_url(wc_get_cart_url()) : "",
             "checkoutURL" => function_exists("wc_get_checkout_url") ? esc_url(wc_get_checkout_url()) : "",
             "shopURL" => function_exists("wc_get_page_permalink") ? esc_url(wc_get_page_permalink('shop')) : "",

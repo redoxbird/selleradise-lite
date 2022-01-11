@@ -50,7 +50,7 @@ import {
   ListboxOption,
 } from "@headlessui/vue";
 import truncate from "lodash/truncate";
-import { categoriesTree, categoriesLoaded } from "../store/menu";
+import { categoriesTree } from "../store/menu";
 import { trans } from "../helpers";
 import { inject, ref, unref, watch, watchEffect } from "@vue/runtime-core";
 

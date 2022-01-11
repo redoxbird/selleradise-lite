@@ -15,7 +15,7 @@
 		<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 	</div>
 		
-	<div class="entry-content">
+	<div class="entry-content <?php echo esc_attr(selleradise_is_woocommerce_page() ? '' : 'selleradise_prose') ?>">
 		<?php
 			the_content();
 

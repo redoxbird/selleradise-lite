@@ -222,11 +222,17 @@ import flatten from "lodash/flatten";
 import take from "lodash/take";
 
 import wNumb from "wnumb";
-import { reactive, ref, toRaw, toRefs, unref } from "@vue/reactivity";
-import { computed, nextTick, onMounted, watch } from "@vue/runtime-core";
+import { reactive, ref, toRefs, unref } from "@vue/reactivity";
+import {
+  computed,
+  nextTick,
+  onMounted,
+  watch,
+  watchEffect,
+} from "@vue/runtime-core";
 
 import * as overlay from "../../store/overlay";
-import { categoriesTree, categoriesLoaded } from "../../store/menu";
+import { categoriesTree } from "../../store/menu";
 
 export default {
   props: [
@@ -306,8 +312,8 @@ export default {
       show: sidebarType.value === "offscreen" ? false : true,
     });
 
-    watch(categoriesLoaded, (to, from) => {
-      if (to && categoriesTree && categoriesTree.value.length) {
+    watchEffect(() => {
+      if (categoriesTree && categoriesTree.value.length) {
         state.categories = [...unref(categoriesTree)];
         updateCheckedCategories();
       }

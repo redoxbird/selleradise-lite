@@ -33,7 +33,7 @@
 import { useSearchService } from "../machines/search";
 import { useMobileMenuService } from "../machines/mobile-menu.js";
 import { useCartService } from "../machines/cart.js";
-import { childMenuIds, updateCategories } from "../store/menu";
+import { linkedIds, updateCategories } from "../store/menu";
 import { onMounted } from "@vue/runtime-core";
 
 export default {
@@ -47,7 +47,7 @@ export default {
 
     function closeMenu() {
       mobileMenuSend("CLOSE");
-      childMenuIds.value = [];
+      linkedIds.mobileMenu.value = [];
     }
 
     onMounted(() => {

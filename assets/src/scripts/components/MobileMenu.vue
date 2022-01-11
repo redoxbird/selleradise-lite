@@ -2,10 +2,10 @@
 import MenuTreeMobile from "./MenuTreeMobile.vue";
 import {
   mobileMenuItems,
-  updateCategories,
   updateMenuItems,
+  categoriesTree,
 } from "../store/menu";
-import { childMenuIds } from "../store/menu";
+import { linkedIds } from "../store/menu";
 import { useMobileMenuService } from "../machines/mobile-menu.js";
 import Account from "../components/sidebars/Account";
 import Categories from "../components/sidebars/Categories";
@@ -40,9 +40,23 @@ export default {
       closeButton: ref(null),
     };
 
+    const showTrigger = {
+      category: () => {
+        if (!selleradiseData.isWooCommerce) {
+          return false;
+        }
+
+        if (categoriesTree.value.length <= 0) {
+          return false;
+        }
+
+        return true;
+      },
+    };
+
     function closeMenu() {
       mobileMenuSend("CLOSE");
-      childMenuIds.value = [];
+      linkedIds.mobileMenu.value = [];
     }
 
     function enableTriggers() {
@@ -130,9 +144,24 @@ export default {
       }
     });
 
+    const eventListeners = {
+      add: () => {
+        elements.menu.value.addEventListener("keydown", handleKeydown);
+      },
+
+      remove: () => {
+        elements.menu.value.removeEventListener("keydown", handleKeydown);
+      },
+
+      update: () => {
+        elements.menu.value.removeEventListener("keydown", handleKeydown);
+        elements.menu.value.addEventListener("keydown", handleKeydown);
+      },
+    };
+
     watchEffect(() => {
       if (elements.menu.value) {
-        elements.menu.value.addEventListener("keydown", handleKeydown);
+        eventListeners.add();
       }
     });
 
@@ -143,7 +172,7 @@ export default {
 
     onUnmounted(() => {
       if (elements.menu.value) {
-        elements.menu.value.removeEventListener("keydown", handleKeydown);
+        eventListeners.remove();
       }
     });
 
@@ -157,6 +186,7 @@ export default {
       closeMenu,
       trans,
       elements,
+      showTrigger,
     };
   },
 };
@@ -266,7 +296,7 @@ export default {
           </span>
         </button>
         <button
-          v-if="isWooCommerce"
+          v-if="showTrigger.category()"
           class="selleradise__mobile-menu__toggle"
           data-tippy-placement="left"
           v-tippy="trans('mobile-menu-button-categories')"

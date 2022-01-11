@@ -28,18 +28,12 @@ export default {
     const { state: mobileMenuState, send: mobileMenuSend } =
       useMobileMenuService();
 
-    function closeMenu() {
-      mobileMenuSend("CLOSE");
-      childMenuIds.value = [];
-    }
-
     return {
       ...selleradiseData,
       ...props,
       device,
       mobileMenuState,
       mobileMenuSend,
-      closeMenu,
       activeSidebar,
     };
   },

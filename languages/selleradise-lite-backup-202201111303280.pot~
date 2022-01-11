@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Selleradise Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 13:03+0000\n"
+"POT-Creation-Date: 2021-12-14 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -46,21 +46,6 @@ msgid_plural "%d Comments."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/Setup/Enqueue.php:217
-#, php-format
-msgid "%d item is in your cart"
-msgstr ""
-
-#: inc/Setup/Enqueue.php:218
-#, php-format
-msgid "%d items are in your cart"
-msgstr ""
-
-#: inc/Setup/Enqueue.php:244
-#, php-format
-msgid "%s has been added to your cart"
-msgstr ""
-
 #. %s: Quantity.
 #: woocommerce/global/quantity-input.php:20
 #, php-format
@@ -82,11 +67,11 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: inc/Helpers.php:666 inc/Plugins/BreadcrumbsTrail.php:271
+#: inc/Helpers.php:668 inc/Plugins/BreadcrumbsTrail.php:271
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:89
+#: inc/Api/Customizer/Colors.php:106
 msgid "a background color."
 msgstr ""
 
@@ -94,15 +79,15 @@ msgstr ""
 msgid "A password will be sent to your email address."
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:126 inc/Api/Customizer/Colors.php:193
+#: inc/Api/Customizer/Colors.php:125 inc/Api/Customizer/Colors.php:192
 msgid "Accent"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:219
+#: inc/Setup/Enqueue.php:220
 msgid "Account"
 msgstr ""
 
-#: inc/Api/Customizer/Header.php:52
+#: inc/Api/Customizer/Header.php:51
 msgid "Accurate"
 msgstr ""
 
@@ -124,15 +109,15 @@ msgstr ""
 msgid "Adaptive Colors"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:226
+#: inc/Setup/Enqueue.php:227
 msgid "Add To Cart"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:227
+#: inc/Setup/Enqueue.php:228
 msgid "Adding To Cart"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:210
+#: inc/Setup/Enqueue.php:211
 msgid "All Categories"
 msgstr ""
 
@@ -150,17 +135,16 @@ msgstr ""
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
+#: inc/Api/Customizer/Footer.php:45
+msgid "All rights reserved by Selleradise &copy; 2021."
+msgstr ""
+
 #: woocommerce/myaccount/form-login.php:136
 msgid "Already have an account?"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:127 inc/Api/Customizer/Colors.php:194
+#: inc/Api/Customizer/Colors.php:126 inc/Api/Customizer/Colors.php:193
 msgid "an accent color, rarely used."
-msgstr ""
-
-#: inc/Setup/Enqueue.php:245
-#, php-format
-msgid "An error occurred while adding %s to your cart"
 msgstr ""
 
 #. 1: plugin name, 2: error message.
@@ -169,19 +153,15 @@ msgstr ""
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: inc/Setup/Enqueue.php:246
-msgid "An error occurred while updating cart"
-msgstr ""
-
 #: woocommerce/cart/cart.php:156 woocommerce/cart/cart.php:157
 msgid "Apply coupon"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:235
+#: inc/Setup/Enqueue.php:236
 msgid "Apply Filters"
 msgstr ""
 
-#: inc/Helpers.php:667 inc/Plugins/BreadcrumbsTrail.php:272
+#: inc/Helpers.php:669 inc/Plugins/BreadcrumbsTrail.php:272
 msgid "Archives"
 msgstr ""
 
@@ -202,7 +182,7 @@ msgstr ""
 msgid "Average rating"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:88 inc/Api/Customizer/Colors.php:155
+#: inc/Api/Customizer/Colors.php:105 inc/Api/Customizer/Colors.php:172
 msgid "Background"
 msgstr ""
 
@@ -228,30 +208,34 @@ msgstr[1] ""
 msgid "Blog"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:74
+#: inc/Api/Customizer/Colors.php:73
 msgid "Both"
 msgstr ""
 
-#: inc/Helpers.php:663 inc/Plugins/BreadcrumbsTrail.php:269
+#: inc/Helpers.php:665 inc/Plugins/BreadcrumbsTrail.php:269
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/Helpers.php:664
+#: inc/Helpers.php:666
 msgctxt "breadcrumbs aria label"
 msgid "Home"
 msgstr ""
 
-#: inc/Helpers.php:662 inc/Plugins/BreadcrumbsTrail.php:268
+#: inc/Helpers.php:664 inc/Plugins/BreadcrumbsTrail.php:268
 msgid "Browse:"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:208
+#: inc/Setup/Enqueue.php:209
 msgid "Cart"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:220 inc/Setup/Enqueue.php:236
+#: inc/Setup/Enqueue.php:221 inc/Setup/Enqueue.php:237
 msgid "Categories"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:71
+msgid "Category Card Type"
 msgstr ""
 
 #: inc/Api/Customizer/Fonts.php:91
@@ -260,11 +244,11 @@ msgid ""
 "if fonts are not loading properly."
 msgstr ""
 
-#: inc/Setup/Enqueue.php:205
+#: inc/Setup/Enqueue.php:206
 msgid "Checkout"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:237
+#: inc/Setup/Enqueue.php:238
 msgid "Clear"
 msgstr ""
 
@@ -272,11 +256,15 @@ msgstr ""
 msgid "Close (Esc)"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:156
+#: inc/Api/Customizer/Colors.php:222
+msgid "Color Palette"
+msgstr ""
+
+#: inc/Api/Customizer/Colors.php:173
 msgid "Color used either for background."
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:60
+#: inc/Api/Customizer/Colors.php:59
 msgid "Colors"
 msgstr ""
 
@@ -285,13 +273,17 @@ msgid "Comment navigation"
 msgstr ""
 
 #. %s is the page number.
-#: inc/Helpers.php:673 inc/Plugins/BreadcrumbsTrail.php:278
+#: inc/Helpers.php:675 inc/Plugins/BreadcrumbsTrail.php:278
 #, php-format
 msgid "Comment Page %s"
 msgstr ""
 
 #: comments.php:82
 msgid "Comments are closed."
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:63
+msgid "Compact"
 msgstr ""
 
 #. %s: Name of current post.
@@ -302,12 +294,6 @@ msgstr ""
 
 #: inc/Api/Customizer/Footer.php:43
 msgid "Copyright notice"
-msgstr ""
-
-#: inc/Api/Customizer/Footer.php:45
-#: template-parts/footers/partials/notice.php:11
-#, php-format
-msgid "Copyright © %s | All rights reserved by %s"
 msgstr ""
 
 #: woocommerce/cart/cart.php:155
@@ -323,11 +309,11 @@ msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:73
+#: inc/Api/Customizer/Colors.php:72
 msgid "Dark"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:223
+#: inc/Setup/Enqueue.php:224
 msgid "Dark Mode"
 msgstr ""
 
@@ -335,7 +321,8 @@ msgstr ""
 msgid "Decrease Product Quantity"
 msgstr ""
 
-#: woocommerce/loop/orderby-default.php:19
+#: woocommerce/loop/orderby-default.php:19 inc/Api/Customizer/Shop.php:59
+#: inc/Api/Customizer/Shop.php:77
 msgid "Default"
 msgstr ""
 
@@ -361,7 +348,7 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:206
+#: inc/Setup/Enqueue.php:207
 msgid "Edit Cart"
 msgstr ""
 
@@ -377,7 +364,7 @@ msgstr ""
 msgid "Empty"
 msgstr ""
 
-#: inc/Core/Ajax.php:387
+#: inc/Core/Ajax.php:381
 msgid "Error occurred while updating product in cart"
 msgstr ""
 
@@ -385,7 +372,7 @@ msgstr ""
 msgid "External Source"
 msgstr ""
 
-#: inc/Api/Customizer/Header.php:51
+#: inc/Api/Customizer/Header.php:50
 msgid "Fast"
 msgstr ""
 
@@ -410,7 +397,7 @@ msgstr ""
 msgid "Go to homepage"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:207
+#: inc/Setup/Enqueue.php:208
 msgid "Go to slide"
 msgstr ""
 
@@ -446,6 +433,10 @@ msgstr ""
 
 #. URI of the theme
 msgid "https://selleradise.com"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:78
+msgid "Icon"
 msgstr ""
 
 #: woocommerce/global/quantity-input.php:23
@@ -521,7 +512,7 @@ msgstr ""
 msgid "Latest"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:213
+#: inc/Setup/Enqueue.php:214
 msgid "Learn More"
 msgstr ""
 
@@ -535,8 +526,12 @@ msgstr ""
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:72
+#: inc/Api/Customizer/Colors.php:71
 msgid "Light"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:62
+msgid "List"
 msgstr ""
 
 #: inc/Api/Customizer/Fonts.php:90
@@ -557,12 +552,12 @@ msgstr ""
 msgid "Login here"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:214
+#: inc/Setup/Enqueue.php:215
 #: template-parts/headers/partials/account-info.php:19
 msgid "Login or create a new account"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:215
+#: inc/Setup/Enqueue.php:216
 msgid "Login/Register"
 msgstr ""
 
@@ -570,7 +565,7 @@ msgstr ""
 msgid "Logo (Dark Mode)"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:216 woocommerce/cart/cart-empty.php:25
+#: inc/Setup/Enqueue.php:217 woocommerce/cart/cart-empty.php:25
 msgid "Looks like you have not added any product to your cart yet."
 msgstr ""
 
@@ -578,12 +573,16 @@ msgstr ""
 msgid "Lost your password?"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:108 inc/Api/Customizer/Colors.php:175
+#: inc/Api/Customizer/Colors.php:87 inc/Api/Customizer/Colors.php:154
 msgid "Main"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:221 template-parts/headers/header-default.php:52
+#: inc/Setup/Enqueue.php:222 template-parts/headers/header-default.php:52
 msgid "Menu"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:60
+msgid "Minimal"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2563
@@ -591,7 +590,7 @@ msgid "Minimum required version:"
 msgstr ""
 
 #. Minute archive title. %s is the minute time format.
-#: inc/Helpers.php:675 inc/Plugins/BreadcrumbsTrail.php:280
+#: inc/Helpers.php:677 inc/Plugins/BreadcrumbsTrail.php:280
 #, php-format
 msgid "Minute %s"
 msgstr ""
@@ -610,7 +609,7 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:68
+#: inc/Api/Customizer/Colors.php:67
 msgid "Mode"
 msgstr ""
 
@@ -626,7 +625,6 @@ msgstr ""
 
 #: template-parts/content/single-post-navigation.php:18
 #: woocommerce/loop/pagination.php:35
-#: template-parts/pages/blog/partials/main.php:39
 msgid "Next"
 msgstr ""
 
@@ -672,12 +670,8 @@ msgstr ""
 msgid "Not Installed"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:224 template-parts/content/none.php:17
+#: inc/Setup/Enqueue.php:225 template-parts/content/none.php:17
 msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content/empty-state.php:19
-msgid "Nothing found"
 msgstr ""
 
 #: inc/Api/Customizer/Shop.php:44
@@ -688,7 +682,7 @@ msgstr ""
 msgid "Older Comments"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:225
+#: inc/Setup/Enqueue.php:226
 msgid "Other"
 msgstr ""
 
@@ -697,12 +691,8 @@ msgstr ""
 msgid "Out Of Stock"
 msgstr ""
 
-#: woocommerce/single-product/tabs/tabs.php:28
-msgid "Overview"
-msgstr ""
-
 #. %s is the page number.
-#: inc/Helpers.php:671 inc/Plugins/BreadcrumbsTrail.php:276
+#: inc/Helpers.php:673 inc/Plugins/BreadcrumbsTrail.php:276
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -732,8 +722,8 @@ msgid ""
 "according to the WordPress guidelines."
 msgstr ""
 
-#: inc/Setup/Enqueue.php:212
-msgid "Please enter at least 2 characters"
+#: inc/Setup/Enqueue.php:213
+msgid "Please enter at least 2 digits"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2614
@@ -799,7 +789,6 @@ msgstr ""
 
 #: template-parts/content/single-post-navigation.php:11
 #: woocommerce/loop/pagination.php:34
-#: template-parts/pages/blog/partials/main.php:38
 msgid "Previous"
 msgstr ""
 
@@ -807,7 +796,7 @@ msgstr ""
 msgid "Previous (arrow left)"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:238
+#: inc/Setup/Enqueue.php:239
 msgid "Price"
 msgstr ""
 
@@ -839,12 +828,16 @@ msgstr ""
 msgid "Proceed to checkout"
 msgstr ""
 
+#: inc/Api/Customizer/Shop.php:53
+msgid "Product Card Type"
+msgstr ""
+
 #: woocommerce/global/quantity-input.php:45
 msgctxt "Product quantity input tooltip"
 msgid "Qty"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:232
+#: inc/Setup/Enqueue.php:233
 msgid "Products"
 msgstr ""
 
@@ -884,11 +877,6 @@ msgstr ""
 
 #: woocommerce/myaccount/form-login.php:80
 msgid "Register here"
-msgstr ""
-
-#: woocommerce/single-product/related.php:22
-#: woocommerce/single-product/tabs/tabs.php:48
-msgid "Related Products"
 msgstr ""
 
 #: woocommerce/loop/orderby-default.php:25
@@ -952,34 +940,24 @@ msgstr ""
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:230
+#: inc/Setup/Enqueue.php:231
 msgid "Sale ends in"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:229
+#: inc/Setup/Enqueue.php:230
 msgid "Sale has ended"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:231
+#: inc/Setup/Enqueue.php:232
 msgid "Sale starts in"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:209 inc/Setup/Enqueue.php:233
+#: inc/Setup/Enqueue.php:210 inc/Setup/Enqueue.php:234
 msgid "Search"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:211
-msgid "Search for products here..."
-msgstr ""
-
-#. %s: Search Term.
-#: search.php:22
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
 #. %s is the search query.
-#: inc/Helpers.php:669 inc/Plugins/BreadcrumbsTrail.php:274
+#: inc/Helpers.php:671 inc/Plugins/BreadcrumbsTrail.php:274
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
@@ -989,12 +967,7 @@ msgid "Select a light header logo to be used with dark background."
 msgstr ""
 
 #. Description of the theme
-msgid ""
-"Selleradise is a clean, responsive and accessible WooCommerce theme. It is "
-"very easy to use and requires minimal configuration to get started. "
-"Selleradise comes with all the basic features that you need in a modern "
-"online store like quick search, mini cart, dark mode, shop filters, lazy "
-"loading, etc."
+msgid "Selleradise is fast, responsive and accessible WooCommerce theme."
 msgstr ""
 
 #. Name of the theme
@@ -1005,11 +978,11 @@ msgstr ""
 msgid "Selleradise Widgets"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:61
+#: inc/Api/Customizer/Colors.php:60
 msgid "Set color for the website."
 msgstr ""
 
-#: inc/Setup/Enqueue.php:222 inc/Setup/Enqueue.php:234
+#: inc/Setup/Enqueue.php:223 inc/Setup/Enqueue.php:235
 msgid "Settings"
 msgstr ""
 
@@ -1042,8 +1015,8 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: template-parts/headers/skip-link.php:10
-msgid "Skip to main content"
+#: inc/Api/Customizer/Shop.php:61
+msgid "Simple"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:336
@@ -1056,10 +1029,6 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: woocommerce/loop/orderby-default.php:47
-msgid "Sort By"
-msgstr ""
-
 #: inc/class-tgm-plugin-activation.php:2615
 msgid "Source"
 msgstr ""
@@ -1068,7 +1037,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:239
+#: inc/Setup/Enqueue.php:240
 msgid "Suggestions"
 msgstr ""
 
@@ -1077,15 +1046,15 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:240
+#: inc/Setup/Enqueue.php:241
 msgid "Tags"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:98 inc/Api/Customizer/Colors.php:165
+#: inc/Api/Customizer/Colors.php:115 inc/Api/Customizer/Colors.php:182
 msgid "Text"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:99 inc/Api/Customizer/Colors.php:166
+#: inc/Api/Customizer/Colors.php:116 inc/Api/Customizer/Colors.php:183
 msgid "text color, make sure that it contrasts well with the background color."
 msgstr ""
 
@@ -1109,7 +1078,9 @@ msgstr[1] ""
 #: inc/class-tgm-plugin-activation.php:391
 #: inc/class-tgm-plugin-activation.php:3027
 msgid "The following plugin was activated successfully:"
-msgstr ""
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:367
 #, php-format
@@ -1143,7 +1114,7 @@ msgid ""
 "hosts, so please be patient."
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:109 inc/Api/Customizer/Colors.php:176
+#: inc/Api/Customizer/Colors.php:88 inc/Api/Customizer/Colors.php:155
 msgid "The main color of the website."
 msgstr ""
 
@@ -1159,7 +1130,7 @@ msgid ""
 "and renaming did not work."
 msgstr ""
 
-#: inc/Setup/Enqueue.php:241
+#: inc/Setup/Enqueue.php:242
 msgid "Theme"
 msgstr ""
 
@@ -1212,6 +1183,10 @@ msgstr[1] ""
 
 #: woocommerce/single-product/photoswipe.php:32
 msgid "Toggle fullscreen"
+msgstr ""
+
+#: template-parts/post/card-trending.php:36
+msgid "Trending Posts"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2616
@@ -1276,12 +1251,12 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:228
+#: inc/Setup/Enqueue.php:229
 msgid "View Cart"
 msgstr ""
 
 #. Weekly archive title. %s is the week date format.
-#: inc/Helpers.php:677 inc/Plugins/BreadcrumbsTrail.php:282
+#: inc/Helpers.php:679 inc/Plugins/BreadcrumbsTrail.php:282
 #, php-format
 msgid "Week %s"
 msgstr ""
@@ -1291,13 +1266,21 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: inc/Setup/Enqueue.php:242
+#: inc/Setup/Enqueue.php:243
 #, php-format
 msgid "Welcome to %s"
 msgstr ""
 
 #: inc/Api/Customizer/Shop.php:38
 msgid "Where to show the filters for the product catalog?"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:72
+msgid "Which type of card design should be used for the shop categories?"
+msgstr ""
+
+#: inc/Api/Customizer/Shop.php:54
+msgid "Which type of card design should be used for the shop?"
 msgstr ""
 
 #: inc/Setup/Setup.php:78
@@ -1315,16 +1298,11 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: woocommerce/single-product/up-sells.php:31
-#: woocommerce/single-product/tabs/tabs.php:42
-msgid "You may also like…"
-msgstr ""
-
 #: woocommerce/checkout/form-checkout.php:26
 msgid "You must be logged in to checkout."
 msgstr ""
 
-#: inc/Setup/Enqueue.php:243 woocommerce/cart/cart-empty.php:24
+#: inc/Setup/Enqueue.php:244 woocommerce/cart/cart-empty.php:24
 msgid "Your cart is empty."
 msgstr ""
 

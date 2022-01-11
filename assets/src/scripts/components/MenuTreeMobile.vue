@@ -1,9 +1,9 @@
 <script>
-import { childMenuIds } from "../store/menu";
+import { linkedIds, elements, active } from "../store/menu";
 import { useMobileMenuService } from "../machines/mobile-menu.js";
-import { ref } from "@vue/reactivity";
+import { computed } from "@vue/reactivity";
 import { trans } from "../helpers";
-import { onMounted, watch } from "@vue/runtime-core";
+import { onMounted, onUnmounted } from "@vue/runtime-core";
 
 export default {
   props: ["items", "level", "parent"],
@@ -13,19 +13,15 @@ export default {
       useMobileMenuService();
 
     const nonLinkCharacters = ["#", " ", ""];
-    const list = ref(null);
-    const elements = {
-      backButton: ref(null),
-    };
 
     function openChildMenu(item) {
       if (!item.children) {
         return;
       }
 
-      if (!childMenuIds.value.includes(item.ID)) {
-        childMenuIds.value.push(item.ID);
-        list.value.scrollIntoView({
+      if (!linkedIds.mobileMenu.value.includes(item.ID)) {
+        linkedIds.mobileMenu.value.push(item.ID);
+        elements.list.value.scrollIntoView({
           behavior: "smooth",
           block: "start",
           inline: "nearest",
@@ -40,7 +36,7 @@ export default {
       if (item.children.length <= 0) {
         return false;
       }
-      return childMenuIds.value.includes(item.ID);
+      return linkedIds.mobileMenu.value.includes(item.ID);
     }
 
     function openChildMenuLink(e, item) {
@@ -54,16 +50,27 @@ export default {
       openChildMenu(item);
     }
 
-    watch(
-      () => [...childMenuIds.value],
-      (to, from) => {
-        if (to.length > from.length) {
-          console.log("Forward");
-        } else {
-          console.log("Backward");
-        }
+    const tabindex = computed(() => {
+      if (!props.parent && !active.submenuID.value) {
+        return null;
       }
-    );
+
+      if (
+        props.parent &&
+        active.submenuID.value &&
+        props.parent.ID === active.submenuID.value
+      ) {
+        return null;
+      }
+
+      return -1;
+    });
+
+    onUnmounted(() => {
+      if (elements.backButton.value) {
+        elements.backButton.value.focus();
+      }
+    });
 
     onMounted(() => {
       if (elements.backButton.value) {
@@ -78,10 +85,11 @@ export default {
       shouldShowChildMenu,
       openChildMenuLink,
       mobileMenuSend,
-      childMenuIds,
-      list,
       trans,
       elements,
+      active,
+      tabindex,
+      linkedIds,
     };
   },
 };
@@ -91,16 +99,17 @@ export default {
   <ul
     class="selleradise_sidebar__navigation-list"
     :class="`level-${level}`"
-    ref="list"
+    :ref="elements.list"
   >
     <li>
       <button
         class="selleradise_sidebar__navigation-button--back"
-        v-on:click="childMenuIds.pop()"
-        v-on:keydown.arrow-left.prevent="childMenuIds.pop()"
+        v-on:click="linkedIds.mobileMenu.value.pop()"
+        v-on:keydown.arrow-left.prevent="linkedIds.mobileMenu.value.pop()"
         :ref="elements.backButton"
         aria-label="Go To Previous List"
         v-if="level > 1"
+        :tabindex="tabindex"
       >
         <span
           class="inlineSVGIcon"
@@ -119,13 +128,14 @@ export default {
 
     <li
       v-for="menuItem in items"
-      :key="menuItem.ID"
       class="menutItem"
+      :key="menuItem.ID"
       :class="[
         menuItem.children && menuItem.children.length > 0 ? 'hasChildren' : '',
         menuItem.classes && ` ${menuItem.classes} `,
       ]"
       :title="menuItem.attr_title ? menuItem.attr_title : null"
+      :data-id="menuItem.ID"
     >
       <a
         class="menuItemLink"
@@ -133,6 +143,7 @@ export default {
         :target="menuItem.target ? menuItem.target : null"
         v-on:click="openChildMenuLink($event, menuItem)"
         v-on:keydown.arrow-right.prevent="openChildMenuLink($event, menuItem)"
+        :tabindex="tabindex"
       >
         <span>{{ menuItem.title }}</span>
       </a>
@@ -145,7 +156,10 @@ export default {
         :aria-haspopup="
           menuItem.children && menuItem.children.length > 0 ? true : undefined
         "
-        :aria-expanded="childMenuIds.includes(menuItem.ID) ? true : false"
+        :aria-expanded="
+          linkedIds.mobileMenu.value.includes(menuItem.ID) ? true : false
+        "
+        :tabindex="tabindex"
       >
         <span
           class="inlineSVGIcon"

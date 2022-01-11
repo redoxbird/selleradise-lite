@@ -7,13 +7,13 @@
  * @package selleradise
  */
 
-function is_blog()
+function selleradise_is_blog()
 {
     return (is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
 }
 
 
-if (!is_active_sidebar( 'selleradise-sidebar' ) || !is_blog()) {
+if (!is_active_sidebar( 'selleradise-sidebar' ) || !selleradise_is_blog()) {
 	return;
 } 
 

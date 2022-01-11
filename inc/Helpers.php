@@ -625,7 +625,6 @@ if (!function_exists('selleradise_get_fonts')) {
             }
         }
 
-        
         if ($_key !== false && isset($fonts[$_key])) {
             return $fonts[$_key];
         }
@@ -928,5 +927,17 @@ if (!function_exists('selleradise_get_shop_max_price')) {
 
         return $max_price;
 
+    }
+}
+
+if (!function_exists('selleradise_is_woocommerce_page')) {
+
+    function selleradise_is_woocommerce_page()
+    {
+        if (!class_exists('WooCommerce')) {
+            return false;
+        }
+
+        return is_cart() || is_checkout() || is_account_page() || is_shop();
     }
 }

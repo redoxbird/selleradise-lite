@@ -320,10 +320,6 @@
         &:hover {
           background-color: rgba(color(text-rgb), 0.05);
         }
-
-        [data-focus-source="key"] &:focus {
-          box-shadow: 0 0 0 0.05em color(text);
-        }
       }
     }
   }
