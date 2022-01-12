@@ -40,6 +40,11 @@
 
   .admin-bar & {
     top: 32px;
+
+    @include device(mobile) {
+      top: 46px;
+      position: absolute;
+    }
   }
 
   .overlayMenu {

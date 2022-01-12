@@ -7,7 +7,7 @@
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
 
 	<!-- Specify what PHP version the code has to be compatible with. -->
-	<config name="testVersion" value="5.6-" />
+	<config name="testVersion" value="7.1-" />
 
 	<!-- PATH for PHPCS -->
 	<arg name="basepath" value="." />
@@ -20,7 +20,6 @@
 
 	<!-- Check the whole Theme, with exclusions. -->
 	<file>.</file>
-	<exclude-pattern>acf-json/index.php</exclude-pattern>
 	<exclude-pattern>wp-config.sample.php</exclude-pattern>
 	<exclude-pattern>*/inc/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
@@ -35,11 +34,11 @@
 	<!-- Include WordPress I18n ruleset-->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="selleradise,tgmpa" />
+			<property name="text_domain" type="array" value="selleradise-lite,tgmpa" />
 		</properties>
 	</rule>
 	<!-- Include PHP Compatibility Coding Standard for WordPress. -->
 	<rule ref="PHPCompatibilityWP" />
 
-	<config name="minimum_supported_wp_version" value="4.6"/>
+	<config name="minimum_supported_wp_version" value="5.5"/>
 </ruleset>
