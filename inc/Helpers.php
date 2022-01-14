@@ -1,7 +1,7 @@
 <?php
 /**
  * Helpers methods
- * 
+ *
  * @package Selleradise
  */
 
@@ -868,28 +868,6 @@ if (!function_exists('selleradise_create_branch')) {
     }
 }
 
-if (!function_exists('selleradise_convert_data_units')) {
-
-    function selleradise_convert_data_units($size)
-    {
-        if (!$size) {
-            return;
-        }
-
-        $unit = array('b', 'kb', 'mb', 'gb', 'tb', 'pb');
-        return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . ' ' . $unit[$i];
-
-    }
-}
-
-if (!function_exists('selleradise_memory_get_usage')) {
-
-    function selleradise_memory_get_usage(bool $real_usage = false)
-    {
-        return selleradise_convert_data_units(memory_get_usage($real_usage));
-    }
-}
-
 if (!function_exists('selleradise_trending_posts_reset_time')) {
 
     function selleradise_trending_posts_reset_time($format = false)
@@ -917,9 +895,12 @@ if (!function_exists('selleradise_get_shop_max_price')) {
 
         global $wpdb;
 
-        $statement = "SELECT * FROM {$wpdb->prefix}postmeta WHERE `meta_key` = %s ORDER BY CAST(`meta_value` as FLOAT) DESC LIMIT 1";
-        $prepare = $wpdb->prepare($statement, ['_price']);
-        $result = $wpdb->get_results($prepare);
+        $result = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT * FROM {$wpdb->prefix}postmeta WHERE `meta_key` = %s ORDER BY CAST(`meta_value` as FLOAT) DESC LIMIT 1", ['_price']
+            )
+        );
+
         $max_price = $result[0]->meta_value ?? 1000;
 
         set_transient('selleradise_get_shop_max_price', $max_price, DAY_IN_SECONDS);

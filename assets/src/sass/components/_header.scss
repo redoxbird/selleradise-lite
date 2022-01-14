@@ -38,15 +38,6 @@
     background-color: color(background);
   }
 
-  .admin-bar & {
-    top: 32px;
-
-    @include device(mobile) {
-      top: 46px;
-      position: absolute;
-    }
-  }
-
   .overlayMenu {
     @extend .overlay;
     z-index: 500;
@@ -153,6 +144,15 @@
         @include font-size(x-small);
         line-height: 1;
       }
+    }
+  }
+
+  .admin-bar & {
+    top: 32px;
+
+    @include device(mobile) {
+      top: 46px;
+      position: absolute;
     }
   }
 }

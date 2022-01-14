@@ -29,7 +29,7 @@ class Tags
             esc_html(get_the_modified_date())
         );
         $posted_on = sprintf(
-            esc_html_x('%s', 'post date', 'selleradise-lite'),
+            esc_html('%s'),
             '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' .selleradise_svg('unicons-line/calender').$time_string . '</a>'
         );
      

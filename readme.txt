@@ -4,15 +4,21 @@ Tags:  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, cust
 Requires at least: 5.5
 Requires PHP: 7.1
 Tested up to: 5.8
-Stable tag: 1.2.3
-License: GPLv3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 1.2.4
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 == Description ==
 
 Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store like quick search, mini cart, dark mode, shop filters, lazy loading, etc.
 
 == Changelog ==
+
+= 1.2.4 =
+* Fixing theme sniffer issues
+
+= 1.2.3 =
+* Making mobile menu fully accessible
 
 = 1.2.2 =
 * Removing default logo in favour of placeholder text

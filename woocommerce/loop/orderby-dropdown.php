@@ -16,13 +16,13 @@ $selected_option = [];
 $orderby_request = $_GET['orderby'] ?? 'menu_order';
 
 
-foreach ( $catalog_orderby_options as $id => $name )  {
+foreach ( $catalog_orderby_options as $options_id => $options_name )  {
 	$option = [
-		'id' => esc_attr($id),
-		'name' => esc_attr($name),
+		'id' => esc_attr($options_id),
+		'name' => esc_attr($options_name),
 	];
 
-	if($orderby_request && $id == $orderby_request) {
+	if($orderby_request && $options_id == $orderby_request) {
 		$selected_option = $option;
 	}
 

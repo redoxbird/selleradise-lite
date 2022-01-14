@@ -14,4 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 ?>
 
-<?php echo wc_get_product_tag_list( $product->get_id(), ' ', '<div class="selleradise_single_product__tags">' . _n( '', '', count( $product->get_category_ids() ), 'selleradise-lite' ) . ' ', '</div>' ); ?>
+<?php 
+	echo wc_get_product_tag_list(
+		$product->get_id(), 
+		' ', 
+		'<div class="selleradise_single_product__tags">', 
+		'</div>' 
+	); 
+?>

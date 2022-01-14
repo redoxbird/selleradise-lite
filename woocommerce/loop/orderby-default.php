@@ -25,13 +25,13 @@ $labels = [
 	'relevance'  => __( 'Relevance', 'selleradise-lite' )
 ];
 
-foreach ( $catalog_orderby_options as $id => $name )  {
+foreach ( $catalog_orderby_options as $options_id => $options_name )  {
 	$option = [
-		'id' => $id,
-		'name' => $name,
+		'id' => $options_id,
+		'name' => $options_name,
 	];
 
-	if($orderby_request && $id == $orderby_request) {
+	if($orderby_request && $options_id == $orderby_request) {
 		$selected_option = $option;
 	}
 
@@ -48,19 +48,19 @@ foreach ( $catalog_orderby_options as $id => $name )  {
 		</span>
 
 		<ul class="selleradise_tablist">
-			<?php foreach ($catalog_orderby_options as $id => $name): ?>
+			<?php foreach ($catalog_orderby_options as $options_id => $name): ?>
 				<li>
 					<input
 					type="radio"
 					name="orderby"
-					id="orderby-<?php echo esc_attr($id); ?>"
-					value="<?php echo esc_attr($id); ?>"
+					id="orderby-<?php echo esc_attr($options_id); ?>"
+					value="<?php echo esc_attr($options_id); ?>"
 					onChange="this.form.submit()"
-					<?php checked($orderby, $id);?>
+					<?php checked($orderby, $options_id);?>
 					>
-					<label for="orderby-<?php echo esc_attr($id); ?>" class="selleradise_tablist__button">
-						<?php echo selleradise_svg(selleradise_get_icon($id)); ?>
-						<span><?php echo esc_html($labels[$id] ?? ''); ?></span>
+					<label for="orderby-<?php echo esc_attr($options_id); ?>" class="selleradise_tablist__button">
+						<?php echo selleradise_svg(selleradise_get_icon($options_id)); ?>
+						<span><?php echo esc_html($labels[$options_id] ?? ''); ?></span>
 					</label>
 				</li>
 			<?php endforeach;?>

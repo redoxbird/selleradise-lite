@@ -117,6 +117,3 @@ $color_variables = [
     
 </style>
 
-
-
-<?php

@@ -160,6 +160,15 @@
   :root[data-focus-source="key"] &:focus {
     opacity: 1;
   }
+
+  .admin-bar & {
+    top: calc(1rem + 32px);
+
+    @include device(mobile) {
+      top: calc(1rem + 46px);
+      position: absolute;
+    }
+  }
 }
 
 .button--icon {

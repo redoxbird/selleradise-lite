@@ -144,9 +144,10 @@ class Setup
 
         global $wpdb;
 
+
         if (!empty($starts__with)) {
             $pieces['where'] .= " AND t.name LIKE %s";
-            $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts__with)}%");
+            $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts__with)}%"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
             return $pieces;
         }
@@ -156,8 +157,9 @@ class Setup
         if (!empty($sounds__like)) {
             $like = $wpdb->esc_like($sounds__like);
             $pieces['where'] .= " AND ((t.name LIKE %s OR t.slug LIKE %s) OR t.name SOUNDS LIKE %s)";
-            $pieces['where'] = $wpdb->prepare($pieces['where'], "%$like%", "%$like%", "$like");
+            $pieces['where'] = $wpdb->prepare($pieces['where'], "%$like%", "%$like%", "$like"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         }
+
 
         return $pieces;
     }
@@ -173,24 +175,28 @@ class Setup
         global $wpdb;
 
         $pieces['where'] .= " AND wp_posts.post_title LIKE %s";
-        $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts_with)}%");
+        $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts_with)}%"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
         return $pieces;
     }
 
     public function admin_pages()
     {
-        $admin_page = add_submenu_page(
-            'themes.php', 
-            'Selleradise Information', 
-            'Selleradise', 
-            'manage_options', 
-            'selleradise_lite_info', 
+        $admin_page = add_theme_page(
+            'Selleradise Information',
+            'Selleradise',
+            'manage_options',
+            'selleradise_lite_info',
             [$this, 'selleradise_lite_info_page']
         );
 
-        add_action('load-'.$admin_page, [$this, 'load_admin_css']);
+        add_action('load-' . $admin_page, [$this, 'load_admin_css']);
 
+    }
+
+    public function selleradise_lite_info_page()
+    {
+        get_template_part("template-parts/admin/info");
     }
 
     public function load_admin_css()
@@ -201,11 +207,6 @@ class Setup
     public function enqueue_admin_css()
     {
         wp_enqueue_style('selleradise-admin', selleradise_assets('css/admin.css'), array(), SELLERADISE_VERSION, 'all');
-    }
-
-    public function selleradise_lite_info_page()
-    {
-        get_template_part("template-parts/admin/info");
     }
 
     public function delete_product_category_transient($term_id)

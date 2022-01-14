@@ -30,5 +30,3 @@ if ($args) {
     <?php get_template_part('template-parts/footers/partials/back-to-top'); ?>
 
 </footer><!-- #colophon -->
-
-<?php

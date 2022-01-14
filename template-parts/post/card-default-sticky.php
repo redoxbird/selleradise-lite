@@ -32,5 +32,3 @@ if (get_theme_mod('post_card_adaptive_colors', false)) {
     <?php get_template_part('template-parts/post/partials/image', null, ["type" => "default"]);?>
 
 </div><!-- #post-## -->
-
-<?php

@@ -240,12 +240,15 @@ export default {
       <transition name="selleradise_sidebar">
         <div
           class="selleradise_sidebar__settings"
-          v-if="haveSettings && activeSidebar === 'settings'"
+          v-if="
+            Object.values(settings).includes('1') &&
+            activeSidebar === 'settings'
+          "
         >
           <ul>
             <li
               class="selleradise_sidebar__settings-toggle"
-              v-if="settings.dark_mode_setting"
+              v-if="settings.dark_mode_setting == '1'"
             >
               <DarkModeToggleBtn />
             </li>
@@ -284,7 +287,7 @@ export default {
         <button
           class="selleradise__mobile-menu__toggle"
           data-tippy-placement="left"
-          v-if="Object.values(settings).includes(true)"
+          v-if="Object.values(settings).includes('1')"
           v-tippy="trans('mobile-menu-button-settings')"
           v-on:click="activeSidebar = 'settings'"
           :class="{

@@ -272,6 +272,10 @@ body.single-product .breadcrumb-trail {
           display: grid;
         }
 
+        .label {
+          text-align: left;
+        }
+
         label {
           @include font-size(p);
           font-weight: font("primary_boldest", "font-weight");

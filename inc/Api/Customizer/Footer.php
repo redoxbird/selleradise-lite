@@ -42,7 +42,7 @@ class Footer
             'settings' => 'copyright_notice',
             'label' => esc_html__('Copyright notice', 'selleradise-lite'),
             'section' => 'selleradise_footer',
-            'default' => sprintf(esc_html__( 'Copyright © %s | All rights reserved by %s', 'selleradise-lite' ), date("Y"), get_bloginfo("name")),
+            'default' => sprintf(esc_html__( 'Copyright © %1$s | All rights reserved by %2$s', 'selleradise-lite' ), date("Y"), get_bloginfo("name")),
         ]);
 
         Kirki::add_field('selleradise-lite', [
