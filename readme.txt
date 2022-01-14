@@ -15,10 +15,10 @@ Selleradise is a clean, responsive and accessible WooCommerce theme. It is very 
 == Changelog ==
 
 = 1.2.4 =
-* Fixing theme sniffer issues
+* Fixed errors reported by Theme Sniffer plugin. 
 
 = 1.2.3 =
-* Making mobile menu fully accessible
+* Made mobile menu fully accessible
 
 = 1.2.2 =
 * Removing default logo in favour of placeholder text

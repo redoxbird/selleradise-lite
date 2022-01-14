@@ -5,8 +5,8 @@
 **Requires at least:** 5.5 \
 **Requires PHP:** 7.1 \
 **Tested up to:** 5.8 \
-**Stable tag:** 1.2.3 \
-**License:** GNU General Public License v3.0 or later \
+**Stable tag:** 1.2.4 \
+**License:** GPL-3.0-or-later \
 **License URI:** https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 ## Description
@@ -17,11 +17,11 @@ Selleradise is a clean, responsive and accessible WooCommerce theme. It is very 
 
 ### 1.2.4
 
-* Fixing theme sniffer issues
+* Fixed errors reported by Theme Sniffer plugin. 
 
 ### 1.2.3
 
-* Making mobile menu fully accessible
+* Made mobile menu fully accessible
 
 ### 1.2.2
 
