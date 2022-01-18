@@ -1,49 +1,68 @@
-# Selleradise Lite
+# Selleradise
 
 **Contributors:** zarhasan \
-**Tags:** e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready \
+**Tags:**  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready \
 **Requires at least:** 5.5 \
 **Requires PHP:** 7.1 \
 **Tested up to:** 5.8 \
-**Stable tag:** 1.2.4 \
+**Stable tag:** 1.2.5 \
 **License:** GPL-3.0-or-later \
 **License URI:** https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 ## Description
 
-Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store like quick search, mini cart, dark mode, shop filters, lazy loading, etc.
+Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store.
+
+### Features ###
+* Quick Search
+* Mini Cart
+* Dark Mode
+* Shop Filters
+* Lazy Loading
+
+### Demos ###
+
+* [Fashion](https://selleradise.redoxbird.com)
+
+### Documentation ###
+
+You can find detailed documentation on [docs.selleradise.com](https://docs.selleradise.com/)
 
 ## Changelog
 
+### 1.2.5
+
+* Fixed squared logos escaping header height.
+
 ### 1.2.4
 
-- Fixed errors reported by Theme Sniffer plugin.
+* Fixed errors reported by Theme Sniffer plugin. 
 
 ### 1.2.3
 
-- Made mobile menu fully accessible
+* Made mobile menu fully accessible
 
 ### 1.2.2
 
-- Removing default logo in favour of placeholder text
-- Fixing accessibility issues
-- Adding Copyright info for each library.
+* Removing default logo in favour of placeholder text
+* Fixing accessibility issues 
+* Adding Copyright info for each library.
 
 ### 1.2.1
 
-- Fixing some errors and warnings.
+* Fixing some errors and warnings.
 
 ### 1.2.0
 
-- Splitting javascript.
+* Splitting javascript.
 
 ### 1.1.0
 
-- Cleaning up some css.
+* Cleaning up some css.
 
 ### 1.0.0
 
-- Releasing the first version of the theme.
+* Releasing the first version of the theme.
 
 ## Copyright
 

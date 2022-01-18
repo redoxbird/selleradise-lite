@@ -1,10 +1,10 @@
-=== Selleradise Lite ===
+=== Selleradise ===
 Contributors: zarhasan
 Tags:  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready
 Requires at least: 5.5
 Requires PHP: 7.1
 Tested up to: 5.8
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
@@ -28,6 +28,9 @@ Selleradise is a clean, responsive and accessible WooCommerce theme. It is very 
 You can find detailed documentation on [docs.selleradise.com](https://docs.selleradise.com/)
 
 == Changelog ==
+
+= 1.2.5 =
+* Fixed squared logos escaping header height.
 
 = 1.2.4 =
 * Fixed errors reported by Theme Sniffer plugin. 
