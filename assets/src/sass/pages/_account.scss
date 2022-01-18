@@ -111,11 +111,11 @@ body.woocommerce-lost-password .woocommerce {
   }
 }
 
-.selleradise-lite .woocommerce form.login,
-.selleradise-lite .woocommerce form.register,
-.selleradise-lite .loginForm--popup form.login,
-.selleradise-lite .loginForm--popup form.register,
-.selleradise-lite .woocommerce .woocommerce-ResetPassword {
+.selleradise .woocommerce form.login,
+.selleradise .woocommerce form.register,
+.selleradise .loginForm--popup form.login,
+.selleradise .loginForm--popup form.register,
+.selleradise .woocommerce .woocommerce-ResetPassword {
   .woocommerce-form-row {
     width: 100%;
 
@@ -277,7 +277,7 @@ body.woocommerce-lost-password .woocommerce {
   }
 }
 
-.selleradise-lite {
+.selleradise {
   .woocommerce-MyAccount-content {
     padding: 5rem;
     width: 75%;

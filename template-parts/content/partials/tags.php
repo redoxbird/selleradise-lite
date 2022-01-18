@@ -12,9 +12,9 @@ if ('post' !== get_post_type()) {
     return;
 }
 
-$selleradise_tags = get_the_terms(get_the_ID(), 'post_tag');
+$post_tags = get_the_terms(get_the_ID(), 'post_tag');
 
-if (!$selleradise_tags) {
+if (!$post_tags) {
     return;
 }
 
@@ -23,16 +23,16 @@ if (!$selleradise_tags) {
 <ul class="selleradise_single_post__tags">
 
     <?php
-        foreach ($selleradise_tags as $index => $selleradise_tag):
+        foreach ($post_tags as $index => $post_tag):
 
-        if ($selleradise_tag->slug === 'uncategorized' && $index > 0) {
+        if ($post_tag->slug === 'uncategorized' && $index > 0) {
             continue;
         }
     ?>
 
 	    <li>
-	        <a href="<?php echo esc_attr(get_term_link($selleradise_tag)) ?>">
-                #<?php echo esc_html($selleradise_tag->name); ?>
+	        <a href="<?php echo esc_attr(get_term_link($post_tag)) ?>">
+                #<?php echo esc_html($post_tag->name); ?>
             </a>
 	    </li>
 

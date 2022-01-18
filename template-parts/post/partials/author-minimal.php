@@ -12,7 +12,7 @@ if ('post' !== get_post_type()) {
     return;
 }
 
-$selleradise_id = get_the_author_meta('ID');
+$author_id = get_the_author_meta('ID');
 
 ?>
 
@@ -20,7 +20,7 @@ $selleradise_id = get_the_author_meta('ID');
     <span class="selleradise_postCard__author-date entry-meta">
       <?php echo Selleradise_Lite\Core\Tags::posted_on(); ?>
       <span class="author vcard">
-        <a class="url fn n" href="<?php echo esc_url(get_author_posts_url($selleradise_id)) ?>">
+        <a class="url fn n" href="<?php echo esc_url(get_author_posts_url($author_id)) ?>">
         <?php echo selleradise_svg('unicons-line/user'); ?>
             <?php echo esc_html(get_the_author()); ?>
         </a>

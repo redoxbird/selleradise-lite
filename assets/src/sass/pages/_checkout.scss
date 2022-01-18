@@ -1,4 +1,4 @@
-.selleradise-lite .selleradise-container .page {
+.selleradise .selleradise-container .page {
   .woocommerce {
     &-billing-fields,
     &-shipping-fields,
@@ -150,7 +150,7 @@
   }
 }
 
-.selleradise-lite .checkout.woocommerce-checkout {
+.selleradise .checkout.woocommerce-checkout {
   color: color(text);
   padding-bottom: 5rem;
 
@@ -225,7 +225,7 @@
   }
 }
 
-.selleradise-lite.woocommerce-page.woocommerce-checkout {
+.selleradise.woocommerce-page.woocommerce-checkout {
   .woocommerce-form-login,
   .woocommerce-form-coupon {
     background-color: color(background);
@@ -236,7 +236,7 @@
   }
 }
 
-.selleradise-lite form.checkout_coupon {
+.selleradise form.checkout_coupon {
   @extend .flex-start;
   border: none;
   color: color(text);
@@ -256,7 +256,7 @@
   }
 }
 
-.selleradise-lite.woocommerce-order-received {
+.selleradise.woocommerce-order-received {
   .pageTitle {
     padding: 0;
     text-align: left;
@@ -333,7 +333,7 @@
 // ===============================
 //
 
-.selleradise-lite .wpmc {
+.selleradise .wpmc {
   @include font-size(p);
   &-tabs-wrapper,
   &-steps-wrapper,
@@ -350,7 +350,7 @@
   }
 
   &-step-item {
-    .selleradise-lite
+    .selleradise
       .checkout.woocommerce-checkout
       &
       .woocommerce-checkout-payment {

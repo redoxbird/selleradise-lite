@@ -31,8 +31,8 @@
   }
 }
 
-.selleradise-lite p.woocommerce-store-notice,
-.selleradise-lite p.demo_store {
+.selleradise p.woocommerce-store-notice,
+.selleradise p.demo_store {
   @include font-size(small);
   position: fixed;
   top: auto;

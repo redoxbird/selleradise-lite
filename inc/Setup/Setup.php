@@ -112,7 +112,7 @@ class Setup
 
     public function add_class_to_body($classes)
     {
-        $classes[] = 'selleradise-lite';
+        $classes[] = 'selleradise';
 
         if (!class_exists('WooCommerce')) {
             return $classes;
@@ -144,7 +144,6 @@ class Setup
 
         global $wpdb;
 
-
         if (!empty($starts__with)) {
             $pieces['where'] .= " AND t.name LIKE %s";
             $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts__with)}%"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
@@ -159,7 +158,6 @@ class Setup
             $pieces['where'] .= " AND ((t.name LIKE %s OR t.slug LIKE %s) OR t.name SOUNDS LIKE %s)";
             $pieces['where'] = $wpdb->prepare($pieces['where'], "%$like%", "%$like%", "$like"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         }
-
 
         return $pieces;
     }
