@@ -177,7 +177,7 @@ export default {
     });
 
     return {
-      ...selleradiseData,
+      selleradiseData,
       mobileMenuItems,
       mobileMenuState,
       haveSettings,
@@ -225,7 +225,10 @@ export default {
         </nav>
       </transition>
 
-      <transition name="selleradise_sidebar" v-if="isWooCommerce">
+      <transition
+        name="selleradise_sidebar"
+        v-if="selleradiseData.isWooCommerce"
+      >
         <div
           class="selleradise_sidebar__account"
           v-show="activeSidebar === 'account'"
@@ -235,20 +238,20 @@ export default {
         </div>
       </transition>
 
-      <Categories v-if="isWooCommerce"> </Categories>
+      <Categories v-if="selleradiseData.isWooCommerce"> </Categories>
 
       <transition name="selleradise_sidebar">
         <div
           class="selleradise_sidebar__settings"
           v-if="
-            Object.values(settings).includes('1') &&
+            Object.values(selleradiseData.settings).includes('1') &&
             activeSidebar === 'settings'
           "
         >
           <ul>
             <li
               class="selleradise_sidebar__settings-toggle"
-              v-if="settings.dark_mode_setting == '1'"
+              v-if="selleradiseData.settings.dark_mode_setting == '1'"
             >
               <DarkModeToggleBtn />
             </li>
@@ -271,7 +274,7 @@ export default {
           </span>
         </button>
         <button
-          v-if="isWooCommerce"
+          v-if="selleradiseData.isWooCommerce"
           class="selleradise__mobile-menu__toggle"
           data-tippy-placement="left"
           v-tippy="trans('mobile-menu-button-account')"
@@ -287,7 +290,7 @@ export default {
         <button
           class="selleradise__mobile-menu__toggle"
           data-tippy-placement="left"
-          v-if="Object.values(settings).includes('1')"
+          v-if="Object.values(selleradiseData.settings).includes('1')"
           v-tippy="trans('mobile-menu-button-settings')"
           v-on:click="activeSidebar = 'settings'"
           :class="{

@@ -31,7 +31,7 @@ export async function updateCart() {
       url: selleradiseData.ajaxURL,
       params: {
         action: "selleradise_get_cart_contents",
-        nonce: selleradiseData.nonce,
+        _wpnonce: selleradiseData["_wpnonce"],
       },
     });
 

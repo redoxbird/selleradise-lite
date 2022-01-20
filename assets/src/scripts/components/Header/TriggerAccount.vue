@@ -1,6 +1,6 @@
 <template>
   <button
-    v-if="isWooCommerce"
+    v-if="selleradiseData.isWooCommerce"
     name="account"
     class="selleradiseHeader__trigger selleradiseHeader__trigger--account"
     v-tippy="trans('mobile-menu-button-account')"
@@ -26,8 +26,8 @@ export default {
     const { send: mobileMenuSend } = useMobileMenuService();
 
     return {
-      ...selleradiseData,
       ...props,
+      selleradiseData,
       mobileMenuSend,
       activeSidebar,
       trans,

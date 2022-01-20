@@ -72,7 +72,6 @@ export default {
     });
 
     return {
-      ...selleradiseData,
       props,
       selectedOption,
       form,

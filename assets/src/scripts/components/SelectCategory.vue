@@ -80,7 +80,7 @@ export default {
     const category = inject("category");
 
     return {
-      ...selleradiseData,
+      selleradiseData,
       categories,
       category,
       truncate,

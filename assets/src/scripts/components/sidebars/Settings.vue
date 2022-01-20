@@ -1,8 +1,11 @@
 <template>
   <transition name="selleradise_sidebar">
-    <div name="settings" v-if="haveSettings">
+    <div name="settings" v-if="selleradiseData.haveSettings">
       <ul>
-        <li class="themeToggle" v-if="settings.dark_mode_setting">
+        <li
+          class="themeToggle"
+          v-if="selleradiseData.settings.dark_mode_setting"
+        >
           <span>{{ trans("Theme") }}</span>
           <dark-mode-toggle-btn> </dark-mode-toggle-btn>
         </li>
@@ -25,7 +28,7 @@ export default {
   },
   setup() {
     return {
-      ...selleradiseData,
+      selleradiseData,
       darkMode,
       haveSettings,
       localStorage,

@@ -1,9 +1,9 @@
 <template>
   <a
-    v-if="isWooCommerce"
+    v-if="selleradiseData.isWooCommerce"
     aria-haspopup="true"
     :class="`selleradiseHeader__trigger selleradiseHeader__trigger--miniCart`"
-    :href="cartURL"
+    :href="selleradiseData.cartURL"
     :aria-label="trans('header-button-cart')"
     :data-count="cart.count"
     :aria-expanded="cartState.matches('hidden') ? null : true"
@@ -33,8 +33,8 @@ export default {
     });
 
     return {
-      ...selleradiseData,
       ...props,
+      selleradiseData,
       device,
       cart,
       cartState,

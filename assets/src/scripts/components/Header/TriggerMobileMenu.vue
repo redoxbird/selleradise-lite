@@ -29,7 +29,6 @@ export default {
       useMobileMenuService();
 
     return {
-      ...selleradiseData,
       ...props,
       device,
       mobileMenuState,

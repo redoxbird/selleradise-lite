@@ -59,7 +59,7 @@ export async function updateMenuItems() {
       url: selleradiseData.ajaxURL,
       params: {
         action: "selleradise_get_menu_items",
-        nonce: selleradiseData.nonce,
+        _wpnonce: selleradiseData["_wpnonce"],
       },
     });
 
@@ -79,7 +79,7 @@ export async function updateCategories() {
       url: selleradiseData.ajaxURL,
       params: {
         action: "selleradise_get_categories",
-        nonce: selleradiseData.nonce,
+        _wpnonce: selleradiseData["_wpnonce"],
       },
     });
 

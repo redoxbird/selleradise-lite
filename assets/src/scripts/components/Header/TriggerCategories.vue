@@ -1,6 +1,6 @@
 <template>
   <button
-    v-if="isWooCommerce"
+    v-if="selleradiseData.isWooCommerce"
     class="selleradiseHeader__trigger selleradiseHeader__trigger--categories"
     :data-selleradise-position="labelPosition"
     v-on:click.prevent="
@@ -39,7 +39,7 @@ export default {
 
     return {
       ...props,
-      ...selleradiseData,
+      selleradiseData,
       activeSidebar,
       mobileMenuSend,
       trans,

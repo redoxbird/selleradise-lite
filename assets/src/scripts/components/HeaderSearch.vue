@@ -282,7 +282,7 @@ export default {
               category: selectedCategory.value.term_id
                 ? selectedCategory.value.term_id
                 : 0,
-              nonce: selleradiseData.nonce,
+              _wpnonce: selleradiseData["_wpnonce"],
             },
           }).then((responseSuggestion) => {
             searchState.suggestions = responseSuggestion.data.terms;
@@ -298,7 +298,7 @@ export default {
               category: selectedCategory.value.slug
                 ? selectedCategory.value.slug
                 : 0,
-              nonce: selleradiseData.nonce,
+              _wpnonce: selleradiseData["_wpnonce"],
             },
           }).then((responseProducts) => {
             addProductsToState(responseProducts.data);
@@ -310,7 +310,7 @@ export default {
             params: {
               action: "selleradise_search_posts",
               keyword: keyword.value,
-              nonce: selleradiseData.nonce,
+              _wpnonce: selleradiseData["_wpnonce"],
             },
           }).then((responsePosts) => {
             searchState.posts = responsePosts.data;

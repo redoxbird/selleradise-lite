@@ -1,6 +1,6 @@
 <template>
   <button
-    v-if="haveSettings"
+    v-if="selleradiseData.haveSettings"
     name="settings"
     class="selleradiseHeader__trigger selleradiseHeader__trigger--settings"
     v-on:click.prevent="
@@ -23,8 +23,8 @@ export default {
     const { send: mobileMenuSend } = useMobileMenuService();
 
     return {
-      ...selleradiseData,
       ...props,
+      selleradiseData,
       haveSettings,
       mobileMenuSend,
       activeSidebar,

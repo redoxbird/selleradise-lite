@@ -38,7 +38,7 @@ class Ajax
 
     public function search_products()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -89,7 +89,7 @@ class Ajax
 
     public function search_terms()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -203,7 +203,7 @@ class Ajax
 
     private function prepare_product_data_for_search_results($products)
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -239,16 +239,7 @@ class Ajax
 
     public function search_posts()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
-
-            wp_send_json([
-                'message' => 'Invalid Request',
-            ]);
-
-            wp_die();
-        };
-
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -306,7 +297,7 @@ class Ajax
 
     public function get_cart_contents()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -322,7 +313,7 @@ class Ajax
 
     public function get_cart_total()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -340,7 +331,7 @@ class Ajax
     public function remove_item_from_cart()
     {
 
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -368,7 +359,7 @@ class Ajax
 
     public function set_cart_item_quantity()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -397,7 +388,7 @@ class Ajax
 
     public function get_menu_items()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',
@@ -445,7 +436,7 @@ class Ajax
 
     public function get_categories()
     {
-        if (!wp_verify_nonce($_GET['nonce'], 'selleradise_ajax')) {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
 
             wp_send_json([
                 'message' => 'Invalid Request',

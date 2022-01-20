@@ -71,7 +71,7 @@ export default {
           params: {
             action: "selleradise_remove_item_from_cart",
             key: key,
-            nonce: selleradiseData.nonce,
+            _wpnonce: selleradiseData["_wpnonce"],
           },
         });
         delete cart.value.items[index];
@@ -93,7 +93,7 @@ export default {
             action: "selleradise_set_cart_item_quantity",
             key: key,
             quantity: cart.value.items[index].quantity,
-            nonce: selleradiseData.nonce,
+            _wpnonce: selleradiseData["_wpnonce"],
           },
         });
         cart.value = response.data.data;

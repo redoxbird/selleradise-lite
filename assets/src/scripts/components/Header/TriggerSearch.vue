@@ -30,7 +30,6 @@ export default {
 
     return {
       ...props,
-      ...selleradiseData,
       device,
       openSearhForm,
       trans,

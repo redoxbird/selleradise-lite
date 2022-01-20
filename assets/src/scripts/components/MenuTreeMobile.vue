@@ -80,7 +80,6 @@ export default {
 
     return {
       ...props,
-      ...selleradiseData,
       openChildMenu,
       shouldShowChildMenu,
       openChildMenuLink,
