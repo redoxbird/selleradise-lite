@@ -4,7 +4,7 @@
 
 Selleradise is a clean, responsive, and accessible WooCommerce theme.
 
-##Features
+## Features
 
 - Quick search
 - Premium Elementor widgets
@@ -15,6 +15,6 @@ Selleradise is a clean, responsive, and accessible WooCommerce theme.
 
 ...and more
 
-##Demos
+## Demos
 
 - [Fashion](https://selleradise.redoxbird.com/)
