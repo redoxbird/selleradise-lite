@@ -16,6 +16,8 @@ Selleradise is a clean, responsive and accessible WooCommerce theme. It is very 
 
 = 1.2.5 =
 * Fixed squared logos escaping header height.
+* Fixed colors presets in customizer
+* Fixed local fonts in customizer
 
 = 1.2.4 =
 * Fixed errors reported by Theme Sniffer plugin. 

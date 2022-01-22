@@ -74,6 +74,8 @@ const selleradiseFunctions = {
         }
       }
 
+      console.log(variation);
+
       if (!variation.image) {
         return;
       }

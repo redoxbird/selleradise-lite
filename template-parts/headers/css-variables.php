@@ -36,13 +36,6 @@ $color_variables = [
                 $color_value = get_theme_mod('color_'.$name, selleradise_get_default_color($name));
                 $color_value_rgb = get_theme_mod('color_'.$name.'_rgb', selleradise_get_default_color($name.'_rgb'));
 
-                //Temporary fix for Kirki bug
-
-                if(!$color_value) {
-                    $color_value = selleradise_get_default_color($name);
-                    $color_value_rgb = selleradise_get_default_color($name.'_rgb');
-                }
-
                 echo esc_html(sprintf('--light-theme_%s:%s;', $css_property, $color_value));
                 echo esc_html(sprintf('--light-theme_%s-rgb:%s;', $css_property, $color_value_rgb));
             };
@@ -51,14 +44,7 @@ $color_variables = [
                 $css_property = sprintf('color-%s', str_replace('_', '-', $name));
                 $color_value = get_theme_mod('dark_mode_color_'.$name, selleradise_get_default_color('dark-theme_'.$name));
                 $color_value_rgb = get_theme_mod('dark_mode_color_'.$name.'_rgb', selleradise_get_default_color('dark-theme_'.$name).'_rgb');
-
-                //Temporary fix for Kirki bug
-
-                if(!$color_value) {
-                    $color_value = selleradise_get_default_color('dark-theme_'.$name);
-                    $color_value_rgb = selleradise_get_default_color('dark-theme_'.$name).'_rgb';
-                }
-
+                
                 echo esc_html(sprintf('--dark-theme_%s:%s;', $css_property, $color_value));
                 echo esc_html(sprintf('--dark-theme_%s-rgb:%s;', $css_property, $color_value_rgb));
             };
