@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Selleradise Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-22 10:26+0000\n"
+"POT-Creation-Date: 2022-01-11 13:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,6 +15,12 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.5.5; wp-5.8.2\n"
 "X-Domain: selleradise-lite"
+
+#: template-parts/headers/partials/logo.php:21
+#: template-parts/headers/partials/logo.php:28
+#: template-parts/headers/partials/logo.php:42
+msgid " Logo"
+msgstr ""
 
 #: inc/Api/Customizer/Header.php:46
 msgid "\"Fast\" will only match beginning of the title."
@@ -55,13 +61,6 @@ msgstr ""
 msgid "%s has been added to your cart"
 msgstr ""
 
-#: template-parts/headers/partials/logo.php:21
-#: template-parts/headers/partials/logo.php:28
-#: template-parts/headers/partials/logo.php:42
-#, php-format
-msgid "%s Logo"
-msgstr ""
-
 #. %s: Quantity.
 #: woocommerce/global/quantity-input.php:20
 #, php-format
@@ -83,11 +82,11 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: inc/Helpers.php:664 inc/Plugins/BreadcrumbsTrail.php:271
+#: inc/Helpers.php:666 inc/Plugins/BreadcrumbsTrail.php:271
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:106
+#: inc/Api/Customizer/Colors.php:89
 msgid "a background color."
 msgstr ""
 
@@ -95,7 +94,7 @@ msgstr ""
 msgid "A password will be sent to your email address."
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:125 inc/Api/Customizer/Colors.php:192
+#: inc/Api/Customizer/Colors.php:126 inc/Api/Customizer/Colors.php:193
 msgid "Accent"
 msgstr ""
 
@@ -155,7 +154,7 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:126 inc/Api/Customizer/Colors.php:193
+#: inc/Api/Customizer/Colors.php:127 inc/Api/Customizer/Colors.php:194
 msgid "an accent color, rarely used."
 msgstr ""
 
@@ -182,7 +181,7 @@ msgstr ""
 msgid "Apply Filters"
 msgstr ""
 
-#: inc/Helpers.php:665 inc/Plugins/BreadcrumbsTrail.php:272
+#: inc/Helpers.php:667 inc/Plugins/BreadcrumbsTrail.php:272
 msgid "Archives"
 msgstr ""
 
@@ -203,7 +202,7 @@ msgstr ""
 msgid "Average rating"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:105 inc/Api/Customizer/Colors.php:172
+#: inc/Api/Customizer/Colors.php:88 inc/Api/Customizer/Colors.php:155
 msgid "Background"
 msgstr ""
 
@@ -229,21 +228,21 @@ msgstr[1] ""
 msgid "Blog"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:73
+#: inc/Api/Customizer/Colors.php:74
 msgid "Both"
 msgstr ""
 
-#: inc/Helpers.php:661 inc/Plugins/BreadcrumbsTrail.php:269
+#: inc/Helpers.php:663 inc/Plugins/BreadcrumbsTrail.php:269
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/Helpers.php:662
+#: inc/Helpers.php:664
 msgctxt "breadcrumbs aria label"
 msgid "Home"
 msgstr ""
 
-#: inc/Helpers.php:660 inc/Plugins/BreadcrumbsTrail.php:268
+#: inc/Helpers.php:662 inc/Plugins/BreadcrumbsTrail.php:268
 msgid "Browse:"
 msgstr ""
 
@@ -273,15 +272,11 @@ msgstr ""
 msgid "Close (Esc)"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:221
-msgid "Color Palette"
-msgstr ""
-
-#: inc/Api/Customizer/Colors.php:173
+#: inc/Api/Customizer/Colors.php:156
 msgid "Color used either for background."
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:59
+#: inc/Api/Customizer/Colors.php:60
 msgid "Colors"
 msgstr ""
 
@@ -290,7 +285,7 @@ msgid "Comment navigation"
 msgstr ""
 
 #. %s is the page number.
-#: inc/Helpers.php:671 inc/Plugins/BreadcrumbsTrail.php:278
+#: inc/Helpers.php:673 inc/Plugins/BreadcrumbsTrail.php:278
 #, php-format
 msgid "Comment Page %s"
 msgstr ""
@@ -312,7 +307,7 @@ msgstr ""
 #: inc/Api/Customizer/Footer.php:45
 #: template-parts/footers/partials/notice.php:11
 #, php-format
-msgid "Copyright © %1$s | All rights reserved by %2$s"
+msgid "Copyright © %s | All rights reserved by %s"
 msgstr ""
 
 #: woocommerce/cart/cart.php:155
@@ -328,7 +323,7 @@ msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:72
+#: inc/Api/Customizer/Colors.php:73
 msgid "Dark"
 msgstr ""
 
@@ -382,7 +377,7 @@ msgstr ""
 msgid "Empty"
 msgstr ""
 
-#: inc/Core/Ajax.php:378
+#: inc/Core/Ajax.php:387
 msgid "Error occurred while updating product in cart"
 msgstr ""
 
@@ -540,7 +535,7 @@ msgstr ""
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:71
+#: inc/Api/Customizer/Colors.php:72
 msgid "Light"
 msgstr ""
 
@@ -583,7 +578,7 @@ msgstr ""
 msgid "Lost your password?"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:87 inc/Api/Customizer/Colors.php:154
+#: inc/Api/Customizer/Colors.php:108 inc/Api/Customizer/Colors.php:175
 msgid "Main"
 msgstr ""
 
@@ -596,7 +591,7 @@ msgid "Minimum required version:"
 msgstr ""
 
 #. Minute archive title. %s is the minute time format.
-#: inc/Helpers.php:673 inc/Plugins/BreadcrumbsTrail.php:280
+#: inc/Helpers.php:675 inc/Plugins/BreadcrumbsTrail.php:280
 #, php-format
 msgid "Minute %s"
 msgstr ""
@@ -615,7 +610,7 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:67
+#: inc/Api/Customizer/Colors.php:68
 msgid "Mode"
 msgstr ""
 
@@ -707,7 +702,7 @@ msgid "Overview"
 msgstr ""
 
 #. %s is the page number.
-#: inc/Helpers.php:669 inc/Plugins/BreadcrumbsTrail.php:276
+#: inc/Helpers.php:671 inc/Plugins/BreadcrumbsTrail.php:276
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -785,6 +780,12 @@ msgstr ""
 #, php-format
 msgctxt "post author"
 msgid "by %s"
+msgstr ""
+
+#: inc/Core/Tags.php:32
+#, php-format
+msgctxt "post date"
+msgid "%s"
 msgstr ""
 
 #: inc/Core/Tags.php:47
@@ -978,7 +979,7 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #. %s is the search query.
-#: inc/Helpers.php:667 inc/Plugins/BreadcrumbsTrail.php:274
+#: inc/Helpers.php:669 inc/Plugins/BreadcrumbsTrail.php:274
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
@@ -1004,7 +1005,7 @@ msgstr ""
 msgid "Selleradise Widgets"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:60
+#: inc/Api/Customizer/Colors.php:61
 msgid "Set color for the website."
 msgstr ""
 
@@ -1080,11 +1081,11 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:115 inc/Api/Customizer/Colors.php:182
+#: inc/Api/Customizer/Colors.php:98 inc/Api/Customizer/Colors.php:165
 msgid "Text"
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:116 inc/Api/Customizer/Colors.php:183
+#: inc/Api/Customizer/Colors.php:99 inc/Api/Customizer/Colors.php:166
 msgid "text color, make sure that it contrasts well with the background color."
 msgstr ""
 
@@ -1142,7 +1143,7 @@ msgid ""
 "hosts, so please be patient."
 msgstr ""
 
-#: inc/Api/Customizer/Colors.php:88 inc/Api/Customizer/Colors.php:155
+#: inc/Api/Customizer/Colors.php:109 inc/Api/Customizer/Colors.php:176
 msgid "The main color of the website."
 msgstr ""
 
@@ -1280,7 +1281,7 @@ msgid "View Cart"
 msgstr ""
 
 #. Weekly archive title. %s is the week date format.
-#: inc/Helpers.php:675 inc/Plugins/BreadcrumbsTrail.php:282
+#: inc/Helpers.php:677 inc/Plugins/BreadcrumbsTrail.php:282
 #, php-format
 msgid "Week %s"
 msgstr ""
