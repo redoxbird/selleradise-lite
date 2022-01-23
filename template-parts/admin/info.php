@@ -1,12 +1,3 @@
-<?php
-
-function selleradise_number($number, $type = "lite") {
-  $color = $type === "lite" ? "text-gray-500" : "text-green-700";
-  return "<span class='$color'>$number</span>";
-}
-
-?>
-
 <div class="selleradise-page-admin--information">
   <h1 class="text-3xl">
     Thank You For Installing Selleradise.
@@ -66,10 +57,10 @@ function selleradise_number($number, $type = "lite") {
             <p class="font-bold text-gray-600 text-left">Quick Search Module</p>
         </td>
         <td class="px-2 py-1">
-            <p class="font-bold text-green-700 text-center">Yes</p>
+            <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
       </tr>
       <tr>
@@ -77,10 +68,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Dark Mode</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
       </tr>
       <tr>
@@ -88,10 +79,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Shop Filters</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
       </tr>
       <tr>
@@ -99,10 +90,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Custom Colors</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
       </tr>
        <tr>
@@ -110,10 +101,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Google Fonts</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Yes</p>
+          <p class="font-bold text-gray-600 text-center">Yes</p>
         </td>
       </tr>
       <tr>
@@ -124,7 +115,7 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-500 text-center">Limited</p>
         </td>
         <td class="px-2 py-1">
-          <p class="font-bold text-green-700 text-center">Complete</p>
+          <p class="font-bold text-gray-600 text-center">Complete</p>
         </td>
       </tr>
       <tr>
@@ -132,11 +123,21 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Headers</p>
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(1) ?>
-
+          1
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(7, "full") ?>
+          7
+        </td>
+      </tr>
+      <tr>
+        <td class="px-2 py-1">
+          <p class="font-bold text-gray-600 text-left">Heros</p>
+        </td>
+        <td class="px-2 py-1 text-center font-semibold">
+          1
+        </td>
+        <td class="px-2 py-1 text-center font-semibold">
+          4
         </td>
       </tr>
       <tr>
@@ -144,10 +145,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Product Cards</p>
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(1) ?>
+          1
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(5, "full") ?>
+          5
         </td>
       </tr>
       <tr>
@@ -155,11 +156,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Category Cards</p>
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(1) ?>
-
+          1
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(6, "full") ?>
+          6
         </td>
       </tr>
       <tr>
@@ -167,11 +167,10 @@ function selleradise_number($number, $type = "lite") {
           <p class="font-bold text-gray-600 text-left">Post Cards</p>
         </td>
         <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(1) ?>
-
+          1
         </td>
        <td class="px-2 py-1 text-center font-semibold">
-          <?php echo selleradise_number(5, "full") ?>
+          5
         </td>
       </tr>
       <tr>
@@ -182,20 +181,7 @@ function selleradise_number($number, $type = "lite") {
             href="https://redoxbird.com/product/selleradise"
             target="_black"
             rel="noreferrer"
-            class="
-                mt-2 
-                inline-block 
-                font-semibold 
-                bg-[#2271b1] 
-                text-sm 
-                text-white 
-                hover:text-white 
-                focus:text-white 
-                active:text-white 
-                px-5 
-                py-3 
-                rounded-full 
-                no-underline"
+            class="button button-primary"
             >
             Get the Full Version
           </a>

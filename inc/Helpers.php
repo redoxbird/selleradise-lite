@@ -889,7 +889,7 @@ if (!function_exists('selleradise_get_shop_max_price')) {
     {
         $max_price = get_transient('selleradise_get_shop_max_price');
 
-        if ($max_price !== false) {
+        if ($max_price) {
             return $max_price ?? 1000;
         }
 
@@ -897,7 +897,7 @@ if (!function_exists('selleradise_get_shop_max_price')) {
 
         $result = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM {$wpdb->prefix}postmeta WHERE `meta_key` = %s ORDER BY CAST(`meta_value` as FLOAT) DESC LIMIT 1", ['_price']
+                "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s ORDER BY CAST(`meta_value` as decimal) DESC LIMIT 1", ['_price']
             )
         );
 
