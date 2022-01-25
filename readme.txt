@@ -4,7 +4,7 @@ Tags:  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, cust
 Requires at least: 5.5
 Requires PHP: 7.1
 Tested up to: 5.8
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
