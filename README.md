@@ -1,6 +1,6 @@
 # Selleradise
 
-![Selleradise Screenshot](https://selleradise.com/dist/images/hero/default.png)
+![Selleradise Screenshot](https://i0.wp.com/themes.svn.wordpress.org/selleradise-lite/1.2.6/screenshot.png)
 
 Selleradise is a clean, responsive, and accessible WooCommerce theme.
 
