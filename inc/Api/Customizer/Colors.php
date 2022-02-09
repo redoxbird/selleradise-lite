@@ -223,7 +223,7 @@ class Colors
             'default' => 'default',
             'choices' => $this->palette,
             'preset' => $presets,
-            'transport' => 'auto',
+            'transport' => 'refresh',
         ]);
 
     }

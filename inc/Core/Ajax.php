@@ -66,7 +66,7 @@ class Ajax
 
         if ($keyword) {
             if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
-                $args['starts_with'] = $keyword;
+                $args['starts__with'] = $keyword;
             } else {
                 $args['s'] = $keyword;
             }
@@ -132,7 +132,7 @@ class Ajax
 
         if ($keyword) {
             if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
-                $term_args['starts_with'] = $keyword;
+                $term_args['starts__with'] = $keyword;
             } else {
                 $term_args['sounds__like'] = $keyword;
             }
@@ -257,7 +257,7 @@ class Ajax
 
         if ($keyword) {
             if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
-                $args['starts_with'] = $keyword;
+                $args['starts__with'] = $keyword;
             } else {
                 $args['s'] = $keyword;
             }

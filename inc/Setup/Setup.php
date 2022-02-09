@@ -164,16 +164,16 @@ class Setup
 
     public function filter_posts_clauses($pieces, $query)
     {
-        $starts_with = (isset($query->query['starts_with'])) ? trim(sanitize_text_field($query->query['starts_with'])) : '';
+        $starts__with = (isset($query->query['starts__with'])) ? trim(sanitize_text_field($query->query['starts__with'])) : '';
 
-        if (empty($starts_with)) {
+        if (empty($starts__with)) {
             return $pieces;
         }
 
         global $wpdb;
 
         $pieces['where'] .= " AND wp_posts.post_title LIKE %s";
-        $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts_with)}%"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+        $pieces['where'] = $wpdb->prepare($pieces['where'], "{$wpdb->esc_like($starts__with)}%"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
         return $pieces;
     }

@@ -15,6 +15,9 @@ Selleradise is a clean, responsive and accessible WooCommerce theme. It is very 
 == Changelog ==
 
 = 1.2.6 =
+* Fixed quick search bar when using fast mode.
+
+= 1.2.6 =
 * Fixed the max price in shop.
 
 = 1.2.5 =

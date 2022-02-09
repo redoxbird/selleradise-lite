@@ -25,7 +25,7 @@ class Menus
         
         register_nav_menus(array(
             'primary' => esc_html__('Primary', 'selleradise-lite'),
-            'mobile' => esc_html__('Mobile', 'selleradise-lite'),
+            'mobile' => esc_html__('Mobile & Sidebar', 'selleradise-lite'),
             'footer' => esc_html__('Footer', 'selleradise-lite'),
         ));
 
