@@ -3,8 +3,8 @@ Contributors: zarhasan
 Tags:  e-commerce, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready
 Requires at least: 5.5
 Requires PHP: 7.1
-Tested up to: 5.8
-Stable tag: 1.2.6
+Tested up to: 5.9
+Stable tag: 1.2.7
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 

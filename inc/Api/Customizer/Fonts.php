@@ -90,7 +90,7 @@ class Fonts
             'label' => esc_html__('Load fonts from google server', 'selleradise-lite'),
             'description' => esc_html__('Check to load fonts from google server instead of local server. Can be used if fonts are not loading properly.', 'selleradise-lite'),
             'section' => 'selleradise_fonts',
-            'default' => true,
+            'default' => false,
         ]);
 
     }
