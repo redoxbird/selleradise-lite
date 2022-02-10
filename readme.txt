@@ -10,11 +10,11 @@ License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 == Description ==
 
-Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store like Mini Cart, Dark Mode, Quick Search, Shop Filters and Lazy Loading. It can be used for all kinds of shops including Fashion,, Furniture, Cosmetic and more.
+Selleradise is a clean, responsive and accessible WooCommerce theme. It is very easy to use and requires minimal configuration to get started. Selleradise comes with all the basic features that you need in a modern online store like Mini Cart, Dark Mode, Quick Search, Shop Filters and Lazy Loading. It can be used for all kinds of shops including Fashion, Furniture, Cosmetic and more.
 
 == Changelog ==
 
-= 1.2.6 =
+= 1.2.7 =
 * Fixed quick search bar when using fast mode.
 
 = 1.2.6 =
@@ -151,7 +151,10 @@ CC0 License
 
 **Screenshot**
 CC0 License
+[PxHere: 1605199](https://pxhere.com/en/photo/1605199)
+[PxHere: 953937](https://pxhere.com/en/photo/953937)
 [PxHere: 527791](https://pxhere.com/en/photo/527791)
-[PxHere: 812325](https://pxhere.com/en/photo/812325)
-[PxHere: 1418384](https://pxhere.com/en/photo/1418384)
+[PxHere: 1105884](https://pxhere.com/en/photo/1105884)
 [PxHere: 1615420](https://pxhere.com/en/photo/1615420)
+[PxHere: 527793](https://pxhere.com/en/photo/527793)
+[PxHere: 1112034](https://pxhere.com/en/photo/1112034)
