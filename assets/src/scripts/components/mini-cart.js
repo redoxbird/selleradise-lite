@@ -50,7 +50,7 @@ export default {
     );
   },
 
-  canIncreaseQauntity(index) {
+  canIncreaseQuantity(index) {
     if (
       this.items[index].product.stock_quantity != null &&
       this.items[index].product.stock_quantity != -1 &&
@@ -63,7 +63,7 @@ export default {
   },
 
   increaseQuantity(index) {
-    if (this.canIncreaseQauntity(index) === false) {
+    if (this.canIncreaseQuantity(index) === false) {
       return;
     }
 
@@ -105,11 +105,11 @@ export default {
       });
       delete this.items[index];
       this.setCartValues(response.data.data);
-      cartService.send("DONE");
-    } catch (error) {
-      cartService.send("DONE");
-    }
+    } catch (error) {}
+
+    cartService.send("DONE");
   },
+
   async updateQuantity(index, key) {
     cartService.send("UPDATE");
 
@@ -126,10 +126,9 @@ export default {
       });
 
       this.setCartValues(response.data.data);
-      cartService.send("DONE");
-    } catch (error) {
-      cartService.send("DONE");
-    }
+    } catch (error) {}
+
+    cartService.send("DONE");
   },
 
   isEmpty() {
