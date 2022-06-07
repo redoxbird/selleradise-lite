@@ -13,7 +13,7 @@ export const cartMachine = Machine(
         on: {
           OPEN: {
             target: "visible",
-            actions: ["addHash"],
+            actions: ["addHash", "fetch"],
           },
         },
       },

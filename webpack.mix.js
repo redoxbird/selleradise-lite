@@ -2,7 +2,7 @@ let mix = require("laravel-mix");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 mix.browserSync({
-  proxy: "http://selleradise.local",
+  proxy: "http://localhost:8010",
   files: ["**/*.php", "assets/dist/css/**/*.css", "assets/dist/js/**/*.js"],
   injectChanges: false,
   reloadDebounce: 300,

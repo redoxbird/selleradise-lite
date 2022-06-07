@@ -30,8 +30,10 @@
   "dependencies": {
     "@headlessui/vue": "^1.4.0",
     "@xstate/vue": "^0.4.0",
+    "alpinejs": "^3.10.2",
     "bricks.js": "^1.8.0",
     "date-fns": "^2.25.0",
+    "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "wnumb": "^1.2.0",
     "xstate": "^4.16.0"

@@ -26,7 +26,7 @@
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">
-	
+
 	<?php get_template_part('template-parts/headers/skip-link'); ?>
 	
 	<?php get_template_part('template-parts/headers/header', "default");?>

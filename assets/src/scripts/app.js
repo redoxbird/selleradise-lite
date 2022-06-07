@@ -1,3 +1,14 @@
+import Alpine from "alpinejs";
+import miniCart from "./components/mini-cart";
+
+window.Alpine = Alpine;
+
+Alpine.store("miniCart", miniCart);
+
+Alpine.start();
+
+// Old
+
 import { createApp } from "@vue/runtime-dom";
 import { selleradise } from "./selleradise";
 
@@ -68,7 +79,7 @@ app.config.isCustomElement = (tag) => {
 
 Selleradise.relocateInlineScriptAndStyle();
 
-const vm = app.mount("#page");
+// const vm = app.mount("#page");
 
 Selleradise.focusSource();
 Selleradise.onWindowLoad();

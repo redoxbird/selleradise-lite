@@ -147,6 +147,7 @@ class Enqueue
         wp_enqueue_script('selleradise-header', selleradise_assets('js/header.js'), array(), $this->get_version(), false);
         wp_enqueue_script('selleradise-main', selleradise_assets('js/app.js'), array(), $this->get_version(), true);
         wp_enqueue_script('selleradise-sliders', selleradise_assets('js/sliders.js'), array('swiper'), $this->get_version(), true);
+        wp_enqueue_script('selleradise-mini-cart', selleradise_assets('js/components/mini-cart.js'), array('alpine'), $this->get_version(), true);
 
         wp_localize_script('selleradise-header', 'selleradiseData', [
             "theme" => $this->get_data_for_javascript()["theme"],
