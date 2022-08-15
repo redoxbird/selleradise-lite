@@ -8,6 +8,7 @@ export default {
   count: 0,
   total: 0,
   title: "",
+  product_ids: [],
 
   async init() {
     cartService.onTransition((state) => {
@@ -48,6 +49,8 @@ export default {
       "%d",
       `<b>${data.count}</b>`
     );
+
+    this.product_ids = this.items.map((item) => item.product_id);
   },
 
   canIncreaseQuantity(index) {

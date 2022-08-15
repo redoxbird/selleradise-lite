@@ -17,12 +17,12 @@ if ($args) {
 <div x-cloak x-data class="selleradise_MiniCart">
   <div
     x-cloak
-    class="selleradise_MiniCart__inner"
+    class="selleradise_MiniCart__inner transition ease-out duration-300"
     x-show="
       selleradiseData.isWooCommerce &&
       $store.miniCart.state != 'hidden'
     "
-    x-transition.opacity
+    x-transition.scale.opacity
   >
     <div class="selleradise_MiniCart__head">
       <p
@@ -129,22 +129,21 @@ if ($args) {
       <?php echo selleradise_svg('loader/simple') ?>
     </div>
 
-    <div
-      x-show="$store.miniCart.isEmpty()"
-      class="selleradise_emptyCart--message"
-    >
-      <div class="selleradise_empty-state__svg">
-        <?php echo selleradise_svg('misc/empty-state') ?>
+    <template x-if="$store.miniCart.isEmpty()">
+      <div class="flex justify-center items-center flex-col text-center">
+        <div class="children:w-20 children:h-auto mb-5">
+          <?php echo selleradise_svg('misc/empty-state') ?>
+        </div>
+        <h2 class="text-xl mb-2">
+          <?php echo esc_html__('Your cart is empty.', 'selleradise-lite'); ?>
+        </h2>
+        <p class="text-sm text-gray-600">
+          <?php echo esc_html__('Looks like you have not added any product to your cart yet.', 'selleradise-lite'); ?>
+        </p>
       </div>
-      <h2>
-        <b
-          ><?php echo esc_html__('Your cart is empty.', 'selleradise-lite'); ?></b
-        >
-      </h2>
-      <p>
-        <?php echo esc_html__('Looks like you have not added any product to your cart yet.', 'selleradise-lite'); ?>
-      </p>
-    </div>
+    </template>
+
+  
   </div>
 
   <div

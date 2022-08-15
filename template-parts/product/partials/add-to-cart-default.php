@@ -21,20 +21,31 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
     return;
 }
 
-$props = [
-    'id' => $product->get_ID(),
-    'name' => esc_attr($product->get_name()),
-    'quantity' => 1,
-    'add_to_cart_url' => esc_url(WC_AJAX::get_endpoint('add_to_cart')),
-    'add_to_cart_text' => esc_attr($product->add_to_cart_text()),
-    'product_add_to_cart_url' => esc_url($product->add_to_cart_url()),
-];
-
 ?>
 
 <?php if ($product->get_type() == 'simple' && $product->is_in_stock() && (class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->editor->is_edit_mode()) === false): ?>
 
-    <add-to-cart v-bind:product-data='<?php echo wp_json_encode($props); ?>'></add-to-cart>
+    <a
+        x-data="addToCart({
+            product: {
+                id: <?php echo esc_html( $product->get_ID() ) ?>,
+                ajax_add_to_cart_endpoint: '<?php echo esc_url(WC_AJAX::get_endpoint('add_to_cart')) ?>',
+            }
+        })"
+        href="<?php echo esc_url( $product->add_to_cart_url() ) ?>"
+        x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--primary']"
+        x-on:click.prevent="addToCart($event)"
+    >
+        <span x-show="!loading && !isInCart()">
+            <?php esc_html_e( "Add To Cart", "selleradise-lite" ) ?>
+        </span>
+        <span x-show="isInCart()">
+            <?php esc_html_e( "View Cart", "selleradise-lite" ) ?>
+        </span>
+        <span x-show="loading">
+            <?php esc_html_e( "Adding To Cart", "selleradise-lite" ) ?>
+        </span>
+    </a>
 
 <?php else:
     
