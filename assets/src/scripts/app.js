@@ -1,10 +1,15 @@
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 import collapse from "@alpinejs/collapse";
+import focus from "@alpinejs/focus";
+import { setup, disconnect } from "twind/shim";
+import tippy from "./directive/tippy";
+
 import miniCart from "./components/mini-cart";
 import addToCart from "./components/add-to-cart";
 import mobileMenu from "./components/mobile-menu";
-import { setup, disconnect } from "twind/shim";
+import searchBar from "./components/search-bar";
+
 import { selleradise } from "./selleradise";
 
 window.Alpine = Alpine;
@@ -12,6 +17,7 @@ window.Alpine = Alpine;
 // Plugins
 Alpine.plugin(intersect);
 Alpine.plugin(collapse);
+Alpine.plugin(focus);
 
 // Store
 Alpine.store("miniCart", miniCart);
@@ -19,6 +25,12 @@ Alpine.store("mobileMenu", mobileMenu);
 
 // Data
 Alpine.data("addToCart", addToCart);
+Alpine.data("searchBar", searchBar);
+
+// Directives
+Alpine.directive("tippy", tippy);
+
+// Initiate
 Alpine.start();
 
 // twind

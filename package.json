@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.10.3",
+    "@alpinejs/focus": "^3.10.3",
     "@alpinejs/intersect": "^3.10.3",
     "@headlessui/vue": "^1.4.0",
     "@xstate/vue": "^0.4.0",

@@ -622,15 +622,6 @@
     }
   }
 
-  &__triggers {
-    @extend .flex-end;
-    margin: 0 1rem;
-
-    @include device(mobileAndTablet) {
-      margin: 0;
-    }
-  }
-
   &__trigger {
     @include focus-outline;
     background-color: transparent;
