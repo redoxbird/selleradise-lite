@@ -25,5 +25,8 @@
       "./inc/Helpers.php",
       "./inc/class-tgm-plugin-activation.php"
     ]
+  },
+  "require": {
+    "log1x/navi": "^2.0"
   }
 }

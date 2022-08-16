@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Helpers methods
  *
@@ -186,51 +187,6 @@ if (!function_exists('selleradise_rgb_to_hsl')) {
     }
 }
 
-if (!function_exists('selleradise_get_color_contrast')) {
-
-    /**
-     * Adjust the brightness of a given color.
-     *
-     * @param string $hexColor
-     * @param string $blackColor
-     * @return int contrast ratio
-     */
-
-    function selleradise_get_color_contrast($hexColor, $blackColor)
-    {
-
-        // hexColor RGB
-        $R1 = hexdec(substr($hexColor, 1, 2));
-        $G1 = hexdec(substr($hexColor, 3, 2));
-        $B1 = hexdec(substr($hexColor, 5, 2));
-
-        // Black RGB
-        // $blackColor = "#000000";
-
-        $R2BlackColor = hexdec(substr($blackColor, 1, 2));
-        $G2BlackColor = hexdec(substr($blackColor, 3, 2));
-        $B2BlackColor = hexdec(substr($blackColor, 5, 2));
-
-        // Calc contrast ratio
-        $L1 = 0.2126 * pow($R1 / 255, 2.2) +
-        0.7152 * pow($G1 / 255, 2.2) +
-        0.0722 * pow($B1 / 255, 2.2);
-
-        $L2 = 0.2126 * pow($R2BlackColor / 255, 2.2) +
-        0.7152 * pow($G2BlackColor / 255, 2.2) +
-        0.0722 * pow($B2BlackColor / 255, 2.2);
-
-        $contrastRatio = 0;
-        if ($L1 > $L2) {
-            $contrastRatio = (float) (($L1 + 0.05) / ($L2 + 0.05));
-        } else {
-            $contrastRatio = (float) (($L2 + 0.05) / ($L1 + 0.05));
-        }
-
-        return $contrastRatio;
-    }
-}
-
 if (!function_exists('selleradise_get_theme_type')) {
     /**
      * Get either light or dark theme.
@@ -249,7 +205,6 @@ if (!function_exists('selleradise_get_theme_type')) {
             } else {
                 return "light";
             }
-
         }
 
         return $theme_type;
@@ -283,29 +238,34 @@ if (!function_exists('selleradise_get_menu_items_by_registered_slug')) {
     }
 }
 
-if (!function_exists('selleradise_find_in_cart')) {
 
+if (!function_exists('selleradise_get_menu_tree')) {
     /**
-     * Finds if products is present in the card.
+     * Get menu items array by a registered slug.
      *
-     * @param int $id
+     * @param string $slug
+     * @return array $menu_items
      */
 
-    function selleradise_find_in_cart($id)
+    function selleradise_get_menu_tree($menu_slug)
     {
-        $cart_items = WC()->cart->get_cart_item_quantities();
 
-        if (empty($cart_items)) {
-            return 0;
+        $menu = [];
+
+        if (!class_exists('Log1x\Navi\Navi')) {
+            return $menu;
         }
 
-        if (!array_key_exists((string) $id, $cart_items)) {
-            return 0;
+        $navigation = new \Log1x\Navi\Navi();
+
+        $navigation->build($menu_slug);
+
+        if ($navigation->isEmpty() === false) {
+            $menu = $navigation->toArray();
         }
 
-        return $cart_items[(string) $id];
+        return $menu;
     }
-
 }
 
 if (!function_exists('selleradise_get_options')) {
@@ -330,7 +290,7 @@ if (!function_exists('selleradise_get_options')) {
 
         $attributes_formatted = [];
 
-        foreach ($attributes as $attribute => $options):
+        foreach ($attributes as $attribute => $options) :
 
             $attributes_formatted[$attribute] = [
                 'name' => wc_attribute_label($attribute),
@@ -376,25 +336,6 @@ if (!function_exists('selleradise_get_options')) {
         }
 
         return $attributes_formatted;
-
-    }
-
-}
-
-if (!function_exists('selleradise_get_variations_json')) {
-    /**
-     * Return variation in json format.
-     *
-     * @return array $variations_attr
-     */
-
-    function selleradise_get_variations_json($product)
-    {
-
-        $variations_json = wp_json_encode($product->get_available_variations());
-        $variations_attr = function_exists('wc_esc_json') ? wc_esc_json($variations_json) : _wp_specialchars($variations_json, ENT_QUOTES, 'UTF-8', true);
-
-        return $variations_attr;
     }
 }
 
@@ -425,6 +366,63 @@ if (!function_exists('selleradise_get_product_categories')) {
         }
 
         return $terms;
+    }
+}
+
+
+if (!function_exists('selleradise_get_product_categories_tree')) {
+
+    /**
+     * Gets product categories.
+     *
+     * @return array $product_categories
+     */
+
+    function selleradise_get_product_categories_tree()
+    {
+
+        $categories_tree = get_transient('selleradise_categories_tree');
+
+        if($categories_tree) {
+            return $categories_tree;
+        }
+
+        $categories = selleradise_get_product_categories();
+
+        if (false === $categories_tree) {
+            $categories = selleradise_get_product_categories();
+            $data = [];
+
+            if (!$categories || empty($categories)) {
+                return $data;
+            }
+
+            foreach ($categories as $term) {
+                $image = [];
+                $image["id"] = (int) esc_attr(get_term_meta($term->term_id, 'thumbnail_id', true));
+                $image["thumbnail"] = wp_get_attachment_image_src($image["id"], 'thumbnail');
+                $image["alt"] = esc_attr(get_post_meta($image["id"], '_wp_attachment_image_alt', true));
+
+                $data[] = [
+                    'term_id' => (int) esc_attr($term->term_id),
+                    'slug' => esc_attr($term->slug),
+                    'name' => esc_html($term->name),
+                    'url' => esc_url(get_term_link($term)),
+                    'description' => esc_html($term->description),
+                    'parent' => (int) esc_attr($term->parent),
+                    'count' => (int) esc_attr($term->count),
+                    'image' => $image,
+                ];
+            }
+
+
+            $categories_tree = selleradise_create_tree($data, 'parent', 'term_id');
+
+
+            set_transient('selleradise_categories_tree', $categories_tree, DAY_IN_SECONDS);
+
+            return $categories_tree;
+        } 
     }
 }
 
@@ -574,7 +572,6 @@ if (!function_exists('selleradise_get_font_weight')) {
         ];
 
         return $variants[$variant] ?? 400;
-
     }
 }
 
@@ -706,8 +703,7 @@ if (!function_exists('selleradise_get_product_image_ratio')) {
         if (get_option('woocommerce_thumbnail_cropping') === 'custom') {
             if (!get_option('woocommerce_thumbnail_cropping_custom_height') || !get_option('woocommerce_thumbnail_cropping_custom_width')) {
                 return 1;
-            }
-            ;
+            };
 
             return (int) get_option('woocommerce_thumbnail_cropping_custom_height') / (int) get_option('woocommerce_thumbnail_cropping_custom_width');
         }
@@ -765,7 +761,6 @@ if (!function_exists('selleradise_get_default_color')) {
         ];
 
         return $colors[$variable];
-
     }
 }
 
@@ -864,7 +859,6 @@ if (!function_exists('selleradise_create_branch')) {
             $tree[] = $child;
         }
         return $tree;
-
     }
 }
 
@@ -897,7 +891,8 @@ if (!function_exists('selleradise_get_shop_max_price')) {
 
         $result = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s ORDER BY CAST(`meta_value` as decimal) DESC LIMIT 1", ['_price']
+                "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s ORDER BY CAST(`meta_value` as decimal) DESC LIMIT 1",
+                ['_price']
             )
         );
 
@@ -906,7 +901,6 @@ if (!function_exists('selleradise_get_shop_max_price')) {
         set_transient('selleradise_get_shop_max_price', $max_price, DAY_IN_SECONDS);
 
         return $max_price;
-
     }
 }
 

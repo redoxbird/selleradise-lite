@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<header role="banner" class="selleradiseHeader selleradiseHeader--default">
+<header x-data role="banner" class="selleradiseHeader selleradiseHeader--default">
   <?php get_template_part('template-parts/headers/partials/logo');?>
   
   <?php get_template_part('template-parts/headers/partials/menu');?>
@@ -21,14 +21,16 @@ if (!defined('ABSPATH')) {
       <?php echo selleradise_svg('unicons-line/search') ?>
     </button>
 
-    <button
-      class="selleradiseHeader__trigger selleradiseHeader__trigger--account"
-      aria-label="<?php esc_attr_e('Search', 'selleradise-lite'); ?>"
-      v-tippy="<?php esc_attr_e('Search', 'selleradise-lite'); ?>"
-      v-on:click.prevent="openSearhForm()"
-    >
-      <?php echo selleradise_svg('unicons-line/user-circle') ?>
-    </button>
+    <?php if(class_exists('WooCommerce')): ?>
+      <button
+        class="selleradiseHeader__trigger selleradiseHeader__trigger--account"
+        aria-label="<?php esc_attr_e('Account', 'selleradise-lite'); ?>"
+        x-tippy="'<?php esc_attr_e('Account', 'selleradise-lite'); ?>'"
+        x-on:click.prevent="$store.mobileMenu.open('account')"
+      >
+        <?php echo selleradise_svg('unicons-line/user-circle') ?>
+      </button>
+    <?php endif; ?>
 
     <?php get_template_part('template-parts/headers/partials/trigger', 'cart');?>
 

@@ -1,14 +1,27 @@
 import Alpine from "alpinejs";
+import intersect from "@alpinejs/intersect";
+import collapse from "@alpinejs/collapse";
 import miniCart from "./components/mini-cart";
 import addToCart from "./components/add-to-cart";
+import mobileMenu from "./components/mobile-menu";
 import { setup, disconnect } from "twind/shim";
+import { selleradise } from "./selleradise";
 
 window.Alpine = Alpine;
 
+// Plugins
+Alpine.plugin(intersect);
+Alpine.plugin(collapse);
+
+// Store
 Alpine.store("miniCart", miniCart);
+Alpine.store("mobileMenu", mobileMenu);
+
+// Data
 Alpine.data("addToCart", addToCart);
 Alpine.start();
 
+// twind
 setup({
   target: document.querySelector("body"),
 });
@@ -18,7 +31,6 @@ disconnect();
 // Old
 
 // import { createApp } from "@vue/runtime-dom";
-import { selleradise } from "./selleradise";
 
 window.Selleradise = selleradise();
 
