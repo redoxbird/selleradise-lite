@@ -296,19 +296,24 @@
     width: 90vw;
     position: fixed;
     left: 50%;
-    top: 2.5rem;
+    top: calc(var(--header-height) + 1rem);
     min-width: 50%;
     margin-left: -45vw;
+    background-color: white;
+
+    &[data-state="idle"] {
+      display: none;
+    }
   }
 }
 
 .selleradiseHeader__searchResults {
   @extend .selleradise-hide-scrollbar;
   width: 100%;
-  height: 40rem;
+  max-height: 40rem;
   background-color: color(background);
   color: color(text);
-  border: 0.1rem solid rgba(color(text-rgb), 0.05);
+  border: 0.1rem solid rgba(color(text-rgb), 0.1);
   position: absolute;
   left: 0;
   top: 100%;

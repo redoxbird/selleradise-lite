@@ -33,7 +33,6 @@ class Ajax
             add_action('wp_ajax_selleradise_' . $ajax_event, [$this, $ajax_event]);
             add_action('wp_ajax_nopriv_selleradise_' . $ajax_event, [$this, $ajax_event]);
         }
-
     }
 
     public function search_products()
@@ -51,7 +50,7 @@ class Ajax
         $category = sanitize_text_field($_GET['category']);
 
         if (!class_exists('WooCommerce')) {
-            return wp_send_json($data);
+            return wp_send_json([]);
 
             wp_die();
         }
@@ -110,14 +109,13 @@ class Ajax
         }
 
         $keyword = sanitize_text_field($_GET['keyword']);
-        $category = sanitize_text_field($_GET['category']);
-        $category_term = get_term($category, 'product_cat');
 
         $term_args = [
             'orderby' => 'count',
             'order' => 'DESC',
             'hide_empty' => false,
             'number' => 5,
+            'taxonomy' => ['product_cat', 'product_tag']
         ];
 
         $product_args = [
@@ -126,79 +124,69 @@ class Ajax
             'return' => 'object',
             'limit' => 5,
             'visibility' => 'search',
-            'category' => [],
-            'tag' => [],
         ];
 
         if ($keyword) {
             if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
                 $term_args['starts__with'] = $keyword;
+                $product_args['starts__with'] = $keyword;
             } else {
                 $term_args['sounds__like'] = $keyword;
+                $product_args['s'] = $keyword;
             }
         }
 
-        if ($category) {
-            $children = get_term_children($category, 'product_cat');
-            $term_args['taxonomy'] = ['product_cat'];
-
-            if ($children && !empty($children)) {
-                $term_args['include'] = $children;
-            } else {
-                $term_args['include'] = [$category];
-            }
-        } else {
-            $term_args['taxonomy'] = ['product_cat', 'product_tag'];
-        }
-
+        $product_query = new WC_Product_Query($product_args);
+        $products = $product_query->get_products();
         $terms = get_terms($term_args);
 
-        if (!empty($terms)) {
-            $term_names = array_column($terms, "name");
-            $duplicate_names = array_unique(array_diff_assoc($term_names, array_unique($term_names)));
-
-            foreach ($terms as $term) {
-                $term_data = [
-                    "slug" => esc_attr($term->slug),
-                    "name" => esc_html($term->name),
-                    "link" => esc_url(get_term_link($term)),
-                ];
-
-                if ($term->taxonomy === 'product_cat') {
-                    $product_args['category'][] = $term->slug;
-                }
-
-                if ($term->taxonomy === 'product_tag') {
-                    $product_args['tag'][] = $term->slug;
-                }
-
-                if (in_array($term->name, $duplicate_names)) {
-                    $term_data["is_duplicate_name"] = true;
-
-                }
-
-                if ($term->parent) {
-                    $parent = get_term($term->parent, $term->taxonomy);
-                    $term_data["parent_term"] = $parent;
-                }
-
-                $data["terms"][] = $term_data;
-            }
-        } else {
-            if ($category_term->slug) {
-                $product_args['category'][] = $category_term->slug;
-            }
-        }
-
-        $query = new WC_Product_Query($product_args);
-
-        $products = $query->get_products();
-
         $data["products"] = $this->prepare_product_data_for_search_results($products);
+        $data["terms"] = $this->prepare_term_data_for_search_results($terms);
 
         wp_send_json($data);
 
         wp_die(); // this is required to terminate immediately and return a proper response
+    }
+
+    private function prepare_term_data_for_search_results($terms)
+    {
+        $data = [];
+
+        if (!$terms || empty($terms)) {
+            return $data;
+        }
+
+        $term_names = array_column($terms, "name");
+        $duplicate_names = array_unique(array_diff_assoc($term_names, array_unique($term_names)));
+
+        foreach ($terms as $term) {
+            $term_data = [
+                "slug" => esc_attr($term->slug),
+                "name" => esc_html($term->name),
+                "link" => esc_url(get_term_link($term)),
+            ];
+
+            if ($term->taxonomy === 'product_cat') {
+                $term_product_args['category'][] = $term->slug;
+            }
+
+            if ($term->taxonomy === 'product_tag') {
+                $term_product_args['tag'][] = $term->slug;
+            }
+
+            if (in_array($term->name, $duplicate_names)) {
+                $term_data["is_duplicate_name"] = true;
+            }
+
+            if ($term->parent) {
+                $parent = get_term($term->parent, $term->taxonomy);
+                $term_data["parent_term"] = $parent;
+            }
+
+            $data[] = $term_data;
+        }
+
+        return $data;
     }
 
     private function prepare_product_data_for_search_results($products)
@@ -486,5 +474,4 @@ class Ajax
 
         return selleradise_create_tree($data, 'parent', 'term_id');
     }
-
 }

@@ -155,8 +155,8 @@ class Setup
 
         if (!empty($sounds__like)) {
             $like = $wpdb->esc_like($sounds__like);
-            $pieces['where'] .= " AND ((t.name LIKE %s OR t.slug LIKE %s) OR t.name SOUNDS LIKE %s)";
-            $pieces['where'] = $wpdb->prepare($pieces['where'], "%$like%", "%$like%", "$like"); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+            $pieces['where'] .= " AND (t.slug LIKE %s OR t.name SOUNDS LIKE %s)";
+            $pieces['where'] = $wpdb->prepare($pieces['where'], "%{$like}%", $like); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         }
 
         return $pieces;

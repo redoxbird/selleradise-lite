@@ -5,6 +5,9 @@ namespace Selleradise_Lite\Setup;
 /**
  * Enqueue.
  */
+
+use WC_AJAX;
+
 class Enqueue
 {
     public $assets;
@@ -193,6 +196,7 @@ class Enqueue
             'homeURL' => esc_url(home_url()),
             'assetsURL' => esc_url(selleradise_assets('/')),
             'ajaxURL' => esc_url(admin_url('admin-ajax.php')),
+            'wcAjaxURl' => WC_AJAX::get_endpoint(),
             "isWooCommerce" => class_exists('WooCommerce') ? true : false,
             "settings" => [
                 "dark_mode_setting" => esc_html(get_theme_mod('theme_type', 'light') === 'both'),
