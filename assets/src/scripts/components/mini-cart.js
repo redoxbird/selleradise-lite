@@ -21,21 +21,19 @@ export default {
   async fetch() {
     let response;
 
+    const params = new URLSearchParams({
+      action: "selleradise_get_cart_contents",
+      _wpnonce: selleradiseData["_wpnonce"],
+    });
+
     try {
-      response = await axios({
-        method: "get",
-        url: selleradiseData.ajaxURL,
-        params: {
-          action: "selleradise_get_cart_contents",
-          _wpnonce: selleradiseData["_wpnonce"],
-        },
-      });
+      response = await fetch(`${selleradiseData.ajaxURL}?${params.toString()}`);
     } catch (error) {
       console.error(error);
     }
 
     if (response.status === 200) {
-      this.setCartValues(response.data);
+      this.setCartValues(await response.json());
     }
   },
 
@@ -96,19 +94,21 @@ export default {
   async removeItemFromCart(index, key) {
     cartService.send("UPDATE");
 
-    try {
-      const response = await axios({
-        method: "get",
-        url: selleradiseData.ajaxURL,
-        params: {
-          action: "selleradise_remove_item_from_cart",
-          key: key,
-          _wpnonce: selleradiseData["_wpnonce"],
-        },
-      });
+    const params = new URLSearchParams({
+      action: "selleradise_remove_item_from_cart",
+      key: key,
+      _wpnonce: selleradiseData["_wpnonce"],
+    });
+
+    const response = await fetch(
+      `${selleradiseData.ajaxURL}?${params.toString()}`
+    );
+
+    if (response.ok) {
+      const data = await response.json();
       delete this.items[index];
-      this.setCartValues(response.data.data);
-    } catch (error) {}
+      this.setCartValues(data.data);
+    }
 
     cartService.send("DONE");
   },
@@ -116,20 +116,21 @@ export default {
   async updateQuantity(index, key) {
     cartService.send("UPDATE");
 
-    try {
-      const response = await axios({
-        method: "get",
-        url: selleradiseData.ajaxURL,
-        params: {
-          action: "selleradise_set_cart_item_quantity",
-          key: key,
-          quantity: this.items[index].quantity,
-          _wpnonce: selleradiseData["_wpnonce"],
-        },
-      });
+    const params = new URLSearchParams({
+      action: "selleradise_set_cart_item_quantity",
+      key: key,
+      quantity: this.items[index].quantity,
+      _wpnonce: selleradiseData["_wpnonce"],
+    });
 
-      this.setCartValues(response.data.data);
-    } catch (error) {}
+    const response = await fetch(
+      `${selleradiseData.ajaxURL}?${params.toString()}`
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      this.setCartValues(data.data);
+    }
 
     cartService.send("DONE");
   },

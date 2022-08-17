@@ -23,32 +23,28 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
 
 ?>
 
-<?php if ($product->get_type() == 'simple' && $product->is_in_stock() && (class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->editor->is_edit_mode()) === false): ?>
+<?php if ($product->get_type() == 'simple' && $product->is_in_stock() && (class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->editor->is_edit_mode()) === false) : ?>
 
-    <a
-        x-data="addToCart({
+    <a x-data="addToCart({
             product: {
-                id: <?php echo esc_html( $product->get_ID() ) ?>,
+                id: <?php echo esc_html($product->get_ID()) ?>,
                 ajax_add_to_cart_endpoint: '<?php echo esc_url(WC_AJAX::get_endpoint('add_to_cart')) ?>',
+                name: '<?php echo esc_html($product->get_title()) ?>',
             }
-        })"
-        href="<?php echo esc_url( $product->add_to_cart_url() ) ?>"
-        x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--primary']"
-        x-on:click.prevent="addToCart($event)"
-    >
+        })" href="<?php echo esc_url($product->add_to_cart_url()) ?>" x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--primary']" x-on:click.prevent="addToCart($event)">
         <span x-show="!loading && !isInCart()">
-            <?php esc_html_e( "Add To Cart", "selleradise-lite" ) ?>
+            <?php esc_html_e("Add To Cart", "selleradise-lite") ?>
         </span>
         <span x-show="isInCart()">
-            <?php esc_html_e( "View Cart", "selleradise-lite" ) ?>
+            <?php esc_html_e("View Cart", "selleradise-lite") ?>
         </span>
         <span x-show="loading">
-            <?php esc_html_e( "Adding To Cart", "selleradise-lite" ) ?>
+            <?php esc_html_e("Adding To Cart", "selleradise-lite") ?>
         </span>
     </a>
 
-<?php else:
-    
+<?php else :
+
     echo apply_filters(
         'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
         sprintf(
@@ -63,6 +59,6 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
         $args
     );
 
-    ?>
+?>
 
-<?php endif;?>
+<?php endif; ?>

@@ -1,6 +1,5 @@
 import { ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
-import { updateCart, cartIsEmpty } from "./store/cart";
 import { calculateContrastRatioLuminance, device, luminance } from "./helpers";
 import { menu } from "./main/menu";
 import { loginFormSwitcher } from "./main/account";
@@ -416,15 +415,8 @@ export function selleradise() {
 
     function update(e) {
       selleradiseNumberInput();
-      updateCart();
 
       const bodyElement = document.querySelector("body");
-
-      if (cartIsEmpty.value) {
-        bodyElement.classList.add("woocommerce-cart-is-empty");
-      } else {
-        bodyElement.classList.remove("woocommerce-cart-is-empty");
-      }
     }
 
     $("body").on("updated_wc_div", update);

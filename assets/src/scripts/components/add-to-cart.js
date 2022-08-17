@@ -1,3 +1,12 @@
+import { replace } from "lodash-es";
+import { trans } from "../helpers";
+
+export const messages = {
+  add_to_cart_success: trans("%s has been added to your cart"),
+  add_to_cart_error: trans("An error occurred while adding %s to your cart"),
+  update_cart_error: trans("An error occurred while updating cart"),
+};
+
 export default (props = {}) => ({
   state: "hidden",
   product: props?.product,
@@ -26,25 +35,35 @@ export default (props = {}) => ({
     data.append("product_id", this.product.id);
     data.append("quantity", 1);
 
+    const successMsg = replace(
+      messages.add_to_cart_success,
+      "%s",
+      `<b> "${this.product.name}" </b>`
+    );
+
+    const errorMsg = replace(
+      messages.add_to_cart_error,
+      "%s",
+      `<b> "${this.product.name}" </b>`
+    );
+
     try {
-      const response = await axios({
+      const response = await fetch(this.product.ajax_add_to_cart_endpoint, {
         method: "post",
-        url: this.product.ajax_add_to_cart_endpoint,
-        data: data,
+        body: data,
       });
 
       this.loading = false;
 
-      // if (response.data.error) {
-      //   showToast(errorMsg, "error");
-      // } else {
-      //   showToast(successMsg, "message");
-      // }
+      if (!response.ok) {
+        this.$store.toast.show(errorMsg, "error");
+      } else {
+        this.$store.toast.show(successMsg, "message");
+      }
       this.$store.miniCart.fetch();
     } catch (error) {
       this.loading = false;
-      console.error(error);
-      // showToast(errorMsg, "error");
+      this.$store.toast.show(errorMsg, "error");
     }
   },
 });

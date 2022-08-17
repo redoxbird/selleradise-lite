@@ -9,6 +9,8 @@ import miniCart from "./components/mini-cart";
 import addToCart from "./components/add-to-cart";
 import mobileMenu from "./components/mobile-menu";
 import searchBar from "./components/search-bar";
+import toast from "./components/toast";
+import filters from "./components/shop/filters";
 
 import { selleradise } from "./selleradise";
 
@@ -22,10 +24,12 @@ Alpine.plugin(focus);
 // Store
 Alpine.store("miniCart", miniCart);
 Alpine.store("mobileMenu", mobileMenu);
+Alpine.store("toast", toast);
 
 // Data
 Alpine.data("addToCart", addToCart);
 Alpine.data("searchBar", searchBar);
+Alpine.data("shopFilters", filters);
 
 // Directives
 Alpine.directive("tippy", tippy);

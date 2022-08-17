@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,22 +12,25 @@
 
 ?>
 
-	<overlay> </overlay>
-	
-	<selleradise-toast>
-		<template v-slot:icon-close>
-      <?php echo selleradise_svg('unicons-line/multiply') ?>
-    </template>
-	</selleradise-toast>
+<overlay> </overlay>
 
-	</div><!-- #content -->
+<div x-data class="selleradiseToast" x-bind:class="`selleradiseToast--${$store.toast.type}`" x-show="$store.toast.isShowing" role="alert" x-bind:style="{ zIndex: $store.toast.zIndex }">
+	<span x-html="$store.toast.message"></span>
+	<button class="button--icon" x-on:click="$store.toast.hide()">
+		<?php echo selleradise_svg('unicons-line/multiply') ?>
+	</button>
+</div>
 
-	<?php get_template_part('template-parts/footers/footer', "default"); ?>
+
+</div><!-- #content -->
+
+<?php get_template_part('template-parts/footers/footer', "default"); ?>
 
 
 </div><!-- #page -->
 
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 
 </body>
+
 </html>
