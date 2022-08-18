@@ -24,6 +24,7 @@ class Ajax
         'set_cart_item_quantity',
         'get_menu_items',
         'get_categories',
+        'get_shop_filter_attributes'
     ];
 
     public function register()
@@ -473,5 +474,48 @@ class Ajax
         }
 
         return selleradise_create_tree($data, 'parent', 'term_id');
+    }
+
+    public function get_shop_filter_attributes()
+    {
+        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'selleradise_ajax')) {
+
+            wp_send_json([
+                'message' => 'Invalid Request',
+            ]);
+
+            wp_die();
+        };
+
+        $attributes = wc_get_attribute_taxonomies();
+        $attributes_with_values = [];
+
+        foreach ($attributes as $key => $attribute) {
+
+            $attribute_values = get_terms(wc_attribute_taxonomy_name($attribute->attribute_name), array(
+                'hide_empty' => false,
+                'orderby' => 'count',
+                'order' => 'DESC',
+                'number' => 100,
+            ));
+
+            foreach ($attribute_values as $key => $attribute_value) {
+                $color = get_term_meta($attribute_value->term_id, 'product_attribute_color');
+
+                if ($color) {
+                    $attribute_values[$key]->color = $color[0];
+                }
+            }
+
+            $attribute->attribute_values = $attribute_values;
+
+            if (!empty($attribute_values)) {
+                $attributes_with_values[] = $attribute;
+            }
+        }
+
+        wp_send_json($attributes_with_values);
+
+        wp_die();
     }
 }

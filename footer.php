@@ -12,7 +12,6 @@
 
 ?>
 
-<overlay> </overlay>
 
 <div x-data class="selleradiseToast" x-bind:class="`selleradiseToast--${$store.toast.type}`" x-show="$store.toast.isShowing" role="alert" x-bind:style="{ zIndex: $store.toast.zIndex }">
 	<span x-html="$store.toast.message"></span>

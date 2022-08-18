@@ -15,7 +15,7 @@ $categories = selleradise_get_product_categories_tree();
 
 
 <div x-data>
-  <div x-show="$store.mobileMenu.isOpen()" class="fixed inset-0 bg-black opacity-75 z-[1499]" x-on:click="$store.mobileMenu.close()"></div>
+  <div x-show="$store.mobileMenu.isOpen()" class="overlay z-[1499]" x-on:click="$store.mobileMenu.close()" x-transition.opacity></div>
 
   <div x-show="$store.mobileMenu.isOpen()" x-trap="$store.mobileMenu.isOpen()" class="selleradise__mobile-menu" x-transition>
     <button class="selleradise__mobile-menu-button--close" x-on:click="$store.mobileMenu.close()" aria-label="Close Mobile Menu">

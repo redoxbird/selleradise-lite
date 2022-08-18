@@ -36,38 +36,6 @@ export function selleradise() {
   }
 
   /**
-   * Relocate inline scrips and styles from #page to footer to avoid vue template compilation error.
-   */
-
-  function relocateInlineScriptAndStyle() {
-    const inlineScriptTags = document.querySelectorAll("#page script");
-    const inlineStyleTags = document.querySelectorAll("#page style");
-
-    if (inlineScriptTags.length > 0) {
-      const inlineScriptWrap = redom.el("div", {
-        id: "SelleradiseInline--scripts",
-      });
-
-      redom.mount(document.body, inlineScriptWrap);
-      redom.setChildren(inlineScriptWrap, inlineScriptTags);
-    }
-
-    if (inlineStyleTags.length > 0) {
-      const inlineStyleWrap = redom.el("div", {
-        id: "SelleradiseInline--styles",
-      });
-
-      redom.mount(
-        document.body,
-        inlineStyleWrap,
-        document.querySelector("#page")
-      );
-
-      redom.setChildren(inlineStyleWrap, inlineStyleTags);
-    }
-  }
-
-  /**
    * Initialize tippy.
    */
 
@@ -111,43 +79,6 @@ export function selleradise() {
    *
    * Button is located in @module views/footers/footer-default.php
    */
-
-  function scrollProgress(
-    element = document.querySelector(".selleradise_back-to-top")
-  ) {
-    if (!element) {
-      return;
-    }
-
-    const stroke = element.querySelector("svg .stroke");
-
-    if (!stroke) {
-      return;
-    }
-
-    const dashArray = stroke.getTotalLength();
-
-    element.style.setProperty("--dasharray", dashArray);
-
-    const observer = scrollama();
-
-    observer
-      .setup({
-        step: document.body,
-        offset: 1,
-        progress: true,
-      })
-      .onStepProgress((response) => {
-        const { scrollElement, index, progress } = response;
-
-        element.style.setProperty(
-          "--dashoffset",
-          dashArray - dashArray * progress
-        );
-      });
-
-    window.addEventListener("resize", observer.resize);
-  }
 
   /**
    * Enables smooth scroll on click on any element containing the class.
@@ -718,11 +649,9 @@ export function selleradise() {
     masonryInstance,
     focusSource,
     onWindowLoad,
-    relocateInlineScriptAndStyle,
     initializeTippy,
     initializeHeadroom,
     lazyLoad,
-    scrollProgress,
     smoothScroll,
     selleradisePopup,
     loginFormSwitcher,

@@ -434,7 +434,7 @@ if (!function_exists('selleradise_get_product_tags')) {
      * @return array $product_tags
      */
 
-    function selleradise_get_product_tags($limit = 100)
+    function selleradise_get_product_tags($limit = 10000)
     {
         if (!class_exists('WooCommerce')) {
             return;

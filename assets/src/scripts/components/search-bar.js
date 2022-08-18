@@ -16,12 +16,6 @@ export default (props = {}) => ({
     });
 
     this.debouncedGetResults = debounce(this.getResults, 500);
-
-    // this.$watch("keyword", (from, to) => {
-    //   console.log(to);
-
-    //   this.getResults();
-    // });
   },
 
   startSearch() {
