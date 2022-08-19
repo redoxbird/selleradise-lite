@@ -6,12 +6,12 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<header x-data role="banner" class="selleradiseHeader selleradiseHeader--default">
+<header x-data="header" role="banner" class="selleradiseHeader selleradiseHeader--default" x-bind:class="{'headroom--unpinned': !pin, 'headroom--not-top': notTop}">
   <?php get_template_part('template-parts/headers/partials/logo'); ?>
   <?php get_template_part('template-parts/headers/partials/menu'); ?>
   <?php get_template_part('template-parts/headers/partials/search', null, [
-      "type" => class_exists('DGWT_WC_Ajax_Search') ? "fibosearch" : "native"
-    ]); 
+    "type" => class_exists('DGWT_WC_Ajax_Search') ? "fibosearch" : "native"
+  ]);
   ?>
   <div class="flex justify-end items-center lg:mx-4 ml-auto">
     <?php get_template_part('template-parts/headers/partials/trigger', "search"); ?>

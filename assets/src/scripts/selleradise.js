@@ -2,9 +2,9 @@ import { ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
 import { calculateContrastRatioLuminance, device, luminance } from "./helpers";
 import { menu } from "./main/menu";
-import { loginFormSwitcher } from "./main/account";
 import { lazyLoad } from "./main/lazyload";
 import Bricks from "bricks.js";
+import { el, setChildren } from "redom";
 
 export function selleradise() {
   /**
@@ -33,45 +33,6 @@ export function selleradise() {
     window.addEventListener("click", function (e) {
       document.documentElement.setAttribute("data-focus-source", "mouse");
     });
-  }
-
-  /**
-   * Initialize tippy.
-   */
-
-  function initializeTippy() {
-    tippy("[data-tippy-content]", {
-      animation: "shift-away",
-      theme: "primary",
-    });
-  }
-
-  /**
-   * Initialize headroom.js.
-   */
-
-  function initializeHeadroom() {
-    let headroomOptions = {
-      // vertical offset in px before element is first unpinned
-      offset: 0,
-    };
-
-    for (const header of document.querySelectorAll(
-      [
-        ".selleradiseHeader--default",
-        ".selleradiseHeader--common",
-        ".selleradiseHeader--simple",
-        ".selleradiseHeader--minimal",
-        ".selleradiseHeader--robust",
-        ".selleradiseHeader--robust-alt",
-        ".selleradiseHeader--centered",
-        ".selleradiseHeader--robust-centered",
-        ".selleradise_back-to-top",
-      ].join(", ")
-    )) {
-      let headroom = new Headroom(header, headroomOptions);
-      headroom.init();
-    }
   }
 
   /**
@@ -144,82 +105,6 @@ export function selleradise() {
         });
       }
     }
-  }
-
-  /**
-   * Abstract function used to create different kinds fo popups.
-   */
-
-  function selleradisePopup(triggerBtn, target, closeBtn) {
-    const trigger = document.querySelector(triggerBtn);
-    const popUp = document.querySelector(target);
-    let closeButton;
-
-    if (popUp) {
-      closeButton = popUp.querySelector(closeBtn);
-    }
-
-    if (!trigger || !popUp || !closeButton) {
-      return;
-    }
-
-    let isActive = ref(false);
-
-    function openPopup(e) {
-      e.preventDefault();
-      isActive.value = true;
-    }
-
-    function closePopup(e) {
-      e.preventDefault();
-      isActive.value = false;
-    }
-
-    function closePopupKeydown(e) {
-      if (e.code === "Escape") {
-        e.preventDefault();
-        isActive.value = false;
-      }
-    }
-
-    trigger.addEventListener("click", openPopup);
-    closeButton.addEventListener("click", closePopup);
-
-    watch(isActive, (to, from) => {
-      if (to === true) {
-        window.addEventListener("keydown", closePopupKeydown);
-        anime({
-          duration: 400,
-          targets: popUp,
-          opacity: [0, 1],
-          easing: "easeOutExpo",
-          begin: () => {
-            popUp.classList.remove("hidden");
-          },
-          update: function (anim) {
-            popUp.classList.add("changing");
-          },
-          complete: () => {
-            popUp.classList.remove("changing");
-          },
-        });
-      } else {
-        window.removeEventListener("keydown", closePopupKeydown);
-        anime({
-          duration: 400,
-          targets: popUp,
-          opacity: [1, 0],
-          easing: "easeOutExpo",
-          update: function (anim) {
-            popUp.classList.add("changing");
-          },
-          complete: () => {
-            popUp.classList.remove("changing");
-            popUp.classList.add("hidden");
-          },
-        });
-      }
-    });
   }
 
   /**
@@ -326,9 +211,9 @@ export function selleradise() {
       }
     }
 
-    let ul = redom.el("ul.selleradise_shop__categories");
+    let ul = el("ul.selleradise_shop__categories");
 
-    redom.setChildren(ul, categories);
+    setChildren(ul, categories);
 
     shopHead.insertAdjacentElement("beforeend", ul);
   }
@@ -337,23 +222,23 @@ export function selleradise() {
    * Initialize woocommerce events.
    */
 
-  function wooCommerceEvents() {
-    if (!jQuery) {
-      return;
-    }
+  // function wooCommerceEvents() {
+  //   if (!jQuery) {
+  //     return;
+  //   }
 
-    const $ = jQuery;
+  //   const $ = jQuery;
 
-    function update(e) {
-      selleradiseNumberInput();
+  //   function update(e) {
+  //     selleradiseNumberInput();
 
-      const bodyElement = document.querySelector("body");
-    }
+  //     const bodyElement = document.querySelector("body");
+  //   }
 
-    $("body").on("updated_wc_div", update);
+  //   $("body").on("updated_wc_div", update);
 
-    $(document).on("added_to_cart", update);
-  }
+  //   $(document).on("added_to_cart", update);
+  // }
 
   /**
    * Add functionality to tabs in product page.
@@ -502,82 +387,6 @@ export function selleradise() {
     window.addEventListener("resize", observer.resize);
   }
 
-  function setAdaptiveColors(element) {
-    element.setAttribute("data-scroll-entered", true);
-
-    const image = element.querySelector("img[data-src]");
-
-    if (!image) {
-      return;
-    }
-
-    const dataSrc = image.getAttribute("data-src");
-
-    if (!dataSrc) {
-      return;
-    }
-
-    image.classList.add("selleradise__image-loading");
-    image.setAttribute("src", dataSrc);
-
-    const colorThief = new ColorThief();
-
-    image.addEventListener("load", function () {
-      image.classList.add("selleradise__image-loaded");
-      image.classList.remove("selleradise__image-loading");
-
-      element.setAttribute("data-image-loaded", true);
-      setColors();
-    });
-
-    function setColors() {
-      const palette = colorThief.getPalette(image, 3);
-      let lum = [];
-      let contrastRatio = [];
-
-      lum[0] = luminance(palette[0][0], palette[0][0], palette[0][0]);
-      lum[1] = luminance(palette[1][0], palette[1][1], palette[1][2]);
-      lum[2] = luminance(palette[2][0], palette[2][1], palette[2][2]);
-
-      const lightIndex = lum.indexOf(Math.max.apply(null, lum));
-      const darkIndex = lum.indexOf(Math.min.apply(null, lum));
-
-      element.style.setProperty(
-        "--selleradise-color-palette-dominant",
-        palette[0].join(", ")
-      );
-
-      element.style.setProperty(
-        "--selleradise-color-palette-dark",
-        palette[darkIndex].join(", ")
-      );
-
-      element.style.setProperty(
-        "--selleradise-color-palette-light",
-        palette[lightIndex].join(", ")
-      );
-
-      contrastRatio[0] = calculateContrastRatioLuminance(lum[0], 0);
-      contrastRatio[1] = calculateContrastRatioLuminance(lum[darkIndex], 0);
-      contrastRatio[2] = calculateContrastRatioLuminance(lum[lightIndex], 0);
-
-      element.style.setProperty(
-        "--selleradise-color-palette-dominant-text",
-        contrastRatio[0] >= 4.5 ? "0,0,0" : "255,255,255"
-      );
-
-      element.style.setProperty(
-        "--selleradise-color-palette-dark-text",
-        contrastRatio[1] >= 4.5 ? "0,0,0" : "255,255,255"
-      );
-
-      element.style.setProperty(
-        "--selleradise-color-palette-light-text",
-        contrastRatio[2] >= 4.5 ? "0,0,0" : "255,255,255"
-      );
-    }
-  }
-
   function initiateMasonryLayout() {
     if (device("mobile")) {
       return;
@@ -649,20 +458,14 @@ export function selleradise() {
     masonryInstance,
     focusSource,
     onWindowLoad,
-    initializeTippy,
-    initializeHeadroom,
     lazyLoad,
     smoothScroll,
-    selleradisePopup,
-    loginFormSwitcher,
     selleradiseNumberInput,
     categoriesInProductPageLoop,
-    wooCommerceEvents,
     menu,
     productPageTabs,
     scrollTrigger,
     adaptiveColors,
-    setAdaptiveColors,
     initiateMasonryLayout,
   };
 }

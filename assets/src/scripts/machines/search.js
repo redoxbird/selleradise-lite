@@ -1,5 +1,4 @@
 import { interpret, Machine } from "xstate";
-import { useService } from "@xstate/vue";
 
 export const searchMachine = Machine(
   {
@@ -68,7 +67,3 @@ export const searchMachine = Machine(
 );
 
 export const searchService = interpret(searchMachine).start();
-
-export function useSearchService() {
-  return useService(searchService);
-}

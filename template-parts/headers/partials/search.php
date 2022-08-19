@@ -15,12 +15,18 @@ if ($args) {
     <span class="sr-only"><?php esc_html_e("Search for products here...", "selleradise-lite"); ?></span>
     <input type="text" x-bind:value="keyword" x-on:input="handleInputChange($event)" x-on:focus="startSearch()" x-on:keydown.tab.shift="stopSearch()" x-on:keydown.enter="handleEnterPress($event)" class="searchField" ref="searchField" name="s" autocomplete="off" maxlength="50" minlength="2" placeholder="<?php esc_attr_e("Search for products here...", "selleradise-lite"); ?>" />
 
-    <button ref="searchClearButton" class="clear" x-show="keyword && keyword != ''" aria-label="'<?php esc_attr_e("Clear", "selleradise-lite"); ?>'" x-tippy="'<?php esc_attr_e("Clear", "selleradise-lite"); ?>'" x-on:click.prevent="clear()">
+    <button x-ref="searchClearButton" class="clear" x-show="keyword && keyword != ''" x-tooltip="headerSearchBarClearButtonTooltip" x-on:click.prevent="clear()">
+      <span id="headerSearchBarClearButtonTooltip" role="tooltip" class="selleradise_tooltip">
+        <?php esc_html_e('Clear', 'selleradise-lite'); ?>
+      </span>
       <?php echo selleradise_svg('unicons-line/multiply'); ?>
     </button>
   </label>
 
-  <button type="submit" x-ref="searchSubmitButton" x-on:blur="handleSubmitBlur()" v-on:keydown.tab.exact="send('STOP')" x-on:click="handleEnterPress($event)" aria-label="'<?php esc_attr_e("Submit", "selleradise-lite"); ?>'" x-tippy="'<?php esc_attr_e("Submit", "selleradise-lite"); ?>'">
+  <button type="submit" x-ref="searchSubmitButton" x-on:blur="handleSubmitBlur()" v-on:keydown.tab.exact="send('STOP')" x-on:click="handleEnterPress($event)" x-tooltip="headerSearchBarSubmitButtonTooltip">
+    <span id="headerSearchBarSubmitButtonTooltip" role="tooltip" class="selleradise_tooltip">
+      <?php esc_attr_e("Submit", "selleradise-lite"); ?>
+    </span>
     <span class="inlineSVGIcon" x-show="state === 'searching'">
       <?php echo selleradise_svg('loader/simple'); ?>
     </span>
@@ -29,7 +35,7 @@ if ($args) {
     </span>
   </button>
 
-  <div x-show="state === 'found'" class="selleradiseHeader__searchResults mt-4 rounded-lg" ref="selleradiseHeader__searchResults" x-cloak>
+  <div x-show="state === 'found'" x-transition class="selleradiseHeader__searchResults mt-4 rounded-lg" ref="selleradiseHeader__searchResults" x-cloak>
     <ul class="selleradiseHeader__searchResults-inner">
       <li x-show="terms && terms.length > 0">
         <ul class="selleradiseHeader__searchResults-suggestions--categories">

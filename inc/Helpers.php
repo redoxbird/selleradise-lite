@@ -383,7 +383,7 @@ if (!function_exists('selleradise_get_product_categories_tree')) {
 
         $categories_tree = get_transient('selleradise_categories_tree');
 
-        if($categories_tree) {
+        if ($categories_tree) {
             return $categories_tree;
         }
 
@@ -422,7 +422,7 @@ if (!function_exists('selleradise_get_product_categories_tree')) {
             set_transient('selleradise_categories_tree', $categories_tree, DAY_IN_SECONDS);
 
             return $categories_tree;
-        } 
+        }
     }
 }
 
@@ -913,5 +913,37 @@ if (!function_exists('selleradise_is_woocommerce_page')) {
         }
 
         return is_cart() || is_checkout() || is_account_page() || is_shop();
+    }
+}
+
+
+if (!function_exists('selleradise_nav_classes')) {
+
+    function selleradise_nav_classes($tag = "ul", $level = 1)
+    {
+
+        if ($tag === "ul") {
+            if ($level === 1) {
+                return "relative flex nowrap justify-start items-center";
+            } else if ($level === 2) {
+                return "bg-white border-2 rounded-lg p-2 border-gray-200 absolute left-0 min-w-full top-full";
+            } else if ($level > 2) {
+                return "bg-white border-2 rounded-lg p-2 border-gray-200 absolute left-full ml-2 min-w-44 min-h-full top-0";
+            };
+        } else if ($tag === "li") {
+            if ($level === 1) {
+                return "relative whitespace-nowrap list-none flex justify-between flex-wrap items-center w-full";
+            } else if ($level > 1) {
+                return "relative flex-1 whitespace-nowrap list-none flex justify-between flex-wrap items-center w-full my-4";
+            };
+        } else if ($tag === "a") {
+            if ($level === 1) {
+                return "flex justify-center items-center nowrap px-4 font-medium text-md focus-within:bg-gray-100 rounded-full";
+            } else if ($level > 1) {
+                return "flex w-full justify-start items-center nowrap px-4 font-semibold text-md focus-within:bg-gray-100 rounded-full";
+            };
+        }
+
+        return;
     }
 }

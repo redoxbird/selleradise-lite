@@ -3,15 +3,19 @@ import intersect from "@alpinejs/intersect";
 import collapse from "@alpinejs/collapse";
 import focus from "@alpinejs/focus";
 import { setup, disconnect } from "twind/shim";
-import tippy from "./directive/tippy";
+import tooltip from "./directive/tooltip";
 
-import miniCart from "./components/mini-cart";
-import addToCart from "./components/add-to-cart";
-import mobileMenu from "./components/mobile-menu";
-import searchBar from "./components/search-bar";
-import toast from "./components/toast";
-import filters from "./components/shop/filters";
-import backToTop from "./components/back-to-top";
+import miniCart from "./store/mini-cart";
+import mobileMenu from "./store/mobile-menu";
+import toast from "./store/toast";
+import addToCart from "./data/add-to-cart";
+import header from "./data/header";
+import searchBar from "./data/search-bar";
+import filters from "./data/filters";
+import backToTop from "./data/back-to-top";
+import loginForm from "./data/login-form";
+import productCard from "./data/product-card";
+import productPage from "./data/product-page";
 
 import { selleradise } from "./selleradise";
 
@@ -28,13 +32,17 @@ Alpine.store("mobileMenu", mobileMenu);
 Alpine.store("toast", toast);
 
 // Data
+Alpine.data("header", header);
 Alpine.data("addToCart", addToCart);
 Alpine.data("searchBar", searchBar);
 Alpine.data("shopFilters", filters);
 Alpine.data("backToTop", backToTop);
+Alpine.data("loginForm", loginForm);
+Alpine.data("productCard", productCard);
+Alpine.data("productPage", productPage);
 
 // Directives
-Alpine.directive("tippy", tippy);
+Alpine.directive("tooltip", tooltip);
 
 // Initiate
 Alpine.start();
@@ -49,14 +57,10 @@ disconnect();
 window.Selleradise = selleradise();
 window.Selleradise.focusSource();
 window.Selleradise.onWindowLoad();
-window.Selleradise.initializeTippy();
-window.Selleradise.initializeHeadroom();
 window.Selleradise.lazyLoad();
 window.Selleradise.smoothScroll();
-window.Selleradise.loginFormSwitcher();
 window.Selleradise.selleradiseNumberInput();
 window.Selleradise.categoriesInProductPageLoop();
-window.Selleradise.wooCommerceEvents();
 window.Selleradise.productPageTabs();
 window.Selleradise.scrollTrigger();
 window.Selleradise.adaptiveColors();

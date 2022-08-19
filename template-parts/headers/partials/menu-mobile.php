@@ -44,26 +44,38 @@ $categories = selleradise_get_product_categories_tree();
     </div>
 
     <div class="selleradise__mobile-menu__toggles">
-      <button class="selleradise__mobile-menu__toggle" data-tippy-placement="left" x-tippy="'<?php echo __('Menu', 'selleradise-lite') ?>'" x-bind:class="{
+      <button class="selleradise__mobile-menu__toggle" data-tooltip-placement="left" x-tooltip="mobileMenuBarsTooltip" x-bind:class="{
           active: $store.mobileMenu.activeSidebar === 'menu',
         }" x-on:click="$store.mobileMenu.activeSidebar = 'menu'">
+
+        <span id="mobileMenuBarsTooltip" role="tooltip" class="selleradise_tooltip">
+          <?php echo esc_html_e('Menu', 'selleradise-lite') ?>
+        </span>
+
         <span class="selleradise__mobile-menu__toggle-icon">
           <?php echo selleradise_svg('unicons-line/bars'); ?>
         </span>
       </button>
 
       <?php if (class_exists('WooCommerce')) : ?>
-        <button class="selleradise__mobile-menu__toggle" data-tippy-placement="left" x-tippy="'<?php echo __('Account', 'selleradise-lite') ?>'" v-tippy="trans('mobile-menu-button-account')" x-bind:class="{
+        <button class="selleradise__mobile-menu__toggle" data-tooltip-placement="left" x-tooltip="mobileMenuAccountTooltip" x-bind:class="{
           active: $store.mobileMenu.activeSidebar === 'account',
         }" x-on:click="$store.mobileMenu.activeSidebar = 'account'">
+          <span id="mobileMenuAccountTooltip" role="tooltip" class="selleradise_tooltip">
+            <?php echo esc_html_e('Account', 'selleradise-lite') ?>
+          </span>
+
           <span class="selleradise__mobile-menu__toggle-icon">
             <?php echo selleradise_svg('unicons-line/user-circle'); ?>
           </span>
         </button>
 
-        <button class="selleradise__mobile-menu__toggle" data-tippy-placement="left" x-tippy="'<?php echo __('Categories', 'selleradise-lite') ?>'" x-bind:class="{
+        <button class="selleradise__mobile-menu__toggle" data-tooltip-placement="left" x-tooltip="mobileMenuCategoriesTooltip" x-bind:class="{
             active: $store.mobileMenu.activeSidebar === 'categories',
           }" x-on:click=" $store.mobileMenu.activeSidebar = 'categories'">
+          <span id="mobileMenuCategoriesTooltip" role="tooltip" class="selleradise_tooltip">
+            <?php echo esc_html_e('Categories', 'selleradise-lite') ?>
+          </span>
           <span class="selleradise__mobile-menu__toggle-icon">
             <?php echo selleradise_svg('unicons-line/apps'); ?>
           </span>

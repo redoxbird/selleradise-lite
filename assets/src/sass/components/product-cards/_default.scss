@@ -32,12 +32,12 @@
     border-radius: var(--border-radius-base);
   }
 
-  .selleradise_productCard__slider .swiper-slide,
+  .selleradise_productCard__slider .embla__slide,
   .selleradise_productCard__image-single {
     height: calc((var(--width) - 1rem) * var(--product-image-ratio));
   }
 
-  &.swiper-slide {
+  &.embla__slide {
     max-width: var(--width);
   }
 
@@ -130,6 +130,7 @@
     margin-top: auto;
 
     .selleradise_button--primary,
+    .selleradise_button--secondary-outline,
     .selleradise_button--secondary {
       @include font-size(small);
       max-width: 75%;
@@ -139,7 +140,7 @@
   @include device(mobile) {
     --width: 90vw;
 
-    &.swiper-slide {
+    &.embla__slide {
       --width: calc(90vw - 5rem);
     }
   }

@@ -69,30 +69,6 @@ GNU General Public License for more details.
 [MIT License](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
 [Source](https://github.com/necolas/normalize.css)
 
-**Swiper**, Copyright (c) 2019 Vladimir Kharlampidi
-[MIT License](https://github.com/nolimits4web/swiper/blob/master/LICENSE)
-[Source](https://github.com/nolimits4web/swiper)
-
-**Headroom.js**, Copyright (c) 2013 Nick Williams
-[MIT License](https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE)
-[Source](https://github.com/WickyNilliams/headroom.js)
-
-**Popper.js**, Copyright (c) 2021 Floating UI contributors
-[MIT License](https://github.com/floating-ui/floating-ui/blob/master/LICENSE)
-[Source](https://github.com/floating-ui/floating-ui)
-
-**Tippy**, Copyright (c) 2017-present atomiks
-[MIT License](https://github.com/atomiks/tippyjs/blob/master/LICENSE)
-[Source](https://github.com/atomiks/tippyjs)
-
-**Anime.js**, Copyright (c) 2019 Julian Garnier
-[MIT License](https://github.com/juliangarnier/anime/blob/master/LICENSE.md)
-[Source](https://github.com/juliangarnier/anime)
-
-**Axios**, Copyright (c) 2014-present Matt Zabriskie
-[MIT License](https://github.com/axios/axios/blob/master/LICENSE)
-[Source](https://github.com/axios/axios)
-
 **noUiSlider**, Copyright (c) 2019 Léon Gersen
 [MIT License](https://github.com/leongersen/noUiSlider/blob/master/LICENSE.md)
 [Source](https://github.com/leongersen/noUiSlider)
@@ -101,10 +77,6 @@ GNU General Public License for more details.
 [MIT License](https://github.com/redom/redom/blob/master/LICENSE)
 [Source](https://github.com/redom/redom)
 
-**colorthief**, Copyright (c) 2015 Lokesh Dhakar
-[MIT License](https://github.com/lokesh/color-thief/blob/master/LICENSE)
-[Source](https://github.com/lokesh/color-thief)
-
 **Scrollama**, Copyright (c) 2017 Russell Goldenberg
 [MIT License](https://github.com/russellgoldenberg/scrollama/blob/main/LICENSE)
 [Source](https://github.com/russellgoldenberg/scrollama)
@@ -112,14 +84,6 @@ GNU General Public License for more details.
 **IntersectionObserver polyfill**, Copyright © 2021 W3C
 [W3C Software Notice and License](https://directory.fsf.org/wiki/License:W3C)
 [Source](https://github.com/w3c/IntersectionObserver/tree/main/polyfill)
-
-**Vue.js**, Copyright (c) 2013-present, Yuxi (Evan) You
-[MIT License](https://github.com/vuejs/vue/blob/dev/LICENSE)
-[Source](https://github.com/vuejs/vue)
-
-**Headless UI**, Copyright (c) 2020 Tailwind Labs
-[MIT License](https://github.com/tailwindlabs/headlessui/blob/main/LICENSE)
-[Source](https://github.com/tailwindlabs)
 
 **Bricks.js**, Copyright (c) 2017 Michael Cavalea
 [MIT License](https://opensource.org/licenses/MIT)

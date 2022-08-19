@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Login Form
  *
@@ -15,131 +16,130 @@
  * @version 4.1.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-do_action( 'woocommerce_before_customer_login_form' ); ?>
+do_action('woocommerce_before_customer_login_form'); ?>
 
-<div class="selleradise_account-forms">
+<div x-data="loginForm" class="selleradise_account-forms">
 
-	<div class="selleradise_account-form selleradise_account-form--login">
+	<div x-show="active === 'login'" class="selleradise_account-form selleradise_account-form--login">
 
 		<h2 class="selleradise_account-form__title">
 			<?php echo _e('Login', 'selleradise-lite'); ?>
 		</h2>
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
-			<?php do_action( 'woocommerce_login_form_start' ); ?>
+			<?php do_action('woocommerce_login_form_start'); ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="username"><?php esc_html_e( 'Username or email address', 'selleradise-lite' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+				<label for="username"><?php esc_html_e('Username or email address', 'selleradise-lite'); ?>&nbsp;<span class="required">*</span></label>
+				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+																																																																																																																										?>
 			</p>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="password"><?php esc_html_e( 'Password', 'selleradise-lite' ); ?>&nbsp;<span class="required">*</span></label>
+				<label for="password"><?php esc_html_e('Password', 'selleradise-lite'); ?>&nbsp;<span class="required">*</span></label>
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
 			</p>
 
-			<?php do_action( 'woocommerce_login_form' ); ?>
+			<?php do_action('woocommerce_login_form'); ?>
 
 			<p class="rememberMe">
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'selleradise-lite' ); ?></span>
+					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'selleradise-lite'); ?></span>
 				</label>
-				
-				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 
-				<button 
-					type="submit" 
-					class="woocommerce-button button woocommerce-form-login__submit" 
-					name="login" 
-					value="<?php echo esc_attr(__('Log in', 'selleradise-lite')); ?>">
-					<?php esc_html_e( 'Log in', 'selleradise-lite' ); ?>
+				<?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
+
+				<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php echo esc_attr(__('Log in', 'selleradise-lite')); ?>">
+					<?php esc_html_e('Log in', 'selleradise-lite'); ?>
 				</button>
 			</p>
 
-			<?php do_action('woocommerce_login_form_end');?>
+			<?php do_action('woocommerce_login_form_end'); ?>
 		</form>
 
 		<div class="selleradise_account-form__option">
 			<?php echo esc_html(__('Lost your password?', 'selleradise-lite')); ?>
 
-			<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
+			<a href="<?php echo esc_url(wp_lostpassword_url()); ?>">
 				<?php echo esc_html(__('Reset here', 'selleradise-lite')); ?>
 			</a>
 		</div>
 
-		<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')): ?>
+		<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 			<div class="selleradise_account-form__option">
 
-				<?php echo esc_html( __("Don't have an account?", 'selleradise-lite') ); ?>
-				
-				<button>
-					<?php echo esc_html( __('Register here', 'selleradise-lite') ); ?>
+				<?php echo esc_html(__("Don't have an account?", 'selleradise-lite')); ?>
+
+				<button x-on:click.prevent="setActive('register')">
+					<?php echo esc_html(__('Register here', 'selleradise-lite')); ?>
 				</button>
 			</div>
-		<?php endif;?>
+		<?php endif; ?>
 	</div>
 
-		
-	<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
-	<div class="selleradise_account-form selleradise_account-form--register hidden">
-		<h2 class="selleradise_account-form__title">
-			<?php echo esc_html(__('Register', 'selleradise-lite')); ?>
-		</h2>
+	<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
-		<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
-			<?php do_action( 'woocommerce_register_form_start' ); ?>
+		<div x-show="active === 'register'" class="selleradise_account-form selleradise_account-form--register">
+			<h2 class="selleradise_account-form__title">
+				<?php echo esc_html(__('Register', 'selleradise-lite')); ?>
+			</h2>
 
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
+			<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?>>
+				<?php do_action('woocommerce_register_form_start'); ?>
 
-				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label for="reg_username"><?php esc_html_e( 'Username', 'selleradise-lite' ); ?>&nbsp;<span class="required">*</span></label>
-					<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-				</p>
+				<?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
 
-			<?php endif; ?>
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="reg_username"><?php esc_html_e('Username', 'selleradise-lite'); ?>&nbsp;<span class="required">*</span></label>
+						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+																																																																																																																														?>
+					</p>
 
-			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="reg_email"><?php esc_html_e( 'Email address', 'selleradise-lite' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-			</p>
-
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+				<?php endif; ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label for="reg_password"><?php esc_html_e( 'Password', 'selleradise-lite' ); ?>&nbsp;<span class="required">*</span></label>
-					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
+					<label for="reg_email"><?php esc_html_e('Email address', 'selleradise-lite'); ?>&nbsp;<span class="required">*</span></label>
+					<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+																																																																																																																						?>
 				</p>
 
-			<?php else : ?>
+				<?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
 
-				<p><?php esc_html_e( 'A password will be sent to your email address.', 'selleradise-lite' ); ?></p>
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="reg_password"><?php esc_html_e('Password', 'selleradise-lite'); ?>&nbsp;<span class="required">*</span></label>
+						<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
+					</p>
 
-			<?php endif; ?>
+				<?php else : ?>
 
-			<?php do_action( 'woocommerce_register_form' ); ?>
+					<p><?php esc_html_e('A password will be sent to your email address.', 'selleradise-lite'); ?></p>
 
-			<p class="woocommerce-form-row form-row">
-				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'selleradise-lite' ); ?>"><?php esc_html_e( 'Register', 'selleradise-lite' ); ?></button>
-			</p>
+				<?php endif; ?>
 
-			<?php do_action( 'woocommerce_register_form_end' ); ?>
+				<?php do_action('woocommerce_register_form'); ?>
 
-		</form>
+				<p class="woocommerce-form-row form-row">
+					<?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
+					<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'selleradise-lite'); ?>"><?php esc_html_e('Register', 'selleradise-lite'); ?></button>
+				</p>
 
-		<div class="selleradise_account-form__option">
-			<?php echo esc_html(__("Already have an account?", 'selleradise-lite')); ?>
+				<?php do_action('woocommerce_register_form_end'); ?>
 
-			<button>
-				<?php echo esc_html(__('Login here', 'selleradise-lite')); ?>
-			</button>
+			</form>
+
+			<div class="selleradise_account-form__option">
+				<?php echo esc_html(__("Already have an account?", 'selleradise-lite')); ?>
+
+				<button x-on:click.prevent="setActive('login')">
+					<?php echo esc_html(__('Login here', 'selleradise-lite')); ?>
+				</button>
+			</div>
 		</div>
-	</div>
 
 
 
@@ -147,4 +147,4 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 </div>
 
 
-<?php do_action( 'woocommerce_after_customer_login_form' ); ?>
+<?php do_action('woocommerce_after_customer_login_form'); ?>

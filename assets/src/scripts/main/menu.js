@@ -1,5 +1,6 @@
 import { ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
+import { setAttr } from "redom";
 
 /**
  * Adds functionality to desktop menu.
@@ -52,7 +53,7 @@ export function menu() {
 
       subMenu.style.setProperty("--width", subMenu.offsetWidth + "px");
 
-      redom.setAttr(anchor, {
+      setAttr(anchor, {
         "aria-haspopup": true,
         "aria-expanded": true,
       });

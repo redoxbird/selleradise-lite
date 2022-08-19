@@ -1,5 +1,4 @@
 import { Machine, interpret } from "xstate";
-import { useService } from "@xstate/vue";
 
 export const cartMachine = Machine(
   {
@@ -69,7 +68,3 @@ export const cartMachine = Machine(
 );
 
 export const cartService = interpret(cartMachine).start();
-
-export function useCartService() {
-  return useService(cartService);
-}

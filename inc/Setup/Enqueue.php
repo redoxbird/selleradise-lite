@@ -29,153 +29,18 @@ class Enqueue
 
     public function enqueue_scripts()
     {
-
-        $this->assets = [
-            "js" => [
-                [
-                    "name" => "swiper",
-                    "file_name" => "swiper.min.js",
-                    "version" => "5.3.6",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "headroom.js",
-                    "file_name" => "headroom.min.js",
-                    "version" => "0.12.0",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "popperjs/core",
-                    "file_name" => "popper.min.js",
-                    "version" => "2.9.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "tippy.js",
-                    "file_name" => "tippy-bundle.umd.min.js",
-                    "version" => "6.3.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "anime.js",
-                    "file_name" => "anime.min.js",
-                    "version" => "3.2.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "axios",
-                    "file_name" => "axios.min.js",
-                    "version" => "0.21.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "nouislider",
-                    "file_name" => "nouislider.min.js",
-                    "version" => "14.6.4",
-                    "condition" => class_exists('WooCommerce') && (is_shop() || is_product_category() || is_product_tag()) ? true : false,
-                ],
-                [
-                    "name" => "redom",
-                    "file_name" => "redom.min.js",
-                    "version" => "3.27.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "colorthief",
-                    "file_name" => "color-thief.min.js",
-                    "version" => "2.3.2",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "scrollama",
-                    "file_name" => "scrollama.js",
-                    "version" => "2.2.0",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "intersection-observer",
-                    "file_name" => "intersection-observer.js",
-                    "version" => "2.2.0",
-                    "condition" => true,
-                ],
-            ],
-            "css" => [
-                [
-                    "name" => "swiper",
-                    "file_name" => "swiper-bundle.min.css",
-                    "version" => "7.0.9",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "tippy",
-                    "file_name" => "tippy.css",
-                    "version" => "6.3.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "tippy-swift-away",
-                    "file_name" => "shift-away.css",
-                    "version" => "6.3.1",
-                    "condition" => true,
-                ],
-                [
-                    "name" => "nouislider",
-                    "file_name" => "nouislider.min.css",
-                    "version" => "14.6.4",
-                    "condition" => class_exists('WooCommerce') && (is_shop() || is_product_category() || is_product_tag()) ? true : false,
-                ],
-            ],
-        ];
-
         // Scripts
 
-        wp_enqueue_script("photoswipe");
-        wp_enqueue_script("photoswipe-ui-default");
-        wp_enqueue_script("jquery");
+        if (class_exists('WooCommerce') && (is_shop() || is_product_category() || is_product_tag())) {
+            wp_enqueue_script("nouislider", get_template_directory_uri() . '/assets/vendor/js/nouislider.min.js', array(), '14.6.4', true);
+            wp_enqueue_style("nouislider", get_template_directory_uri() . '/assets/vendor/css/nouislider.min.css', array(), "14.6.4", 'all');
+        }
 
-        foreach ($this->assets['js'] as $index => $javascript_asset) {
-            if ($javascript_asset["condition"] !== true) {
-                continue;
-            }
+        wp_enqueue_script("scrollama", get_template_directory_uri() . '/assets/vendor/js/scrollama.js', array(), '2.2.0', true);
+        wp_enqueue_script("intersection-observer", get_template_directory_uri() . '/assets/vendor/js/intersection-observer.js', array(), '2.2.0', true);
 
-            wp_enqueue_script(
-                $javascript_asset['name'],
-                get_template_directory_uri() . '/assets/vendor/js/' . $javascript_asset['file_name'],
-                array(),
-                $javascript_asset['version'],
-                true
-            );
-        };
-
-        wp_enqueue_script('selleradise-header', selleradise_assets('js/header.js'), array(), $this->get_version(), false);
         wp_enqueue_script('selleradise-main', selleradise_assets('js/app.js'), array(), $this->get_version(), true);
-        wp_enqueue_script('selleradise-sliders', selleradise_assets('js/sliders.js'), array('swiper'), $this->get_version(), true);
-        wp_enqueue_script('selleradise-mini-cart', selleradise_assets('js/components/mini-cart.js'), array('alpine'), $this->get_version(), true);
-
-        wp_localize_script('selleradise-header', 'selleradiseData', [
-            "theme" => $this->get_data_for_javascript()["theme"],
-        ]);
-
         wp_localize_script('selleradise-main', 'selleradiseData', $this->get_data_for_javascript());
-
-        // Styles
-
-        wp_enqueue_style("photoswipe");
-        wp_enqueue_style("photoswipe-default-skin");
-
-        foreach ($this->assets['css'] as $index => $css_asset) {
-            if ($css_asset["condition"] !== true) {
-                continue;
-            };
-
-            wp_enqueue_style(
-                $css_asset['name'],
-                get_template_directory_uri() . '/assets/vendor/css/' . $css_asset['file_name'],
-                array(),
-                $css_asset['version'],
-                'all'
-            );
-        };
 
         wp_enqueue_style('selleradise-lite', selleradise_assets('css/style.css'), array(), $this->get_version(), 'all');
 
@@ -298,7 +163,6 @@ class Enqueue
         if (class_exists('Kirki') && is_customize_preview()) {
             wp_enqueue_script('selleradise-admin', get_template_directory_uri() . '/assets/dist/js/admin.js', array('jquery'), time(), true);
         }
-
     }
 
     public function get_version()
@@ -318,5 +182,4 @@ class Enqueue
 
         return $version;
     }
-
 }

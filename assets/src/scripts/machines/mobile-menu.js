@@ -1,5 +1,4 @@
 import { interpret, Machine } from "xstate";
-import { useService } from "@xstate/vue";
 
 export const mobileMenuMachine = Machine(
   {
@@ -59,7 +58,3 @@ export const mobileMenuMachine = Machine(
 );
 
 export const mobileMenuService = interpret(mobileMenuMachine).start();
-
-export function useMobileMenuService() {
-  return useService(mobileMenuService);
-}

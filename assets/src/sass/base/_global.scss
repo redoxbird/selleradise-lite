@@ -152,3 +152,28 @@ img {
   background: color(text);
   color: color(background);
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+}
+
+.selleradise_tooltip {
+  @include font-size(small);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: color(text);
+  color: color(background);
+  border-color: color(text);
+  font-weight: font("primary_boldest", "font-weight");
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius-base);
+}

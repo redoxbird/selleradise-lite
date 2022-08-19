@@ -27,14 +27,11 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'selleradise_single_product', $product ); ?>>
+<div x-data="productPage" id="product-<?php the_ID(); ?>" <?php wc_product_class( 'selleradise_single_product', $product ); ?>>
 
 	<div class="selleradise_single_product__content" id="selleradise_single_product__content">
 		
 		<?php
-			get_template_part('woocommerce/single-product/photoswipe');
-
-
 			/**
 			 * Hook: woocommerce_before_single_product_summary.
 			 *

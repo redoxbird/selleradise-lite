@@ -31,7 +31,7 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
                 ajax_add_to_cart_endpoint: '<?php echo esc_url(WC_AJAX::get_endpoint('add_to_cart')) ?>',
                 name: '<?php echo esc_html($product->get_title()) ?>',
             }
-        })" href="<?php echo esc_url($product->add_to_cart_url()) ?>" x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--primary']" x-on:click.prevent="addToCart($event)">
+        })" href="<?php echo esc_url($product->add_to_cart_url()) ?>" x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--secondary-outline']" x-on:click.prevent="addToCart($event)">
         <span x-show="!loading && !isInCart()">
             <?php esc_html_e("Add To Cart", "selleradise-lite") ?>
         </span>
@@ -51,7 +51,7 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
             '<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
             esc_url($product->add_to_cart_url()),
             esc_attr(isset($args['quantity']) ? $args['quantity'] : 1),
-            esc_attr(isset($args['class']) ? $args['class'] : 'selleradise_button--primary'),
+            esc_attr(isset($args['class']) ? $args['class'] : 'selleradise_button--secondary-outline'),
             isset($args['attributes']) ? wc_implode_html_attributes($args['attributes']) : '',
             esc_html($product->add_to_cart_text())
         ),

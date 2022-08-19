@@ -24,7 +24,7 @@ body.single-product .breadcrumb-trail {
     width: auto;
     height: auto;
 
-    .swiper-wrapper {
+    .embla__container {
       @extend .inline-list;
     }
 
@@ -44,13 +44,13 @@ body.single-product .breadcrumb-trail {
       width: 40rem;
       border-radius: var(--border-radius-base);
 
-      .swiper-wrapper {
+      .embla__container {
         width: 100%;
         height: 100%;
       }
     }
 
-    &-slide.swiper-slide {
+    &-slide.embla__slide {
       @extend .flex-center;
       @extend .selleradise-background-image;
       position: relative;
@@ -72,7 +72,7 @@ body.single-product .breadcrumb-trail {
         width: 90vw;
       }
 
-      &-slide.swiper-slide {
+      &-slide.embla__slide {
         height: calc(90vw * var(--product-image-ratio));
       }
 
@@ -89,12 +89,12 @@ body.single-product .breadcrumb-trail {
     width: 40rem;
     padding: 1rem 0.1rem;
 
-    .swiper-wrapper {
+    .embla__container {
       width: 100%;
       height: 100%;
     }
 
-    .swiper-slide {
+    .embla__slide {
       @extend .selleradise-background-image;
       width: 100%;
       height: 100%;
@@ -102,7 +102,7 @@ body.single-product .breadcrumb-trail {
       cursor: pointer;
       border-radius: var(--border-radius-half);
 
-      &.swiper-slide-thumb-active {
+      &.active {
         box-shadow: 0 0 0 0.15em color(text);
       }
     }

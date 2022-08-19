@@ -1,5 +1,5 @@
 import { searchService } from "../machines/search";
-import { debounce, get } from "lodash-es";
+import { debounce, get, isEmpty } from "lodash-es";
 
 export default (props = {}) => ({
   state: "idle",
@@ -64,6 +64,10 @@ export default (props = {}) => ({
   },
 
   async getResults() {
+    if (isEmpty(this.keyword)) {
+      return;
+    }
+
     searchService.send("SEARCH");
     const params = {};
     const url = {};
