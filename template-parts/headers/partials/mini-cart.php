@@ -22,7 +22,7 @@ if ($args) {
     <div class="selleradise_MiniCart__head">
       <p class="selleradise_MiniCart__headCount" x-show="$store.miniCart.isNotEmpty()" x-html="$store.miniCart.title"></p>
       <button class="button--close buttonIcon--secondary-outline" x-on:click="$store.miniCart.close()" x-ref="closeBtn">
-        <?php echo selleradise_svg('unicons-line/multiply') ?>
+        <?php echo selleradise_svg('tabler-icons/x') ?>
       </button>
     </div>
 
@@ -46,14 +46,14 @@ if ($args) {
                       ? 'selleradise_MiniCart__decreaseQuantity'
                       : 'selleradise_MiniCart__removeItem'
                   " x-on:click.prevent="$store.miniCart.decreaseQuantity(index)">
-                  <span x-show="item.quantity > 1"><?php echo selleradise_svg('unicons-line/minus') ?></span>
-                  <span x-show="item.quantity <= 1"><?php echo selleradise_svg('unicons-line/trash') ?></span>
+                  <span x-show="item.quantity > 1"><?php echo selleradise_svg('tabler-icons/minus') ?></span>
+                  <span x-show="item.quantity <= 1"><?php echo selleradise_svg('tabler-icons/trash') ?></span>
                 </button>
 
                 <span class="selleradise_MiniCart__itemQuantityCount" x-text="item.quantity"></span>
 
                 <button class="selleradise_MiniCart__increaseQuantity" x-on:click.prevent="$store.miniCart.increaseQuantity(index)">
-                  <?php echo selleradise_svg('unicons-line/plus') ?>
+                  <?php echo selleradise_svg('tabler-icons/plus') ?>
                 </button>
               </div>
             </div>

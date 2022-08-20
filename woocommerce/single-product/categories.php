@@ -23,7 +23,7 @@ $categories = get_the_terms($product->get_ID(), 'product_cat');
 
 <ul class="selleradise_single_product__categories">
     <li class="selleradise_single_product__categories-icon">
-        <?php echo selleradise_svg('unicons-line/apps'); ?>
+        <?php echo selleradise_svg('tabler-icons/category-2'); ?>
     </li>
 
     <?php foreach ($categories as $key => $category): ?>

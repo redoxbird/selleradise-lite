@@ -238,7 +238,6 @@ if (!function_exists('selleradise_get_menu_items_by_registered_slug')) {
     }
 }
 
-
 if (!function_exists('selleradise_get_menu_tree')) {
     /**
      * Get menu items array by a registered slug.
@@ -290,7 +289,7 @@ if (!function_exists('selleradise_get_options')) {
 
         $attributes_formatted = [];
 
-        foreach ($attributes as $attribute => $options) :
+        foreach ($attributes as $attribute => $options):
 
             $attributes_formatted[$attribute] = [
                 'name' => wc_attribute_label($attribute),
@@ -369,7 +368,6 @@ if (!function_exists('selleradise_get_product_categories')) {
     }
 }
 
-
 if (!function_exists('selleradise_get_product_categories_tree')) {
 
     /**
@@ -415,9 +413,7 @@ if (!function_exists('selleradise_get_product_categories_tree')) {
                 ];
             }
 
-
             $categories_tree = selleradise_create_tree($data, 'parent', 'term_id');
-
 
             set_transient('selleradise_categories_tree', $categories_tree, DAY_IN_SECONDS);
 
@@ -514,26 +510,26 @@ if (!function_exists('selleradise_get_icon')) {
     {
 
         $icon_types = [
-            'simple' => 'unicons-line/plus',
-            'external' => 'unicons-line/external-link-alt',
-            'variable' => 'unicons-line/eye',
-            'grouped' => 'unicons-line/eye',
-            'dashboard' => 'unicons-line/dashboard',
-            'orders' => 'unicons-line/truck',
-            'downloads' => 'unicons-line/cloud-download',
-            'edit-address' => 'unicons-line/estate',
-            'edit-account' => 'unicons-line/user-circle',
-            'customer-logout' => 'unicons-line/sign-out-alt',
-            'out-of-stock' => 'unicons-line/exclamation-triangle',
+            'simple' => 'tabler-icons/plus',
+            'external' => 'tabler-icons/external-link',
+            'variable' => 'tabler-icons/eye',
+            'grouped' => 'tabler-icons/eye',
+            'dashboard' => 'tabler-icons/dashboard',
+            'orders' => 'tabler-icons/truck-delivery',
+            'downloads' => 'tabler-icons/cloud-download',
+            'edit-address' => 'tabler-icons/home',
+            'edit-account' => 'tabler-icons/user-circle',
+            'customer-logout' => 'tabler-icons/logout',
+            'out-of-stock' => 'tabler-icons/alert-triangle',
             'star' => 'unicons-bold/star',
-            'star-outline' => 'unicons-line/star',
-            'menu_order' => 'unicons-line/sort-amount-up',
-            'popularity' => 'unicons-line/award-alt',
-            'rating' => 'unicons-line/star',
-            'date' => 'unicons-line/calender',
-            'price' => 'unicons-line/usd-circle',
-            'price-desc' => 'unicons-line/usd-circle',
-            'relevance' => 'unicons-line/lightbulb-alt',
+            'star-outline' => 'tabler-icons/star',
+            'menu_order' => 'tabler-icons/sort-ascending-numbers',
+            'popularity' => 'tabler-icons/award',
+            'rating' => 'tabler-icons/star',
+            'date' => 'tabler-icons/calendar',
+            'price' => 'tabler-icons/sort-ascending-numbers',
+            'price-desc' => 'tabler-icons/sort-descending-numbers',
+            'relevance' => 'tabler-icons/bulb',
         ];
 
         return $icon_types[$key] ?? false;
@@ -703,7 +699,8 @@ if (!function_exists('selleradise_get_product_image_ratio')) {
         if (get_option('woocommerce_thumbnail_cropping') === 'custom') {
             if (!get_option('woocommerce_thumbnail_cropping_custom_height') || !get_option('woocommerce_thumbnail_cropping_custom_width')) {
                 return 1;
-            };
+            }
+            ;
 
             return (int) get_option('woocommerce_thumbnail_cropping_custom_height') / (int) get_option('woocommerce_thumbnail_cropping_custom_width');
         }
@@ -916,32 +913,33 @@ if (!function_exists('selleradise_is_woocommerce_page')) {
     }
 }
 
-
 if (!function_exists('selleradise_nav_classes')) {
 
     function selleradise_nav_classes($tag = "ul", $level = 1)
     {
-
         if ($tag === "ul") {
             if ($level === 1) {
                 return "relative flex nowrap justify-start items-center";
             } else if ($level === 2) {
-                return "bg-white border-2 rounded-lg p-2 border-gray-200 absolute left-0 min-w-full top-full";
+                return "bg-white border-1 rounded-lg p-2 border-gray-200 absolute left-0 min-w-full top-full";
             } else if ($level > 2) {
-                return "bg-white border-2 rounded-lg p-2 border-gray-200 absolute left-full ml-2 min-w-44 min-h-full top-0";
-            };
+                return "bg-white border-1 rounded-lg p-2 border-gray-200 absolute left-full ml-2 min-w-44 min-h-full top-0";
+            }
+            ;
         } else if ($tag === "li") {
             if ($level === 1) {
                 return "relative whitespace-nowrap list-none flex justify-between flex-wrap items-center w-full";
             } else if ($level > 1) {
-                return "relative flex-1 whitespace-nowrap list-none flex justify-between flex-wrap items-center w-full my-4";
-            };
+                return "relative flex-1 whitespace-nowrap list-none flex justify-between flex-wrap items-center w-full my-2";
+            }
+            ;
         } else if ($tag === "a") {
             if ($level === 1) {
-                return "flex justify-center items-center nowrap px-4 font-medium text-md focus-within:bg-gray-100 rounded-full";
+                return "flex justify-center items-center nowrap px-4 py-1 font-medium text-md focus-within:bg-gray-100 rounded-full";
             } else if ($level > 1) {
-                return "flex w-full justify-start items-center nowrap px-4 font-semibold text-md focus-within:bg-gray-100 rounded-full";
-            };
+                return "flex w-full justify-start items-center nowrap px-4 py-1 font-semibold text-md focus-within:bg-gray-100 rounded-full";
+            }
+            ;
         }
 
         return;

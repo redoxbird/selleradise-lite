@@ -1,10 +1,8 @@
-import { ref } from "@vue/reactivity";
-import { watch } from "@vue/runtime-core";
-import { calculateContrastRatioLuminance, device, luminance } from "./helpers";
-import { menu } from "./main/menu";
+import { device } from "./helpers";
 import { lazyLoad } from "./main/lazyload";
 import Bricks from "bricks.js";
 import { el, setChildren } from "redom";
+import scrollama from "scrollama";
 
 export function selleradise() {
   /**
@@ -14,10 +12,6 @@ export function selleradise() {
   const masonryInstance = {
     shop: null,
   };
-
-  function onWindowLoad() {
-    document.addEventListener("DOMContentLoaded", menu);
-  }
 
   function focusSource() {
     const keys = ["Tab", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
@@ -104,87 +98,6 @@ export function selleradise() {
           });
         });
       }
-    }
-  }
-
-  /**
-   * A custom input number field with (+) and (-) buttons.
-   */
-  function selleradiseNumberInput() {
-    const inputs = document.querySelectorAll("input[type='number']");
-
-    const upButtonOriginal = document.querySelector(
-      ".selleradise__input--number-icon--up"
-    );
-
-    const downButtonOriginal = document.querySelector(
-      ".selleradise__input--number-icon--down"
-    );
-
-    if (inputs.length < 1 || !upButtonOriginal || !downButtonOriginal) {
-      return;
-    }
-
-    for (const input of inputs) {
-      input.classList.add("customInput--number");
-      const upButton = upButtonOriginal.cloneNode(true);
-      const downButton = downButtonOriginal.cloneNode(true);
-      const min = input.getAttribute("min");
-      const max = input.getAttribute("max");
-      const step = input.getAttribute("step")
-        ? parseInt(input.getAttribute("step"))
-        : 1;
-      const inputRef = ref(parseInt(input.value) || 0);
-
-      upButtonOriginal.remove();
-      downButtonOriginal.remove();
-
-      upButton.removeAttribute("style");
-      downButton.removeAttribute("style");
-
-      input.insertAdjacentElement("afterend", upButton);
-      input.insertAdjacentElement("beforebegin", downButton);
-
-      if (input.value >= parseInt(max)) {
-        upButton.setAttribute("disabled", true);
-      }
-
-      if (input.value <= parseInt(min)) {
-        downButton.setAttribute("disabled", true);
-      }
-
-      watch(inputRef, (to, from) => {
-        input.value = inputRef.value;
-        input.dispatchEvent(new Event("change", { bubbles: true }));
-
-        if (to >= parseInt(max)) {
-          upButton.setAttribute("disabled", true);
-        } else {
-          upButton.removeAttribute("disabled");
-        }
-
-        if (to <= parseInt(min)) {
-          downButton.setAttribute("disabled", true);
-        } else {
-          downButton.removeAttribute("disabled");
-        }
-      });
-
-      upButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        let currentValue = parseInt(input.value) || 0;
-        if (!max || currentValue < parseInt(max)) {
-          inputRef.value = currentValue + step;
-        }
-      });
-
-      downButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        let currentValue = parseInt(input.value);
-        if (currentValue > parseInt(min)) {
-          inputRef.value = currentValue - step;
-        }
-      });
     }
   }
 
@@ -360,33 +273,6 @@ export function selleradise() {
     window.addEventListener("resize", observer.resize);
   }
 
-  /**
-   * This will extract color palette from image of elements.
-   */
-
-  function adaptiveColors() {
-    const elements = document.querySelectorAll(".selleradise_adaptive_colors");
-
-    if (elements.length < 1) {
-      return;
-    }
-
-    const observer = scrollama();
-
-    observer
-      .setup({
-        step: elements,
-        offset: 0.9,
-        once: true,
-      })
-      .onStepEnter((response) => {
-        const { element, index, direction } = response;
-        setAdaptiveColors(element);
-      });
-
-    window.addEventListener("resize", observer.resize);
-  }
-
   function initiateMasonryLayout() {
     if (device("mobile")) {
       return;
@@ -457,15 +343,11 @@ export function selleradise() {
   return {
     masonryInstance,
     focusSource,
-    onWindowLoad,
     lazyLoad,
     smoothScroll,
-    selleradiseNumberInput,
     categoriesInProductPageLoop,
-    menu,
     productPageTabs,
     scrollTrigger,
-    adaptiveColors,
     initiateMasonryLayout,
   };
 }

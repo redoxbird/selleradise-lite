@@ -369,69 +369,6 @@ body.single-product .breadcrumb-trail {
           margin: 0;
         }
 
-        .quantity {
-          @extend .flex-center;
-          flex-basis: fit-content;
-          background-color: transparent;
-          border-radius: var(--border-radius-base);
-          overflow: hidden;
-          margin-right: 1rem !important;
-          border: 0.1em solid rgba(color(text-rgb), 0.1);
-
-          input {
-            height: 2rem;
-            border: none;
-            border-radius: 0;
-            min-width: 5rem;
-            font-weight: font("primary_boldest", "font-weight");
-            background-color: transparent;
-            box-shadow: none;
-
-            &.customInput--number {
-              min-width: 2rem;
-            }
-
-            &:focus {
-              border: none;
-              box-shadow: none;
-            }
-
-            [data-focus-source="key"] &:focus {
-              background-color: rgba(color(text-rgb), 0.05);
-            }
-          }
-        }
-
-        .selleradise__input--number-icon--up,
-        .selleradise__input--number-icon--down {
-          color: color(text);
-          background-color: transparent;
-          border: none;
-          outline: none;
-          align-self: stretch;
-          width: 3.5rem;
-          transition: all 400ms easing(out-expo);
-
-          svg {
-            width: 1.25rem;
-            height: 1.25rem;
-          }
-
-          &:hover:not(:disabled),
-          &:focus:not(:disabled) {
-            background-color: rgba(color(text-rgb), 0.05);
-          }
-
-          &:disabled {
-            color: rgba(color(text-rgb), 0.5);
-          }
-
-          [data-focus-source="key"] &:focus {
-            background-color: color(text);
-            color: color(background);
-          }
-        }
-
         .button {
           @extend .selleradise_button--primary;
         }

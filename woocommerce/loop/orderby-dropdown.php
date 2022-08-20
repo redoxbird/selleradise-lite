@@ -37,6 +37,6 @@ foreach ($catalog_orderby_options as $options_id => $options_name) {
 <?php wc_query_string_form_fields(null, array('orderby', 'submit', 'paged', 'product-page')); ?>
 
 <button x-data x-on:click="$dispatch('open-shop-filters');" class="selleradise_shop__orderby--dropdown-filters-trigger">
-	<?php echo selleradise_svg('unicons-line/sliders-v');
+	<?php echo selleradise_svg('tabler-icons/adjustments');
 	esc_html_e('Filter', 'selleradise-lite'); ?>
 </button>

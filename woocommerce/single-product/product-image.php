@@ -44,8 +44,8 @@ array_unshift($gallery_image_ids, $post_thumbnail_id);
 		</ul>
 
 		<div class="flex justify-center items-center absolute bottom-2 left-1/2 -translate-x-1/2 bg-white border-1 border-gray-300 rounded-full text-gray-600">
-			<button class="selleradise_slider__nav--previous" x-on:click.prevent="emblaPrev()"><?php echo selleradise_svg('unicons-line/angle-left') ?></button>
-			<button class="selleradise_slider__nav--next" x-on:click.prevent="emblaNext()"><?php echo selleradise_svg('unicons-line/angle-right') ?></button>
+			<button class="selleradise_slider__nav--previous" x-on:click.prevent="emblaPrev()"><?php echo selleradise_svg('tabler-icons/chevron-left') ?></button>
+			<button class="selleradise_slider__nav--next" x-on:click.prevent="emblaNext()"><?php echo selleradise_svg('tabler-icons/chevron-right') ?></button>
 		</div>
 	</div>
 
@@ -61,7 +61,7 @@ array_unshift($gallery_image_ids, $post_thumbnail_id);
 
 			?>
 				<button class="w-40 h-40 rounded-lg overflow-hidden" x-bind:class="{'border-gray-900 border-2 transition-all': isInView(<?php echo esc_attr($index); ?>) }" x-on:click.prevent="onThumbClick(<?php echo esc_attr($index); ?>)">
-					<img class="w-full h-full object-cover" data-src="<?php echo esc_attr($thumbnail[0]); ?>" alt="">
+					<img class="w-full h-full object-cover" src="<?php echo esc_attr($thumbnail[0]); ?>" alt="">
 				</button>
 			<?php endforeach; ?>
 		</div>

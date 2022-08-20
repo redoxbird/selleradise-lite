@@ -19,7 +19,7 @@ $categories = selleradise_get_product_categories_tree();
 
   <div x-show="$store.mobileMenu.isOpen()" x-trap="$store.mobileMenu.isOpen()" class="selleradise__mobile-menu" x-transition>
     <button class="selleradise__mobile-menu-button--close" x-on:click="$store.mobileMenu.close()" aria-label="Close Mobile Menu">
-      <?php echo selleradise_svg('unicons-line/multiply'); ?>
+      <?php echo selleradise_svg('tabler-icons/x'); ?>
     </button>
 
     <nav class="absolute top-20 left-0 right-20 bottom-0 z-10 px-10 pt-10" role="navigation" aria-label="Primary" x-show="$store.mobileMenu.activeSidebar === 'menu'" x-transition>
@@ -53,7 +53,7 @@ $categories = selleradise_get_product_categories_tree();
         </span>
 
         <span class="selleradise__mobile-menu__toggle-icon">
-          <?php echo selleradise_svg('unicons-line/bars'); ?>
+          <?php echo selleradise_svg('tabler-icons/menu-2'); ?>
         </span>
       </button>
 
@@ -66,7 +66,7 @@ $categories = selleradise_get_product_categories_tree();
           </span>
 
           <span class="selleradise__mobile-menu__toggle-icon">
-            <?php echo selleradise_svg('unicons-line/user-circle'); ?>
+            <?php echo selleradise_svg('tabler-icons/user-circle'); ?>
           </span>
         </button>
 
@@ -77,7 +77,7 @@ $categories = selleradise_get_product_categories_tree();
             <?php echo esc_html_e('Categories', 'selleradise-lite') ?>
           </span>
           <span class="selleradise__mobile-menu__toggle-icon">
-            <?php echo selleradise_svg('unicons-line/apps'); ?>
+            <?php echo selleradise_svg('tabler-icons/category-2'); ?>
           </span>
         </button>
       <?php endif; ?>

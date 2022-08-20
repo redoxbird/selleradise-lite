@@ -30,7 +30,7 @@ class Tags
         );
         $posted_on = sprintf(
             esc_html('%s'),
-            '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' .selleradise_svg('unicons-line/calender').$time_string . '</a>'
+            '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' .selleradise_svg('tabler-icons/calender').$time_string . '</a>'
         );
      
         return "<span class='posted-on'>{$posted_on}</span>";

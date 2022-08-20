@@ -21,7 +21,7 @@ $author_id = get_the_author_meta('ID');
       <?php echo Selleradise_Lite\Core\Tags::posted_on(); ?>
       <span class="author vcard">
         <a class="url fn n" href="<?php echo esc_url(get_author_posts_url($author_id)) ?>">
-        <?php echo selleradise_svg('unicons-line/user'); ?>
+        <?php echo selleradise_svg('tabler-icons/user-circle'); ?>
             <?php echo esc_html(get_the_author()); ?>
         </a>
       </span>

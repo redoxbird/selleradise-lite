@@ -1,3 +1,5 @@
+import scrollama from "scrollama";
+
 /**
  * Lazy load images.
  */
@@ -17,8 +19,8 @@ export function lazyLoad(context = document) {
     observer
       .setup({
         step: images,
-        offset: 1,
         once: true,
+        offset: 0.45,
       })
       .onStepEnter((response) => {
         const { element, index, direction } = response;
@@ -45,8 +47,8 @@ export function lazyLoad(context = document) {
     observerBack
       .setup({
         step: backgroundImages,
-        offset: 1,
         once: true,
+        offset: 0.45,
       })
       .onStepEnter((response) => {
         const { element, index, direction } = response;

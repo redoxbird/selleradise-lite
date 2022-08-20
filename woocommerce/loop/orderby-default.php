@@ -72,7 +72,7 @@ foreach ( $catalog_orderby_options as $options_id => $options_name )  {
 	</form>
 
 	<button class="selleradise_shop--default__sort-filtersTrigger">
-		<?php echo selleradise_svg('unicons-line/sliders-v-alt'); esc_html_e( 'Filter', 'selleradise-lite' ); ?>
+		<?php echo selleradise_svg('tabler-icons/adjustments'); esc_html_e( 'Filter', 'selleradise-lite' ); ?>
 	</button>
 
 </div>

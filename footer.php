@@ -16,7 +16,7 @@
 <div x-data class="selleradiseToast" x-bind:class="`selleradiseToast--${$store.toast.type}`" x-show="$store.toast.isShowing" role="alert" x-bind:style="{ zIndex: $store.toast.zIndex }">
 	<span x-html="$store.toast.message"></span>
 	<button class="button--icon" x-on:click="$store.toast.hide()">
-		<?php echo selleradise_svg('unicons-line/multiply') ?>
+		<?php echo selleradise_svg('tabler-icons/x') ?>
 	</button>
 </div>
 

@@ -177,3 +177,11 @@ img {
   padding: 0.5em 1em;
   border-radius: var(--border-radius-base);
 }
+
+input[type="number"].qty::-webkit-inner-spin-button,
+input[type="number"].qty::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

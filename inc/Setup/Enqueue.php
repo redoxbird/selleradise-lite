@@ -36,10 +36,7 @@ class Enqueue
             wp_enqueue_style("nouislider", get_template_directory_uri() . '/assets/vendor/css/nouislider.min.css', array(), "14.6.4", 'all');
         }
 
-        wp_enqueue_script("scrollama", get_template_directory_uri() . '/assets/vendor/js/scrollama.js', array(), '2.2.0', true);
-        wp_enqueue_script("intersection-observer", get_template_directory_uri() . '/assets/vendor/js/intersection-observer.js', array(), '2.2.0', true);
-
-        wp_enqueue_script('selleradise-main', selleradise_assets('js/app.js'), array(), $this->get_version(), true);
+        wp_enqueue_script('selleradise-main', selleradise_assets('js/main.js'), array(), $this->get_version(), true);
         wp_localize_script('selleradise-main', 'selleradiseData', $this->get_data_for_javascript());
 
         wp_enqueue_style('selleradise-lite', selleradise_assets('css/style.css'), array(), $this->get_version(), 'all');

@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="selleradise_page__title">
+	<div class="selleradise_page__title text-2xl">
 		<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 	</div>
 		

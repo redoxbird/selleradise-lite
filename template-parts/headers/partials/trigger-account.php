@@ -3,6 +3,6 @@
     <span id="triggerAccountTooltip" role="tooltip" class="selleradise_tooltip">
       <?php esc_html_e('Account', 'selleradise-lite'); ?>
     </span>
-    <?php echo selleradise_svg('unicons-line/user-circle') ?>
+    <?php echo selleradise_svg('tabler-icons/user-circle') ?>
   </button>
 <?php endif; ?>

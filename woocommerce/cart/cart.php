@@ -15,13 +15,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php get_template_part('template-parts/components/breadcrumb');?>
 
-<div class="selleradise_page-cart">
+<div class="selleradise_page-cart flex justify-start items-stretch flex-wrap w-full pb-20 text-text-900">
 
-	<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+	<form class="woocommerce-cart-form flex-1 text-md overflow-hidden rounded-lg" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-		<ul class="selleradise_page-cart__items cart woocommerce-cart-form__contents">
+		<ul class="mt-2 grid grid-cols-2 md:grid-cols-3 gap-4 cart woocommerce-cart-form__contents">
 			<?php do_action('woocommerce_before_cart_contents'); ?>
 
 			<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ):
@@ -33,32 +33,32 @@ do_action( 'woocommerce_before_cart' ); ?>
 				?>
 
 				
-				<li class="selleradise_page-cart__item cart_item">
-					<div class="selleradise_page-cart__item-image">
+				<li x-data="cartItem" x-bind:style="{'--width': width + 'px'}" class="border-1 border-gray-200 rounded-xl overflow-hidden cart_item">
+					<div class="w-full relative">
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 							if ( ! $product_permalink ) {
 								echo wp_kses_post( $thumbnail ); // PHPCS: XSS ok.
 							} else {
-								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+								printf( '<a href="%s" class="selleradise-background-image overflow-hidden w-full h-ratio">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
 							}
 						?>
 
-						<div class="selleradise_page-cart__item-subtotal">
+						<div class="text-sm font-semibold absolute right-2 top-2 bg-accent-500 text-accent-900 py-2 px-4 rounded-full">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
 						</div>
 					</div>
 
-					<div class="selleradise_page-cart__item-info">
-						<h2 class="selleradise_page-cart__item-name">
+					<div class="p-5 self-stretch flex flex-col justify-start items-start">
+						<h2 class="text-md m-0">
 							<?php
 								if ( ! $product_permalink ) {
 									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 								} else {
-									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s" class="text-text-900 hover:underline hover:text-main-500">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 								}
 
 								do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -76,10 +76,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php get_template_part('woocommerce/cart/variation-info', null, ['_product' => $_product]);?>
 
 					
-						<div class="selleradise_page-cart__item-price">
+						<div class="flex justify-start items-center mt-3 w-full flex-wrap">
 
-							<div class="selleradise_page-cart__item-quantity product-quantity">
-								
+							<div class="product-quantity">
 								<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -101,22 +100,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</div>
 
-							<span class="closeIcon">
-								<?php echo selleradise_svg('unicons-line/multiply'); ?>
+							<span class="justify-center items-center text-text-900 p-3 opacity-50 children:w-3 children:h-3 hidden md:flex">
+								<?php echo selleradise_svg('tabler-icons/x'); ?>
 							</span>
 
-							<span class="selleradise_page-cart__item-price-single">
+							<span class="font-semibold text-sm">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 								?>
 							</span>
 
-							<div class="selleradise_page-cart__item-remove">
+							<div class="mt-3">
 								<?php
 									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										'woocommerce_cart_item_remove_link',
 										sprintf(
-											'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">%s</a>',
+											'<a href="%s" class="mt-auto text-xs font-semibold text-text-900 bg-gray-50 border-gray-200 border-1 px-3 py-1 rounded-full hover:bg-red-500 hover:text-white" aria-label="%s" data-product_id="%s" data-product_sku="%s">%s</a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 											esc_html__( 'Remove this item', 'selleradise-lite' ),
 											esc_attr( $product_id ),
@@ -144,16 +143,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php endif; endforeach; ?>
 		</ul>
 
-		<div class="actions">
-			<div class="update-action-wrap">
+		<div class="actions mt-4 w-full">
+			<div class="update-action-wrap flex justify-end w-full">
 				<button type="submit" class="selleradise_button--primary" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'selleradise-lite' ); ?>"><?php esc_html_e( 'Update cart', 'selleradise-lite' ); ?></button>
 			</div>
 
 			<?php if ( wc_coupons_enabled() ) { ?>
-				<div class="coupon">
-					<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'selleradise-lite' ); ?></label> 
-					<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'selleradise-lite' ); ?>" /> 
-					<button type="submit" class="selleradise_button--secondary" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'selleradise-lite' ); ?>">
+				<div class="coupon flex justify-start items-start flex-wrap flex-col w-full relative py-4">
+					<label for="coupon_code" class="mt-4 font-semibold"><?php esc_html_e( 'Coupon:', 'selleradise-lite' ); ?></label> 
+					<input type="text" name="coupon_code" class="input-text w-full grow border-none mt-2 px-4 mb-4" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'selleradise-lite' ); ?>" /> 
+					<button type="submit" class="selleradise_button--secondary ml-auto" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'selleradise-lite' ); ?>">
 						<?php esc_attr_e( 'Apply coupon', 'selleradise-lite' ); ?>
 					</button>
 					<?php do_action( 'woocommerce_cart_coupon' ); ?>

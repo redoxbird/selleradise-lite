@@ -2,5 +2,5 @@
   <span id="triggerSearchTooltip" role="tooltip" class="selleradise_tooltip">
     <?php esc_html_e('Search', 'selleradise-lite'); ?>
   </span>
-  <?php echo selleradise_svg('unicons-line/search') ?>
+  <?php echo selleradise_svg('tabler-icons/search') ?>
 </button>

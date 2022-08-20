@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php echo selleradise_svg('unicons-line/share') ?>
 					</button>
 					<button class="pswp__button pswp__button--close" aria-label="<?php esc_attr_e( 'Close (Esc)', 'selleradise-lite' ); ?>">
-						<?php echo selleradise_svg('unicons-line/multiply') ?>
+						<?php echo selleradise_svg('tabler-icons/x') ?>
 					</button>
 				</div>
 				<div class="pswp__preloader">

@@ -1,4 +1,5 @@
 import { throttle } from "lodash-es";
+import scrollama from "scrollama";
 
 export default () => ({
   dashArray: 0,
@@ -13,12 +14,6 @@ export default () => ({
       this.observer = scrollama();
       this.observe();
     });
-
-    this.resize = throttle(() => {
-      this.observer?.resize();
-    }, 1000);
-
-    window.addEventListener("resize", this.resize);
   },
 
   observe() {

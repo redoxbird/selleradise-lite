@@ -20,23 +20,26 @@ if ( $max_value && $min_value === $max_value ) {
 	$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'selleradise-lite' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'selleradise-lite' );
 	?>
 
-	<button class="selleradise__input--number-icon--up" aria-label="<?php esc_attr_e('Increase Product Quantity', 'selleradise-lite');?>" style="display: none;">
-		<?php echo selleradise_svg('unicons-line/plus'); ?>
-	</button>
 
-	<button class="selleradise__input--number-icon--down" aria-label="<?php esc_attr_e('Decrease Product Quantity', 'selleradise-lite');?>" style="display: none;">
-		<?php echo selleradise_svg('unicons-line/minus'); ?>
-	</button>
-
-	<div class="quantity">
+	<div 
+		x-data="quantityInput" 
+		class="quantity overflow-hidden rounded-full h-12 w-auto border-gray-200 border-1 flex justify-center items-center"
+		>
 		<?php do_action( 'woocommerce_before_quantity_input_field' ); ?>
+
+		<button x-on:click.prevent="decrease($event)" x-bind:disabled="!canDecrease" class="w-12 h-12 p-4 flex justify-center items-center disabled:opacity-50" aria-label="<?php esc_attr_e('Increase Product Quantity', 'selleradise-lite');?>">
+			<?php echo selleradise_svg('tabler-icons/minus'); ?>
+		</button>
+
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>">
 			<?php echo esc_html( $label ); ?>
 		</label>
+
 		<input
+			x-ref="input"
 			type="number"
 			id="<?php echo esc_attr( $input_id ); ?>"
-			class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
+			class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?> !shadow-none h-full flex justify-center items-center"
 			step="<?php echo esc_attr( $step ); ?>"
 			min="<?php echo esc_attr( $min_value ); ?>"
 			max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
@@ -47,6 +50,12 @@ if ( $max_value && $min_value === $max_value ) {
 			placeholder="<?php echo esc_attr( $placeholder ); ?>"
 			inputmode="<?php echo esc_attr( $inputmode ); ?>" />
 		<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
+
+		<button x-on:click.prevent="increase($event)" x-bind:disabled="!canIncrease"  class="w-12 h-12 p-4 flex justify-center items-center disabled:opacity-50" aria-label="<?php esc_attr_e('Decrease Product Quantity', 'selleradise-lite');?>">
+			<?php echo selleradise_svg('tabler-icons/plus'); ?>
+		</button>
 	</div>
+
+
 	<?php
 }

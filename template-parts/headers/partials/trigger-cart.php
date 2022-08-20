@@ -18,6 +18,6 @@ if ($args) {
   <span id="triggerMiniCartTooltip" role="tooltip" class="selleradise_tooltip">
     <?php esc_html_e('Cart', 'selleradise-lite'); ?>
   </span>
-  <?php echo selleradise_svg('unicons-line/shopping-bag') ?>
+  <?php echo selleradise_svg('tabler-icons/basket') ?>
   <span x-text="$store.miniCart.count || 0"></span>
 </button>

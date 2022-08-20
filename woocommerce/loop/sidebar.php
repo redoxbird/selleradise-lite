@@ -56,7 +56,7 @@ $location = get_theme_mod('filters_location', 'sidebar');
                     <?php esc_html_e('Apply Filters', 'selleradise-lite') ?>
                 </button>
                 <a href="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink('shop') : "") ?>" class="selleradise_shop__filters-action-clear">
-                    <?php echo selleradise_svg('unicons-line/multiply'); ?>
+                    <?php echo selleradise_svg('tabler-icons/x'); ?>
                     <?php esc_html_e('Clear', 'selleradise-lite') ?>
                 </a>
             </div>
@@ -118,7 +118,7 @@ $location = get_theme_mod('filters_location', 'sidebar');
                     <?php esc_html_e('Apply Filters', 'selleradise-lite') ?>
                 </button>
                 <a href="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink('shop') : "") ?>" class="selleradise_shop__filters-action-clear">
-                    <?php echo selleradise_svg('unicons-line/multiply'); ?>
+                    <?php echo selleradise_svg('tabler-icons/x'); ?>
                     <?php esc_html_e('Clear', 'selleradise-lite') ?>
                 </a>
             </div>

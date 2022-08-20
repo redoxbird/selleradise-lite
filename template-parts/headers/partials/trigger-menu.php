@@ -2,5 +2,5 @@
    <span id="triggerMenuTooltip" role="tooltip" class="selleradise_tooltip">
      <?php esc_html_e('Menu', 'selleradise-lite'); ?>
    </span>
-   <?php echo selleradise_svg('unicons-line/bars') ?>
+   <?php echo selleradise_svg('tabler-icons/menu-2') ?>
  </button>

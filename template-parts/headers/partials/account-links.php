@@ -31,7 +31,7 @@ if ($args) {
   <ul>
     <li>
       <a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>">
-        <?php echo selleradise_svg("unicons-line/sign-in-alt"); ?>
+        <?php echo selleradise_svg("tabler-icons/login"); ?>
         <?php _e("Login", 'selleradise-lite'); ?>
       </a>
     </li>
@@ -39,7 +39,7 @@ if ($args) {
     <?php if(get_option( 'woocommerce_enable_myaccount_registration', false) == 'yes'): ?>
       <li>
         <a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>#register">
-          <?php echo selleradise_svg("unicons-line/user-plus"); ?>
+          <?php echo selleradise_svg("tabler-icons/user-plus"); ?>
           <?php _e("Register", 'selleradise-lite'); ?>
         </a>
       </li>

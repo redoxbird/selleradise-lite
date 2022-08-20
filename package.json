@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:es": "esbuild assets/src/scripts/app.js --outfile=assets/dist/js/app.js --bundle --minify --watch",
+    "dev:es": "esbuild assets/src/scripts/main.js --outfile=assets/dist/js/main.js --bundle --minify --watch",
     "dev:sass": "sass --watch assets/src/sass/style.scss assets/dist/css/style.css",
-    "dev:sync": "browser-sync start --proxy 'http://localhost:8010' --files 'assets/dist' --no-inject-changes=true",
+    "dev:sync": "browser-sync start --proxy 'http://localhost:8010' --files 'assets/dist,template-parts,woocommerce' --no-inject-changes=true",
     "build": "run-p build:*",
-    "build:es": "esbuild assets/src/scripts/app.js --outfile=assets/dist/js/app.js --bundle --minify",
+    "build:es": "esbuild assets/src/scripts/main.js --outfile=assets/dist/js/main.js --bundle --minify --target=es2017",
     "build:sass": "sass assets/src/sass/style.scss assets/dist/css/style.css --style compressed"
   },
   "keywords": [],
@@ -17,27 +17,27 @@
   "license": "GNU General Public License v3.0 or later",
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
-    "browser-sync": "^2.27.5",
+    "browser-sync": "^2.27.10",
+    "esbuild": "^0.15.5",
     "npm-run-all": "^4.1.5",
-    "esbuild": "^0.14.47",
-    "sass": "^1.30.0",
-    "sass-loader": "^8.0.2",
-    "vue": "^3.0.5"
+    "sass": "^1.54.5"
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.10.3",
     "@alpinejs/focus": "^3.10.3",
     "@alpinejs/intersect": "^3.10.3",
     "@floating-ui/dom": "^1.0.1",
-    "alpinejs": "^3.10.2",
+    "alpinejs": "^3.10.3",
     "bricks.js": "^1.8.0",
-    "date-fns": "^2.25.0",
+    "date-fns": "^2.29.2",
     "embla-carousel": "^7.0.1",
+    "intersection-observer": "^0.12.2",
     "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "redom": "^3.29.0",
+    "scrollama": "^3.2.0",
     "twind": "^0.16.17",
     "wnumb": "^1.2.0",
-    "xstate": "^4.16.0"
+    "xstate": "^4.33.2"
   }
 }

@@ -19,12 +19,13 @@ if ($_product->get_type() !== 'variation') {
 
 ?>
 
-<ul class="selleradise_page-cart__item-variations">
+<ul class="flex justify-start items-start gap-2 mt-3 text-sm">
     <?php foreach($_product->get_variation_attributes(false) as $variation_taxonomy => $value): ?>
 
-        <li>
-            <span class="label"><?php echo esc_html( wc_attribute_label($variation_taxonomy, $_product) ); ?></span>
-            <span class="value"><?php echo esc_html( $_product->get_attribute($variation_taxonomy) ); ?></span>
+        <li class="flex justify-start items-center gap-0.5">
+            <span><?php echo esc_html( wc_attribute_label($variation_taxonomy, $_product) ); ?></span>
+            <span>:</span>
+            <span class="font-semibold"><?php echo esc_html( $_product->get_attribute($variation_taxonomy) ); ?></span>
         </li>
 
     <?php endforeach; ?>

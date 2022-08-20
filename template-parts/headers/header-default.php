@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<header x-data="header" role="banner" class="selleradiseHeader selleradiseHeader--default" x-bind:class="{'headroom--unpinned': !pin, 'headroom--not-top': notTop}">
+<header x-data role="banner" class="selleradiseHeader selleradiseHeader--default" x-bind:class="{'headroom--unpinned': !$store.scroll.pin, 'headroom--pinned': $store.scroll.pin, 'headroom--not-top': !$store.scroll.start}">
   <?php get_template_part('template-parts/headers/partials/logo'); ?>
   <?php get_template_part('template-parts/headers/partials/menu'); ?>
   <?php get_template_part('template-parts/headers/partials/search', null, [

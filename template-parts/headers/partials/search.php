@@ -19,7 +19,7 @@ if ($args) {
       <span id="headerSearchBarClearButtonTooltip" role="tooltip" class="selleradise_tooltip">
         <?php esc_html_e('Clear', 'selleradise-lite'); ?>
       </span>
-      <?php echo selleradise_svg('unicons-line/multiply'); ?>
+      <?php echo selleradise_svg('tabler-icons/x'); ?>
     </button>
   </label>
 
@@ -31,7 +31,7 @@ if ($args) {
       <?php echo selleradise_svg('loader/simple'); ?>
     </span>
     <span class="inlineSVGIcon" x-show="state !== 'searching'">
-      <?php echo selleradise_svg('unicons-line/search'); ?>
+      <?php echo selleradise_svg('tabler-icons/search'); ?>
     </span>
   </button>
 

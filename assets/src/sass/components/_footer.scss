@@ -75,19 +75,12 @@ a.selleradise_back-to-top {
   font-size: 1rem;
   border-radius: 50%;
   overflow: visible;
-  opacity: 0;
   transform-origin: center;
-  transform: scale(0.8);
   transition: all 400ms easing(out-expo);
 
   svg:not(.progress) {
     width: 1.25rem;
     height: 1.25rem;
-  }
-
-  &.headroom--not-top {
-    opacity: 1;
-    transform: scale(1);
   }
 
   p {

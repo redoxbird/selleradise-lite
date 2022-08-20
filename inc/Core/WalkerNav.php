@@ -40,7 +40,7 @@ class WalkerNav extends Walker_Nav_Menu
         $anchor .= '<a' . $attributes . '>';
         $anchor .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
 
-        $anchor .= (($depth == 0 || 1) && $args->has_children) ? selleradise_svg('unicons-line/angle-down') : null;
+        $anchor .= (($depth == 0 || 1) && $args->has_children) ? selleradise_svg('tabler-icons/chevron-down') : null;
         $anchor .= '</a>';
 
         // add support for menu item descriptions
