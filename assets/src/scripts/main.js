@@ -3,6 +3,7 @@ import intersect from "@alpinejs/intersect";
 import collapse from "@alpinejs/collapse";
 import focus from "@alpinejs/focus";
 import { setup, disconnect } from "twind/shim";
+import { amber, red } from "twind/colors";
 
 import miniCart from "./store/mini-cart";
 import mobileMenu from "./store/mobile-menu";
@@ -19,6 +20,7 @@ import productCard from "./data/product-card";
 import productPage from "./data/product-page";
 import quantityInput from "./data/quantity-input";
 import cartItem from "./data/cart-item";
+import saleTimer from "./data/sale-timer";
 
 import { selleradise } from "./selleradise";
 
@@ -49,6 +51,7 @@ Alpine.data("productCard", productCard);
 Alpine.data("productPage", productPage);
 Alpine.data("quantityInput", quantityInput);
 Alpine.data("cartItem", cartItem);
+Alpine.data("saleTimer", saleTimer);
 
 // Initiate
 Alpine.start();
@@ -66,12 +69,17 @@ setup({
           500: "var(--selleradise-color-accent-light)",
           900: "var(--selleradise-color-accent-light-text)",
         },
+        background: {
+          50: "var(--selleradise-color-background)",
+        },
         main: {
           500: "var(--selleradise-color-main)",
         },
         text: {
           900: "var(--selleradise-color-text)",
         },
+        amber: amber,
+        red: red,
       },
 
       fontSize: {
@@ -79,6 +87,8 @@ setup({
       },
       height: {
         ratio: "calc(var(--width) * var(--product-image-ratio))",
+        "ratio-padded":
+          "calc((var(--width) - 1rem) * var(--product-image-ratio))",
       },
     },
   },

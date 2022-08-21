@@ -21,7 +21,7 @@ $categories = get_the_terms($product->get_ID(), 'product_cat');
 
 ?>
 
-<ul class="selleradise_productCard__categories">
+<ul class="selleradise_productCard__categories <?php echo isset($classes) ? esc_attr($classes) : null ?>">
     <li class="selleradise_productCard__categories-icon">
         <?php echo selleradise_svg('tabler-icons/category-2'); ?>
     </li>

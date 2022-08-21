@@ -28,12 +28,12 @@ if (!wc_review_ratings_enabled() || !$product->get_average_rating()) {
 <div class="selleradise_productRating--normal">
     <div class="back-stars">
         <?php for ($i = 1; $i <= 5; $i++): ?>
-            <?php echo selleradise_svg('unicons-solid/star'); ?>
+            <?php echo selleradise_svg('fontawesome/star-solid'); ?>
         <?php endfor; ?>
 
         <div class="front-stars" style="width: <?php echo esc_attr($product->get_average_rating() / 5) * 100; ?>%;">
             <?php for ($i = 1; $i <= 5; $i++): ?>
-                <?php echo selleradise_svg('unicons-solid/star'); ?>
+                <?php echo selleradise_svg('fontawesome/star-solid'); ?>
             <?php endfor; ?>
         </div>
     </div>

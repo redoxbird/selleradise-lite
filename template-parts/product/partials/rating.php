@@ -35,6 +35,6 @@ if ($average_rating < 2.5) {
 ?>
 
 <div class="productRating--minimal <?php echo esc_attr($color_class); ?>">
-    <?php echo selleradise_svg('unicons-solid/star'); ?>
+    <?php echo selleradise_svg('fontawesome/star-solid'); ?>
     <span><?php echo esc_html( $average_rating ); ?></span>
 </div>

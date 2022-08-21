@@ -88,18 +88,6 @@ $color_variables = [
         --selleradise-color-light: var(--light-theme_color-background);
         --selleradise-color-dark: var(--light-theme_color-text);
     }
-
-    :root[data-selleradise-theme-type="dark"] {
-        <?php
-            foreach($color_variables as $css_property => $theme_mod_name) {
-                echo esc_html(sprintf('--selleradise-color-%s: var(--dark-theme_color-%s);', str_replace('_', '-', $theme_mod_name), str_replace('_', '-', $theme_mod_name)));
-                echo esc_html(sprintf('--selleradise-color-%s-rgb: var(--dark-theme_color-%s-rgb);', str_replace('_', '-', $theme_mod_name), str_replace('_', '-', $theme_mod_name)));
-            };
-        ?>
-
-        --selleradise-color-light: var(--dark-theme_color-text);
-        --selleradise-color-dark: var(--dark-theme_color-background);
-    }
     
 </style>
 

@@ -20,7 +20,6 @@
     padding: 2.5rem 2.5rem 5rem 2.5rem;
     border-radius: var(--border-radius-base);
     transform-origin: left center;
-    outline: none;
     &-enter-active,
     &-leave-active {
       transition: transform 600ms easing(out-expo),

@@ -2,7 +2,6 @@ import EmblaCarousel from "embla-carousel";
 
 export default () => ({
   embla: null,
-  emblaInitCount: 0,
   emblaThumbs: null,
   activeIndex: 0,
 
@@ -15,25 +14,21 @@ export default () => ({
       return;
     }
 
-    this.embla = EmblaCarousel(this.$refs.images, { loop: false });
-    this.emblaThumbs = EmblaCarousel(this.$refs.thumbs, {
-      selectedClass: "",
-      containScroll: "keepSnaps",
-      dragFree: true,
-    });
-
-    this.embla.on("select", () => {
-      this.setActiveIndex();
+    window.addEventListener("load", () => {
+      this.embla = EmblaCarousel(this.$refs.images, { loop: false });
+      this.emblaThumbs = EmblaCarousel(this.$refs.thumbs, {
+        selectedClass: "",
+        containScroll: "keepSnaps",
+        dragFree: true,
+      });
+      this.embla.on("select", () => {
+        this.setActiveIndex();
+      });
     });
   },
 
   onThumbClick(index) {
     if (!this.emblaThumbs.clickAllowed()) return;
-
-    if (this.emblaInitCount < 1) {
-      this.embla.reInit();
-      this.emblaInitCount++;
-    }
 
     this.embla.scrollTo(index);
   },
@@ -51,11 +46,6 @@ export default () => ({
   },
 
   emblaNext() {
-    if (this.emblaInitCount < 1) {
-      this.embla.reInit();
-      this.emblaInitCount++;
-    }
-
     this.embla?.scrollNext();
   },
 });

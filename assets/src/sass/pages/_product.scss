@@ -112,24 +112,6 @@ body.single-product .breadcrumb-trail {
     }
   }
 
-  &__title {
-    @include font-size(h2);
-    color: color(text);
-    margin: 0;
-    line-height: 1.2;
-  }
-
-  &__after-title {
-    @extend .flex-start;
-    width: 100%;
-    margin-top: 1rem;
-
-    a.selleradise_productRating--textual {
-      color: color(text);
-      margin-right: 1rem;
-    }
-  }
-
   &__categories {
     @include font-size(p);
     @extend .flex-start;
@@ -170,7 +152,7 @@ body.single-product .breadcrumb-trail {
     @extend .flex-start;
     align-items: center;
     color: color(text);
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0.5rem 0;
 
     .amount {
       @include font-size(h4);
@@ -259,7 +241,7 @@ body.single-product .breadcrumb-trail {
       .woocommerce-product-details__short-description {
         @include font-size(p);
         color: rgba(color(text-rgb), 0.7);
-        margin: 0;
+        margin: 1rem 0;
       }
 
       .variations_form {

@@ -26,7 +26,7 @@ if ($gallery_image_ids) {
 ?>
 
 
-<a href="<?php echo esc_url($product->get_permalink()); ?>" class="selleradise_productCard__image-outer">
+<a href="<?php echo esc_url($product->get_permalink()); ?>" class="selleradise_productCard__image-outer w-full">
     <?php 
       if (!empty($gallery_image_ids) && false === (isset($classes) && $classes && strpos($classes, 'swiper-slide'))): 
         

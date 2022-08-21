@@ -77,8 +77,6 @@ class Enqueue
                 'mini-cart-items-text' => __("%d items are in your cart", "selleradise-lite"),
                 'mobile-menu-toggle-dark-mode' => __('Dark Mode', 'selleradise-lite'),
                 'Other' => __('Other', 'selleradise-lite'),
-                'product-sale-ends-in' => __('Sale ends in', 'selleradise-lite'),
-                'product-sale-starts-in' => __('Sale starts in', 'selleradise-lite'),
                 'Products' => __('Products', 'selleradise-lite'),
                 'Search' => __('Search', 'selleradise-lite'),
                 'Settings' => __('Settings', 'selleradise-lite'),

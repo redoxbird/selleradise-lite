@@ -30,14 +30,16 @@ if($product->get_review_count() <= 1) {
 
 ?>
 
-<div class="selleradise_productRating--textual">
-    <?php echo selleradise_svg('unicons-solid/star'); ?>
+<div class="flex justify-start items-center text-sm whitespace-nowrap">
+    <span class="w-3 h-auto mr-0.5 text-amber-400 children:fill-current">
+      <?php echo selleradise_svg('fontawesome/star-solid'); ?>
+    </span>
 
-    <span class="selleradise_productRating--textual__average">
+    <span class="font-semibold mr-1">
       <?php echo esc_html( $product->get_average_rating() ); ?>
     </span>
     
-    <span class="selleradise_productRating--textual__count">
+    <span class="opacity-75">
       <?php echo esc_html(sprintf('(%s %s)', $product->get_review_count(), $count_text)); ?>
     </span>
 </div>

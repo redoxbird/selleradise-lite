@@ -521,7 +521,7 @@ if (!function_exists('selleradise_get_icon')) {
             'edit-account' => 'tabler-icons/user-circle',
             'customer-logout' => 'tabler-icons/logout',
             'out-of-stock' => 'tabler-icons/alert-triangle',
-            'star' => 'unicons-bold/star',
+            'star' => 'fontawesome/star-solid',
             'star-outline' => 'tabler-icons/star',
             'menu_order' => 'tabler-icons/sort-ascending-numbers',
             'popularity' => 'tabler-icons/award',

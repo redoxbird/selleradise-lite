@@ -4,17 +4,7 @@ $sidebar_width: 22.5rem;
 @import "shop/sort";
 
 .selleradise_shop {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
   &__title {
-    position: relative;
-    width: 100%;
-
-    h1 {
-      margin: 1rem 0 0 0;
-    }
-
     .term-description {
       @include font-size(p);
       font-weight: font("primary_bolder", "font-weight");
@@ -24,11 +14,6 @@ $sidebar_width: 22.5rem;
   }
 
   &__head {
-    padding: 0 1rem 0 0;
-    font-size: 1rem;
-    border-radius: var(--border-radius-base);
-    grid-column: 1 / -1;
-
     .woocommerce-breadcrumb {
       padding: 0;
       background-color: inherit;
@@ -45,20 +30,20 @@ $sidebar_width: 22.5rem;
   $prefix: &;
 
   &-list {
-    @extend .inline-list;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, var(--width));
-    grid-gap: 2rem;
-    gap: 2rem;
-    justify-content: start;
+    // @extend .inline-list;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, var(--width));
+    // grid-gap: 2rem;
+    // gap: 2rem;
+    // justify-content: start;
 
     > .product-category {
       display: none;
     }
 
-    [data-selleradise-sidebar-type="offscreen"] & {
-      justify-content: space-between;
-    }
+    // [data-selleradise-sidebar-type="offscreen"] & {
+    //   justify-content: space-between;
+    // }
   }
 
   @include device(desktop) {

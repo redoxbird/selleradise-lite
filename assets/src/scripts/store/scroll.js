@@ -1,4 +1,4 @@
-import scrollama from "scrollama";
+import { throttle } from "lodash-es";
 
 export default {
   direction: null,
@@ -6,39 +6,38 @@ export default {
   start: true,
   pin: false,
   progress: 0,
+  height: 0,
   scroll: {
     y: 0,
     x: 0,
   },
 
   init() {
-    window.addEventListener("DOMContentLoaded", () => {
-      this.observer = scrollama();
-      this.observe();
-    });
+    this.update(this.scroll);
+
+    window.addEventListener(
+      "scroll",
+      throttle(() => {
+        this.update(this.scroll);
+      }, 150)
+    );
   },
 
-  observe() {
-    if (!this.observer) {
-      return;
-    }
+  update(scroll) {
+    this.scroll = {
+      y: window.pageYOffset || document.documentElement.scrollTop,
+      x: window.pageXOffset || document.documentElement.scrollLeft,
+    };
 
-    this.observer
-      .setup({
-        step: document.body,
-        progress: true,
-      })
-      .onStepProgress((data) => {
-        this.scroll = {
-          y: window.pageYOffset || document.documentElement.scrollTop,
-          x: window.pageXOffset || document.documentElement.scrollLeft,
-        };
+    this.height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
 
-        this.end = data.progress >= 0.9;
-        this.start = this.scroll.y <= 0;
-        this.direction = data.direction;
-        this.pin = this.scroll.y > 100 && data.direction === "up";
-        this.progress = data.progress;
-      });
+    this.progress = this.scroll.y / this.height;
+
+    this.start = this.scroll.y <= 0;
+    this.direction = this.scroll.y < scroll.y ? "up" : "down";
+    this.pin = this.scroll.y > 100 && this.direction === "up";
+    this.end = this.scroll.y >= this.height;
   },
 };

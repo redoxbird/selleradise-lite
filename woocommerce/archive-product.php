@@ -17,7 +17,7 @@ $category_archive_display = get_option( 'woocommerce_category_archive_display', 
 ?>
 
 <div 
-	class="selleradise_shop selleradise_shop--default" 
+	class="selleradise_shop selleradise_shop--default grid grid-cols-4" 
 	data-selleradise-image-cropping="<?php echo esc_attr( get_option('woocommerce_thumbnail_cropping') ); ?>"
 	data-selleradise-sidebar-type="<?php echo esc_attr( get_theme_mod( 'filters_location', 'sidebar' ) ); ?>"
 	data-selleradise-card-type="default"
@@ -25,7 +25,7 @@ $category_archive_display = get_option( 'woocommerce_category_archive_display', 
 	data-selleradise-shop-display="<?php echo esc_attr( $shop_page_display ); ?>"
 	data-selleradise-category-display="<?php echo esc_attr( $category_archive_display ); ?>">
 
-	<div class="selleradise_shop__head">
+	<div class="selleradise_shop__head pr-4 text-md col-span-full">
 
 		<?php 
 			/**
@@ -48,7 +48,7 @@ $category_archive_display = get_option( 'woocommerce_category_archive_display', 
 
 		<div class="selleradise_shop__title">
 			<?php if (apply_filters('woocommerce_show_page_title', true)): ?>
-				<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title();?></h1>
+				<h1 class="woocommerce-products-header__title page-title relative w-full mt-4 text-2xl"><?php woocommerce_page_title();?></h1>
 			<?php endif;?>
 			
 			<?php

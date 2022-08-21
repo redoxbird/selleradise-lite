@@ -122,11 +122,6 @@
         background-color: color(main);
         color: color(main-text);
         margin-right: 0.75rem;
-
-        @include device(mobile) {
-          width: 2.5rem;
-          height: 2.5rem;
-        }
       }
 
       &__name {
@@ -136,13 +131,17 @@
         line-height: 1;
 
         @include device(mobile) {
-          @include font-size(h5);
+          display: none;
         }
       }
 
       &__tagline {
-        @include font-size(x-small);
+        @include font-size(xx-small);
         line-height: 1;
+
+        @include device(mobile) {
+          display: none;
+        }
       }
     }
   }

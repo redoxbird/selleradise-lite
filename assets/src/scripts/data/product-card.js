@@ -1,11 +1,23 @@
 import EmblaCarousel from "embla-carousel";
+import { throttle } from "lodash-es";
 
 export default () => ({
   embla: null,
-  emblaInitCount: 0,
+  width: 300,
 
   init() {
     this.initEmbla();
+
+    this.$nextTick(() => {
+      this.setWidth();
+    });
+
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        this.setWidth();
+      }, 500)
+    );
   },
 
   initEmbla() {
@@ -14,7 +26,9 @@ export default () => ({
     }
     const options = { loop: false };
 
-    this.embla = EmblaCarousel(this.$refs.images, options);
+    window.addEventListener("load", () => {
+      this.embla = EmblaCarousel(this.$refs.images, options);
+    });
   },
 
   emblaPrev() {
@@ -22,11 +36,10 @@ export default () => ({
   },
 
   emblaNext() {
-    if (this.emblaInitCount < 1) {
-      this.embla.reInit();
-      this.emblaInitCount++;
-    }
-
     this.embla?.scrollNext();
+  },
+
+  setWidth() {
+    this.width = this.$el.offsetWidth;
   },
 });

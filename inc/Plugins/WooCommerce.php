@@ -116,7 +116,7 @@ class WooCommerce
 
     public function single_product_after_title_wrap_start()
     {
-        echo '<div class="selleradise_single_product__after-title">';
+        echo '<div class="flex w-full mt-4 gap-4 flex-wrap">';
     }
 
     public function single_product_after_title_wrap_end()

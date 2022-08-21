@@ -19,7 +19,6 @@
   a,
   button {
     @include focus-outline;
-    outline: none;
     display: inline-flex;
   }
 

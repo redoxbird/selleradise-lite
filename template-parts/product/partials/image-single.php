@@ -17,7 +17,7 @@ $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
 $image_ratio = (int) $image_src[2] / (int) $image_src[1];
 ?>
 
-<div class="selleradise_productCard__image-single"
+<div class="selleradise_productCard__image-single rounded-2xl h-ratio-padded"
     <?php if(get_option('woocommerce_thumbnail_cropping') == 'uncropped'): ?>
         style="--product-image-ratio: <?php echo esc_attr($image_ratio); ?>;"
     <?php endif; ?>

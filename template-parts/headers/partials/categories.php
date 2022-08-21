@@ -10,8 +10,16 @@ if (isset($args)) {
 
 ?>
 
-<ul <?php if ($parent) : ?> x-show="activeChild == true" class="m-0 p-0 pl-3 w-full text-sm font-medium border-0 border-l-1 border-solid border-l-zinc-200" x-collapse <?php else : ?> class="m-0 px-page pb-12 w-full text-md min-h-[30rem]" <?php endif; ?>>
-  
+<ul 
+  <?php if ($parent) : ?> 
+    x-show="activeChild == true" 
+    class="m-0 p-0 pl-3 w-full text-sm font-medium border-0 border-l-1 border-solid border-l-zinc-200" 
+    x-collapse 
+  <?php else : ?> 
+    class="m-0 px-page pb-12 w-full text-md min-h-[30rem]" 
+  <?php endif; ?>
+  >
+
   <?php foreach ($items as $item) : ?>
     <li class="list-none flex justify-between flex-wrap items-center w-full" x-data="{activeChild: false}">
       <a href="<?php echo $item['url']; ?>" class="block flex-1 py-2 my-2 font-primary font-semibold focus-within:text-primary rounded-full">

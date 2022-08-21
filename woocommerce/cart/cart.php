@@ -11,7 +11,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
-do_action( 'woocommerce_before_cart' ); ?>
+do_action( 'woocommerce_before_cart' ); 
+
+?>
 
 <?php get_template_part('template-parts/components/breadcrumb');?>
 
@@ -21,7 +23,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-		<ul class="mt-2 grid grid-cols-2 md:grid-cols-3 gap-4 cart woocommerce-cart-form__contents">
+		<ul class="mt-2 grid grid-cols-1 md:grid-cols-3 gap-4 cart woocommerce-cart-form__contents">
 			<?php do_action('woocommerce_before_cart_contents'); ?>
 
 			<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ):
@@ -100,7 +102,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</div>
 
-							<span class="justify-center items-center text-text-900 p-3 opacity-50 children:w-3 children:h-3 hidden md:flex">
+							<span class="flex justify-center items-center text-text-900 p-3 opacity-50 children:w-3 children:h-3">
 								<?php echo selleradise_svg('tabler-icons/x'); ?>
 							</span>
 
@@ -110,7 +112,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</span>
 
-							<div class="mt-3">
+							<div class="mt-3 w-full">
 								<?php
 									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										'woocommerce_cart_item_remove_link',

@@ -66,23 +66,3 @@
     font-weight: font("primary_boldest", "font-weight");
   }
 }
-
-.#{$global-prefix}_productRating--textual {
-  @include font-size(p);
-  @extend .flex-start;
-
-  svg {
-    color: #ffd166;
-    width: 1.2em;
-    height: 1.2em;
-  }
-
-  &__average {
-    font-weight: font("primary_boldest", "font-weight");
-    margin: 0 0.25em;
-  }
-
-  &__count {
-    color: rgba(color(text-rgb), 0.7);
-  }
-}
