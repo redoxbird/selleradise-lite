@@ -9,39 +9,38 @@
 
 ?>
 
-<section class="selleradise_page__nothing">
+<section class="flex justify-center items-center px-page py-20 lg:min-h-[var(--hero-height)]">
 
 
-	<div class="page-content">
+	<div class="page-content flex flex-col justify-center items-center">
 
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'selleradise-lite' ); ?></h1>
+		<h1 class="page-title text-5xl font-bold mb-4"><?php esc_html_e( 'Nothing Found', 'selleradise-lite' ); ?></h1>
 
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) :
-		?>
-
+		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p>
 				<?php
-				printf(
-					wp_kses(
-						/* translators: 1: link. */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'selleradise-lite' ),
-						array(
-							'a' => array(
-								'href' => array(),
-								'class' => 'selleradise_button--primary'
-							),
-						)
-					),
-					esc_url( admin_url( 'post-new.php' ) )
-				);
+					printf(
+						wp_kses(
+							/* translators: 1: link. */
+							__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'selleradise-lite' ),
+							array(
+								'a' => array(
+									'href' => array(),
+									'class' => 'selleradise_button--primary mt-10'
+								),
+							)
+						),
+						esc_url( admin_url( 'post-new.php' ) )
+					);
 				?>
 			</p>
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'selleradise-lite' ); ?></p>
+			<p>
+				<?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'selleradise-lite' ); ?>
+			</p>
 			
 			<?php
 				get_search_form();

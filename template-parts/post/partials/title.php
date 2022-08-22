@@ -10,10 +10,12 @@ if ($args) {
 
 if ('post' !== get_post_type()) {
     return;
-}
+} 
 
-if (is_single()):
-    the_title('<h1 class="selleradise_postCard--'.$type.'__entry-title">', '</h1>');
-else:
-    the_title('<h2 class="selleradise_postCard--'.$type.'__entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-endif;
+?>
+
+<h2>
+    <a class="hover:underline hover:text-main-500" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+        <?php echo esc_html( get_the_title() ); ?>
+    </a>
+</h2>

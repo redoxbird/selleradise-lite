@@ -48,7 +48,17 @@ $location = get_theme_mod('filters_location', 'sidebar');
 
     <div x-show="isSmall && show()" class="overlay" x-on:click="close()" x-transition.opacity></div>
 
-    <div x-on:open-shop-filters.window="open();" x-on:click.outside="close()" x-show="show()" x-transition x-bind:class="['selleradise_shop__filters',className()]">
+    <div 
+        x-on:open-shop-filters.window="open();" 
+        x-on:click.outside="close()" 
+        x-show="show()"  
+        x-bind:class="['selleradise_shop__filters',className()]"
+        x-transition:enter="transition ease-out-expo duration-400"
+        x-transition:enter-start="opacity-0 translate-x-16"
+        x-transition:enter-end="opacity-100 translate-x-0"
+        x-transition:leave="transition ease-out-expo duration-500"
+        x-transition:leave-start="opacity-100 translate-x-0"
+        x-transition:leave-end="opacity-0 translate-x-16">
 
         <form method="get" x-ref="form" x-on:change="updateFormData();" action="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink('shop') : "") ?>">
             <div class="selleradise_shop__filters-actions" x-show="isChanged" x-transition x-cloak>

@@ -712,7 +712,7 @@ if (!function_exists('selleradise_get_product_image_ratio')) {
 if (!function_exists('selleradise_blog_page_classes')) {
     function selleradise_blog_page_classes()
     {
-        $classes = ['selleradise-container', 'selleradise-page--blog'];
+        $classes = ['selleradise-container', 'selleradise-page--blog flex justify-start pb-6 items-stretch flex-wrap'];
 
         if (is_active_sidebar('selleradise-sidebar')) {
             $classes[] = 'selleradise-page--blog-has-sidebar';
@@ -935,7 +935,7 @@ if (!function_exists('selleradise_nav_classes')) {
             ;
         } else if ($tag === "a") {
             if ($level === 1) {
-                return "flex justify-center items-center nowrap px-4 py-1 font-medium text-md focus-within:bg-gray-100 rounded-full";
+                return "flex justify-center items-center nowrap px-4 py-1 font-semibold text-md focus-within:bg-gray-100 rounded-full";
             } else if ($level > 1) {
                 return "flex w-full justify-start items-center nowrap px-4 py-1 font-semibold text-md focus-within:bg-gray-100 rounded-full";
             }

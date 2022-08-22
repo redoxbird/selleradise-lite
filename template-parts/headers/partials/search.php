@@ -11,11 +11,29 @@ if ($args) {
 ?>
 
 <form action="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>" method="get" x-data="searchBar({type: '<?php echo esc_attr(isset($type) && $type ? $type : 'native') ?>'})" x-on:start-search.window="start()" x-on:click.outside="!['idle', 'initiated'].includes(state) && stop()" x-bind:data-state="state" role="search" x-ref="searchForm" class="selleradiseHeader__searchForm">
-  <label>
+  <label class="flex">
     <span class="sr-only"><?php esc_html_e("Search for products here...", "selleradise-lite"); ?></span>
-    <input type="text" x-bind:value="keyword" x-on:input="handleInputChange($event)" x-on:focus="startSearch()" x-on:keydown.tab.shift="stopSearch()" x-on:keydown.enter="handleEnterPress($event)" class="searchField" ref="searchField" name="s" autocomplete="off" maxlength="50" minlength="2" placeholder="<?php esc_attr_e("Search for products here...", "selleradise-lite"); ?>" />
-
-    <button x-ref="searchClearButton" class="clear" x-show="keyword && keyword != ''" x-tooltip="headerSearchBarClearButtonTooltip" x-on:click.prevent="clear()">
+    <input
+      type="text"
+      x-bind:value="keyword"
+      x-on:input="handleInputChange($event)"
+      x-on:focus="startSearch()"
+      x-on:keydown.tab.shift="stopSearch()"
+      x-on:keydown.enter="handleEnterPress($event)"
+      class="searchField"
+      ref="searchField"
+      name="s"
+      autocomplete="off"
+      maxlength="50"
+      minlength="2"
+      placeholder="<?php esc_attr_e("Search for products here...", "selleradise-lite"); ?>" 
+    />
+    <button 
+      x-ref="searchClearButton" 
+      class="clear" 
+      x-show="keyword && keyword != ''" 
+      x-tooltip="headerSearchBarClearButtonTooltip" 
+      x-on:click.prevent="clear()">
       <span id="headerSearchBarClearButtonTooltip" role="tooltip" class="selleradise_tooltip">
         <?php esc_html_e('Clear', 'selleradise-lite'); ?>
       </span>
@@ -51,7 +69,12 @@ if ($args) {
         <ul class="selleradiseHeader__searchResults-suggestions--products">
           <template x-for="product in products">
             <li>
-              <a x-bind:href="getLink(product, 'product')" x-text="getName(product, 'product')"></a>
+              <a 
+                class="text-sm font-semibold" 
+                x-bind:href="getLink(product, 'product')" 
+                x-text="getName(product, 'product')">
+              </a>
+              <span x-show="getPrice(product)" class="mt-2 opacity-75 text-sm" x-html="getPrice(product)"></span>
             </li>
           </template>
         </ul>

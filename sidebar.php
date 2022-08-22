@@ -24,7 +24,7 @@ if ( is_customize_preview() ) {
 
 ?>
 
-<div class="selleradise_blog__sidebar" v-pre>
+<div class="selleradise_blog__sidebar w-1/3">
 	<aside id="secondary" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'selleradise-sidebar' ); ?>
 	</aside>

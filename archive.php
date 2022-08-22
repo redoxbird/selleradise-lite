@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<div class="selleradise_page__title">
 		<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_title( '<h1 class="page-title text-3xl mb-4">', '</h1>' );
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</div>

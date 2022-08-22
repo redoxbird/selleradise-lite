@@ -15,8 +15,15 @@ if (isset($args)) {
 <ul x-transition <?php if ($parent) : ?> x-show="activeChild == true" <?php endif; ?> class="<?php echo esc_attr(selleradise_nav_classes("ul", $level)); ?>">
   <?php foreach ($items as $item) : ?>
     <li x-on:mouseenter="activeChild = true" x-on:mouseleave="activeChild = false" x-data="{activeChild: false}" class="<?php echo esc_attr(selleradise_nav_classes("li", $level)); ?>">
-      <a href="<?php echo $item->url; ?>" x-on:keyup.prevent.down="activeChild = true" x-on:keyup.prevent.up="activeChild = false" class="<?php echo esc_attr(selleradise_nav_classes("a", $level)); ?> <?php echo $item->active ? 'bg-gray-100' : ''; ?>">
-        <?php echo $item->label; ?>
+      <a
+        href="<?php echo $item->url; ?>"
+        x-on:keyup.prevent.down="activeChild = true"
+        x-on:keyup.prevent.up="activeChild = false"
+        class="<?php echo esc_attr(selleradise_nav_classes("a", $level)); ?> <?php echo $item->active ? 'bg-gray-100' : ''; ?>">
+
+        <span class="<?php echo esc_attr($item->children && $level === 1 ? 'mr-1' : null) ?>">
+           <?php echo $item->label; ?>
+        </span>
 
         <?php if ($item->children && $level === 1) : ?>
           <template x-if="!activeChild">

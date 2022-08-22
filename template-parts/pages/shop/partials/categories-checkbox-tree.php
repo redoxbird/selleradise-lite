@@ -10,7 +10,7 @@ if (isset($args)) {
 
 ?>
 
-<ul <?php if ($parent) : ?> x-show="activeChild == true" class="m-0 p-0 pl-3 w-full text-sm font-medium border-0 border-l-1 border-solid border-l-zinc-200" x-collapse <?php else : ?> class="m-0 px-page w-full text-md" <?php endif; ?>>
+<ul <?php if ($parent) : ?> x-show="activeChild == true" class="m-0 p-0 pl-3 w-full text-sm font-medium border-0 border-l-1 border-solid border-l-zinc-200" x-collapse <?php else : ?> class="m-0 w-full text-md" <?php endif; ?>>
 
   <?php foreach ($items as $item) : ?>
     <li class="list-none flex justify-between flex-wrap items-center w-full" x-data="{activeChild: false}">
@@ -23,12 +23,12 @@ if (isset($args)) {
       <?php if (isset($item['children']) && !empty($item['children'])) : ?>
         <button class="w-8 h-8 flex justify-center items-center py-2 bg-gray-50 border-1 border-gray-300 border-0 rounded-full" x-on:click.prevent="activeChild = !activeChild" aria-label="<?php echo esc_html(__("Open", "charlesrwood") . ' ' . $item['name']); ?>">
           <template x-if="!activeChild">
-            <span class="w-5 h-auto">
+            <span class="w-5 h-auto flex justify-center items-center">
               <?php echo selleradise_svg("tabler-icons/chevron-down"); ?>
             </span>
           </template>
           <template x-if="activeChild">
-            <span class="w-5 h-auto">
+            <span class="w-5 h-auto flex justify-center items-center">
               <?php echo selleradise_svg("tabler-icons/chevron-up"); ?>
             </span>
           </template>

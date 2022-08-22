@@ -17,7 +17,16 @@ $categories = selleradise_get_product_categories_tree();
 <div x-data>
   <div x-show="$store.mobileMenu.isOpen()" class="overlay z-[1499]" x-on:click="$store.mobileMenu.close()" x-transition.opacity></div>
 
-  <div x-show="$store.mobileMenu.isOpen()" x-trap="$store.mobileMenu.isOpen()" class="selleradise__mobile-menu" x-transition>
+  <div 
+    class="selleradise__mobile-menu" 
+    x-show="$store.mobileMenu.isOpen()" 
+    x-trap="$store.mobileMenu.isOpen()" 
+    x-transition:enter="transition ease-out-expo duration-400"
+    x-transition:enter-start="opacity-0 translate-x-16"
+    x-transition:enter-end="opacity-100 translate-x-0"
+    x-transition:leave="transition ease-out-expo duration-500"
+    x-transition:leave-start="opacity-100 translate-x-0"
+    x-transition:leave-end="opacity-0 translate-x-16">
     <button class="selleradise__mobile-menu-button--close" x-on:click="$store.mobileMenu.close()" aria-label="Close Mobile Menu">
       <?php echo selleradise_svg('tabler-icons/x'); ?>
     </button>

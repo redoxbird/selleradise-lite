@@ -30,10 +30,10 @@ class Tags
         );
         $posted_on = sprintf(
             esc_html('%s'),
-            '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' .selleradise_svg('tabler-icons/calendar').$time_string . '</a>'
+            '<a class="flex justify-start items-center hover:underline" href="' . esc_url(get_permalink()) . '" rel="bookmark"><span class="flex justify-center items-center w-3 mr-1 h-auto">' .selleradise_svg('tabler-icons/calendar').'</span>'.$time_string . '</a>'
         );
      
-        return "<span class='posted-on'>{$posted_on}</span>";
+        return "<span class='posted-on leading-none'>{$posted_on}</span>";
     }
 
     public static function entry_footer()

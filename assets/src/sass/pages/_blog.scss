@@ -1,54 +1,17 @@
 .selleradise-page--blog {
-  @extend .flex-start;
-  padding-bottom: 1.5rem;
-  align-items: stretch;
-
   .selleradise_page__title {
     margin: 2.5rem 0 0 0;
-  }
-
-  main {
-    width: 65%;
-    flex-grow: 1;
-    align-self: stretch;
   }
 
   .archive-description {
     color: rgba(color(text-rgb), 0.7);
   }
-
-  @include device(mobile) {
-    main {
-      width: 100%;
-    }
-  }
-}
-
-.posts {
-  @extend .flex-between;
-  margin-top: 2.5rem;
-
-  &[data-selleradise-post-card-type="masonry"] {
-    display: block;
-    column-count: 3;
-    column-gap: 2.5rem;
-    width: 100%;
-
-    .selleradise-page--blog-has-sidebar & {
-      column-count: 2;
-    }
-  }
-
-  .blogPage--macy & {
-    justify-content: flex-start;
-  }
 }
 
 .selleradise_blog__sidebar {
   @include font-size(p);
-  width: 35%;
   align-self: stretch;
-  padding: 2.5rem 0 0 5rem;
+  padding: 2.5rem 0 0 2.5rem;
   margin-bottom: 2rem;
 
   a {

@@ -14,7 +14,7 @@ if (!$gallery_image_ids) {
 
 ?>
 
-<div x-ref="images" class="selleradise_productCard__slider rounded-2xl embla h-ratio-padded">
+<div x-data="embla" class="selleradise_productCard__slider rounded-2xl embla h-ratio-padded">
     <div class="embla__container">
         <?php
         foreach ($gallery_image_ids as $image_id) :
@@ -23,7 +23,13 @@ if (!$gallery_image_ids) {
             $image_ratio = (int) $image_src[2] / (int) $image_src[1];
         ?>
             <div class="embla__slide" <?php if (get_option('woocommerce_thumbnail_cropping') == 'uncropped') : ?> style="--product-image-ratio: <?php echo esc_attr($image_ratio); ?>;" <?php endif; ?>>
-                <img class="w-full !h-full object-cover" src="<?php echo esc_url(wc_placeholder_img_src()); ?>" data-src="<?php echo esc_url($image_id ? $image_src[0] : wc_placeholder_img_src()); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="<?php echo esc_attr($image_src[1]); ?>" height="<?php echo esc_attr($image_src[2]); ?>">
+                <img
+                  class="w-full !h-full object-cover"
+                  src="<?php echo esc_url(wc_placeholder_img_src()); ?>"
+                  x-intersect.once="$setSrc('<?php echo esc_url($image_id ? $image_src[0] : wc_placeholder_img_src()); ?>')"
+                  alt="<?php echo esc_attr($image_alt); ?>"
+                  width="<?php echo esc_attr($image_src[1]); ?>"
+                  height="<?php echo esc_attr($image_src[2]); ?>">
             </div>
         <?php endforeach; ?>
     </div>

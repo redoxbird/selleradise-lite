@@ -16,12 +16,12 @@ $author_id = get_the_author_meta('ID');
 
 ?>
 
-<div class="selleradise_postCard__author--minimal">
-    <span class="selleradise_postCard__author-date entry-meta">
+<div class="w-full mt-auto pt-6">
+    <span class="entry-meta flex justify-start items-center gap-2 text-xs font-medium opacity-75">
       <?php echo Selleradise_Lite\Core\Tags::posted_on(); ?>
       <span class="author vcard">
-        <a class="url fn n" href="<?php echo esc_url(get_author_posts_url($author_id)) ?>">
-        <?php echo selleradise_svg('tabler-icons/user-circle'); ?>
+        <a class="url fn n flex justify-start items-center hover:underline" href="<?php echo esc_url(get_author_posts_url($author_id)) ?>">
+            <span class="flex justify-center items-center w-3 mr-1 h-auto"><?php echo selleradise_svg('tabler-icons/user-circle'); ?></span>
             <?php echo esc_html(get_the_author()); ?>
         </a>
       </span>

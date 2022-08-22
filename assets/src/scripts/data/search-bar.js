@@ -147,4 +147,12 @@ export default (props = {}) => ({
 
     return get(result, key[of][this.type]);
   },
+
+  getPrice(result) {
+    const key = {
+      native: "price",
+    };
+
+    return get(result, key[this.type]);
+  },
 });

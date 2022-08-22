@@ -20,6 +20,8 @@
 	</button>
 </div>
 
+<!-- This is to make alpine transition work with twind, looking for better solution. -->
+<span class="hidden transition ease-out ease-out-expo duration-400 duration-500 translate-x-16 translate-x-0 opacity-0 scale-90 opacity-100 scale-100"></span>
 
 </div><!-- #content -->
 

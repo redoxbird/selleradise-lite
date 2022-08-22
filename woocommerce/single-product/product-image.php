@@ -37,7 +37,11 @@ array_unshift($gallery_image_ids, $post_thumbnail_id);
 			?>
 
 				<li class="selleradise_single_product__images-slide embla__slide" data-size-w="<?php echo esc_attr($image[1]); ?>" data-size-h="<?php echo esc_attr($image[2]); ?>" <?php if (get_option('woocommerce_thumbnail_cropping') == 'uncropped') : ?> style="--product-image-ratio: <?php echo esc_attr($image_ratio); ?>;" <?php endif; ?>>
-					<img class="w-full h-full object-cover" src="<?php echo esc_url(wc_placeholder_img_src()); ?>" data-src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+					<img
+					  class="w-full h-full object-cover"
+					  src="<?php echo esc_url(wc_placeholder_img_src()); ?>"
+						x-intersect.once="$setSrc('<?php echo esc_url($image[0]); ?>')"
+					  alt="<?php echo esc_attr($image_alt); ?>">
 					<a href="<?php echo esc_url($image_full[0]); ?>"></a>
 				</li>
 			<?php endforeach; ?>
@@ -61,7 +65,11 @@ array_unshift($gallery_image_ids, $post_thumbnail_id);
 
 			?>
 				<button class="w-40 h-40 rounded-lg overflow-hidden" x-bind:class="{'border-gray-900 border-2 transition-all': isInView(<?php echo esc_attr($index); ?>) }" x-on:click.prevent="onThumbClick(<?php echo esc_attr($index); ?>)">
-					<img class="w-full h-full object-cover" src="<?php echo esc_attr($thumbnail[0]); ?>" alt="">
+					<img
+					  class="w-full h-full object-cover"
+						x-intersect.once="$setSrc('<?php echo esc_attr($thumbnail[0]); ?>')"
+						src="<?php echo esc_url(wc_placeholder_img_src()); ?>"
+					  alt="">
 				</button>
 			<?php endforeach; ?>
 		</div>

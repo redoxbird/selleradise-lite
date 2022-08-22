@@ -9,22 +9,20 @@
 
 get_header(); ?>
 
-<div class="selleradise_page_404">
+<div class="flex justify-center items-center px-page py-20 min-h-[var(--hero-height)]">
+	<div class="flex flex-col justify-center items-center">
+		<h1 class="text-10xl m-0 text-center leading-none">
+			<?php esc_html_e('404', 'selleradise-lite'); ?>
+		</h1>
 
-		<div class="selleradise_page_404__message">
-			<h1>
-				<?php esc_html_e('404', 'selleradise-lite'); ?>
-			</h1>
-
-			<p>
-				<?php esc_html_e('Page not found', 'selleradise-lite'); ?>
-			</p>
-			
-			<a href="<?php echo esc_url( home_url() ); ?>" class="selleradise_button--primary">
-				<?php esc_html_e('Go to homepage', 'selleradise-lite'); ?>
-			</a>
-		</div>
-
+		<p class="text-2xl text-text-900 opacity-75 m-0">
+			<?php esc_html_e('Page not found', 'selleradise-lite'); ?>
+		</p>
+		
+		<a href="<?php echo esc_url( home_url() ); ?>" class="selleradise_button--primary mt-10">
+			<?php esc_html_e('Go to homepage', 'selleradise-lite'); ?>
+		</a>
+	</div>
 </div>
 
 <?php

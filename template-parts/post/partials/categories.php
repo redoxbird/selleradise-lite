@@ -23,7 +23,7 @@ $categories = array_slice($categories, 0, 4, true);
 
 ?>
 
-<ul class="selleradise_postCard--<?php echo esc_attr( $type ) ?>__categories">
+<ul class="flex justify-start items-center gap-2 w-full mt-4">
     <?php 
         foreach ($categories as $index => $category): 
             
@@ -33,7 +33,9 @@ $categories = array_slice($categories, 0, 4, true);
     ?>
 
     <li>
-        <a href="<?php echo esc_attr( get_term_link($category) ) ?>"><?php echo esc_html($category->name); ?></a>
+        <a class="selleradise_chip--base" href="<?php echo esc_attr( get_term_link($category) ) ?>">
+            <?php echo esc_html($category->name); ?>
+        </a>
     </li>
 
     <?php endforeach; ?>
