@@ -2,7 +2,7 @@ import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 import collapse from "@alpinejs/collapse";
 import focus from "@alpinejs/focus";
-import { setup, disconnect } from "twind/shim";
+import * as Shim from "twind/shim";
 
 import miniCart from "./store/mini-cart";
 import mobileMenu from "./store/mobile-menu";
@@ -10,6 +10,8 @@ import toast from "./store/toast";
 import scroll from "./store/scroll";
 
 import tooltip from "./directive/tooltip";
+import embla from "./directive/embla";
+import lazy from "./directive/lazy";
 
 import setSrc from "./magic/setSrc";
 
@@ -24,52 +26,51 @@ import productPage from "./data/product-page";
 import quantityInput from "./data/quantity-input";
 import cartItem from "./data/cart-item";
 import saleTimer from "./data/sale-timer";
-import embla from "./data/embla";
 
 import { selleradise } from "./selleradise";
-import twind from "./twind";
+import { default as TwindConfig } from "./config/twind";
 
 window.Alpine = Alpine;
+window.Shim = Shim;
 
 // Plugins
-Alpine.plugin(intersect);
-Alpine.plugin(collapse);
-Alpine.plugin(focus);
+window.Alpine.plugin(intersect);
+window.Alpine.plugin(collapse);
+window.Alpine.plugin(focus);
 
 // Store
-Alpine.store("miniCart", miniCart);
-Alpine.store("mobileMenu", mobileMenu);
-Alpine.store("toast", toast);
-Alpine.store("scroll", scroll);
+window.Alpine.store("miniCart", miniCart);
+window.Alpine.store("mobileMenu", mobileMenu);
+window.Alpine.store("toast", toast);
+window.Alpine.store("scroll", scroll);
 
 // Directives
-Alpine.directive("tooltip", tooltip);
+window.Alpine.directive("tooltip", tooltip);
+window.Alpine.directive("embla", embla);
+window.Alpine.directive("lazy", lazy);
 
 // Magic properties
-Alpine.magic("setSrc", setSrc);
+window.Alpine.magic("setSrc", setSrc);
 
 // Data
-Alpine.data("header", header);
-Alpine.data("addToCart", addToCart);
-Alpine.data("searchBar", searchBar);
-Alpine.data("shopFilters", filters);
-Alpine.data("backToTop", backToTop);
-Alpine.data("loginForm", loginForm);
-Alpine.data("productCard", productCard);
-Alpine.data("productPage", productPage);
-Alpine.data("quantityInput", quantityInput);
-Alpine.data("cartItem", cartItem);
-Alpine.data("saleTimer", saleTimer);
-Alpine.data("embla", embla);
+window.Alpine.data("header", header);
+window.Alpine.data("addToCart", addToCart);
+window.Alpine.data("searchBar", searchBar);
+window.Alpine.data("shopFilters", filters);
+window.Alpine.data("backToTop", backToTop);
+window.Alpine.data("loginForm", loginForm);
+window.Alpine.data("productCard", productCard);
+window.Alpine.data("productPage", productPage);
+window.Alpine.data("quantityInput", quantityInput);
+window.Alpine.data("cartItem", cartItem);
+window.Alpine.data("saleTimer", saleTimer);
 
-// Initiate
-Alpine.start();
+// Initiate twind
+window.TwindConfig = TwindConfig;
+window.Shim.setup(window.TwindConfig);
+window.Shim.disconnect();
 
-// twind
-setup(twind);
-
-disconnect();
-
+// Initiate selleradise
 window.Selleradise = selleradise();
 window.Selleradise.focusSource();
 window.Selleradise.lazyLoad();
@@ -77,3 +78,19 @@ window.Selleradise.smoothScroll();
 window.Selleradise.categoriesInProductPageLoop();
 window.Selleradise.productPageTabs();
 window.Selleradise.scrollTrigger();
+
+// Initiate alpine
+window.Alpine.start();
+
+window.addEventListener("selleradise-widget-initialized", (e) => {
+  if (!e.detail?.isEdit) {
+    return;
+  }
+
+  window.Shim.setup({
+    ...window.TwindConfig,
+    target: e.detail?.element || document.documentElement,
+  });
+
+  window.Shim.disconnect();
+});

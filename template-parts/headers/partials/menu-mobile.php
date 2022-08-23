@@ -31,7 +31,17 @@ $categories = selleradise_get_product_categories_tree();
       <?php echo selleradise_svg('tabler-icons/x'); ?>
     </button>
 
-    <nav class="absolute top-20 left-0 right-20 bottom-0 z-10 px-10 pt-10" role="navigation" aria-label="Primary" x-show="$store.mobileMenu.activeSidebar === 'menu'" x-transition>
+    <nav
+      class="absolute top-20 left-0 right-20 bottom-0 z-10 px-10 pt-10"
+      role="navigation"
+      aria-label="Primary"
+      x-show="$store.mobileMenu.activeSidebar === 'menu'"
+      x-transition:enter="transition ease-out-expo duration-500"
+      x-transition:enter-start="opacity-0 translate-y-16"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-out-expo duration-300"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-16">
       <?php
       if ($menu && !empty($menu)) :
         get_template_part("template-parts/headers/partials/nav", "mobile", ["items" => $menu, "level" => 1, "parent" => []]);
@@ -39,12 +49,29 @@ $categories = selleradise_get_product_categories_tree();
       ?>
     </nav>
 
-    <div class="selleradise_sidebar__account absolute top-20 left-0 right-20 bottom-0 z-10 px-6 pt-10" x-show="$store.mobileMenu.activeSidebar === 'account'" x-transition>
+    <div
+      class="selleradise_sidebar__account absolute top-20 left-0 right-20 bottom-0 z-10 px-6 pt-10"
+      x-show="$store.mobileMenu.activeSidebar === 'account'"
+      x-transition:enter="transition ease-out-expo duration-500"
+      x-transition:enter-start="opacity-0 translate-y-16"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-out-expo duration-300"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-16">
       <?php get_template_part('template-parts/headers/partials/account', 'info'); ?>
       <?php get_template_part('template-parts/headers/partials/account', 'links'); ?>
     </div>
 
-    <div class="absolute top-20 left-0 right-20 bottom-0 z-10 px-10 pt-10" role="navigation" x-show="$store.mobileMenu.activeSidebar === 'categories'" x-transition>
+    <div
+      class="absolute top-20 left-0 right-20 bottom-0 z-10 px-10 pt-10"
+      role="navigation"
+      x-show="$store.mobileMenu.activeSidebar === 'categories'"
+      x-transition:enter="transition ease-out-expo duration-500"
+      x-transition:enter-start="opacity-0 translate-y-16"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-out-expo duration-300"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-16">
       <?php
       if ($categories && !empty($categories)) :
         get_template_part("template-parts/headers/partials/categories", null, ["items" => $categories, "level" => 1, "parent" => []]);

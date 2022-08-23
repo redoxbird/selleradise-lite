@@ -16,6 +16,22 @@ export default {
     });
 
     await this.fetch();
+
+    this.jQueryEvents();
+  },
+
+  jQueryEvents() {
+    if (!jQuery) {
+      return;
+    }
+
+    jQuery("body").on("updated_wc_div", async () => {
+      await this.fetch();
+    });
+
+    jQuery(document).on("added_to_cart", async () => {
+      await this.fetch();
+    });
   },
 
   async fetch() {

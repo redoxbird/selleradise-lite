@@ -27,7 +27,7 @@ $image_ratio = (int) $image_src[2] / (int) $image_src[1];
     <?php else: ?>
         <img 
             src="<?php echo wc_placeholder_img_src(); ?>" 
-            x-intersect.once="$setSrc('<?php echo esc_url($image ? $image_src[0] : wc_placeholder_img_src()); ?>')"
+            x-lazy:src="<?php echo esc_url($image ? $image_src[0] : wc_placeholder_img_src()); ?>"
             alt="<?php echo esc_attr( $image_alt ); ?>"
             width="<?php echo esc_attr($image_src[1]); ?>"
             height="<?php echo esc_attr($image_src[2]); ?>"

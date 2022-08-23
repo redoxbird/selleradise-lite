@@ -14,7 +14,7 @@ if ($args) {
 
 ?>
 
-<div x-cloak x-data class="selleradise_MiniCart" x-on:updated_wc_div.document="$store.miniCart.fetch()">
+<div x-cloak x-data class="selleradise_MiniCart">
   <div x-cloak class="selleradise_MiniCart__inner transition ease-out duration-300" x-show="
       selleradiseData.isWooCommerce &&
       $store.miniCart.state != 'hidden'
@@ -80,7 +80,7 @@ if ($args) {
 
     <template x-if="$store.miniCart.isEmpty()">
       <div class="flex justify-center items-center flex-col text-center">
-        <div class="children:w-20 children:h-auto mb-5">
+        <div class="flex justify-center items-center w-20 h-auto mb-5 p-2 children:w-full">
           <?php echo selleradise_svg('misc/empty-state') ?>
         </div>
         <h2 class="text-xl mb-2">

@@ -32,7 +32,10 @@ if (isset($classes) && $classes) {
 ?>
 
 
-<li x-data="productCard" x-bind:style="{'--width': width + 'px'}" class="<?php echo esc_attr($class); ?> flex flex-col justify-start items-start rounded-2xl bg-background-50 text-text-900 border-1 border-gray-200 hover:border-gray-300 p-2 overflow-hidden transition-all">
+<li
+    x-data="productCard"
+    x-bind:style="{'--width': width + 'px'}"
+    class="<?php echo esc_attr($class); ?> flex flex-col justify-start items-start rounded-2xl bg-background-50 text-text-900 border-1 border-gray-200 hover:border-gray-300 p-2 overflow-hidden transition-all">
     <?php do_action('woocommerce_before_shop_loop_item'); ?>
 
     <?php get_template_part('template-parts/product/partials/sale', 'chip', ["product" => $product, "classes" => "bg-text-900 rounded-full px-4 py-2 text-xs z-50 text-background-50 font-semibold absolute left-4 top-4"]); ?>

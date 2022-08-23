@@ -14,7 +14,7 @@ if (!$gallery_image_ids) {
 
 ?>
 
-<div x-data="embla" class="selleradise_productCard__slider rounded-2xl embla h-ratio-padded">
+<div x-embla class="selleradise_productCard__slider rounded-2xl embla h-ratio-padded">
     <div class="embla__container">
         <?php
         foreach ($gallery_image_ids as $image_id) :
@@ -26,7 +26,7 @@ if (!$gallery_image_ids) {
                 <img
                   class="w-full !h-full object-cover"
                   src="<?php echo esc_url(wc_placeholder_img_src()); ?>"
-                  x-intersect.once="$setSrc('<?php echo esc_url($image_id ? $image_src[0] : wc_placeholder_img_src()); ?>')"
+                  x-lazy:src="<?php echo esc_url($image_id ? $image_src[0] : wc_placeholder_img_src()); ?>"
                   alt="<?php echo esc_attr($image_alt); ?>"
                   width="<?php echo esc_attr($image_src[1]); ?>"
                   height="<?php echo esc_attr($image_src[2]); ?>">
@@ -34,7 +34,7 @@ if (!$gallery_image_ids) {
         <?php endforeach; ?>
     </div>
     <div class="flex justify-center items-center absolute bottom-2 left-1/2 -translate-x-1/2 bg-white border-1 border-gray-300 rounded-full text-gray-600">
-        <button class="selleradise_slider__nav--previous" x-on:click.prevent="emblaPrev()"><?php echo selleradise_svg('tabler-icons/chevron-left') ?></button>
-        <button class="selleradise_slider__nav--next" x-on:click.prevent="emblaNext()"><?php echo selleradise_svg('tabler-icons/chevron-right') ?></button>
+        <button x-embla:prev class="selleradise_slider__nav--previous"><?php echo selleradise_svg('tabler-icons/chevron-left') ?></button>
+        <button x-embla:next class="selleradise_slider__nav--next"><?php echo selleradise_svg('tabler-icons/chevron-right') ?></button>
     </div>
 </div>

@@ -60,6 +60,7 @@ class Enqueue
             'ajaxURL' => esc_url(admin_url('admin-ajax.php')),
             'wcAjaxURl' => WC_AJAX::get_endpoint(),
             "isWooCommerce" => class_exists('WooCommerce') ? true : false,
+            "isNormalMode" => function_exists('selleradise_is_normal_mode') ? selleradise_is_normal_mode() : true,
             "settings" => [
                 "dark_mode_setting" => esc_html(get_theme_mod('theme_type', 'light') === 'both'),
             ],

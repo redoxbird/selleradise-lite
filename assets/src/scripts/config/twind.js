@@ -49,10 +49,19 @@ export default {
       gridTemplateRows: {
         8: "repeat(8, minmax(0, 1fr))",
       },
+      spacing: {
+        128: "32rem",
+        144: "36rem",
+        160: "40rem",
+        168: "42rem",
+      },
       height: {
         ratio: "calc(var(--width) * var(--product-image-ratio))",
         "ratio-padded":
           "calc((var(--width) - 1rem) * var(--product-image-ratio))",
+      },
+      minHeight: {
+        "screen-adjusted": "var(--hero-height)",
       },
       boxShadow: {
         "3xl": "0 3.6em 3.6em -2.7em var(--selleradise-color-shadow)",

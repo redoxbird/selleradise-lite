@@ -10,7 +10,16 @@ if ($args) {
 
 ?>
 
-<form action="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>" method="get" x-data="searchBar({type: '<?php echo esc_attr(isset($type) && $type ? $type : 'native') ?>'})" x-on:start-search.window="start()" x-on:click.outside="!['idle', 'initiated'].includes(state) && stop()" x-bind:data-state="state" role="search" x-ref="searchForm" class="selleradiseHeader__searchForm">
+<form
+  action="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>"
+  method="get"
+  x-data="searchBar({type: '<?php echo esc_attr(isset($type) && $type ? $type : 'native') ?>'})"
+  x-on:start-search.window="start()"
+  x-on:click.outside="!['idle', 'initiated'].includes(state) && stop()"
+  x-bind:data-state="state"
+  role="search"
+  x-ref="searchForm"
+  class="selleradiseHeader__searchForm">
   <label class="flex">
     <span class="sr-only"><?php esc_html_e("Search for products here...", "selleradise-lite"); ?></span>
     <input

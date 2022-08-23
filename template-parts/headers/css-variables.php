@@ -68,7 +68,7 @@ $color_variables = [
         --border-radius-half: calc(var(--border-radius-base) / 2);
         --border-radius-fourth: calc(var(--border-radius-base) / 4);
         --border-radius-x2: calc(var(--border-radius-base) * 2);
-
+        --page-padding: 5vw;
         --header-height: <?php echo esc_html( $header_height ); ?>;
         --hero-height: calc(100vh - var(--header-height));
         --product-image-ratio: <?php echo esc_html(selleradise_get_product_image_ratio()); ?>;
