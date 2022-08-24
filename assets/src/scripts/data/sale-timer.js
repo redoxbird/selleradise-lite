@@ -1,4 +1,5 @@
 import { intervalToDuration } from "date-fns";
+import { omit } from "lodash";
 
 export default (props) => ({
   now: new Date(),
@@ -34,10 +35,12 @@ export default (props) => ({
         return;
       }
 
-      this.duration = intervalToDuration({
+      const duration = intervalToDuration({
         start: date1,
         end: date2,
       });
+
+      this.duration = duration["months"] ? duration : omit(duration, "months");
     });
   },
 

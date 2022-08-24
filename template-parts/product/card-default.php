@@ -46,7 +46,7 @@ if (isset($classes) && $classes) {
             <?php do_action('woocommerce_before_shop_loop_item_title'); ?>
 
             <h3 class="text-md m-0 flex-grow w-3/5 leading-normal">
-                <a class="flex-grow text-inherit hover:text-main-500 hover:underline" href="<?php echo esc_url($product->get_permalink()); ?>">
+                <a class="flex-grow text-inherit hover:text-main-900 hover:underline" href="<?php echo esc_url($product->get_permalink()); ?>">
                     <?php echo esc_html($product->get_name()); ?>
                 </a>
             </h3>

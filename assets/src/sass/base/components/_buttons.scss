@@ -136,7 +136,6 @@
   &-outline {
     @extend .#{$global-prefix}_button--base;
     background-color: transparent;
-    color: rgba(color(text-rgb), 0.7);
     border-color: rgba(color(text-rgb), 0.25);
 
     &:hover {
