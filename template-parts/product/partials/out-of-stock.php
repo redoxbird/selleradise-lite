@@ -1,1 +1,1 @@
-<button disabled="disabled" class="selleradise_button--secondary"><?php esc_html_e('Out Of Stock', 'selleradise-lite'); ?></button>
+<button disabled="disabled" class="selleradise_button--secondary"><?php esc_html_e('Out Of Stock', 'TEXT_DOMAIN'); ?></button>

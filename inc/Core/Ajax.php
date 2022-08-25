@@ -364,7 +364,7 @@ class Ajax
 
         if (!$set_quantity) {
             wp_send_json_error([
-                'message' => __('Error occurred while updating product in cart', 'selleradise-lite'),
+                'message' => __('Error occurred while updating product in cart', 'TEXT_DOMAIN'),
             ]);
 
             wp_die();

@@ -31,18 +31,18 @@ class Shop
             return;
         }
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'radio',
             'settings' => 'filters_location',
-            'label' => __('Shop Filter Location', 'selleradise-lite'),
-            'description' => esc_html__('Where to show the filters for the product catalog?', 'selleradise-lite'),
+            'label' => __('Shop Filter Location', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Where to show the filters for the product catalog?', 'TEXT_DOMAIN'),
             'section' => 'woocommerce_product_catalog',
             'default' => 'sidebar',
             'priority' => 30,
             'choices' => [
-                'sidebar' => esc_html__('Right Sidebar', 'selleradise-lite'),
-                'offscreen' => esc_html__('Off Screen', 'selleradise-lite'),
-                'sidebar-left' => esc_html__('Left Sidebar', 'selleradise-lite'),
+                'sidebar' => esc_html__('Right Sidebar', 'TEXT_DOMAIN'),
+                'offscreen' => esc_html__('Off Screen', 'TEXT_DOMAIN'),
+                'sidebar-left' => esc_html__('Left Sidebar', 'TEXT_DOMAIN'),
             ],
             'transport' => 'refresh',
         ]);

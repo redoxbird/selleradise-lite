@@ -56,42 +56,42 @@ class Colors
         }
 
         Kirki::add_section('selleradise_colors', array(
-            'title' => esc_html__('Colors', 'selleradise-lite'),
-            'description' => esc_html__('Set color for the website.', 'selleradise-lite'),
+            'title' => esc_html__('Colors', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Set color for the website.', 'TEXT_DOMAIN'),
             'priority' => 22,
         ));
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'radio-buttonset',
             'settings' => 'theme_type',
-            'label' => esc_html__('Mode', 'selleradise-lite'),
+            'label' => esc_html__('Mode', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => 'light',
             'choices' => [
-                'light' => esc_html__('Light', 'selleradise-lite'),
-                'dark' => esc_html__('Dark', 'selleradise-lite'),
-                'both' => esc_html__('Both', 'selleradise-lite'),
+                'light' => esc_html__('Light', 'TEXT_DOMAIN'),
+                'dark' => esc_html__('Dark', 'TEXT_DOMAIN'),
+                'both' => esc_html__('Both', 'TEXT_DOMAIN'),
             ],
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'custom',
             'settings' => 'title_light_mode_color',
             'section' => 'selleradise_colors',
             'default' => selleradise_kirki_heading('Colors'),
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'color_main',
-            'label' => esc_html__('Main', 'selleradise-lite'),
-            'description' => esc_html__('The main color of the website.', 'selleradise-lite'),
+            'label' => esc_html__('Main', 'TEXT_DOMAIN'),
+            'description' => esc_html__('The main color of the website.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("main"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'color_main_text',
             'section' => 'selleradise_colors',
@@ -99,37 +99,37 @@ class Colors
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'color_background',
-            'label' => __('Background', 'selleradise-lite'),
-            'description' => esc_html__('a background color.', 'selleradise-lite'),
+            'label' => __('Background', 'TEXT_DOMAIN'),
+            'description' => esc_html__('a background color.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("background"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'color_text',
-            'label' => __('Text', 'selleradise-lite'),
-            'description' => esc_html__('text color, make sure that it contrasts well with the background color.', 'selleradise-lite'),
+            'label' => __('Text', 'TEXT_DOMAIN'),
+            'description' => esc_html__('text color, make sure that it contrasts well with the background color.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("text"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'color_accent_light',
-            'label' => __('Accent', 'selleradise-lite'),
-            'description' => esc_html__('an accent color, rarely used.', 'selleradise-lite'),
+            'label' => __('Accent', 'TEXT_DOMAIN'),
+            'description' => esc_html__('an accent color, rarely used.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("accent_light"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'color_accent_light_text',
             'section' => 'selleradise_colors',
@@ -141,24 +141,24 @@ class Colors
          * Dark Mode Colors
          */
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'custom',
             'settings' => 'title_dark_mode_color',
             'section' => 'selleradise_colors',
             'default' => selleradise_kirki_heading('Colors (Dark Mode)'),
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'dark_mode_color_main',
-            'label' => __('Main', 'selleradise-lite'),
-            'description' => esc_html__('The main color of the website.', 'selleradise-lite'),
+            'label' => __('Main', 'TEXT_DOMAIN'),
+            'description' => esc_html__('The main color of the website.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("dark-theme_main"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'dark_mode_color_main_text',
             'section' => 'selleradise_colors',
@@ -166,37 +166,37 @@ class Colors
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'dark_mode_color_background',
-            'label' => __('Background', 'selleradise-lite'),
-            'description' => esc_html__('Color used either for background.', 'selleradise-lite'),
+            'label' => __('Background', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Color used either for background.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("dark-theme_background"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'dark_mode_color_text',
-            'label' => __('Text', 'selleradise-lite'),
-            'description' => esc_html__('text color, make sure that it contrasts well with the background color.', 'selleradise-lite'),
+            'label' => __('Text', 'TEXT_DOMAIN'),
+            'description' => esc_html__('text color, make sure that it contrasts well with the background color.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("dark-theme_text"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'dark_mode_color_accent_light',
-            'label' => __('Accent', 'selleradise-lite'),
-            'description' => esc_html__('an accent color, rarely used.', 'selleradise-lite'),
+            'label' => __('Accent', 'TEXT_DOMAIN'),
+            'description' => esc_html__('an accent color, rarely used.', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => selleradise_get_default_color("dark-theme_accent_light"),
             'transport' => 'refresh',
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'color',
             'settings' => 'dark_mode_color_accent_light_text',
             'section' => 'selleradise_colors',
@@ -208,17 +208,17 @@ class Colors
         // Color Palette
         //=======================
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'custom',
             'settings' => 'title_color_palette',
             'section' => 'selleradise_colors',
             'default' => selleradise_kirki_heading('Predefined Color Palettes'),
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'palette',
             'settings' => 'color_palette',
-            'label' => __('Color Palette', 'selleradise-lite'),
+            'label' => __('Color Palette', 'TEXT_DOMAIN'),
             'section' => 'selleradise_colors',
             'default' => 'default',
             'choices' => $this->palette,

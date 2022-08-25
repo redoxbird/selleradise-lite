@@ -29,6 +29,7 @@ export default {
           900: "var(--selleradise-color-main)",
         },
         text: {
+          25: "rgba(var(--selleradise-color-text-rgb), 0.025)",
           50: "rgba(var(--selleradise-color-text-rgb), 0.05)",
           100: "rgba(var(--selleradise-color-text-rgb), 0.1)",
           200: "rgba(var(--selleradise-color-text-rgb), 0.2)",
@@ -54,14 +55,17 @@ export default {
         8: "repeat(8, minmax(0, 1fr))",
       },
       spacing: {
+        120: "30rem",
         128: "32rem",
         144: "36rem",
         160: "40rem",
         168: "42rem",
+        176: "44rem",
       },
       width: {
         "1/10": "10%",
         "3/10": "30%",
+        "9/20": "45%",
       },
       height: {
         ratio: "calc(var(--width) * var(--product-image-ratio))",

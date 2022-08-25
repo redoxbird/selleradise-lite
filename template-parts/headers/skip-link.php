@@ -7,5 +7,5 @@ if (!defined('ABSPATH')) {
 ?>
 
 <a href="#content" class="selleradise_button--skip-to-content">
-  <?php esc_html_e("Skip to main content", "selleradise-lite"); ?>
+  <?php esc_html_e("Skip to main content", "TEXT_DOMAIN"); ?>
 </a>

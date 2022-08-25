@@ -23,9 +23,9 @@ if (!wc_review_ratings_enabled() || !$product->get_average_rating()) {
 $count_text;
 
 if($product->get_review_count() <= 1) {
-  $count_text = __('review', 'selleradise-lite');
+  $count_text = __('review', 'TEXT_DOMAIN');
 } else {
-  $count_text = __('reviews', 'selleradise-lite');
+  $count_text = __('reviews', 'TEXT_DOMAIN');
 }
 
 ?>

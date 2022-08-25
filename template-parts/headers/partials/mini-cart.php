@@ -65,10 +65,10 @@ if ($args) {
     <div class="selleradise_MiniCart__foot" x-show="$store.miniCart.isNotEmpty()">
       <div class="selleradise_MiniCart__footActions">
         <a x-bind:href="selleradiseData.cartURL" class="selleradise_button--secondary-outline">
-          <?php esc_attr_e('Edit Cart', 'selleradise-lite'); ?>
+          <?php esc_attr_e('Edit Cart', 'TEXT_DOMAIN'); ?>
         </a>
         <a x-bind:href="selleradiseData.checkoutURL" class="selleradise_button--primary">
-          <?php esc_attr_e('Checkout', 'selleradise-lite'); ?>
+          <?php esc_attr_e('Checkout', 'TEXT_DOMAIN'); ?>
           <span class="selleradise_MiniCart__footCartTotal" x-html="$store.miniCart.total"></span>
         </a>
       </div>
@@ -84,10 +84,10 @@ if ($args) {
           <?php echo selleradise_svg('misc/empty-state') ?>
         </div>
         <h2 class="text-xl mb-2">
-          <?php echo esc_html__('Your cart is empty.', 'selleradise-lite'); ?>
+          <?php echo esc_html__('Your cart is empty.', 'TEXT_DOMAIN'); ?>
         </h2>
         <p class="text-sm text-gray-600">
-          <?php echo esc_html__('Looks like you have not added any product to your cart yet.', 'selleradise-lite'); ?>
+          <?php echo esc_html__('Looks like you have not added any product to your cart yet.', 'TEXT_DOMAIN'); ?>
         </p>
       </div>
     </template>

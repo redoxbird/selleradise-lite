@@ -18,7 +18,7 @@ global $post, $product;
 	$percentage = (int) round(($product->get_regular_price() - (float) $product->get_sale_price()) / (float) $product->get_regular_price() * 100);
 	?>
 	<span class="selleradise_chip--onsale">
-		<?php echo sprintf(esc_html__('%s%% OFF', 'selleradise-lite'), $percentage); ?>
+		<?php echo sprintf(esc_html__('%s%% OFF', 'TEXT_DOMAIN'), $percentage); ?>
 	</span>
 <?php
 endif;

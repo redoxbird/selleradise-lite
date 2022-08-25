@@ -15,14 +15,14 @@ $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
 
  <a 
     href="<?php echo esc_url( home_url() ); ?>" 
-    aria-label="<?php echo esc_attr(sprintf(__('%s Logo', 'selleradise-lite'), get_bloginfo('name'))); ?>" 
+    aria-label="<?php echo esc_attr(sprintf(__('%s Logo', 'TEXT_DOMAIN'), get_bloginfo('name'))); ?>" 
     class="selleradiseHeader__logo-outer">
 
   <?php if(has_custom_logo()): ?>
     <img
       class="selleradiseHeader__logo--dark"
       src="<?php echo has_custom_logo() ? $logo[0] : selleradise_assets('images/selleradise-logo.svg'); ?>"
-      alt="<?php echo esc_attr(sprintf(__('%s Logo', 'selleradise-lite'), get_bloginfo('name'))); ?>"
+      alt="<?php echo esc_attr(sprintf(__('%s Logo', 'TEXT_DOMAIN'), get_bloginfo('name'))); ?>"
       width="<?php echo esc_attr($logo[1]); ?>"
       height="<?php echo esc_attr($logo[2]); ?>"
     />

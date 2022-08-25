@@ -36,7 +36,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. */
-						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'selleradise-lite' ),
+						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'TEXT_DOMAIN' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -49,7 +49,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'selleradise-lite' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'TEXT_DOMAIN' ),
 					'after'  => '</div>',
 				)
 			);

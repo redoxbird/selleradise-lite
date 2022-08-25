@@ -16,6 +16,6 @@ if (isset($args)) {
   </div>
 
   <a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="selleradise_button--primary">
-    <?php esc_html_e('Refresh', 'selleradise-lite'); ?>
+    <?php esc_html_e('Refresh', 'TEXT_DOMAIN'); ?>
   </a>
 </section>

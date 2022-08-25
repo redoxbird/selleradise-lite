@@ -327,77 +327,77 @@ if (!class_exists('TGM_Plugin_Activation')) {
 
             // Load class strings.
             $this->strings = array(
-                'page_title' => __('Install Required Plugins', 'selleradise-lite'),
-                'menu_title' => __('Install Plugins', 'selleradise-lite'),
+                'page_title' => __('Install Required Plugins', 'TEXT_DOMAIN'),
+                'menu_title' => __('Install Plugins', 'TEXT_DOMAIN'),
                 /* translators: %s: plugin name. */
-                'installing' => __('Installing Plugin: %s', 'selleradise-lite'),
+                'installing' => __('Installing Plugin: %s', 'TEXT_DOMAIN'),
                 /* translators: %s: plugin name. */
-                'updating' => __('Updating Plugin: %s', 'selleradise-lite'),
-                'oops' => __('Something went wrong with the plugin API.', 'selleradise-lite'),
+                'updating' => __('Updating Plugin: %s', 'TEXT_DOMAIN'),
+                'oops' => __('Something went wrong with the plugin API.', 'TEXT_DOMAIN'),
                 'notice_can_install_required' => _n_noop(
                     /* translators: 1: plugin name(s). */
                     'This theme requires the following plugin: %1$s.',
                     'This theme requires the following plugins: %1$s.',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'notice_can_install_recommended' => _n_noop(
                     /* translators: 1: plugin name(s). */
                     'This theme recommends the following plugin: %1$s.',
                     'This theme recommends the following plugins: %1$s.',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'notice_ask_to_update' => _n_noop(
                     /* translators: 1: plugin name(s). */
                     'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
                     'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'notice_ask_to_update_maybe' => _n_noop(
                     /* translators: 1: plugin name(s). */
                     'There is an update available for: %1$s.',
                     'There are updates available for the following plugins: %1$s.',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'notice_can_activate_required' => _n_noop(
                     /* translators: 1: plugin name(s). */
                     'The following required plugin is currently inactive: %1$s.',
                     'The following required plugins are currently inactive: %1$s.',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'notice_can_activate_recommended' => _n_noop(
                     /* translators: 1: plugin name(s). */
                     'The following recommended plugin is currently inactive: %1$s.',
                     'The following recommended plugins are currently inactive: %1$s.',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'install_link' => _n_noop(
                     'Begin installing plugin',
                     'Begin installing plugins',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'update_link' => _n_noop(
                     'Begin updating plugin',
                     'Begin updating plugins',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
                 'activate_link' => _n_noop(
                     'Begin activating plugin',
                     'Begin activating plugins',
-                    'selleradise-lite'
+                    'TEXT_DOMAIN'
                 ),
-                'return' => __('Return to Required Plugins Installer', 'selleradise-lite'),
-                'dashboard' => __('Return to the Dashboard', 'selleradise-lite'),
-                'plugin_activated' => __('Plugin activated successfully.', 'selleradise-lite'),
-                'activated_successfully' => __('The following plugin was activated successfully:', 'selleradise-lite'),
+                'return' => __('Return to Required Plugins Installer', 'TEXT_DOMAIN'),
+                'dashboard' => __('Return to the Dashboard', 'TEXT_DOMAIN'),
+                'plugin_activated' => __('Plugin activated successfully.', 'TEXT_DOMAIN'),
+                'activated_successfully' => __('The following plugin was activated successfully:', 'TEXT_DOMAIN'),
                 /* translators: 1: plugin name. */
-                'plugin_already_active' => __('No action taken. Plugin %1$s was already active.', 'selleradise-lite'),
+                'plugin_already_active' => __('No action taken. Plugin %1$s was already active.', 'TEXT_DOMAIN'),
                 /* translators: 1: plugin name. */
-                'plugin_needs_higher_version' => __('Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'selleradise-lite'),
+                'plugin_needs_higher_version' => __('Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'TEXT_DOMAIN'),
                 /* translators: 1: dashboard link. */
-                'complete' => __('All plugins installed and activated successfully. %1$s', 'selleradise-lite'),
-                'dismiss' => __('Dismiss this notice', 'selleradise-lite'),
-                'notice_cannot_install_activate' => __('There are one or more required or recommended plugins to install, update or activate.', 'selleradise-lite'),
-                'contact_admin' => __('Please contact the administrator of this site for help.', 'selleradise-lite'),
+                'complete' => __('All plugins installed and activated successfully. %1$s', 'TEXT_DOMAIN'),
+                'dismiss' => __('Dismiss this notice', 'TEXT_DOMAIN'),
+                'notice_cannot_install_activate' => __('There are one or more required or recommended plugins to install, update or activate.', 'TEXT_DOMAIN'),
+                'contact_admin' => __('Please contact the administrator of this site for help.', 'TEXT_DOMAIN'),
             );
 
             do_action('tgmpa_register');
@@ -520,8 +520,8 @@ if (!class_exists('TGM_Plugin_Activation')) {
             $actions['update'] = sprintf(
                 '<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
                 esc_url($this->get_tgmpa_status_url('update')),
-                esc_attr__('This plugin needs to be updated to be compatible with your theme.', 'selleradise-lite'),
-                esc_html__('Update Required', 'selleradise-lite')
+                esc_attr__('This plugin needs to be updated to be compatible with your theme.', 'TEXT_DOMAIN'),
+                esc_html__('Update Required', 'TEXT_DOMAIN')
             );
 
             return $actions;
@@ -831,7 +831,7 @@ if (!empty($this->message) && is_string($this->message)) {
 
                 // Display message based on if all plugins are now active or not.
                 if ($this->is_tgmpa_complete()) {
-                    echo '<p>', sprintf(esc_html($this->strings['complete']), '<a href="' . esc_url(self_admin_url()) . '">' . esc_html__('Return to the Dashboard', 'selleradise-lite') . '</a>'), '</p>';
+                    echo '<p>', sprintf(esc_html($this->strings['complete']), '<a href="' . esc_url(self_admin_url()) . '">' . esc_html__('Return to the Dashboard', 'TEXT_DOMAIN') . '</a>'), '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 } else {
                     echo '<p><a href="', esc_url($this->get_tgmpa_url()), '" target="_parent">', esc_html($this->strings['return']), '</a></p>';
@@ -940,10 +940,10 @@ if (!empty($this->message) && is_string($this->message)) {
                     if (true === $GLOBALS['wp_filesystem']->move($from_path, $to_path)) {
                         return trailingslashit($to_path);
                     } else {
-                        return new WP_Error('rename_failed', esc_html__('The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'selleradise-lite') . ' ' . esc_html__('Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'selleradise-lite'), array('found' => $subdir_name, 'expected' => $desired_slug));
+                        return new WP_Error('rename_failed', esc_html__('The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'TEXT_DOMAIN') . ' ' . esc_html__('Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'TEXT_DOMAIN'), array('found' => $subdir_name, 'expected' => $desired_slug));
                     }
                 } elseif (empty($subdir_name)) {
-                    return new WP_Error('packaged_wrong', esc_html__('The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'selleradise-lite') . ' ' . esc_html__('Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'selleradise-lite'), array('found' => $subdir_name, 'expected' => $desired_slug));
+                    return new WP_Error('packaged_wrong', esc_html__('The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'TEXT_DOMAIN') . ' ' . esc_html__('Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'TEXT_DOMAIN'), array('found' => $subdir_name, 'expected' => $desired_slug));
                 }
             }
 
@@ -1129,12 +1129,12 @@ if (!empty($this->message) && is_string($this->message)) {
                         $count = count($plugin_group);
                         $linked_plugins = array_map(array('TGMPA_Utils', 'wrap_in_em'), $linked_plugins);
                         $last_plugin = array_pop($linked_plugins); // Pop off last name to prep for readability.
-                        $imploded = empty($linked_plugins) ? $last_plugin : (implode(', ', $linked_plugins) . ' ' . esc_html_x('and', 'plugin A *and* plugin B', 'selleradise-lite') . ' ' . $last_plugin);
+                        $imploded = empty($linked_plugins) ? $last_plugin : (implode(', ', $linked_plugins) . ' ' . esc_html_x('and', 'plugin A *and* plugin B', 'TEXT_DOMAIN') . ' ' . $last_plugin);
 
                         $rendered .= sprintf(
                             $line_template,
                             sprintf(
-                                translate_nooped_plural($this->strings[$type], $count, 'selleradise-lite'),
+                                translate_nooped_plural($this->strings[$type], $count, 'TEXT_DOMAIN'),
                                 $imploded,
                                 $count
                             )
@@ -1183,14 +1183,14 @@ if (!empty($this->message) && is_string($this->message)) {
                 if ($install_count > 0) {
                     $action_links['install'] = sprintf(
                         $link_template,
-                        translate_nooped_plural($this->strings['install_link'], $install_count, 'selleradise-lite'),
+                        translate_nooped_plural($this->strings['install_link'], $install_count, 'TEXT_DOMAIN'),
                         esc_url($this->get_tgmpa_status_url('install'))
                     );
                 }
                 if ($update_count > 0) {
                     $action_links['update'] = sprintf(
                         $link_template,
-                        translate_nooped_plural($this->strings['update_link'], $update_count, 'selleradise-lite'),
+                        translate_nooped_plural($this->strings['update_link'], $update_count, 'TEXT_DOMAIN'),
                         esc_url($this->get_tgmpa_status_url('update'))
                     );
                 }
@@ -1199,7 +1199,7 @@ if (!empty($this->message) && is_string($this->message)) {
             if (current_user_can('activate_plugins') && $activate_count > 0) {
                 $action_links['activate'] = sprintf(
                     $link_template,
-                    translate_nooped_plural($this->strings['activate_link'], $activate_count, 'selleradise-lite'),
+                    translate_nooped_plural($this->strings['activate_link'], $activate_count, 'TEXT_DOMAIN'),
                     esc_url($this->get_tgmpa_status_url('activate'))
                 );
             }
@@ -2026,7 +2026,7 @@ if (!empty($this->message) && is_string($this->message)) {
             esc_html(
                 sprintf(
                     /* translators: %s: version number */
-                    __('TGMPA v%s', 'selleradise-lite'),
+                    __('TGMPA v%s', 'TEXT_DOMAIN'),
                     self::TGMPA_VERSION
                 )
             ),
@@ -2327,10 +2327,10 @@ if (!class_exists('TGMPA_List_Table')) {
         protected function get_plugin_advise_type_text($required)
         {
             if (true === $required) {
-                return __('Required', 'selleradise-lite');
+                return __('Required', 'TEXT_DOMAIN');
             }
 
-            return __('Recommended', 'selleradise-lite');
+            return __('Recommended', 'TEXT_DOMAIN');
         }
 
         /**
@@ -2347,13 +2347,13 @@ if (!class_exists('TGMPA_List_Table')) {
 
             switch ($type) {
                 case 'repo':
-                    $string = __('WordPress Repository', 'selleradise-lite');
+                    $string = __('WordPress Repository', 'TEXT_DOMAIN');
                     break;
                 case 'external':
-                    $string = __('External Source', 'selleradise-lite');
+                    $string = __('External Source', 'TEXT_DOMAIN');
                     break;
                 case 'bundled':
-                    $string = __('Pre-Packaged', 'selleradise-lite');
+                    $string = __('Pre-Packaged', 'TEXT_DOMAIN');
                     break;
             }
 
@@ -2371,25 +2371,25 @@ if (!class_exists('TGMPA_List_Table')) {
         protected function get_plugin_status_text($slug)
         {
             if (!$this->tgmpa->is_plugin_installed($slug)) {
-                return __('Not Installed', 'selleradise-lite');
+                return __('Not Installed', 'TEXT_DOMAIN');
             }
 
             if (!$this->tgmpa->is_plugin_active($slug)) {
-                $install_status = __('Installed But Not Activated', 'selleradise-lite');
+                $install_status = __('Installed But Not Activated', 'TEXT_DOMAIN');
             } else {
-                $install_status = __('Active', 'selleradise-lite');
+                $install_status = __('Active', 'TEXT_DOMAIN');
             }
 
             $update_status = '';
 
             if ($this->tgmpa->does_plugin_require_update($slug) && false === $this->tgmpa->does_plugin_have_update($slug)) {
-                $update_status = __('Required Update not Available', 'selleradise-lite');
+                $update_status = __('Required Update not Available', 'TEXT_DOMAIN');
 
             } elseif ($this->tgmpa->does_plugin_require_update($slug)) {
-                $update_status = __('Requires Update', 'selleradise-lite');
+                $update_status = __('Requires Update', 'TEXT_DOMAIN');
 
             } elseif (false !== $this->tgmpa->does_plugin_have_update($slug)) {
-                $update_status = __('Update recommended', 'selleradise-lite');
+                $update_status = __('Update recommended', 'TEXT_DOMAIN');
             }
 
             if ('' === $update_status) {
@@ -2398,7 +2398,7 @@ if (!class_exists('TGMPA_List_Table')) {
 
             return sprintf(
                 /* translators: 1: install status, 2: update status */
-                _x('%1$s, %2$s', 'Install/Update Status', 'selleradise-lite'),
+                _x('%1$s, %2$s', 'Install/Update Status', 'TEXT_DOMAIN'),
                 $install_status,
                 $update_status
             );
@@ -2446,19 +2446,19 @@ if (!class_exists('TGMPA_List_Table')) {
                 switch ($type) {
                     case 'all':
                         /* translators: 1: number of plugins. */
-                        $text = _nx('All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'selleradise-lite');
+                        $text = _nx('All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'TEXT_DOMAIN');
                         break;
                     case 'install':
                         /* translators: 1: number of plugins. */
-                        $text = _n('To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'selleradise-lite');
+                        $text = _n('To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'TEXT_DOMAIN');
                         break;
                     case 'update':
                         /* translators: 1: number of plugins. */
-                        $text = _n('Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'selleradise-lite');
+                        $text = _n('Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'TEXT_DOMAIN');
                         break;
                     case 'activate':
                         /* translators: 1: number of plugins. */
-                        $text = _n('To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'selleradise-lite');
+                        $text = _n('To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'TEXT_DOMAIN');
                         break;
                     default:
                         $text = '';
@@ -2544,7 +2544,7 @@ if (!class_exists('TGMPA_List_Table')) {
             $output = array();
 
             if ($this->tgmpa->is_plugin_installed($item['slug'])) {
-                $installed = !empty($item['installed_version']) ? $item['installed_version'] : _x('unknown', 'as in: "version nr unknown"', 'selleradise-lite');
+                $installed = !empty($item['installed_version']) ? $item['installed_version'] : _x('unknown', 'as in: "version nr unknown"', 'TEXT_DOMAIN');
 
                 $color = '';
                 if (!empty($item['minimum_version']) && $this->tgmpa->does_plugin_require_update($item['slug'])) {
@@ -2552,7 +2552,7 @@ if (!class_exists('TGMPA_List_Table')) {
                 }
 
                 $output[] = sprintf(
-                    '<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __('Installed version:', 'selleradise-lite') . '</p>',
+                    '<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __('Installed version:', 'TEXT_DOMAIN') . '</p>',
                     $color,
                     $installed
                 );
@@ -2560,7 +2560,7 @@ if (!class_exists('TGMPA_List_Table')) {
 
             if (!empty($item['minimum_version'])) {
                 $output[] = sprintf(
-                    '<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __('Minimum required version:', 'selleradise-lite') . '</p>',
+                    '<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __('Minimum required version:', 'TEXT_DOMAIN') . '</p>',
                     $item['minimum_version']
                 );
             }
@@ -2572,7 +2572,7 @@ if (!class_exists('TGMPA_List_Table')) {
                 }
 
                 $output[] = sprintf(
-                    '<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __('Available version:', 'selleradise-lite') . '</p>',
+                    '<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __('Available version:', 'TEXT_DOMAIN') . '</p>',
                     $color,
                     $item['available_version']
                 );
@@ -2596,7 +2596,7 @@ if (!class_exists('TGMPA_List_Table')) {
          */
         public function no_items()
         {
-            echo esc_html__('No plugins to install, update or activate.', 'selleradise-lite') . ' <a href="' . esc_url(self_admin_url()) . '"> ' . esc_html__('Return to the Dashboard', 'selleradise-lite') . '</a>';
+            echo esc_html__('No plugins to install, update or activate.', 'TEXT_DOMAIN') . ' <a href="' . esc_url(self_admin_url()) . '"> ' . esc_html__('Return to the Dashboard', 'TEXT_DOMAIN') . '</a>';
             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
         }
 
@@ -2611,14 +2611,14 @@ if (!class_exists('TGMPA_List_Table')) {
         {
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'plugin' => __('Plugin', 'selleradise-lite'),
-                'source' => __('Source', 'selleradise-lite'),
-                'type' => __('Type', 'selleradise-lite'),
+                'plugin' => __('Plugin', 'TEXT_DOMAIN'),
+                'source' => __('Source', 'TEXT_DOMAIN'),
+                'type' => __('Type', 'TEXT_DOMAIN'),
             );
 
             if ('all' === $this->view_context || 'update' === $this->view_context) {
-                $columns['version'] = __('Version', 'selleradise-lite');
-                $columns['status'] = __('Status', 'selleradise-lite');
+                $columns['version'] = __('Version', 'TEXT_DOMAIN');
+                $columns['status'] = __('Status', 'TEXT_DOMAIN');
             }
 
             return apply_filters('tgmpa_table_columns', $columns);
@@ -2670,18 +2670,18 @@ if (!class_exists('TGMPA_List_Table')) {
             // Display the 'Install' action link if the plugin is not yet available.
             if (!$this->tgmpa->is_plugin_installed($item['slug'])) {
                 /* translators: %2$s: plugin name in screen reader markup */
-                $actions['install'] = __('Install %2$s', 'selleradise-lite');
+                $actions['install'] = __('Install %2$s', 'TEXT_DOMAIN');
             } else {
                 // Display the 'Update' action link if an update is available and WP complies with plugin minimum.
                 if (false !== $this->tgmpa->does_plugin_have_update($item['slug']) && $this->tgmpa->can_plugin_update($item['slug'])) {
                     /* translators: %2$s: plugin name in screen reader markup */
-                    $actions['update'] = __('Update %2$s', 'selleradise-lite');
+                    $actions['update'] = __('Update %2$s', 'TEXT_DOMAIN');
                 }
 
                 // Display the 'Activate' action link, but only if the plugin meets the minimum version.
                 if ($this->tgmpa->can_plugin_activate($item['slug'])) {
                     /* translators: %2$s: plugin name in screen reader markup */
-                    $actions['activate'] = __('Activate %2$s', 'selleradise-lite');
+                    $actions['activate'] = __('Activate %2$s', 'TEXT_DOMAIN');
                 }
             }
 
@@ -2753,7 +2753,7 @@ if (!class_exists('TGMPA_List_Table')) {
 				<tr class="plugin-update-tr">
 					<td colspan="', absint($this->get_column_count()), '" class="plugin-update colspanchange">
 						<div class="update-message">',
-            esc_html__('Upgrade message from the plugin author:', 'selleradise-lite'),
+            esc_html__('Upgrade message from the plugin author:', 'TEXT_DOMAIN'),
             ' <strong>', wp_kses_data($item['upgrade_notice']), '</strong>
 						</div>
 					</td>
@@ -2788,16 +2788,16 @@ if (!class_exists('TGMPA_List_Table')) {
 
             if ('update' !== $this->view_context && 'activate' !== $this->view_context) {
                 if (current_user_can('install_plugins')) {
-                    $actions['tgmpa-bulk-install'] = __('Install', 'selleradise-lite');
+                    $actions['tgmpa-bulk-install'] = __('Install', 'TEXT_DOMAIN');
                 }
             }
 
             if ('install' !== $this->view_context) {
                 if (current_user_can('update_plugins')) {
-                    $actions['tgmpa-bulk-update'] = __('Update', 'selleradise-lite');
+                    $actions['tgmpa-bulk-update'] = __('Update', 'TEXT_DOMAIN');
                 }
                 if (current_user_can('activate_plugins')) {
-                    $actions['tgmpa-bulk-activate'] = __('Activate', 'selleradise-lite');
+                    $actions['tgmpa-bulk-activate'] = __('Activate', 'TEXT_DOMAIN');
                 }
             }
 
@@ -2829,9 +2829,9 @@ if (!class_exists('TGMPA_List_Table')) {
                 // Did user actually select any plugins to install/update ?
                 if (empty($_POST['plugin'])) {
                     if ('install' === $install_type) {
-                        $message = __('No plugins were selected to be installed. No action taken.', 'selleradise-lite');
+                        $message = __('No plugins were selected to be installed. No action taken.', 'TEXT_DOMAIN');
                     } else {
-                        $message = __('No plugins were selected to be updated. No action taken.', 'selleradise-lite');
+                        $message = __('No plugins were selected to be updated. No action taken.', 'TEXT_DOMAIN');
                     }
 
                     echo '<div id="message" class="error"><p>', esc_html($message), '</p></div>';
@@ -2872,9 +2872,9 @@ if (!class_exists('TGMPA_List_Table')) {
                 // No need to proceed further if we have no plugins to handle.
                 if (empty($plugins_to_install)) {
                     if ('install' === $install_type) {
-                        $message = __('No plugins are available to be installed at this time.', 'selleradise-lite');
+                        $message = __('No plugins are available to be installed at this time.', 'TEXT_DOMAIN');
                     } else {
-                        $message = __('No plugins are available to be updated at this time.', 'selleradise-lite');
+                        $message = __('No plugins are available to be updated at this time.', 'TEXT_DOMAIN');
                     }
 
                     echo '<div id="message" class="error"><p>', esc_html($message), '</p></div>';
@@ -2980,7 +2980,7 @@ if (!class_exists('TGMPA_List_Table')) {
 
                 // Did user actually select any plugins to activate ?
                 if (empty($_POST['plugin'])) {
-                    echo '<div id="message" class="error"><p>', esc_html__('No plugins were selected to be activated. No action taken.', 'selleradise-lite'), '</p></div>';
+                    echo '<div id="message" class="error"><p>', esc_html__('No plugins were selected to be activated. No action taken.', 'TEXT_DOMAIN'), '</p></div>';
 
                     return false;
                 }
@@ -3006,7 +3006,7 @@ if (!class_exists('TGMPA_List_Table')) {
 
                 // Return early if there are no plugins to activate.
                 if (empty($plugins_to_activate)) {
-                    echo '<div id="message" class="error"><p>', esc_html__('No plugins are available to be activated at this time.', 'selleradise-lite'), '</p></div>';
+                    echo '<div id="message" class="error"><p>', esc_html__('No plugins are available to be activated at this time.', 'TEXT_DOMAIN'), '</p></div>';
 
                     return false;
                 }
@@ -3020,11 +3020,11 @@ if (!class_exists('TGMPA_List_Table')) {
                     $count = count($plugin_names); // Count so we can use _n function.
                     $plugin_names = array_map(array('TGMPA_Utils', 'wrap_in_strong'), $plugin_names);
                     $last_plugin = array_pop($plugin_names); // Pop off last name to prep for readability.
-                    $imploded = empty($plugin_names) ? $last_plugin : (implode(', ', $plugin_names) . ' ' . esc_html_x('and', 'plugin A *and* plugin B', 'selleradise-lite') . ' ' . $last_plugin);
+                    $imploded = empty($plugin_names) ? $last_plugin : (implode(', ', $plugin_names) . ' ' . esc_html_x('and', 'plugin A *and* plugin B', 'TEXT_DOMAIN') . ' ' . $last_plugin);
 
                     printf( // WPCS: xss ok.
                         '<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-                        esc_html(_n('The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'selleradise-lite')),
+                        esc_html(_n('The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'TEXT_DOMAIN')),
                         $imploded
                     );
 
@@ -3237,8 +3237,8 @@ if (!function_exists('tgmpa_load_bulk_installer')) {
                      */
                     public function activate_strings()
                     {
-                        $this->strings['activation_failed'] = __('Plugin activation failed.', 'selleradise-lite');
-                        $this->strings['activation_success'] = __('Plugin activated successfully.', 'selleradise-lite');
+                        $this->strings['activation_failed'] = __('Plugin activation failed.', 'TEXT_DOMAIN');
+                        $this->strings['activation_success'] = __('Plugin activated successfully.', 'TEXT_DOMAIN');
                     }
 
                     /**
@@ -3584,29 +3584,29 @@ if (!function_exists('tgmpa_load_bulk_installer')) {
                         if ('update' === $this->options['install_type']) {
                             parent::add_strings();
                             /* translators: 1: plugin name, 2: action number 3: total number of actions. */
-                            $this->upgrader->strings['skin_before_update_header'] = __('Updating Plugin %1$s (%2$d/%3$d)', 'selleradise-lite');
+                            $this->upgrader->strings['skin_before_update_header'] = __('Updating Plugin %1$s (%2$d/%3$d)', 'TEXT_DOMAIN');
                         } else {
                             /* translators: 1: plugin name, 2: error message. */
-                            $this->upgrader->strings['skin_update_failed_error'] = __('An error occurred while installing %1$s: <strong>%2$s</strong>.', 'selleradise-lite');
+                            $this->upgrader->strings['skin_update_failed_error'] = __('An error occurred while installing %1$s: <strong>%2$s</strong>.', 'TEXT_DOMAIN');
                             /* translators: 1: plugin name. */
-                            $this->upgrader->strings['skin_update_failed'] = __('The installation of %1$s failed.', 'selleradise-lite');
+                            $this->upgrader->strings['skin_update_failed'] = __('The installation of %1$s failed.', 'TEXT_DOMAIN');
 
                             if ($this->tgmpa->is_automatic) {
                                 // Automatic activation strings.
-                                $this->upgrader->strings['skin_upgrade_start'] = __('The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'selleradise-lite');
+                                $this->upgrader->strings['skin_upgrade_start'] = __('The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'TEXT_DOMAIN');
                                 /* translators: 1: plugin name. */
-                                $this->upgrader->strings['skin_update_successful'] = __('%1$s installed and activated successfully.', 'selleradise-lite') . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__('Show Details', 'selleradise-lite') . '</span><span class="hidden">' . esc_html__('Hide Details', 'selleradise-lite') . '</span>.</a>';
-                                $this->upgrader->strings['skin_upgrade_end'] = __('All installations and activations have been completed.', 'selleradise-lite');
+                                $this->upgrader->strings['skin_update_successful'] = __('%1$s installed and activated successfully.', 'TEXT_DOMAIN') . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__('Show Details', 'TEXT_DOMAIN') . '</span><span class="hidden">' . esc_html__('Hide Details', 'TEXT_DOMAIN') . '</span>.</a>';
+                                $this->upgrader->strings['skin_upgrade_end'] = __('All installations and activations have been completed.', 'TEXT_DOMAIN');
                                 /* translators: 1: plugin name, 2: action number 3: total number of actions. */
-                                $this->upgrader->strings['skin_before_update_header'] = __('Installing and Activating Plugin %1$s (%2$d/%3$d)', 'selleradise-lite');
+                                $this->upgrader->strings['skin_before_update_header'] = __('Installing and Activating Plugin %1$s (%2$d/%3$d)', 'TEXT_DOMAIN');
                             } else {
                                 // Default installation strings.
-                                $this->upgrader->strings['skin_upgrade_start'] = __('The installation process is starting. This process may take a while on some hosts, so please be patient.', 'selleradise-lite');
+                                $this->upgrader->strings['skin_upgrade_start'] = __('The installation process is starting. This process may take a while on some hosts, so please be patient.', 'TEXT_DOMAIN');
                                 /* translators: 1: plugin name. */
-                                $this->upgrader->strings['skin_update_successful'] = esc_html__('%1$s installed successfully.', 'selleradise-lite') . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__('Show Details', 'selleradise-lite') . '</span><span class="hidden">' . esc_html__('Hide Details', 'selleradise-lite') . '</span>.</a>';
-                                $this->upgrader->strings['skin_upgrade_end'] = __('All installations have been completed.', 'selleradise-lite');
+                                $this->upgrader->strings['skin_update_successful'] = esc_html__('%1$s installed successfully.', 'TEXT_DOMAIN') . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__('Show Details', 'TEXT_DOMAIN') . '</span><span class="hidden">' . esc_html__('Hide Details', 'TEXT_DOMAIN') . '</span>.</a>';
+                                $this->upgrader->strings['skin_upgrade_end'] = __('All installations have been completed.', 'TEXT_DOMAIN');
                                 /* translators: 1: plugin name, 2: action number 3: total number of actions. */
-                                $this->upgrader->strings['skin_before_update_header'] = __('Installing Plugin %1$s (%2$d/%3$d)', 'selleradise-lite');
+                                $this->upgrader->strings['skin_before_update_header'] = __('Installing Plugin %1$s (%2$d/%3$d)', 'TEXT_DOMAIN');
                             }
                         }
                     }
@@ -3669,7 +3669,7 @@ if (!function_exists('tgmpa_load_bulk_installer')) {
                             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                             $update_actions['dashboard'] = sprintf(
                                 esc_html($this->tgmpa->strings['complete']),
-                                '<a href="' . esc_url(self_admin_url()) . '">' . esc_html__('Return to the Dashboard', 'selleradise-lite') . '</a>'
+                                '<a href="' . esc_url(self_admin_url()) . '">' . esc_html__('Return to the Dashboard', 'TEXT_DOMAIN') . '</a>'
                             );
                         } else {
                             $update_actions['tgmpa_page'] = '<a href="' . esc_url($this->tgmpa->get_tgmpa_url()) . '" target="_parent">' . esc_html($this->tgmpa->strings['return']) . '</a>';

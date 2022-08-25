@@ -15,8 +15,8 @@ if ($args) {
 
 $user = [];
 
-$user['display_name'] = __('Guest', 'selleradise-lite');
-$user['user_email'] = __('Login or create a new account', 'selleradise-lite');
+$user['display_name'] = __('Guest', 'TEXT_DOMAIN');
+$user['user_email'] = __('Login or create a new account', 'TEXT_DOMAIN');
 
 $user = (object) $user;
 

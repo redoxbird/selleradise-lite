@@ -32,7 +32,7 @@ if ($args) {
     <li>
       <a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>">
         <?php echo selleradise_svg("tabler-icons/login"); ?>
-        <?php _e("Login", 'selleradise-lite'); ?>
+        <?php _e("Login", 'TEXT_DOMAIN'); ?>
       </a>
     </li>
 
@@ -40,7 +40,7 @@ if ($args) {
       <li>
         <a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>#register">
           <?php echo selleradise_svg("tabler-icons/user-plus"); ?>
-          <?php _e("Register", 'selleradise-lite'); ?>
+          <?php _e("Register", 'TEXT_DOMAIN'); ?>
         </a>
       </li>
     <?php endif; ?>

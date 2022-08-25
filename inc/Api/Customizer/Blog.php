@@ -31,15 +31,15 @@ class Blog
         }
 
         Kirki::add_section('blog', array(
-            'title' => esc_html__('Blog', 'selleradise-lite'),
-            'description' => esc_html__('Settings related to blog.', 'selleradise-lite'),
+            'title' => esc_html__('Blog', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Settings related to blog.', 'TEXT_DOMAIN'),
             'priority' => 40,
         ));
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'checkbox',
             'settings' => 'post_card_adaptive_colors',
-            'label' => esc_html__('Adaptive Colors', 'selleradise-lite'),
+            'label' => esc_html__('Adaptive Colors', 'TEXT_DOMAIN'),
             'section' => 'blog',
             'default' => false,
         ]);

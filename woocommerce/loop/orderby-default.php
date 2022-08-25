@@ -16,13 +16,13 @@ $selected_option = [];
 $orderby_request = $_GET['orderby'] ?? 'menu_order';
 
 $labels = [
-	'menu_order' => __( 'Default', 'selleradise-lite' ),
-	'popularity' => __( 'Popularity', 'selleradise-lite' ),
-	'rating'     => __( 'Average rating', 'selleradise-lite' ),
-	'date'       => __( 'Latest', 'selleradise-lite' ),
-	'price'      => __( 'Price: low to high', 'selleradise-lite' ),
-	'price-desc' => __( 'Price: high to low', 'selleradise-lite' ),
-	'relevance'  => __( 'Relevance', 'selleradise-lite' )
+	'menu_order' => __( 'Default', 'TEXT_DOMAIN' ),
+	'popularity' => __( 'Popularity', 'TEXT_DOMAIN' ),
+	'rating'     => __( 'Average rating', 'TEXT_DOMAIN' ),
+	'date'       => __( 'Latest', 'TEXT_DOMAIN' ),
+	'price'      => __( 'Price: low to high', 'TEXT_DOMAIN' ),
+	'price-desc' => __( 'Price: high to low', 'TEXT_DOMAIN' ),
+	'relevance'  => __( 'Relevance', 'TEXT_DOMAIN' )
 ];
 
 foreach ( $catalog_orderby_options as $options_id => $options_name )  {
@@ -44,7 +44,7 @@ foreach ( $catalog_orderby_options as $options_id => $options_name )  {
 	<form class="selleradise_shop--default__sortForm--default" method="get">
 
 		<span class="screen-reader-text">
-			<?php esc_html_e( "Sort By", "selleradise-lite" ); ?>
+			<?php esc_html_e( "Sort By", 'TEXT_DOMAIN' ); ?>
 		</span>
 
 		<ul class="selleradise_tablist">
@@ -72,7 +72,7 @@ foreach ( $catalog_orderby_options as $options_id => $options_name )  {
 	</form>
 
 	<button class="selleradise_shop--default__sort-filtersTrigger">
-		<?php echo selleradise_svg('tabler-icons/adjustments'); esc_html_e( 'Filter', 'selleradise-lite' ); ?>
+		<?php echo selleradise_svg('tabler-icons/adjustments'); esc_html_e( 'Filter', 'TEXT_DOMAIN' ); ?>
 	</button>
 
 </div>

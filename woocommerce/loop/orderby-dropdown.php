@@ -38,5 +38,5 @@ foreach ($catalog_orderby_options as $options_id => $options_name) {
 
 <button x-data x-on:click="$dispatch('open-shop-filters');" class="selleradise_shop__orderby--dropdown-filters-trigger">
 	<?php echo selleradise_svg('tabler-icons/adjustments');
-	esc_html_e('Filter', 'selleradise-lite'); ?>
+	esc_html_e('Filter', 'TEXT_DOMAIN'); ?>
 </button>

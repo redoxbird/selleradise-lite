@@ -66,7 +66,7 @@ class Setup
 
         $GLOBALS['content_width'] = apply_filters('content_width', 1920);
 
-        load_theme_textdomain('selleradise-lite', get_template_directory() . '/languages');
+        load_theme_textdomain('TEXT_DOMAIN', get_template_directory() . '/languages');
 
     }
 
@@ -75,29 +75,29 @@ class Setup
 
         $plugins = array(
             array(
-                'name' => esc_html__('WooCommerce', 'selleradise-lite'),
+                'name' => esc_html__('WooCommerce', 'TEXT_DOMAIN'),
                 'slug' => 'woocommerce',
                 'required' => false,
             ),
             array(
-                'name' => esc_html__('Kirki', 'selleradise-lite'),
+                'name' => esc_html__('Kirki', 'TEXT_DOMAIN'),
                 'slug' => 'kirki',
                 'required' => false,
             ),
             array(
-                'name' => esc_html__('Elementor', 'selleradise-lite'),
+                'name' => esc_html__('Elementor', 'TEXT_DOMAIN'),
                 'slug' => 'elementor',
                 'required' => false,
             ),
             array(
-                'name' => esc_html__('Selleradise Widgets', 'selleradise-lite'),
+                'name' => esc_html__('Selleradise Widgets', 'TEXT_DOMAIN'),
                 'slug' => 'selleradise-widgets',
                 'required' => false,
             ),
         );
 
         $config = array(
-            'id' => 'selleradise-lite',
+            'id' => 'TEXT_DOMAIN',
             'default_path' => get_template_directory() . '/plugins/',
             'menu' => 'tgmpa-install-plugins',
             'has_notices' => true,

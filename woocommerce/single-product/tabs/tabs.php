@@ -25,7 +25,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 	<ul class="selleradise_single_product__tabs" role="tablist">
 		<li id="selleradise_single_product__content_tab" role="tab" aria-controls="selleradise_single_product__content">
 			<a href="#selleradise_single_product__content">
-				<?php esc_html_e("Overview", "selleradise-lite"); ?>
+				<?php esc_html_e("Overview", 'TEXT_DOMAIN'); ?>
 			</a>
 		</li>
 
@@ -39,13 +39,13 @@ if ( ! empty( $product_tabs ) ) : ?>
 
 		<li id="selleradise_single_product__upsells_tab" role="tab" aria-controls="selleradise_single_product__upsells">
 			<a href="#selleradise_single_product__upsells">
-				<?php esc_html_e("You may also like…", "selleradise-lite"); ?>
+				<?php esc_html_e("You may also like…", 'TEXT_DOMAIN'); ?>
 			</a>
 		</li>
 
 		<li id="selleradise_single_product__related_tab" role="tab" aria-controls="selleradise_single_product__related">
 			<a href="#selleradise_single_product__related">
-				<?php esc_html_e("Related Products", "selleradise-lite"); ?>
+				<?php esc_html_e("Related Products", 'TEXT_DOMAIN'); ?>
 			</a>
 		</li>
 	</ul>

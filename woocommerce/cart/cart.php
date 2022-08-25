@@ -70,7 +70,7 @@ do_action( 'woocommerce_before_cart' );
 
 								// Backorder notification.
 								if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'selleradise-lite' ) . '</p>', $product_id ) );
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'TEXT_DOMAIN' ) . '</p>', $product_id ) );
 								}
 							?>
 						</h2>
@@ -119,10 +119,10 @@ do_action( 'woocommerce_before_cart' );
 										sprintf(
 											'<a href="%s" class="mt-auto text-xs font-semibold text-text-900 bg-gray-50 border-gray-200 border-1 px-3 py-1 rounded-full hover:bg-red-500 hover:text-white" aria-label="%s" data-product_id="%s" data-product_sku="%s">%s</a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-											esc_html__( 'Remove this item', 'selleradise-lite' ),
+											esc_html__( 'Remove this item', 'TEXT_DOMAIN' ),
 											esc_attr( $product_id ),
 											esc_attr( $_product->get_sku() ),
-											esc_html__( 'Remove', 'selleradise-lite' )
+											esc_html__( 'Remove', 'TEXT_DOMAIN' )
 										),
 										$cart_item_key
 									);
@@ -147,15 +147,15 @@ do_action( 'woocommerce_before_cart' );
 
 		<div class="actions mt-4 w-full">
 			<div class="update-action-wrap flex justify-end w-full">
-				<button type="submit" class="selleradise_button--primary" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'selleradise-lite' ); ?>"><?php esc_html_e( 'Update cart', 'selleradise-lite' ); ?></button>
+				<button type="submit" class="selleradise_button--primary" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'TEXT_DOMAIN' ); ?>"><?php esc_html_e( 'Update cart', 'TEXT_DOMAIN' ); ?></button>
 			</div>
 
 			<?php if ( wc_coupons_enabled() ) { ?>
 				<div class="coupon flex justify-start items-start flex-wrap flex-col w-full relative py-4">
-					<label for="coupon_code" class="mt-4 font-semibold"><?php esc_html_e( 'Coupon:', 'selleradise-lite' ); ?></label> 
-					<input type="text" name="coupon_code" class="input-text w-full grow border-none mt-2 px-4 mb-4" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'selleradise-lite' ); ?>" /> 
-					<button type="submit" class="selleradise_button--secondary ml-auto" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'selleradise-lite' ); ?>">
-						<?php esc_attr_e( 'Apply coupon', 'selleradise-lite' ); ?>
+					<label for="coupon_code" class="mt-4 font-semibold"><?php esc_html_e( 'Coupon:', 'TEXT_DOMAIN' ); ?></label> 
+					<input type="text" name="coupon_code" class="input-text w-full grow border-none mt-2 px-4 mb-4" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'TEXT_DOMAIN' ); ?>" /> 
+					<button type="submit" class="selleradise_button--secondary ml-auto" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'TEXT_DOMAIN' ); ?>">
+						<?php esc_attr_e( 'Apply coupon', 'TEXT_DOMAIN' ); ?>
 					</button>
 					<?php do_action( 'woocommerce_cart_coupon' ); ?>
 				</div>

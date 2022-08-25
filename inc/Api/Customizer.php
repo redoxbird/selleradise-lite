@@ -25,7 +25,7 @@ class Customizer
 
         add_action('init', array($this, 'setup'));
 
-        Kirki::add_config('selleradise-lite', array(
+        Kirki::add_config('TEXT_DOMAIN', array(
             'capability' => 'edit_theme_options',
             'option_type' => 'theme_mod',
         ));

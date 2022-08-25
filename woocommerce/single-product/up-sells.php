@@ -28,7 +28,7 @@ if ( $upsells ) : ?>
 		
 		<?php
 
-		$heading = apply_filters( 'woocommerce_product_upsells_products_heading', __("You may also like…", "selleradise-lite") );
+		$heading = apply_filters( 'woocommerce_product_upsells_products_heading', __("You may also like…", 'TEXT_DOMAIN') );
 
 		if ( $heading ) : ?>
 			<h2><?php echo esc_html( $heading ); ?></h2>

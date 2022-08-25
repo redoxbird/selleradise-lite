@@ -26,5 +26,5 @@ $percentage = (int) round(($product->get_regular_price() - (float) $product->get
 ?>
 
 <span class="<?php echo isset($classes) ? esc_attr($classes) : null ?>">
-    <?php echo sprintf(esc_html__('%s%% OFF', 'selleradise-lite'), $percentage); ?>
+    <?php echo sprintf(esc_html__('%s%% OFF', 'TEXT_DOMAIN'), $percentage); ?>
 </span>

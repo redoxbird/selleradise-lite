@@ -26,16 +26,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="pswp__top-bar">
 				<div class="pswp__counter"></div>
 				<div class="pswp__controls">
-					<button class="pswp__button pswp__button--zoom" aria-label="<?php esc_attr_e( 'Zoom in/out', 'selleradise-lite' ); ?>">
+					<button class="pswp__button pswp__button--zoom" aria-label="<?php esc_attr_e( 'Zoom in/out', 'TEXT_DOMAIN' ); ?>">
 						<?php echo selleradise_svg('unicons-line/search-plus') ?>
 					</button>
-					<button class="pswp__button pswp__button--fs" aria-label="<?php esc_attr_e( 'Toggle fullscreen', 'selleradise-lite' ); ?>">
+					<button class="pswp__button pswp__button--fs" aria-label="<?php esc_attr_e( 'Toggle fullscreen', 'TEXT_DOMAIN' ); ?>">
 						<?php echo selleradise_svg('unicons-line/expand-arrows') ?>
 					</button>
-					<button class="pswp__button pswp__button--share" aria-label="<?php esc_attr_e( 'Share', 'selleradise-lite' ); ?>">
+					<button class="pswp__button pswp__button--share" aria-label="<?php esc_attr_e( 'Share', 'TEXT_DOMAIN' ); ?>">
 						<?php echo selleradise_svg('unicons-line/share') ?>
 					</button>
-					<button class="pswp__button pswp__button--close" aria-label="<?php esc_attr_e( 'Close (Esc)', 'selleradise-lite' ); ?>">
+					<button class="pswp__button pswp__button--close" aria-label="<?php esc_attr_e( 'Close (Esc)', 'TEXT_DOMAIN' ); ?>">
 						<?php echo selleradise_svg('tabler-icons/x') ?>
 					</button>
 				</div>
@@ -50,10 +50,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
 				<div class="pswp__share-tooltip"></div>
 			</div>
-			<button class="pswp__button pswp__button--arrow--left" aria-label="<?php esc_attr_e( 'Previous (arrow left)', 'selleradise-lite' ); ?>">
+			<button class="pswp__button pswp__button--arrow--left" aria-label="<?php esc_attr_e( 'Previous (arrow left)', 'TEXT_DOMAIN' ); ?>">
 				<?php echo selleradise_svg('unicons-line/angle-left') ?>
 			</button>
-			<button class="pswp__button pswp__button--arrow--right" aria-label="<?php esc_attr_e( 'Next (arrow right)', 'selleradise-lite' ); ?>">
+			<button class="pswp__button pswp__button--arrow--right" aria-label="<?php esc_attr_e( 'Next (arrow right)', 'TEXT_DOMAIN' ); ?>">
 				<?php echo selleradise_svg('unicons-line/angle-right') ?>
 			</button>
 			<div class="pswp__caption">

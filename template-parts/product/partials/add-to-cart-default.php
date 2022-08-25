@@ -35,13 +35,13 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
         class="lg:text-xs text-sm" 
         href="<?php echo esc_url($product->add_to_cart_url()) ?>" x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--secondary-outline']" x-on:click.prevent="addToCart($event)">
         <span x-show="!loading && !isInCart()">
-            <?php esc_html_e("Add To Cart", "selleradise-lite") ?>
+            <?php esc_html_e("Add To Cart", 'TEXT_DOMAIN') ?>
         </span>
         <span x-show="isInCart()">
-            <?php esc_html_e("View Cart", "selleradise-lite") ?>
+            <?php esc_html_e("View Cart", 'TEXT_DOMAIN') ?>
         </span>
         <span x-show="loading">
-            <?php esc_html_e("Adding To Cart", "selleradise-lite") ?>
+            <?php esc_html_e("Adding To Cart", 'TEXT_DOMAIN') ?>
         </span>
     </a>
 

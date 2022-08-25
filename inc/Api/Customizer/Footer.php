@@ -32,23 +32,23 @@ class Footer
         }
 
         Kirki::add_section('selleradise_footer', array(
-            'title' => esc_html__('Footer', 'selleradise-lite'),
-            'description' => esc_html__('Settings for footer section.', 'selleradise-lite'),
+            'title' => esc_html__('Footer', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Settings for footer section.', 'TEXT_DOMAIN'),
             'priority' => 30,
         ));
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'text',
             'settings' => 'copyright_notice',
-            'label' => esc_html__('Copyright notice', 'selleradise-lite'),
+            'label' => esc_html__('Copyright notice', 'TEXT_DOMAIN'),
             'section' => 'selleradise_footer',
-            'default' => sprintf(esc_html__( 'Copyright © %1$s | All rights reserved by %2$s', 'selleradise-lite' ), date("Y"), get_bloginfo("name")),
+            'default' => sprintf(esc_html__( 'Copyright © %1$s | All rights reserved by %2$s', 'TEXT_DOMAIN' ), date("Y"), get_bloginfo("name")),
         ]);
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'checkbox',
             'settings' => 'disable_back_to_top',
-            'label' => esc_html__('Disable back to top button?', 'selleradise-lite'),
+            'label' => esc_html__('Disable back to top button?', 'TEXT_DOMAIN'),
             'section' => 'selleradise_footer',
             'default' => false,
         ]);

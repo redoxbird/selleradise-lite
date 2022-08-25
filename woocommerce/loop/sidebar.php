@@ -63,11 +63,11 @@ $location = get_theme_mod('filters_location', 'sidebar');
         <form method="get" x-ref="form" x-on:change="updateFormData();" action="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink('shop') : "") ?>">
             <div class="selleradise_shop__filters-actions" x-show="isChanged" x-transition x-cloak>
                 <button type="submit" class="selleradise_shop__filters-action-apply">
-                    <?php esc_html_e('Apply Filters', 'selleradise-lite') ?>
+                    <?php esc_html_e('Apply Filters', 'TEXT_DOMAIN') ?>
                 </button>
                 <a href="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink('shop') : "") ?>" class="selleradise_shop__filters-action-clear">
                     <?php echo selleradise_svg('tabler-icons/x'); ?>
-                    <?php esc_html_e('Clear', 'selleradise-lite') ?>
+                    <?php esc_html_e('Clear', 'TEXT_DOMAIN') ?>
                 </a>
             </div>
 
@@ -75,7 +75,7 @@ $location = get_theme_mod('filters_location', 'sidebar');
             <div class="selleradise_shop__filters-price">
                 <div class="selleradise_shop__filters-price-head">
                     <h3 class="selleradise_shop__filters-title">
-                        <?php esc_html_e('Price', 'selleradise-lite') ?>
+                        <?php esc_html_e('Price', 'TEXT_DOMAIN') ?>
                     </h3>
                     <div class="selleradise_shop__filters-price-values">
                         <span x-text="currencySymbol + fields.min_price"></span>
@@ -89,7 +89,7 @@ $location = get_theme_mod('filters_location', 'sidebar');
 
             <div class="categories" v-if="hasCategories" name="selleradise_shop__filters-categories-input">
                 <h3 class="selleradise_shop__filters-title" key="selleradise_shop__filters-categories-title">
-                    <?php esc_html_e('Categories', 'selleradise-lite') ?>
+                    <?php esc_html_e('Categories', 'TEXT_DOMAIN') ?>
                 </h3>
 
                 <?php
@@ -125,11 +125,11 @@ $location = get_theme_mod('filters_location', 'sidebar');
 
             <div class="selleradise_shop__filters-actions" x-show="isChanged" x-transition x-cloak>
                 <button type="submit" class="selleradise_shop__filters-action-apply">
-                    <?php esc_html_e('Apply Filters', 'selleradise-lite') ?>
+                    <?php esc_html_e('Apply Filters', 'TEXT_DOMAIN') ?>
                 </button>
                 <a href="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink('shop') : "") ?>" class="selleradise_shop__filters-action-clear">
                     <?php echo selleradise_svg('tabler-icons/x'); ?>
-                    <?php esc_html_e('Clear', 'selleradise-lite') ?>
+                    <?php esc_html_e('Clear', 'TEXT_DOMAIN') ?>
                 </a>
             </div>
 

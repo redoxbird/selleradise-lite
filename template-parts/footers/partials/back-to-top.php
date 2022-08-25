@@ -27,7 +27,7 @@ if (get_theme_mod('disable_back_to_top', false) === true) {
     x-effect="dashOffset = dashArray - dashArray * $store.scroll.progress"
     x-bind:style="{'--dasharray': dashArray, '--dashoffset': dashOffset}" 
     href="#page"
-    aria-label="<?php esc_attr_e('Go back to top', 'selleradise-lite'); ?>" 
+    aria-label="<?php esc_attr_e('Go back to top', 'TEXT_DOMAIN'); ?>" 
     class="selleradise_back-to-top selleradise_trigger_smoothscroll" 
     data-smoothscroll-y="0" 
     role="button">

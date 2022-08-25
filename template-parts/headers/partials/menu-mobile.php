@@ -85,7 +85,7 @@ $categories = selleradise_get_product_categories_tree();
         }" x-on:click="$store.mobileMenu.activeSidebar = 'menu'">
 
         <span id="mobileMenuBarsTooltip" role="tooltip" class="selleradise_tooltip">
-          <?php echo esc_html_e('Menu', 'selleradise-lite') ?>
+          <?php echo esc_html_e('Menu', 'TEXT_DOMAIN') ?>
         </span>
 
         <span class="selleradise__mobile-menu__toggle-icon">
@@ -98,7 +98,7 @@ $categories = selleradise_get_product_categories_tree();
           active: $store.mobileMenu.activeSidebar === 'account',
         }" x-on:click="$store.mobileMenu.activeSidebar = 'account'">
           <span id="mobileMenuAccountTooltip" role="tooltip" class="selleradise_tooltip">
-            <?php echo esc_html_e('Account', 'selleradise-lite') ?>
+            <?php echo esc_html_e('Account', 'TEXT_DOMAIN') ?>
           </span>
 
           <span class="selleradise__mobile-menu__toggle-icon">
@@ -110,7 +110,7 @@ $categories = selleradise_get_product_categories_tree();
             active: $store.mobileMenu.activeSidebar === 'categories',
           }" x-on:click=" $store.mobileMenu.activeSidebar = 'categories'">
           <span id="mobileMenuCategoriesTooltip" role="tooltip" class="selleradise_tooltip">
-            <?php echo esc_html_e('Categories', 'selleradise-lite') ?>
+            <?php echo esc_html_e('Categories', 'TEXT_DOMAIN') ?>
           </span>
           <span class="selleradise__mobile-menu__toggle-icon">
             <?php echo selleradise_svg('tabler-icons/category-2'); ?>

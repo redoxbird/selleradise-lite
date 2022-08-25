@@ -22,9 +22,9 @@ class Sidebar
     public function widgets_init()
     {
         register_sidebar(array(
-            'name' => esc_html__('Sidebar', 'selleradise-lite'),
+            'name' => esc_html__('Sidebar', 'TEXT_DOMAIN'),
             'id' => 'selleradise-sidebar',
-            'description' => esc_html__('Default sidebar to add all your widgets.', 'selleradise-lite'),
+            'description' => esc_html__('Default sidebar to add all your widgets.', 'TEXT_DOMAIN'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget' => '</section>',
             'before_title' => '<h2 class="widget-title">',

@@ -39,11 +39,11 @@ class Enqueue
         wp_enqueue_script('selleradise-main', selleradise_assets('js/main.js'), array(), $this->get_version(), true);
         wp_localize_script('selleradise-main', 'selleradiseData', $this->get_data_for_javascript());
 
-        wp_enqueue_style('selleradise-lite', selleradise_assets('css/style.css'), array(), $this->get_version(), 'all');
+        wp_enqueue_style('TEXT_DOMAIN', selleradise_assets('css/style.css'), array(), $this->get_version(), 'all');
 
-        if (class_exists('Selleradise_Widgets\\Init')) {
-            wp_enqueue_style('selleradise-widgets', selleradise_assets('css/elementor-widgets.css'), array(), $this->get_version(), 'all');
-        }
+        // if (class_exists('Selleradise_Widgets\\Init')) {
+        //     wp_enqueue_style('selleradise-widgets', selleradise_assets('css/elementor-widgets.css'), array(), $this->get_version(), 'all');
+        // }
 
         // Extra
         if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -60,39 +60,30 @@ class Enqueue
             'ajaxURL' => esc_url(admin_url('admin-ajax.php')),
             'wcAjaxURl' => WC_AJAX::get_endpoint(),
             "isWooCommerce" => class_exists('WooCommerce') ? true : false,
-            "isNormalMode" => function_exists('selleradise_is_normal_mode') ? selleradise_is_normal_mode() : true,
-            "settings" => [
-                "dark_mode_setting" => esc_html(get_theme_mod('theme_type', 'light') === 'both'),
-            ],
+            "settings" => [],
             "theme" => [
                 "type" => esc_attr(get_theme_mod('theme_type', 'light')),
                 "current" => !empty($_COOKIE['darkMode']) && $_COOKIE['darkMode'] == 'true' ? 'dark' : 'light',
                 "darkMode" => !empty($_COOKIE['darkMode']) && $_COOKIE['darkMode'] == 'true' ? true : false,
             ],
             'langs' => [
-                'Checkout' => __('Checkout', 'selleradise-lite'),
-                'Edit Cart' => __('Edit Cart', 'selleradise-lite'),
-                'Go to slide' => __('Go to slide', 'selleradise-lite'),
-                'header-search-dropdown' => __('All Categories', 'selleradise-lite'),
-                'mini-cart-item-text' => __("%d item is in your cart", "selleradise-lite"),
-                'mini-cart-items-text' => __("%d items are in your cart", "selleradise-lite"),
-                'mobile-menu-toggle-dark-mode' => __('Dark Mode', 'selleradise-lite'),
-                'Other' => __('Other', 'selleradise-lite'),
-                'Products' => __('Products', 'selleradise-lite'),
-                'Search' => __('Search', 'selleradise-lite'),
-                'Settings' => __('Settings', 'selleradise-lite'),
-                'shop-filter-apply' => __('Apply Filters', 'selleradise-lite'),
-                'shop-filter-categories' => __('Categories', 'selleradise-lite'),
-                'shop-filter-clear' => __('Clear', 'selleradise-lite'),
-                'shop-filter-price' => __('Price', 'selleradise-lite'),
-                'Suggestions' => __('Suggestions', 'selleradise-lite'),
-                'Tags' => __('Tags', 'selleradise-lite'),
-                'Theme' => __('Theme', 'selleradise-lite'),
-                'Welcome to %s' => __('Welcome to %s', 'selleradise-lite'),
-                'Your cart is empty.' => __('Your cart is empty.', 'selleradise-lite'),
-                "%s has been added to your cart" => __("%s has been added to your cart", "selleradise-lite"),
-                "An error occurred while adding %s to your cart" => __("An error occurred while adding %s to your cart", "selleradise-lite"),
-                "An error occurred while updating cart" => __("An error occurred while updating cart", "selleradise-lite"),
+                'Checkout' => __('Checkout', 'TEXT_DOMAIN'),
+                'Edit Cart' => __('Edit Cart', 'TEXT_DOMAIN'),
+                'Go to slide' => __('Go to slide', 'TEXT_DOMAIN'),
+                'mini-cart-item-text' => __("%d item is in your cart", 'TEXT_DOMAIN'),
+                'mini-cart-items-text' => __("%d items are in your cart", 'TEXT_DOMAIN'),
+                'Other' => __('Other', 'TEXT_DOMAIN'),
+                'Products' => __('Products', 'TEXT_DOMAIN'),
+                'Search' => __('Search', 'TEXT_DOMAIN'),
+                'Settings' => __('Settings', 'TEXT_DOMAIN'),
+                'Suggestions' => __('Suggestions', 'TEXT_DOMAIN'),
+                'Tags' => __('Tags', 'TEXT_DOMAIN'),
+                'Theme' => __('Theme', 'TEXT_DOMAIN'),
+                'Welcome to %s' => __('Welcome to %s', 'TEXT_DOMAIN'),
+                'Your cart is empty.' => __('Your cart is empty.', 'TEXT_DOMAIN'),
+                "%s has been added to your cart" => __("%s has been added to your cart", 'TEXT_DOMAIN'),
+                "An error occurred while adding %s to your cart" => __("An error occurred while adding %s to your cart", 'TEXT_DOMAIN'),
+                "An error occurred while updating cart" => __("An error occurred while updating cart", 'TEXT_DOMAIN'),
             ],
         ];
 

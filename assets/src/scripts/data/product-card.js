@@ -16,7 +16,7 @@ export default () => ({
     );
 
     window.addEventListener("selleradise-widget-initialized", (e) => {
-      if (!e.detail?.isEdit || e.detail?.name !== "products") {
+      if (!e.detail?.isEdit || !e.detail?.element?.contains(this.$el)) {
         return;
       }
 

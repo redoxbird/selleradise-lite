@@ -16,6 +16,6 @@ if(!function_exists('mc4wp_show_form')) {
 ?>
 
 <div class="selleradise_footer__form">
-  <h2><?php esc_html_e( 'Join to receive regular updates', 'selleradise-lite' ); ?></h2>
+  <h2><?php esc_html_e( 'Join to receive regular updates', 'TEXT_DOMAIN' ); ?></h2>
   <?php mc4wp_show_form(); ?>
 </div>

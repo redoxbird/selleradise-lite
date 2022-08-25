@@ -21,7 +21,7 @@ if ($args) {
   x-ref="searchForm"
   class="selleradiseHeader__searchForm">
   <label class="flex">
-    <span class="sr-only"><?php esc_html_e("Search for products here...", "selleradise-lite"); ?></span>
+    <span class="sr-only"><?php esc_html_e("Search for products here...", 'TEXT_DOMAIN'); ?></span>
     <input
       type="text"
       x-bind:value="keyword"
@@ -35,7 +35,7 @@ if ($args) {
       autocomplete="off"
       maxlength="50"
       minlength="2"
-      placeholder="<?php esc_attr_e("Search for products here...", "selleradise-lite"); ?>" 
+      placeholder="<?php esc_attr_e("Search for products here...", 'TEXT_DOMAIN'); ?>" 
     />
     <button 
       x-ref="searchClearButton" 
@@ -44,7 +44,7 @@ if ($args) {
       x-tooltip="headerSearchBarClearButtonTooltip" 
       x-on:click.prevent="clear()">
       <span id="headerSearchBarClearButtonTooltip" role="tooltip" class="selleradise_tooltip">
-        <?php esc_html_e('Clear', 'selleradise-lite'); ?>
+        <?php esc_html_e('Clear', 'TEXT_DOMAIN'); ?>
       </span>
       <?php echo selleradise_svg('tabler-icons/x'); ?>
     </button>
@@ -52,7 +52,7 @@ if ($args) {
 
   <button type="submit" x-ref="searchSubmitButton" x-on:blur="handleSubmitBlur()" v-on:keydown.tab.exact="send('STOP')" x-on:click="handleEnterPress($event)" x-tooltip="headerSearchBarSubmitButtonTooltip">
     <span id="headerSearchBarSubmitButtonTooltip" role="tooltip" class="selleradise_tooltip">
-      <?php esc_attr_e("Submit", "selleradise-lite"); ?>
+      <?php esc_attr_e("Submit", 'TEXT_DOMAIN'); ?>
     </span>
     <span class="inlineSVGIcon" x-show="state === 'searching'">
       <?php echo selleradise_svg('loader/simple'); ?>

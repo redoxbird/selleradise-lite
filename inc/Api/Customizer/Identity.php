@@ -32,11 +32,11 @@ class Identity
         }
        
 
-        Kirki::add_field('selleradise-lite', [
+        Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'image',
             'settings' => 'custom_logo_dark_mode',
-            'label' => __('Logo (Dark Mode)', 'selleradise-lite'),
-            'description' => esc_html__('Select a light header logo to be used with dark background.', 'selleradise-lite'),
+            'label' => __('Logo (Dark Mode)', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Select a light header logo to be used with dark background.', 'TEXT_DOMAIN'),
             'section' => 'title_tagline',
             'default' => '',
             'priority' => 9,

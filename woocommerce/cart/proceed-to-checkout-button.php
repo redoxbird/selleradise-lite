@@ -14,5 +14,5 @@ if (!defined('ABSPATH')) {
 ?>
 
 <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="selleradise_button--primary alt wc-forward">
-	<?php esc_html_e( 'Proceed to checkout', 'selleradise-lite' ); ?>
+	<?php esc_html_e( 'Proceed to checkout', 'TEXT_DOMAIN' ); ?>
 </a>
