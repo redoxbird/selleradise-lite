@@ -1,6 +1,6 @@
 <?php
 
-namespace Selleradise_Lite\Core;
+namespace THEME_NAMESPACE\Core;
 
 use Walker_Nav_Menu;
 

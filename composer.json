@@ -1,5 +1,5 @@
 {
-  "name": "khizar/selleradise-lite",
+  "name": "khizar/selleradise",
   "description": "",
   "keywords": [
     "WordPress",
@@ -19,7 +19,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Selleradise_Lite\\": "./inc"
+      "THEME_NAMESPACE\\": "./inc"
     },
     "files": [
       "./inc/Helpers.php",

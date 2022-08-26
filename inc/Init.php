@@ -8,7 +8,7 @@
  * @package Selleradise
  */
 
-namespace Selleradise_Lite;
+namespace THEME_NAMESPACE;
 
 final class Init
 {

@@ -36,7 +36,7 @@ $byline = sprintf(
       <?php echo esc_html(get_the_author()); ?>
     </a>
     <span class="selleradise_postCard__author-date entry-meta">
-      <?php Selleradise_Lite\Core\Tags::posted_on(); ?>
+      <?php THEME_NAMESPACE\Core\Tags::posted_on(); ?>
     </span>
   </div>
 

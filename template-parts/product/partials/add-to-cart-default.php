@@ -32,7 +32,7 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
                 name: '<?php echo esc_html($product->get_title()) ?>',
             }
         })"
-        class="lg:text-xs text-sm" 
+        class="text-xs" 
         href="<?php echo esc_url($product->add_to_cart_url()) ?>" x-bind:class="[isInCart() ? 'selleradise_button--secondary' : 'selleradise_button--secondary-outline']" x-on:click.prevent="addToCart($event)">
         <span x-show="!loading && !isInCart()">
             <?php esc_html_e("Add To Cart", 'TEXT_DOMAIN') ?>
@@ -53,7 +53,7 @@ if (!$product->managing_stock() && !$product->is_in_stock()) {
             '<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
             esc_url($product->add_to_cart_url()),
             esc_attr(isset($args['quantity']) ? $args['quantity'] : 1),
-            esc_attr(isset($args['class']) ? $args['class'] : 'selleradise_button--secondary-outline lg:text-xs text-sm'),
+            esc_attr(isset($args['class']) ? $args['class'] : 'selleradise_button--secondary-outline text-xs'),
             isset($args['attributes']) ? wc_implode_html_attributes($args['attributes']) : '',
             esc_html($product->add_to_cart_text())
         ),

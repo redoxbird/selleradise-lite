@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_cart' );
 							}
 						?>
 
-						<div class="text-sm font-semibold absolute right-2 top-2 bg-accent-500 text-accent-900 py-2 px-4 rounded-full">
+						<div class="text-sm font-semibold absolute right-2 top-2 bg-accent-900 text-accent-text py-2 px-4 rounded-full">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>

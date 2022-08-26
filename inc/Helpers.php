@@ -681,7 +681,7 @@ if (!function_exists('selleradise_get_breadcrumb')) {
             'echo' => true,
         );
 
-        $breadcrumb = new Selleradise_Lite\Plugins\BreadcrumbsTrail;
+        $breadcrumb = new THEME_NAMESPACE\Plugins\BreadcrumbsTrail;
         $breadcrumb->register($args);
 
         return $breadcrumb->trail();

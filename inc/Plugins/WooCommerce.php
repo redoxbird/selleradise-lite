@@ -7,7 +7,7 @@
  * @package selleradise
  */
 
-namespace Selleradise_Lite\Plugins;
+namespace THEME_NAMESPACE\Plugins;
 
 class WooCommerce
 {

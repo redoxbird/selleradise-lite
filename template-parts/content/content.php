@@ -22,7 +22,7 @@
 		?>
 				<div class="entry-meta">
 					<?php
-						Selleradise_Lite\Core\Tags::posted_on();
+						THEME_NAMESPACE\Core\Tags::posted_on();
 					?>
 				</div><!-- .entry-meta -->
 		<?php
@@ -57,6 +57,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php Selleradise_Lite\Core\Tags::entry_footer(); ?>
+		<?php THEME_NAMESPACE\Core\Tags::entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

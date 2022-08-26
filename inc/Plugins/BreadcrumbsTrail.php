@@ -40,7 +40,7 @@
  * @access public
  */
 
-namespace Selleradise_Lite\Plugins;
+namespace THEME_NAMESPACE\Plugins;
 
 class BreadcrumbsTrail
 {

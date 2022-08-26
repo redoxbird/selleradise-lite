@@ -6,7 +6,7 @@ defined('ABSPATH') || exit;
 /**
  * Hook: selleradise_before_shop_products.
  *
- * @hooked Selleradise_Lite\plugins::shop_sidebar() - 10
+ * @hooked THEME_NAMESPACE\plugins::shop_sidebar() - 10
  */
 
 do_action('selleradise_before_shop_products');
@@ -33,7 +33,7 @@ if ($filters_location === 'sidebar-left') {
              * @hooked woocommerce_output_all_notices - 10
              * @hooked woocommerce_result_count - 20
              * @hooked woocommerce_catalog_ordering - 30
-			 * @hooked Selleradise_Lite\Plugins\WooCommerce::shop_sidebar - 40
+			 * @hooked THEME_NAMESPACE\Plugins\WooCommerce::shop_sidebar - 40
 			 */
 
 			do_action( 'woocommerce_before_shop_loop' );
@@ -58,7 +58,7 @@ if ($filters_location === 'sidebar-left') {
             /**
              * Hook: woocommerce_after_shop_loop.
              *
-			 * @hooked Selleradise_Lite\Plugins\WooCommerce::shop_sidebar - 4
+			 * @hooked THEME_NAMESPACE\Plugins\WooCommerce::shop_sidebar - 4
              * @hooked woocommerce_pagination - 10
              */
             do_action( 'woocommerce_after_shop_loop' );
@@ -88,7 +88,7 @@ if ($filters_location === 'sidebar-left') {
 /**
  * Hook: selleradise_before_shop_products.
  *
- * @hooked Selleradise_Lite\plugins::shop_sidebar() - 10
+ * @hooked THEME_NAMESPACE\plugins::shop_sidebar() - 10
  */
 
 do_action('selleradise_after_shop_products');

@@ -5,7 +5,7 @@
  * @link https://jetpack.com/
  */
 
-namespace Selleradise_Lite\Plugins;
+namespace THEME_NAMESPACE\Plugins;
 
 use Jetpack;
 

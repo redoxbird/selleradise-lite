@@ -22,9 +22,9 @@ if (!$gallery_image_ids) {
             $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
             $image_ratio = (int) $image_src[2] / (int) $image_src[1];
         ?>
-            <div class="embla__slide" <?php if (get_option('woocommerce_thumbnail_cropping') == 'uncropped') : ?> style="--product-image-ratio: <?php echo esc_attr($image_ratio); ?>;" <?php endif; ?>>
+            <div class="group embla__slide" <?php if (get_option('woocommerce_thumbnail_cropping') == 'uncropped') : ?> style="--product-image-ratio: <?php echo esc_attr($image_ratio); ?>;" <?php endif; ?>>
                 <img
-                  class="w-full !h-full object-cover"
+                  class="w-full !h-full object-cover group-hover:scale-105 duration-700 ease-out-expo"
                   src="<?php echo esc_url(wc_placeholder_img_src()); ?>"
                   x-lazy:src="<?php echo esc_url($image_id ? $image_src[0] : wc_placeholder_img_src()); ?>"
                   alt="<?php echo esc_attr($image_alt); ?>"

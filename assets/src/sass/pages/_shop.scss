@@ -26,7 +26,6 @@ $sidebar_width: 22.5rem;
 }
 
 .selleradise_shop__products {
-  @extend .selleradise_productCards;
   $prefix: &;
 
   &-list {

@@ -867,7 +867,6 @@ body.single-product .breadcrumb-trail {
 
 .selleradise_single_product__related,
 .selleradise_single_product__upsells {
-  @extend .selleradise_productCards;
   width: 100%;
   height: auto;
   padding: 2.5rem $page-padding;

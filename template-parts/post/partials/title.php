@@ -15,7 +15,7 @@ if ('post' !== get_post_type()) {
 ?>
 
 <h2>
-    <a class="hover:underline hover:text-main-900" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+    <a class="hover:underline hover:text-main-900 break-all" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
         <?php echo esc_html( get_the_title() ); ?>
     </a>
 </h2>

@@ -5,7 +5,7 @@
  * @package Selleradise
  */
 
-namespace Selleradise_Lite\Api;
+namespace THEME_NAMESPACE\Api;
 use Kirki;
 
 /**

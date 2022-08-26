@@ -26,29 +26,21 @@ if (isset($args)) {
         </span>
 
         <?php if ($item->children && $level === 1) : ?>
-          <template x-if="!activeChild">
-            <span class="w-5 h-auto ml-auto flex justify-center items-center">
-              <?php echo selleradise_svg("tabler-icons/chevron-down"); ?>
-            </span>
-          </template>
-          <template x-if="activeChild">
-            <span class="w-5 h-auto ml-auto flex justify-center items-center">
-              <?php echo selleradise_svg("tabler-icons/chevron-up"); ?>
-            </span>
-          </template>
+          <span x-cloak x-show="!activeChild" class="w-5 h-auto ml-auto flex justify-center items-center">
+            <?php echo selleradise_svg("tabler-icons/chevron-down"); ?>
+          </span>
+          <span x-cloak x-show="activeChild" class="w-5 h-auto ml-auto flex justify-center items-center">
+            <?php echo selleradise_svg("tabler-icons/chevron-up"); ?>
+          </span>
         <?php endif; ?>
 
         <?php if ($item->children && $level > 1) : ?>
-          <template x-if="!activeChild">
-            <span class="w-5 h-auto ml-auto flex justify-center items-center">
-              <?php echo selleradise_svg("tabler-icons/chevron-right"); ?>
-            </span>
-          </template>
-          <template x-if="activeChild">
-            <span class="w-5 h-auto ml-auto flex justify-center items-center">
-              <?php echo selleradise_svg("tabler-icons/chevron-left"); ?>
-            </span>
-          </template>
+          <span x-cloak x-show="!activeChild"  class="shrink-0 w-5 h-auto ml-auto flex justify-center items-center">
+            <?php echo selleradise_svg("tabler-icons/chevron-right"); ?>
+          </span>
+          <span x-cloak x-show="activeChild" class="w-5 h-auto ml-auto flex justify-center items-center">
+            <?php echo selleradise_svg("tabler-icons/chevron-left"); ?>
+          </span>
         <?php endif; ?>
       </a>
 

@@ -5,10 +5,10 @@
  * @package Selleradise
  */
 
-namespace Selleradise_Lite\Api\Customizer;
+namespace THEME_NAMESPACE\Api\Customizer;
 
 use Kirki;
-use Selleradise_Lite\Api\Customizer;
+use THEME_NAMESPACE\Api\Customizer;
 
 /**
  * Identity class

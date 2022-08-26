@@ -23,7 +23,7 @@ $categories = array_slice($categories, 0, 4, true);
 
 ?>
 
-<ul class="flex justify-start items-center gap-2 w-full mt-4">
+<ul class="flex justify-start flex-wrap items-center gap-2 w-full mt-4">
     <?php 
         foreach ($categories as $index => $category): 
             

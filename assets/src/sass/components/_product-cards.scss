@@ -1,54 +1,7 @@
-@import "product-cards/default";
-
-.selleradise_productCards {
-  &[data-selleradise-card-type="compact"] {
-    --width: 12.5rem;
-
-    @include device(tablet) {
-      --width: 14rem;
-    }
-  }
-
-  &[data-selleradise-card-type="list"] {
-    --width: 34.5rem;
-
-    @include device(mobile) {
-      --width: 90vw;
-    }
-
-    [data-selleradise-sidebar-type="offscreen"] &,
-    .selleradise_single_product__related &,
-    .selleradise_single_product__upsells & {
-      --width: 30rem;
-
-      @include device(mobile) {
-        --width: 90vw;
-      }
-    }
-  }
-}
-
 .selleradise_productCard {
   overflow: hidden;
   position: relative;
   z-index: 1;
-
-  .productRating--minimal {
-    @extend .flex-center;
-    @include font-size(p);
-    position: absolute;
-    border-radius: 0.5rem;
-    padding: 0.25rem 0.75em 0.25rem 0.5em;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    z-index: 30;
-
-    svg {
-      width: 1em;
-      height: 1em;
-      margin: 0 0.25em 0 0;
-    }
-  }
 
   .yith-wcwl-add-to-wishlist {
     margin-top: 0;
@@ -154,13 +107,7 @@
   }
 
   &__price {
-    @include font-size(p);
     @extend .flex-start;
-    font-weight: font("primary_boldest", "font-weight");
-
-    .woocommerce-Price-currencySymbol {
-      @include font-size(p);
-    }
 
     span {
       line-height: 1.6;

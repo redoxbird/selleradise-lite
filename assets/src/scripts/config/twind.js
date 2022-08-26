@@ -14,8 +14,8 @@ export default {
       colors: {
         ...colors,
         accent: {
-          500: "var(--selleradise-color-accent-light)",
-          900: "var(--selleradise-color-accent-light-text)",
+          text: "var(--selleradise-color-accent-light-text)",
+          900: "var(--selleradise-color-accent-light)",
         },
         background: {
           50: "var(--selleradise-color-background)",
@@ -26,6 +26,7 @@ export default {
           text: "var(--selleradise-color-main-text)",
           100: "rgba(var(--selleradise-color-main-rgb), 0.1)",
           700: "rgba(var(--selleradise-color-main-rgb), 0.7)",
+          800: "rgba(var(--selleradise-color-main-rgb), 0.9)",
           900: "var(--selleradise-color-main)",
         },
         text: {

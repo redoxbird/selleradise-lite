@@ -1,6 +1,6 @@
 <?php
 
-namespace Selleradise_Lite\Setup;
+namespace THEME_NAMESPACE\Setup;
 
 /**
  * Enqueue.
