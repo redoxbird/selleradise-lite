@@ -24,7 +24,7 @@ class Ajax
         'set_cart_item_quantity',
         'get_menu_items',
         'get_categories',
-        'get_shop_filter_attributes'
+        'get_shop_filter_attributes',
     ];
 
     public function register()
@@ -65,11 +65,7 @@ class Ajax
         ];
 
         if ($keyword) {
-            if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
-                $args['starts__with'] = $keyword;
-            } else {
-                $args['s'] = $keyword;
-            }
+            $args['s'] = $keyword;
         }
 
         if ($category) {
@@ -116,7 +112,7 @@ class Ajax
             'order' => 'DESC',
             'hide_empty' => false,
             'number' => 5,
-            'taxonomy' => ['product_cat', 'product_tag']
+            'taxonomy' => ['product_cat', 'product_tag'],
         ];
 
         $product_args = [
@@ -128,13 +124,8 @@ class Ajax
         ];
 
         if ($keyword) {
-            if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
-                $term_args['starts__with'] = $keyword;
-                $product_args['starts__with'] = $keyword;
-            } else {
-                $term_args['sounds__like'] = $keyword;
-                $product_args['s'] = $keyword;
-            }
+            $term_args['name__like'] = $keyword;
+            $product_args['s'] = $keyword;
         }
 
         $product_query = new WC_Product_Query($product_args);
@@ -245,11 +236,7 @@ class Ajax
         ];
 
         if ($keyword) {
-            if (get_theme_mod('quick_search_type', 'accurate') === 'fast') {
-                $args['starts__with'] = $keyword;
-            } else {
-                $args['s'] = $keyword;
-            }
+            $args['s'] = $keyword;
         }
 
         $posts = new WP_Query($args);
@@ -310,7 +297,6 @@ class Ajax
 
             wp_die();
         };
-
 
         wp_send_json_success(wc()->cart->get_cart_total());
 

@@ -151,14 +151,6 @@ class Setup
             return $pieces;
         }
 
-        $sounds__like = (isset($args['sounds__like'])) ? trim(sanitize_text_field($args['sounds__like'])) : '';
-
-        if (!empty($sounds__like)) {
-            $like = $wpdb->esc_like($sounds__like);
-            $pieces['where'] .= " AND (t.slug LIKE %s OR t.name SOUNDS LIKE %s)";
-            $pieces['where'] = $wpdb->prepare($pieces['where'], "%{$like}%", $like); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-        }
-
         return $pieces;
     }
 

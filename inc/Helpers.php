@@ -945,3 +945,61 @@ if (!function_exists('selleradise_nav_classes')) {
         return;
     }
 }
+
+if (!function_exists('selleradise_products_classes')) {
+
+    function selleradise_products_classes($card_type, $fullwidth = false)
+    {
+        $cols = [];
+
+        if ($fullwidth) {
+            $cols = [
+                "default" => [
+                    "sm" => 1,
+                    "md" => 2,
+                    "lg" => 4,
+                ],
+                "minimal" => [
+                    "sm" => 1,
+                    "md" => 2,
+                    "lg" => 4,
+                ],
+                "compact" => [
+                    "sm" => 2,
+                    "md" => 5,
+                    "lg" => 7,
+                ],
+                "list" => [
+                    "sm" => 1,
+                    "md" => 2,
+                    "lg" => 3,
+                ],
+            ];
+        } else {
+            $cols = [
+                "default" => [
+                    "sm" => 1,
+                    "md" => 2,
+                    "lg" => 3,
+                ],
+                "minimal" => [
+                    "sm" => 1,
+                    "md" => 3,
+                    "lg" => 3,
+                ],
+                "compact" => [
+                    "sm" => 2,
+                    "md" => 5,
+                    "lg" => 5,
+                ],
+                "list" => [
+                    "sm" => 1,
+                    "md" => 2,
+                    "lg" => 2,
+                ],
+            ];
+        }
+
+        return "grid-cols-" . $cols[$card_type]['sm'] . " md:grid-cols-" . $cols[$card_type]['md'] . " lg:grid-cols-" . $cols[$card_type]['lg'];
+    }
+}

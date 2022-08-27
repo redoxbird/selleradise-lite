@@ -37,11 +37,20 @@ class Blog
         ));
 
         Kirki::add_field('TEXT_DOMAIN', [
-            'type' => 'checkbox',
-            'settings' => 'post_card_adaptive_colors',
-            'label' => esc_html__('Adaptive Colors', 'TEXT_DOMAIN'),
+            'type' => 'radio',
+            'settings' => 'blog_card_type',
+            'label' => __('Card Type', 'TEXT_DOMAIN'),
+            'description' => esc_html__('Select a type of blog card.', 'TEXT_DOMAIN'),
             'section' => 'blog',
-            'default' => false,
+            'default' => 'default',
+            'choices' => [
+                'default' => esc_html__('Default', 'TEXT_DOMAIN'),
+                'popular' => esc_html__('Popular', 'TEXT_DOMAIN'),
+                'minimal' => esc_html__('Minimal', 'TEXT_DOMAIN'),
+                'text' => esc_html__('Text Only', 'TEXT_DOMAIN'),
+                'list' => esc_html__('List', 'TEXT_DOMAIN'),
+            ],
+            'transport' => 'refresh',
         ]);
 
     }

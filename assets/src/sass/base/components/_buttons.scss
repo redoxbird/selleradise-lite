@@ -50,6 +50,11 @@
   }
 }
 
+.#{$global-prefix}_button--sm {
+  @include font-size(small);
+  padding: 0.4em 1em;
+}
+
 .#{$global-prefix}_button--primary {
   @extend .#{$global-prefix}_button--base;
   background-color: color(main);
@@ -142,6 +147,31 @@
       background-color: color(text);
       color: color(background);
       box-shadow: none;
+    }
+  }
+}
+
+.#{$global-prefix}_button--neutral {
+  @extend .#{$global-prefix}_button--base;
+  background-color: color(text);
+  color: color(background);
+
+  &::after {
+    content: none;
+  }
+
+  &::before {
+    background-color: rgba(color(background-rgb), 0.05);
+  }
+
+  &:not(:disabled):hover {
+    box-shadow: inset 0 0 0 0.1em color(text);
+  }
+
+  &:not(:disabled):active,
+  &:not(:disabled):focus {
+    &::before {
+      clip-path: circle(100% at 50% 50%);
     }
   }
 }

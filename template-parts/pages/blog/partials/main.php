@@ -1,7 +1,7 @@
 <main id="main" class="site-main w-full flex-grow self-stretch lg:w-2/3" role="main">
 
   <?php if ( have_posts() ) : ?>
-    <div class="posts grid md:grid-cols-2 gap-8 mt-8" data-selleradise-post-card-type="default">
+    <div class="posts grid md:grid-cols-2 gap-8 mt-8" data-selleradise-post-card-type="<?php echo esc_attr( get_theme_mod('blog_card_type', 'default') ); ?>">
 
       <?php 
         global $wp_query;
@@ -9,12 +9,13 @@
         while (have_posts()): the_post();
 
           if($wp_query->current_post == 0 && !is_paged() && !is_singular()) {
-            get_template_part('template-parts/post/card','default-sticky');
+            get_template_part('template-parts/post/card', get_theme_mod('blog_card_type', 'default').'-sticky'.get_post_format());
           } else {
-            get_template_part('template-parts/post/card', "default");
+            get_template_part('template-parts/post/card', get_theme_mod('blog_card_type', 'default').get_post_format());
           }
 
         endwhile;
+
       ?>
     </div>
     
