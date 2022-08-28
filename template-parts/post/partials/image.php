@@ -20,9 +20,8 @@ $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: get_t
 
 <a href="<?php echo esc_attr( get_the_permalink() ); ?>" class="<?php echo esc_attr(isset($classes) ? $classes : 'w-full h-80 rounded-2xl overflow-hidden') ?>">
     <img 
+        <?php echo selleradise_lazy_src($image ? $image[0] : selleradise_get_image_placeholder()); ?>
         class="w-full h-full object-cover"
-        src="<?php echo esc_url( selleradise_get_image_placeholder() ); ?>"
-        x-intersect.once="$setSrc('<?php echo esc_attr( $image ? $image[0] : selleradise_get_image_placeholder() ); ?>')"
         width="<?php echo esc_attr($image[1] ?? 0); ?>"
         height="<?php echo esc_attr($image[2] ?? 0); ?>"
         alt="<?php echo esc_attr( $image_alt ); ?>"

@@ -43,40 +43,6 @@
       }
     }
 
-    &-filtersTrigger {
-      @include font-size(small);
-      @extend .flex-start;
-      font-weight: font("primary_boldest", "font-weight");
-      padding: 0.75em 1em 0.75em 0;
-      background-color: transparent;
-      color: color(text);
-      border-radius: 2.5rem;
-      outline: none;
-      margin-left: auto;
-      display: none;
-      border: 0.1em solid rgba(color(text-rgb), 0.1);
-      border-radius: var(--border-radius-x2);
-      transition: all 400ms easing(out-expo);
-
-      &.showing {
-        display: flex;
-      }
-
-      svg {
-        width: 1em;
-        height: 1em;
-        margin: 0 0.75em 0 1em;
-      }
-
-      &:hover {
-        background-color: rgba(color(text-rgb), 0.05);
-      }
-
-      [data-focus-source="key"] &:focus {
-        box-shadow: 0 0 0 0.1rem color(text);
-      }
-    }
-
     @include device(mobileAndTablet) {
       display: none;
     }
@@ -129,20 +95,25 @@
   }
 
   &-filters-trigger {
-    @include font-size(small);
     @extend .flex-center;
-    @extend .selleradise_chip--base;
+    @include font-size(p);
     display: inline-flex;
     border: none;
     padding: 0.7em 1.7em 0.7em 1em;
     background-color: transparent;
-    border: 0.05em solid rgba(color(text-rgb), 0.1);
+    box-shadow: 0 0 0 0.1em rgba(var(--selleradise-color-text-rgb), 0.1);
     display: none;
+    height: 3rem;
+    border-radius: 0.75rem;
 
     svg {
-      width: 1.2em;
-      height: 1.2em;
+      width: 1em;
+      height: 1em;
       margin-right: 0.5em;
+    }
+
+    [data-selleradise-sidebar-type="offscreen"] & {
+      display: inline-flex;
     }
 
     @include device(mobileAndTablet) {

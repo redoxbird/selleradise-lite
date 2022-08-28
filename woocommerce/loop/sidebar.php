@@ -9,6 +9,7 @@ global $wp_query;
 
 $shop_page_display = get_option('woocommerce_shop_page_display', false);
 $category_archive_display = get_option('woocommerce_category_archive_display', false);
+$location = get_theme_mod('filters_location', 'sidebar');
 $search_params = array();
 
 parse_str($_SERVER['QUERY_STRING'], $search_params);
@@ -35,7 +36,6 @@ $categories = selleradise_get_product_categories_tree();
 
 $min_price = isset($search_params['min_price']) && $search_params['min_price'] ? $search_params['min_price'] : 0;
 $max_price = isset($search_params['max_price']) && $search_params['max_price'] ? $search_params['max_price'] : 0;
-$location = get_theme_mod('filters_location', 'sidebar');
 ?>
 
 <div x-data="shopFilters({
@@ -46,7 +46,11 @@ $location = get_theme_mod('filters_location', 'sidebar');
         type: '<?php echo esc_attr($location); ?>'
     })">
 
-    <div x-show="isSmall && show()" class="overlay" x-on:click="close()" x-transition.opacity></div>
+    <?php if($location === "offscreen"): ?>
+        <div x-show="show()" class="overlay" x-on:click="close()" x-transition.opacity></div>
+    <?php else: ?>
+        <div x-show="isSmall && show()" class="overlay" x-on:click="close()" x-transition.opacity></div>
+    <?php endif; ?>
 
     <div 
         x-on:open-shop-filters.window="open();" 

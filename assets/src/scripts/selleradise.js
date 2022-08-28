@@ -1,18 +1,8 @@
-import { device } from "./helpers";
 import { lazyLoad } from "./main/lazyload";
-import Bricks from "bricks.js";
 import { el, setChildren } from "redom";
 import scrollama from "scrollama";
 
 export function selleradise() {
-  /**
-   * Variables.
-   */
-
-  const masonryInstance = {
-    shop: null,
-  };
-
   function focusSource() {
     const keys = ["Tab", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 
@@ -28,12 +18,6 @@ export function selleradise() {
       document.documentElement.setAttribute("data-focus-source", "mouse");
     });
   }
-
-  /**
-   * Displays scroll progress on back to button.
-   *
-   * Button is located in @module views/footers/footer-default.php
-   */
 
   /**
    * Enables smooth scroll on click on any element containing the class.
@@ -130,28 +114,6 @@ export function selleradise() {
 
     shopHead.insertAdjacentElement("beforeend", ul);
   }
-
-  /**
-   * Initialize woocommerce events.
-   */
-
-  // function wooCommerceEvents() {
-  //   if (!jQuery) {
-  //     return;
-  //   }
-
-  //   const $ = jQuery;
-
-  //   function update(e) {
-  //     selleradiseNumberInput();
-
-  //     const bodyElement = document.querySelector("body");
-  //   }
-
-  //   $("body").on("updated_wc_div", update);
-
-  //   $(document).on("added_to_cart", update);
-  // }
 
   /**
    * Add functionality to tabs in product page.
@@ -273,81 +235,12 @@ export function selleradise() {
     window.addEventListener("resize", observer.resize);
   }
 
-  function initiateMasonryLayout() {
-    if (device("mobile")) {
-      return;
-    }
-
-    const shop = document.querySelector(
-      '.selleradise_shop[data-selleradise-image-cropping="uncropped"]'
-    );
-
-    if (!shop) {
-      return;
-    }
-
-    if (
-      ["robust", "robust-alt", "list"].includes(
-        shop.dataset.selleradiseCardType
-      )
-    ) {
-      return;
-    }
-
-    const container = shop.querySelector(".selleradise_shop__products-list");
-
-    if (!container) {
-      return;
-    }
-
-    const sizes = {
-      default: [
-        { columns: 1, gutter: 10 },
-        { mq: "768px", columns: 2, gutter: 25 },
-        { mq: "1024px", columns: 3, gutter: 50 },
-      ],
-      compact: [
-        { columns: 2, gutter: 10 },
-        { mq: "768px", columns: 3, gutter: 25 },
-        { mq: "1024px", columns: 5, gutter: 40 },
-      ],
-      offscreen: [
-        { columns: 1, gutter: 10 },
-        { mq: "768px", columns: 2, gutter: 25 },
-        { mq: "1024px", columns: 4, gutter: 50 },
-      ],
-    };
-
-    let sizeToUse = "default";
-
-    if (shop.dataset.selleradiseSidebarType === "offscreen") {
-      sizeToUse = "offscreen";
-    }
-
-    if (shop.dataset.selleradiseCardType === "compact") {
-      sizeToUse = "compact";
-    }
-
-    masonryInstance.shop = Bricks({
-      container: container,
-      packed: "data-packed",
-      position: false,
-      sizes: sizes[sizeToUse],
-    });
-
-    document.addEventListener("DOMContentLoaded", (e) => {
-      masonryInstance.shop.resize(true).pack();
-    });
-  }
-
   return {
-    masonryInstance,
     focusSource,
     lazyLoad,
     smoothScroll,
     categoriesInProductPageLoop,
     productPageTabs,
     scrollTrigger,
-    initiateMasonryLayout,
   };
 }

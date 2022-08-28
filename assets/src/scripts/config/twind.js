@@ -67,14 +67,16 @@ export default {
         "1/10": "10%",
         "3/10": "30%",
         "9/20": "45%",
+        "padding-adjusted": "calc(100% - (var(--page-padding) * 2))",
       },
       height: {
         ratio: "calc(var(--width) * var(--product-image-ratio))",
         "ratio-padded":
           "calc((var(--width) - 1rem) * var(--product-image-ratio))",
+        "screen-adjusted": "calc(100vh - var(--header-height))",
       },
       minHeight: {
-        "screen-adjusted": "var(--hero-height)",
+        "screen-adjusted": "calc(100vh - var(--header-height))",
       },
       boxShadow: {
         "3xl": "0 3.6em 3.6em -2.7em var(--selleradise-color-shadow)",

@@ -67,12 +67,13 @@ foreach ( $catalog_orderby_options as $options_id => $options_name )  {
 		</ul>
 		
 
-	<input type="hidden" name="paged" value="1" />
+		<input type="hidden" name="paged" value="1" />
 		<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
 	</form>
 
-	<button class="selleradise_shop--default__sort-filtersTrigger">
-		<?php echo selleradise_svg('tabler-icons/adjustments'); esc_html_e( 'Filter', 'TEXT_DOMAIN' ); ?>
+	<button x-data x-on:click="$dispatch('open-shop-filters');" class="selleradise_shop__orderby--dropdown-filters-trigger">
+		<?php echo selleradise_svg('tabler-icons/adjustments');
+		esc_html_e('Filter', 'TEXT_DOMAIN'); ?>
 	</button>
 
 </div>

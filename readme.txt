@@ -85,10 +85,6 @@ GNU General Public License for more details.
 [W3C Software Notice and License](https://directory.fsf.org/wiki/License:W3C)
 [Source](https://github.com/w3c/IntersectionObserver/tree/main/polyfill)
 
-**Bricks.js**, Copyright (c) 2017 Michael Cavalea
-[MIT License](https://opensource.org/licenses/MIT)
-[Source](https://github.com/callmecavs/bricks.js)
-
 **date-fns**, Copyright (c) 2021 Sasha Koss and Lesha Koss https://kossnocorp.mit-license.org
 [MIT License](https://github.com/date-fns/date-fns/blob/master/LICENSE.md)
 [Source](https://github.com/date-fns/date-fns)

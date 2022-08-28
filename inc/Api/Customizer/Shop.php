@@ -47,6 +47,8 @@ class Shop
             'transport' => 'refresh',
         ]);
 
+        // <REMOVE_IN_LITE>
+
         Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'radio',
             'settings' => 'shop_page_card_type',
@@ -64,6 +66,8 @@ class Shop
             ],
             'transport' => 'refresh',
         ]);
+        
+        // </REMOVE_IN_LITE>
 
         Kirki::add_field('TEXT_DOMAIN', [
             'type' => 'radio',

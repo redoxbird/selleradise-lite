@@ -12,7 +12,6 @@ import scroll from "./store/scroll";
 import tooltip from "./directive/tooltip";
 import embla from "./directive/embla";
 import lazy from "./directive/lazy";
-import width from "./directive/width";
 
 import setSrc from "./magic/setSrc";
 
@@ -51,7 +50,6 @@ window.Alpine.store("scroll", scroll);
 window.Alpine.directive("tooltip", tooltip);
 window.Alpine.directive("embla", embla);
 window.Alpine.directive("lazy", lazy);
-window.Alpine.directive("width", width);
 
 // Magic properties
 window.Alpine.magic("setSrc", setSrc);

@@ -13,13 +13,13 @@ if (!defined('ABSPATH')) {
     "type" => class_exists('DGWT_WC_Ajax_Search') ? "fibosearch" : "native"
   ]);
   ?>
+  
   <div class="flex justify-end items-center lg:mx-4 ml-auto">
     <?php get_template_part('template-parts/headers/partials/trigger', "search"); ?>
     <?php get_template_part('template-parts/headers/partials/trigger', "account"); ?>
     <?php get_template_part('template-parts/headers/partials/trigger', 'cart'); ?>
     <?php get_template_part('template-parts/headers/partials/trigger', 'menu'); ?>
   </div>
-
 </header>
 
 <?php get_template_part('template-parts/headers/partials/mini-cart'); ?>

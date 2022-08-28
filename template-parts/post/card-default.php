@@ -7,7 +7,7 @@ if ($args) {
     extract($args);
 }
 
-$class = 'selleradise_postCard--default h-auto bg-background-50 text-text-900 self-stretch flex justify-start item-start flex-col flex-wrap rounded-2xl border-1 border-gray-200 p-3 overflow-hidden';
+$class = 'selleradise_postCard--default h-auto bg-background-50 text-text-900 self-stretch flex justify-start item-start flex-col flex-wrap rounded-2xl border-1 border-gray-200 p-2 overflow-hidden';
 
 if(isset($classes) && $classes) {
     $class .= $classes;

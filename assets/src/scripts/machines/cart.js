@@ -1,6 +1,6 @@
-import { Machine, interpret } from "xstate";
+import { createMachine, interpret } from "xstate";
 
-export const cartMachine = Machine(
+export const cartMachine = createMachine(
   {
     id: "miniCart",
     initial: "hidden",
@@ -12,7 +12,7 @@ export const cartMachine = Machine(
         on: {
           OPEN: {
             target: "visible",
-            actions: ["addHash", "fetch"],
+            actions: ["addHash"],
           },
         },
       },
@@ -20,7 +20,7 @@ export const cartMachine = Machine(
         on: {
           CLOSE: {
             target: "hidden",
-            actions: ["focusOpenButton", "removeHash"],
+            actions: ["removeHash"],
           },
           UPDATE: "updating",
         },
@@ -34,17 +34,6 @@ export const cartMachine = Machine(
   },
   {
     actions: {
-      focusOpenButton: (context, event) => {
-        const trigger = document.querySelector(
-          ".selleradiseHeader__trigger--miniCart"
-        );
-
-        if (!trigger) {
-          return;
-        }
-
-        trigger.focus();
-      },
       addHash: (context, event) => {
         window.location.hash = "#mini-cart";
 

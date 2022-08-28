@@ -913,6 +913,43 @@ if (!function_exists('selleradise_is_woocommerce_page')) {
     }
 }
 
+if (!function_exists('selleradise_is_normal_mode')) {
+
+    function selleradise_is_normal_mode()
+    {
+        if (!class_exists('\Elementor\Plugin')) {
+            return true;
+        }
+
+        if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
+            return false;
+        }
+
+        return true;
+    }
+}
+
+if (!function_exists('selleradise_lazy_src')) {
+
+    function selleradise_lazy_src($src)
+    {
+        if (selleradise_is_normal_mode()) {
+            return sprintf(
+                '%s="%s" src="%s"',
+                'x-lazy:src',
+                $src,
+                selleradise_get_image_placeholder()
+            );
+        } else {
+            return sprintf(
+                '%s="%s"',
+                'src',
+                $src
+            );
+        }
+    }
+}
+
 if (!function_exists('selleradise_nav_classes')) {
 
     function selleradise_nav_classes($tag = "ul", $level = 1)
@@ -964,6 +1001,11 @@ if (!function_exists('selleradise_products_classes')) {
                     "md" => 2,
                     "lg" => 4,
                 ],
+                "simple" => [
+                    "sm" => 1,
+                    "md" => 2,
+                    "lg" => 4,
+                ],
                 "compact" => [
                     "sm" => 2,
                     "md" => 5,
@@ -983,6 +1025,11 @@ if (!function_exists('selleradise_products_classes')) {
                     "lg" => 3,
                 ],
                 "minimal" => [
+                    "sm" => 1,
+                    "md" => 3,
+                    "lg" => 3,
+                ],
+                "simple" => [
                     "sm" => 1,
                     "md" => 3,
                     "lg" => 3,
